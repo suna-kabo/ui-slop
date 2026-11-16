@@ -1,85 +1,171 @@
 # Typography System
 
-Typography is part of product structure, not a finishing layer.
+Typography is one of the strongest signals that an interface was actually art-directed.
 
-## Default character
+A readable font can still make the whole product feel generic.
 
-When no brand type system is supplied, prefer a rounded or humanist UI face with:
+## Start from voice
 
-- mature softness
-- strong small-size readability
-- generous x-height
-- clear counters
-- distinct 1 / I / l and 0 / O
-- useful medium and semibold weights
-- clear numerals
-- good tabular figures when available
+Before choosing a family, describe the typographic voice.
 
-Avoid defaulting to:
+Useful dimensions:
 
-- harsh industrial grotesks
-- exaggerated condensed faces
-- editorial serif systems in dense operational UI
-- childish rounded fonts
-- display fonts used for body UI
+- soft ↔ sharp
+- playful ↔ formal
+- technical ↔ human
+- compact ↔ open
+- contemporary ↔ archival
+- neutral ↔ expressive
+- geometric ↔ calligraphic
+- quiet ↔ energetic
 
-## Audition fonts in the actual product
+Choose a direction that supports the product.
 
-Do not choose a font only because it is popular.
+## Convenience is not a design reason
 
-When practical, render at least two or three plausible candidates in the real interface and compare:
+Arial, Helvetica, Segoe UI, Roboto, Inter, SF-like system sans, and similar neutral families can be correct.
 
-- page title
-- navigation
-- dense table/list row
-- small metadata
-- numbers
-- long labels
-- buttons
-- mobile view
+They should not win an open-ended substantial design merely because:
 
-Judge rhythm and legibility, not only personality.
+- they already exist
+- they are safe
+- the agent knows them
+- they render everywhere
+- they are common in SaaS
 
-## Hierarchy
+If the product should feel authored, audition a direction with more character before settling on a generic neutral.
 
-Create hierarchy through a controlled combination of:
+Keep sensible generic fallbacks.
 
-- size
-- weight
-- contrast
-- spacing
+## Audition directions, not names
+
+For substantial new visual systems, compare at least two materially different typographic directions when practical.
+
+A direction includes:
+
+- family/pairing
+- weight strategy
+- width/size strategy
+- numerals
 - case
-- line-height
+- tracking
+- line height
+- heading/body/control relationship
 
-Do not rely on font size alone.
+Examples:
 
-Avoid giant page titles in working software unless the task genuinely benefits from them.
+- warm humanist sans + restrained numeric style
+- soft grotesk with no mono except identifiers
+- expressive display face + calm utility sans
+- narrow technical sans + open body sans
+- serif-led reading system + restrained sans controls
 
-## Numeric data
+Do not audition two almost-identical sans fonts and call it exploration.
 
-Use tabular numerals where column comparison matters.
+## Product roles
 
-Align decimal or percentage information consistently when practical.
+Possible roles:
 
-Do not let a decorative font choice damage the readability of numbers.
+- display/identity
+- task title
+- section
+- body
+- control
+- metadata
+- numeric
+- identifier/code
+- caption
+- collection/promotional title
 
-## External fonts
+Not every product needs every role.
 
-If adding a font:
+Do not let "large bold sans" carry the entire hierarchy.
 
+## Small-size survival
+
+Test:
+
+- 12–14px controls
+- 14–16px body
+- changing numbers
+- long names
+- punctuation
+- mixed case
+- non-English content if relevant
+- mobile rendering
+
+A display face can fail in dense UI.
+
+## Numerals
+
+Use tabular numerals where changing values need stable alignment.
+
+Do not force mono onto every number.
+
+A proportional UI face with tabular numeral features may feel more refined than a monospace family in every data cell.
+
+Use mono when identifiers, code-like values, or product voice justify it.
+
+## Weight and width
+
+Use the smallest set of weights that creates the hierarchy.
+
+Avoid 700/800 everywhere.
+
+Variable font axes can help when they materially improve density, emphasis, responsiveness, or identity.
+
+Do not animate font axes merely because possible.
+
+## Production behavior
+
+- prefer WOFF2 when self-hosting
+- load only used weights/styles
 - verify licensing
-- prefer WOFF2
-- self-host when appropriate
-- minimize weights/files
-- use variable fonts when they reduce cost without browser issues
-- preload only what materially improves rendering
-- provide sensible fallbacks
-- avoid visible layout shift
+- avoid synthetic bold/italic when it distorts the face
+- minimize layout shift
+- set useful fallbacks
+- test fallback metrics
+- use `font-variant-numeric: tabular-nums` where appropriate
+- use `text-wrap: balance` selectively for short headings
+- use `text-wrap: pretty` selectively for short prose
+- use `overflow-wrap: break-word` for hostile tokens
+- keep important truncated content recoverable
+- keep mobile inputs browser-safe
+- set document `lang`
+- handle mixed direction with `dir` / `bdi`
 
-## Scaling
+## Display type does not rescue generic structure
 
-The interface must remain usable with 200% text scaling.
+A giant headline does not make a generic shell authored.
 
-Do not hide essential actions behind fixed-height containers.
+On Workflow surfaces, display type must communicate task-critical state or genuine product identity.
 
-Avoid text that only fits because the default zoom is small.
+Do not add slogans merely because the page looks empty.
+
+## Emotional role
+
+For identity-heavy products, test whether typography contributes:
+
+- warmth
+- energy
+- precision
+- nostalgia
+- softness
+- speed
+- collectibility
+- intimacy
+
+If the product should feel cared for and the type feels like a browser default, the system is unfinished.
+
+## Final type test
+
+Ask:
+
+- Would I choose this same family for three unrelated products?
+- Is it helping the product voice?
+- Did I compare a materially different direction?
+- Are small UI states still excellent?
+- Do numbers behave properly?
+- Does the type feel intentionally selected?
+
+If not, revisit it.

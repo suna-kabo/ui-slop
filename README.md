@@ -1,139 +1,159 @@
 # UI Slop
 
-An opinionated anti-slop Agent Skill for designing, rebuilding, refining, and auditing production user interfaces.
+A standalone, composable Agent Skill for production UI that resists generic AI composition, component repetition, and shallow interaction design.
 
-UI Slop is not a component library and not a fixed visual theme. It is a **UI design and engineering operating system** for agents.
+UI Slop is not a component library or a fixed visual theme.
 
-The name is intentionally blunt. The skill exists to stop generic AI-generated interface habits before they become the product.
+It is a UI design and engineering decision system.
 
-Its core idea is simple:
+Its job is to preserve the product contract while forcing an agent to choose product-specific structure, art direction, typography, information relationships, interaction, responsive behavior, and task continuity, then verify the actual rendered product.
 
-> Protect the product contract. Treat presentation as redesignable. Build a coherent visual and interaction system, then verify it in the real browser.
+## Current release: v1.7
 
-The skill is designed to fight generic AI-generated UI by combining product hierarchy, layout, spacing, typography, restrained color, interaction motion, accessibility, performance, and mandatory browser self-review.
+v1.6 established three important layers:
 
-## What it covers
+- Semantic Diversity
+- Reactive Surfaces
+- Information Relationships
 
-- product-contract discovery before visual changes
-- ground-up redesign authority when permitted
-- anti-AI-slop rules
-- no defensive or implementation-facing product copy
-- information architecture and hierarchy
-- layout, density, and spacing rhythm
-- rounded / humanist typography defaults
-- restrained color and shape language
-- motion and interaction grammar
-- tables, lists, inspectors, and mobile composition
-- browser interaction and visual critique loops
-- accessibility and 200% reflow
-- frontend performance
-- updating obsolete presentation-specific tests without weakening behavior
-- capability discovery, including relevant skills/plugins/tools when the host permits it
+Two independent sample sets showed those changes working, but also exposed a higher-order failure mode:
 
-## Philosophy
+> the first action can work while the next action, return path, or preserved context still feels accidental.
 
-UI Slop does **not** force every product to look the same.
+v1.7 adds **Task Continuity**.
 
-User-provided brand direction, existing design systems, and product constraints override the fallback aesthetic.
+It asks the agent to design:
 
-When no direction is supplied, the defaults favor:
+- where the next likely action lives
+- how long important state should survive
+- what Back/close should restore
+- how browse-heavy products connect objects beyond filters
+- when relationships need an action
+- how continuity changes on mobile
+- how nested detail/history should behave
 
-- calm, modern, mature interfaces
-- medium density
-- rounded or humanist UI typography
-- neutral foundations with restrained semantic color
-- modest radii and minimal decorative surfaces
-- high-quality motion used for continuity rather than spectacle
-- static screens that feel humble, with personality revealed through interaction
+The detailed model lives in `references/task-continuity.md` so SKILL.md stays comparatively compact.
 
-## Skill structure
+## Core workflow
+
+```text
+route task
+→ protect product contract
+→ identify user jobs + domain objects
+→ map important information relationships
+→ define surface mode + intended feeling
+→ establish design thesis
+→ explore structural directions
+→ run silhouette check
+→ establish visual + typography direction
+→ build coherent system
+→ design semantic diversity + reactive shared state
+→ design task continuity
+→ implement states + responsive + motion
+→ browser QA from first action and live-state follow-up
+→ AI Fingerprint Gate
+→ Evidence Gate
+→ Taste Gate
+→ ship
+```
+
+## Structure
 
 ```text
 ui-slop/
 ├── SKILL.md
 ├── README.md
 ├── LICENSE
+├── ACKNOWLEDGEMENTS.md
+├── CHANGELOG.md
 ├── .gitignore
 ├── references/
-│   ├── visual-defaults.md
+│   ├── accessibility-baseline.md
+│   ├── ai-fingerprint-gate.md
+│   ├── art-direction-media.md
+│   ├── asset-strategy.md
+│   ├── authored-experience.md
+│   ├── browser-qa.md
+│   ├── coherence-floor.md
+│   ├── color-system.md
+│   ├── craft-floor.md
 │   ├── design-system.md
-│   ├── origin-principles.md
-│   ├── layout-spacing-system.md
+│   ├── evidence-gate.md
+│   ├── extension-protocol.md
+│   ├── information-design.md
+│   ├── information-relationships.md
+│   ├── interaction-hierarchy.md
+│   ├── interaction-states.md
+│   ├── layout-responsive.md
+│   ├── motion-interaction.md
+│   ├── performance-baseline.md
+│   ├── reactive-surfaces.md
+│   ├── semantic-diversity.md
+│   ├── structural-direction.md
+│   ├── task-continuity.md
+│   ├── taste-gate.md
 │   ├── typography-system.md
-│   ├── motion-system.md
-│   └── review-checklist.md
-└── examples/
-    ├── audit-only.md
-    ├── ground-up-rebuild.md
-    └── refinement-pass.md
+│   ├── visual-commitment.md
+│   └── visual-direction.md
+└── evidence/
+    ├── v1.6.1-candidate-probe.md
+    └── cross-sample-findings-v1.7.md
 ```
 
-A skill is a folder anchored by `SKILL.md`. Supporting references can be loaded when needed.
+## Standalone first
+
+UI Slop should produce a complete design workflow without requiring Impeccable, frontend-design, better-* skills, or another UI skill.
+
+Browser automation, testing, accessibility tooling, image tooling, and performance measurement remain execution and verification capabilities.
+
+## Composable by design
+
+When another specialist skill is active, UI Slop does not fight it.
+
+Priority:
+
+1. explicit user instruction
+2. protected product/domain contract
+3. project/framework constraints
+4. narrower specialist guidance inside its specialty
+5. UI Slop system/taste guidance
+6. UI Slop fallback suggestions
 
 ## Install
 
-For Codex, project-scoped skills live under `.agents/skills/`; user-scoped skills live under `~/.agents/skills/`.
-
-### User-scoped
+### Codex, current project
 
 ```bash
-git clone <YOUR_UI_SLOP_REPO_URL> ~/.agents/skills/ui-slop
+mkdir -p .agents/skills
+git submodule add <YOUR_REPO_URL> .agents/skills/ui-slop
+```
+
+### Codex, all projects for the user
+
+```bash
+git clone <YOUR_REPO_URL> ~/.agents/skills/ui-slop
 ```
 
 PowerShell:
 
 ```powershell
-git clone <YOUR_UI_SLOP_REPO_URL> "$HOME\.agents\skills\ui-slop"
+git clone <YOUR_REPO_URL> "$HOME\.agents\skills\ui-slop"
 ```
 
-### Track it inside a Git project
+Other Agent-Skills-compatible environments can copy the whole `ui-slop` directory into their skill path.
 
-If you want the skill version pinned with a project, use a submodule rather than an accidental nested Git repository:
+## Philosophy
 
-```bash
-mkdir -p .agents/skills
-git submodule add <YOUR_UI_SLOP_REPO_URL> .agents/skills/ui-slop
-```
+**Protect the product contract. Treat presentation as redesignable.**
 
-You can also copy the `ui-slop` folder manually into the skills directory used by another compatible agent environment.
+**Domain objects should shape the interface.**
 
-Then ask the agent to use `ui-slop` for a UI build, redesign, refinement, or audit. Compatible agents can also discover it automatically from the `name` and `description` in `SKILL.md`.
+**Consistency should not erase semantic differences.**
 
-The release ZIP is also valid as an OpenAI skill bundle: it contains one top-level `ui-slop/` folder and exactly one `SKILL.md`.
+**Related state should react together.**
 
-## Typical uses
+**A task is not finished when the first action works.**
 
-- rebuild an existing app without inheriting its visual debt
-- redesign a dashboard that feels generic or AI-generated
-- establish a coherent layout / spacing / motion system
-- refine an already-good UI without over-designing it
-- audit a frontend for hierarchy, usability, accessibility, and polish
-- give a coding agent enough autonomy to make visual decisions and iterate in-browser
+**Browse paths are product structure, not just filters.**
 
-## System references
-
-- [Visual defaults](references/visual-defaults.md)
-- [Design system](references/design-system.md)
-- [Layout and spacing](references/layout-spacing-system.md)
-- [Typography](references/typography-system.md)
-- [Motion and interaction](references/motion-system.md)
-- [Final review checklist](references/review-checklist.md)
-- [Origin principles](references/origin-principles.md)
-
-The references are progressive disclosure. The agent should load the relevant parts when the task needs them rather than treating every file as mandatory context for every tiny UI change.
-
-## Tool and plugin autonomy
-
-Before substantial UI work, the skill tells the agent to inspect available capabilities for frontend implementation, design, browser automation, accessibility, performance, and visual review.
-
-When the host environment allows it, the agent may discover, enable, or install useful skills/plugins. Any authentication or explicit permission requirement still follows the host platform's approval flow.
-
-## Not a visual template
-
-UI Slop intentionally does not ship a fixed page template, component library, or mandatory palette.
-
-The point is to produce interfaces that are coherent with their product, not interfaces that all look like UI Slop.
-
-## License
-
-MIT.
+**A clean but interchangeable interface is not finished.**

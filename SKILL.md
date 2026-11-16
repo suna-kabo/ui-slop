@@ -1,719 +1,416 @@
 ---
 name: ui-slop
-description: Anti-slop UI design and engineering system for designing, rebuilding, refining, or auditing production interfaces. Preserves the product contract while giving broad presentation freedom, with opinionated layout, spacing, rounded/humanist typography, restrained color, motion, accessibility, performance, capability discovery, and mandatory browser self-review. Use for web apps, dashboards, research tools, SaaS products, internal tools, responsive frontends, and substantial UI work.
+description: Standalone, composable UI design and engineering workflow for building, rebuilding, refining, or auditing production interfaces without generic AI composition, typography, component, or dashboard defaults. Protects product behavior while enforcing product-specific structure, art direction, semantic diversity, reactive information relationships, task continuity, accessibility, responsive behavior, browser QA, evidence, and taste review.
 ---
 
 # UI Slop
 
-Use this skill when the user asks to design, redesign, rebuild, implement, refine, or audit a product UI.
+Use this skill to design, rebuild, refine, implement, or audit a production interface.
 
-The goal is not to produce a fashionable screenshot. The goal is to create a product interface that is clear, purposeful, distinctive, performant, accessible, and pleasant to use for long periods.
+The goal is not merely clean UI. The goal is a product that feels **specific, authored, cared for, technically sound, and worth using**.
 
-## 0. Choose the operating mode
+UI Slop must work by itself. Other UI/design/frontend/motion/accessibility skills are optional specialists.
 
-Match the process to the user's scope before changing anything.
+## 0. Route the task
 
-Use one of these modes:
+Choose the smallest mode that matches the request:
 
-- **Audit:** inspect and critique only. Do not modify files, code, design, or deployment.
-- **Refinement:** preserve the approved design direction and architecture. Fix material hierarchy, spacing, density, typography, interaction, accessibility, responsiveness, or polish issues without restarting the design.
-- **Ground-up rebuild:** preserve the product contract but treat the presentation layer as redesignable. Rebuild information architecture, component structure, design system, and presentation from first principles when the user grants that authority.
+- **Audit**: inspect/report only.
+- **Refinement**: preserve approved structure and visual world; fix material issues.
+- **Rebuild**: preserve product behavior while allowing presentation, information architecture, components, interaction model, and design system to change from first principles.
 
-Do not turn a refinement request into a redesign.
+Classify the surface:
 
-Do not turn an audit into implementation.
+- **Workflow**: repeated tasks, speed, clarity, context.
+- **Reading**: comprehension, hierarchy, annotation.
+- **Persuasion**: narrative, proof, decision, action.
+- **Immersion**: content/artifact leads; chrome recedes.
+- **Browse / Collect**: discovery, comparison, saving, returning, fandom, shopping, media.
 
-Do not preserve the old presentation during a ground-up rebuild merely because changing it creates a larger diff.
+One product can contain several modes.
 
-Scale validation effort to the task, but substantial UI work still requires real rendered review.
+## 1. Protect the product contract
 
-## 1. Establish the product contract first
+Before redesigning, identify what must remain correct:
 
-Before changing presentation, identify what is actually protected.
-
-Extract the product contract from the existing implementation, specifications, tests, routes, data models, documentation, and user instructions.
-
-The protected contract may include:
-
-- domain semantics
-- calculations and business rules
-- data integrity
-- user workflows
-- required actions
-- saved state
-- exports/imports
-- routes and browser history
-- permissions and authentication behavior
-- loading, empty, error, offline, and recovery behavior
-- keyboard behavior
-- accessibility requirements
-- responsive behavior that is functionally important
+- domain semantics and data correctness
+- required workflows and actions
+- auth, permissions, saved state
+- imports/exports
+- routes, history, deep links
+- loading, empty, error, retry, offline behavior
+- keyboard and accessibility requirements
 - external integration boundaries
+- functionally important responsive behavior
 
-Do not change domain logic merely because the UI is difficult to explain.
+Do not weaken domain logic because presentation is difficult.
 
-Simplify the presentation instead.
+For a rebuild, existing DOM/CSS/cards/navigation/layout are behavioral references only unless explicitly protected.
 
-If the task is an audit-only task, do not modify the product.
+## 2. Identify user jobs, domain objects, relationships, and intended feeling
 
-## 2. Treat presentation as disposable when the task allows it
-
-For a ground-up redesign, the existing presentation layer is not protected merely because it exists.
-
-You may remove, replace, relocate, merge, or redesign:
-
-- navigation
-- sidebars
-- top bars
-- tabs
-- cards
-- tables and table columns
-- filters
-- search
-- sorting controls
-- inspectors
-- dialogs
-- status bars
-- helper text
-- badges and pills
-- breadcrumbs
-- page titles
-- empty states
-- mobile navigation
-- responsive structure
-- CSS architecture
-- frontend component hierarchy
-- motion
-- visual tokens
-- icons
-- font choices
-
-If something is unnecessary, delete it.
-
-If several controls can become one simpler interaction, combine them.
-
-If a feature should be contextual instead of permanently visible, move it into the relevant workflow.
-
-Do not preserve technical debt merely to reduce diff size.
-
-For a true ground-up rebuild, do not start by restyling the old stylesheet.
-
-Treat the existing frontend primarily as a behavioral reference unless the user explicitly protects its presentation.
-
-Use this sequence:
-
-1. inspect existing functionality and user flows
-2. document the protected product contract
-3. identify reusable data/API boundaries
-4. establish a new information architecture
-5. establish a new component architecture
-6. establish the design system and tokens
-7. build a fresh shell
-8. migrate required behavior into it
-9. validate behavioral parity
-10. remove obsolete presentation code
-
-When practical, build the new shell separately before replacing the old presentation.
-
-For a substantial ground-up rebuild, read the design-system, layout/spacing, typography, and motion references before committing to the new presentation language.
-
-A large frontend diff is acceptable when the task genuinely calls for a new interface.
-
-If the final screenshots still look structurally like the old UI with different colors, spacing, or radius values, the ground-up redesign has failed.
-
-## 3. Find the core user questions
-
-Reduce the product to the smallest set of questions or jobs the interface must answer.
-
-Examples:
+Reduce the interface to the smallest useful questions:
 
 - What is happening?
 - What changed?
 - What needs attention?
 - What should I do next?
-- What object am I inspecting?
-- What evidence supports this state?
-
-The primary workflow must dominate the visual hierarchy.
+- What am I comparing or inspecting?
+- What should I explore next?
 
-Secondary utilities must remain accessible without competing with the primary workflow.
+List the objects users actually think about and the important relationships between them.
 
-Do not make every feature equally prominent.
+Examples:
 
-## 4. Reject AI-slop patterns
+- orders / stages / exceptions
+- evidence / rankings / notes
+- places / routes / time
+- songs / takes / waveforms
+- collections / characters / releases / products
 
-Do not default to generic dashboard conventions simply because they are easy to generate.
+Choose the intended feeling: calm, curious, playful, intimate, precise, collectible, expressive, premium, or another product-grounded direction.
 
-Avoid by default:
+The primary job gets the strongest hierarchy. Domain relationships should shape the interface rather than becoming isolated widgets.
 
-- sidebars used only because "apps have sidebars"
-- card grids for every type of information
-- rounded rectangles around every object
-- giant marketing-style headings inside working software
-- gradient hero panels
-- a subtitle under every heading
-- pill overload
-- meaningless icons
-- badges everywhere
-- glassmorphism used as a general surface system
-- generic KPI cards
-- decorative charts that do not improve decisions
-- helper text filling empty space
-- identical section layouts repeated mechanically
-- generic SaaS/admin hierarchy
-- large empty hero regions in data-heavy products
-- fake sophistication through glow, blur, and gradients
+For Browse / Collect and Immersion, usability alone is not enough. The product should reward exploration.
 
-Every structural element must earn its space.
+If identity or visual content matters, decide early whether the finished surface needs real/generated imagery, illustration, texture, or sourced fonts. Prototype placeholders must not silently become final art direction.
 
-If the result looks like a generic AI-generated dashboard, redesign it.
+Read when relevant:
 
-## 5. No defensive writing
+- `references/authored-experience.md`
+- `references/asset-strategy.md`
+- `references/information-relationships.md`
 
-Visible product copy must earn its space.
+## 3. Establish a design thesis
 
-Do not expose unnecessary:
+For substantial work define:
 
-- implementation explanations
-- developer reasoning
-- technical diagnostics
-- internal architecture terms
-- methodology narration that users do not need at that moment
-- defensive disclaimers
-- obvious instructions
-- filler subtitles
-- prose added because a section looks empty
-- copy explaining a confusing interaction instead of fixing the interaction
+- surface mode
+- primary job
+- intended feeling
+- structural idea
+- density
+- type character
+- interaction character
+- one signature idea if useful
+- one generic pattern deliberately avoided
 
-Solve confusion first through:
+Weak: `clean modern dashboard`.
 
-- naming
-- hierarchy
-- grouping
-- visual relationships
-- affordance
-- interaction
-- progressive disclosure
+Strong theses explain how the actual domain and workflow shape the surface.
 
-Use explanatory text only when it materially helps the user make a decision or complete a task.
+A thesis must be specific enough to reject plausible alternatives.
 
-## 6. Visual direction hierarchy
+## 4. Explore structure before styling
 
-User-provided brand, art direction, and product context override the default aesthetic below.
+When the shell is open, do not start with color or font.
 
-If no clear art direction exists, use this opinionated fallback:
+Use domain objects to outline at least **three materially different spatial concepts** when practical. They must differ in geometry, not merely cards or colors.
 
-- calm
-- modern
-- mature
-- restrained
-- medium density
-- slightly Japanese in discipline: precision, alignment, negative space, and quiet surfaces rather than cultural decoration
-- visually humble
-- highly polished in interaction
-- distinctive through proportion, typography, alignment, spacing, and motion rather than decoration
+Possible models include route/timeline, indexed ledger, object shelf, comparison canvas, stage flow, spatial map, contextual list/detail, catalog spread, or relationship field.
 
-Default visual character:
+Judge them in low-style form first.
 
-- neutral charcoal / near-black / gray / off-white foundation
-- approximately 85–90% neutral surfaces and text
-- approximately 10–15% semantic or interaction color
-- soft off-white primary text on dark foundations
-- muted secondary text
-- restrained cool interaction accent
-- muted green positive
-- muted coral negative
-- restrained amber warning
-- modest radii
-- ruled separation where a card is unnecessary
-- minimal decorative chrome
+For Workflow surfaces, treat landing-page grammar as suspicious unless task-critical: giant slogan hero, eyebrow + headline + subtitle, empty intro region, detached top-right controls, marketing CTA hierarchy.
 
-Do not introduce cultural motifs merely because the fallback mentions Japanese restraint.
+Controls belong near what they control. Detail does not automatically belong in a right-side rounded card.
 
-Static screenshots should look controlled and humble.
+Run the silhouette test:
 
-The interface should reveal more personality while being used than while sitting still.
+> If color, copy, imagery, and branding disappear, does the geometry still feel specific to the product?
 
-Do not confuse restraint with emptiness or under-design.
+If unrelated products produce the same silhouette, reject the shell.
 
-## 7. Typography default
+Read:
 
-When no brand type system is specified, prefer a rounded or humanist UI typeface with some personality.
+- `references/structural-direction.md`
+- `references/information-design.md`
 
-Desired characteristics:
+## 5. Establish visual commitment and art direction
 
-- slightly soft or rounded forms
-- friendly but mature
-- highly readable at small sizes
-- comfortable in dense product interfaces
-- clear numerals
-- strong distinction between weights
-- not corporate-industrial by default
-- not childish
-- not exaggeratedly condensed
-- not editorial-serif unless the product specifically benefits from that direction
+If a protected visual system exists, use it. Otherwise ground direction in subject, audience, culture, materials, tempo, content, and usage.
 
-Do not choose a font by reputation alone.
+When major axes are open, compare materially different visual/type directions rather than accepting the first safe model default.
 
-Audition multiple suitable typefaces in the actual rendered interface before settling on one when the environment permits it.
+Choose the page-scale commitment level:
 
-Useful reference directions include:
+- **Quiet instrument**
+- **Anchored world**
+- **Full world**
 
-- Torus-like rounded UI typography
-- modern humanist grotesks
-- restrained variable sans families
-- softer product-oriented system fonts
+The level follows the task, not a universal UI Slop aesthetic.
 
-If using an external font:
+Suspicious defaults include recurring charcoal + green/purple, gray + blue SaaS, near-black + neon, cream + terracotta + serif, broadsheet rules, soft-rounded admin UI, and giant bold sans + tiny uppercase eyebrow. They are allowed only when product-grounded.
 
-- verify the license
-- self-host when appropriate
-- prefer WOFF2
-- minimize font files and weights
-- use variable fonts where they genuinely reduce cost
-- preload only what materially helps
-- avoid layout shift
-- define sensible fallbacks
+Typography must feel selected, not inherited. For identity-heavy or browse-heavy work, audition a direction with visible character when practical.
 
-Use tabular numerals for tables, financial data, measurements, timers, or any interface where column alignment matters.
+Read:
 
-Typography must remain readable at 200% text scaling.
+- `references/visual-direction.md`
+- `references/visual-commitment.md`
+- `references/typography-system.md`
+- `references/color-system.md`
+- `references/art-direction-media.md`
+- `references/asset-strategy.md`
 
-## 8. Color default
+## 6. Build one coherent system without semantic sameness
 
-User brand direction overrides this section.
+Define only what the product needs: surfaces, text hierarchy, color roles, spacing, dividers/elevation, shape roles, control sizes, focus, interaction states, motion grammar, responsive transformations, and media rules.
 
-When no palette is specified, prefer a neutral foundation with restrained semantic color.
+Consistency means shared grammar, not repeated templates.
 
-A useful default ratio is approximately:
+Do not force different meanings into the same badge, pill, tiny uppercase label, chip, or metadata treatment. Campaign identity, artwork credit, availability, timeline event, category, filter, annotation, and navigation are different semantic roles unless the product proves otherwise.
 
-- 85 to 90 percent neutral surfaces and text
-- 10 to 15 percent semantic or interaction accents
+Meaning can be expressed through typography, position, color, image treatment, shape, motion, progressive disclosure, relationship, or state change instead of another component container.
 
-Use color primarily for:
+Read:
 
-- state
-- hierarchy
-- focus
-- selection
-- positive/negative meaning
-- warning or error meaning
+- `references/design-system.md`
+- `references/semantic-diversity.md`
+- `references/color-system.md`
+- `references/typography-system.md`
 
-Avoid by default:
+## 7. Design reactive relationships, not isolated widgets
 
-- neon palettes
-- constant glow
-- giant accent-color surfaces
-- gradient-heavy backgrounds
-- decorative color without meaning
-- too many competing brand hues
+For products with connected state, decide what should react when users select, focus, filter, play, or change context.
 
-Dark and light themes are both acceptable. Choose based on the product and context rather than habit.
+Identify shared state such as selected object, active collection, character, filters, time range, route, playback, shift, or favorites. Map which regions should respond together.
 
-For long-session research or operational software, neutral charcoal or soft off-white foundations are often effective starting points.
+Interaction should expose relationships that static composition cannot express as clearly. Do not add charts, animation, hover effects, or dashboards merely to appear interactive.
 
-## 9. Density and spacing
+Important reactive relationships must work with click/tap, keyboard, narrow layouts, and reduced motion. Hover may preview but cannot be the only path.
 
-Default to medium density unless the product clearly needs another mode.
+Read:
 
-The UI should not feel cramped.
+- `references/reactive-surfaces.md`
+- `references/information-relationships.md`
 
-The UI should not feel like a marketing landing page.
+## 8. Design task continuity
 
-At common desktop widths, meaningful content should use the available space instead of floating inside unnecessarily narrow columns.
+A feature is not complete because its first action works.
 
-Avoid solving empty space by adding decorative content.
+For repeated work, browsing, nested detail, playback, or saved-state flows, define:
 
-Improve composition first.
+- **state lifetime**: what is transient, view-local, navigation-continuous, session-continuous, or persistent
+- **action locality**: where the next likely high-frequency action lives after selection
+- **return contract**: what Back/close restores, including route, filters, selection, sort, scroll, focus, and ongoing activity
+- **browse topology**: natural paths between meaningful objects beyond search and facets
+- **relationship actionability**: whether important relationships can be followed or compared when users need them
 
-Use a consistent spacing rhythm, but do not let token systems force awkward layouts.
+Do not let implementation convenience decide mode transitions or persistence.
 
-Related data should sit close together. Unrelated workflows need stronger separation.
+On mobile, continuity includes preserving the selected context and keeping the next action reachable without unnecessary backtracking.
 
-## 10. Build one coherent design system
+Test the second and third action, not only the first.
 
-Do not design each page independently.
+Read `references/task-continuity.md`.
 
-Before detailed polish, establish a shared UI grammar for:
+## 9. Implement complete interaction and motion
 
-- canvas and raised surfaces
-- text hierarchy
-- semantic colors
-- spacing rhythm
-- content widths
-- borders and dividers
-- radii
-- control heights
-- table/list rhythm
-- hover, pressed, selected, disabled, loading, and focus states
-- inspector/dialog behavior
-- navigation behavior
-- motion timing and easing
-- responsive breakpoints
-- mobile transformation rules
+For each important interactive component, cover applicable default, hover, pressed, focus-visible, selected/current, disabled, loading, empty, error, and success states.
 
-Prefer a small number of deliberate tokens over many local exceptions.
+Use native semantics where they solve the interaction well.
 
-Consistency does not mean every section should look identical. Reuse the same grammar while allowing each workflow to have the composition it needs.
+For layered detail:
 
-The design system should make unrelated screens feel like the same product without forcing them into the same card template.
+- Escape dismisses the topmost transient layer
+- browser/system Back handles route-level detail
+- Enter/Space activates the focused trigger
+- do not bind Space globally to dismissal
+- restore focus to the invoker after transient detail closes
 
-Read `references/design-system.md` when establishing a new UI language or when an existing frontend feels visually fragmented.
+Motion should explain selection, hierarchy, navigation, state change, cause/effect, or spatial continuity. Frequent actions should feel immediate. Respect `prefers-reduced-motion`.
 
-## 11. Tables, lists, and data surfaces
+Read:
 
-Use tables when the user genuinely benefits from aligned comparison across columns.
+- `references/interaction-states.md`
+- `references/interaction-hierarchy.md`
+- `references/motion-interaction.md`
 
-Do not use a table simply because the data is structured.
+## 10. Compose responsive behavior, not desktop stacking
 
-Do not turn every record into a card.
+Use spacing, alignment, typography, dividers, and surface changes before bounded containers.
 
-For dense research or operational products:
+Breakpoints come from content/interaction failure, not habitual device numbers.
 
-- align numerics
-- make row interactivity obvious
-- keep important identity fields visually stable
-- separate state from direction when they are different concepts
-- prioritize scan speed
-- keep sorting/filtering understandable
-- avoid horizontal scrolling when a better responsive representation exists
+Mobile may change representation, order, navigation, detail behavior, action placement, and density. It must preserve the primary object and task continuity.
 
-On mobile, redesign the information representation intentionally instead of stacking desktop columns blindly.
+Read `references/layout-responsive.md`.
 
-## 12. Motion and interaction
+## 11. Reject AI slop and filler
 
-High-quality motion is encouraged when it improves continuity, hierarchy, cause and effect, or spatial understanding.
+Reject unjustified cards-around-everything, pill/badge overload, giant headings in task software, filler subtitles, meaningless icons, decorative charts, generic KPI rows, generic main + right rail, top-right search by habit, slogan copy, repeated identical section layouts, and one aesthetic reused across unrelated products.
 
-Fancy interaction is acceptable.
+Anti-slop does **not** mean minimal. Replace removed decoration with stronger structure, proportion, typography, hierarchy, interaction, and subject-specific detail.
 
-Fancy decoration is optional.
+Visible copy must help users understand, decide, recover, or act.
 
-Good uses include:
+## 12. Compose with specialist skills narrowly
 
-- active indicator gliding between tabs or destinations
-- subtle row movement or contrast on hover
-- compact press feedback
-- inspector or detail surfaces opening from a contextual direction
-- filter state transitions
-- selection morphing
-- lightweight page transitions
-- data movement transitions after a refresh when they improve comprehension
+UI Slop is complete enough to run alone.
 
-Default timing guidance:
+Possible specialists include frontend/framework, visual critique, motion, accessibility, browser automation, visual regression, performance, design-source/Figma, and image generation/search.
 
-- small feedback: roughly 120 to 180 ms
-- ordinary navigation or state transition: roughly 150 to 220 ms
-- longer only when the spatial transition genuinely benefits from it
+Conflict order:
 
-Prefer compositor-friendly animation:
+1. explicit user instruction
+2. protected product/domain contract
+3. project/framework constraints
+4. narrower specialist guidance inside its specialty
+5. UI Slop system/taste guidance
+6. UI Slop fallback suggestions
 
-- transform
-- opacity
+Do not merge several skills' preferred aesthetics.
 
-Be cautious with:
+Read `references/extension-protocol.md`.
 
-- large animated blur
-- repeated backdrop-filter animation
-- animated large shadows
-- width/height animation that causes layout work
-- unnecessary continuous animation
-- JavaScript animation loops
+## 13. Harden before taste review
 
-Avoid layout thrashing.
+Verify applicable realistic long content, empty/loading/error/retry, disabled states, permissions, narrow/large widths, 200% text/zoom, keyboard-only flow, reduced motion, localization/RTL, offline/reconnect, and primary-interaction performance.
 
-Do not animate large tables merely for spectacle.
+Do not invent irrelevant edge cases.
 
-Respect `prefers-reduced-motion`.
+Read:
 
-Interaction polish must not make the product feel slower.
+- `references/accessibility-baseline.md`
+- `references/performance-baseline.md`
+- `references/craft-floor.md`
+- `references/coherence-floor.md`
 
-## 13. Navigation
+## 14. Browser QA is mandatory for substantial visual work
 
-Choose navigation from the product's information architecture, not from convention.
+Use bounded review.
 
-Do not automatically choose a sidebar, top navigation, or bottom navigation.
+### Pass A
 
-Fewer core destinations often benefit from lighter navigation.
+Render representative desktop/mobile states together, operate primary flows, and inspect first viewport, navigation, selection, detail, realistic content, narrow/mobile, 200% zoom, reduced motion, loading/empty/error, and runtime issues.
 
-Secondary destinations should remain available without receiving equal emphasis.
+Also inspect:
 
-On mobile, navigation may use a different structure from desktop.
+- low-style/grayscale/zoomed-out structure
+- silhouette against unrelated recent work
+- spatial utilization and dead-space quality
+- the three weakest visible regions
+- secondary utility coherence
+- repeated component treatments carrying unrelated meanings
+- the three most important domain relationships
+- touch/keyboard equivalents for reactive behavior
+- the next likely action from a live selected/filtered state
+- Back/close/reload behavior for continuity state
+- at least one nested detail path when relevant
 
-Back/Forward behavior, deep links, focus restoration, and route continuity should remain coherent.
+Collect material findings before editing.
 
-## 14. Inspectors, dialogs, and drilldowns
+### Fix batch
 
-Use contextual detail surfaces when they let users inspect an object without losing list context.
+Repair related findings together. Do not pixel-polish a structurally wrong shell.
 
-Avoid nested cards inside inspectors.
+### Pass B
 
-Prioritize:
+Re-render representative states and confirm fixes/regressions. Stop when remaining issues are minor/non-structural.
 
-1. identity
-2. current state
-3. evidence
-4. relevant metrics
-5. related objects or actions
+Screenshots must be visually inspected, not merely captured. If no browser is available, do not claim browser validation.
 
-Do not fill empty inspector space with explanatory prose.
+Read `references/browser-qa.md`.
 
-If a section has no meaningful content, usually do not render it.
+## 15. AI Fingerprint Gate
 
-Restore focus to the originating control when the detail surface closes.
+Before final acceptance, inspect for clusters of generated patterns, including repeated opening composition, generic KPI/right-rail structures, universal rounded controls, pill overload, habit-driven search placement, decorative data widgets, identical mobile stacking, generic slogan copy, same font/palette across unrelated work, semantic-to-component collapse, isolated widgets with no linked state, browse-heavy products where every path collapses into search/facets, and routine next actions far from the selected object.
 
-## 15. Capability discovery and tool freedom
+No single pattern is automatically wrong. Several without product reasons indicate convergence.
 
-Before substantial design work, inspect the actual capabilities available in the environment.
+If the gate fails, stop polish, return to Structural Direction, replace the shell, and rerun silhouette comparison. Do not solve structural slop by changing accent color.
 
-Look for relevant:
+Read `references/ai-fingerprint-gate.md`.
 
-- frontend implementation skills
-- product design skills
-- UI/UX review skills
-- interaction or motion skills
-- browser automation
-- accessibility tooling
-- performance tooling
-- visual comparison tooling
-- image generation when visual exploration is genuinely useful
-- design or prototyping plugins
-- repository and deployment tools
+## 16. Evidence Gate
 
-When the environment permits it, you may discover, enable, or install additional relevant skills/plugins rather than limiting yourself to the initially visible toolset.
+Block completion on material failures in core behavior, keyboard/focus, accessible names/roles/states, required contrast, clipping/unreachable actions, required narrow reflow, color-only critical meaning, missing required states, severe performance regression, route/history regression, or broken recovery.
 
-Do not install or connect tools merely to increase tool count.
+Do not convert personal taste into correctness findings. The bar for "verified" is actual inspection.
 
-Use each capability for a clear purpose.
+Read `references/evidence-gate.md`.
 
-Before installing, connecting, or executing a third-party capability:
+## 17. Taste Gate
 
-- inspect what it does and why it is needed
-- prefer the minimum permissions/capabilities required
-- do not expose secrets, private files, credentials, or unrelated user data
-- do not run untrusted setup scripts blindly
-- keep external network access scoped to the task
+After Evidence Gate passes, ask:
 
-Do not claim a skill/plugin was used unless it was actually invoked.
+- Would this still feel product-specific without the logo?
+- Do domain objects shape the silhouette?
+- Is composition derived from workflow/content?
+- Does typography contribute character?
+- Does color come from the product?
+- Could this shell serve many unrelated products unchanged?
+- Does interaction reveal care beyond the screenshot?
+- Is browsing rewarding where exploration matters?
+- Is restraint deliberate rather than under-designed?
+- Is mobile genuinely composed?
+- Are different semantic roles distinguishable without becoming inconsistent?
+- Does the interface respond as one connected system?
+- Can the user naturally continue from selection into the next likely action?
+- Does Back/close restore expected context?
+- Are browse paths richer than search and facets alone?
+- Is the weakest visible region still part of the same product world?
 
-Read its instructions before relying on it.
+A clean but interchangeable interface does not pass.
 
-If installation, authentication, or connection requires explicit user approval, follow the platform's approval flow. Do not bypass it.
+Read:
 
-If a useful external capability is unavailable, use the strongest available alternative and continue unless the missing capability makes the task impossible.
+- `references/taste-gate.md`
+- `references/authored-experience.md`
+- `references/coherence-floor.md`
 
-## 16. Mandatory browser self-review
+## 18. Preserve behavior tests, not obsolete presentation
 
-Do not finish substantial UI work after only coding and automated tests.
+Do not weaken product-contract tests.
 
-Use this loop:
+Presentation tests may change when they freeze obsolete selectors, copy, placement, component structure, or snapshots. Replace them with durable current behavior/accessibility tests.
 
-1. understand the product
-2. identify protected behavior
-3. establish the design direction
-4. implement
-5. run the actual product
-6. open it in a real browser
-7. interact with it
-8. inspect visually
-9. identify problems
-10. revise
-11. repeat
+Update documentation when removed UI makes it inaccurate.
 
-Operate the product as a user would.
+## 19. Finish with evidence
 
-Where applicable:
+For implementation work, report only what helps validate the result:
 
-- click controls
-- hover interactive rows
-- use filters and sorting
-- search
-- scroll long lists
-- open and close detail surfaces
-- use Back and Forward
-- use keyboard navigation
-- use Saved/favorites/bookmarks
-- test export/download actions
-- test loading, empty, error, disconnected, and recovery states
-- resize the viewport
-- inspect content with unusually long labels
-- inspect reduced-motion mode
-- inspect 200% text scaling
-
-Do not infer visual quality from test counts.
-
-Screenshots must be visually inspected, not merely captured.
-
-If a real browser or equivalent rendered environment is unavailable, do not claim browser validation. Use the strongest available rendering/inspection method and report that limitation clearly.
-
-## 17. Viewport acceptance
-
-For a substantial responsive web product, inspect representative widths such as:
-
-- 1920
-- 1440
-- 1280
-- 768
-- 430
-- 390
-- 360
-- 320 px
-
-Adjust the set when the product has different target devices.
-
-Do not only check for overflow.
-
-Judge composition, hierarchy, density, touch usability, text wrapping, and scan speed at each width.
-
-Mobile does not need to structurally resemble desktop.
-
-## 18. Accessibility
-
-Use native semantics wherever possible.
-
-Verify at minimum:
-
-- keyboard reachability
-- visible focus
-- focus restoration
-- meaningful accessible names
-- dialog containment where appropriate
-- no color-only communication of critical meaning
-- contrast
-- 200% text and reflow
-- reduced motion
-- forced-colors/high-contrast behavior when relevant
-- touch-target usability on mobile
-
-Accessibility fixes should integrate with the design rather than look bolted on.
-
-## 19. Performance
-
-Visual polish cannot come at the cost of interaction quality.
-
-Inspect at minimum:
-
-- initial rendering
-- page transitions
-- detail/inspector transitions
-- scrolling large lists or tables
-- filtering and sorting
-- resizing
-- mobile interaction
-- reduced-motion mode
-
-Remove motion or effects that materially harm responsiveness.
-
-Avoid adding heavy libraries when native CSS or small existing utilities are sufficient.
-
-## 20. Tests and existing presentation assertions
-
-Do not weaken genuine product-contract tests to make a redesign pass.
-
-However, presentation-specific tests may be updated when they freeze obsolete UI structure, copy, selectors, or placement that the redesign intentionally changed.
-
-When updating such a test:
-
-- preserve the behavior being tested
-- use accessible and durable selectors where possible
-- test the current interaction instead of restoring obsolete UI solely for the test
-
-If documentation describes a removed interaction, update the current documentation too.
-
-Historical/archive documentation should remain historical rather than being rewritten to pretend it was always current.
-
-## 21. Autonomous design authority
-
-When the user grants broad redesign authority, make design decisions yourself.
-
-Do not ask the user to enumerate every problem in the current UI.
-
-Do not preserve an element merely because nobody explicitly approved its removal.
-
-Do not ask permission to remove obviously redundant presentation if the task already grants redesign authority.
-
-Ask only when a decision changes the protected product contract, introduces a consequential new requirement, or requires user authentication/approval that the platform cannot provide autonomously.
-
-## 22. Self-criticism
-
-Review the result from multiple perspectives:
-
-- first-time user
-- frequent user
-- product designer
-- frontend engineer
-- accessibility reviewer
-- performance reviewer
-
-Ask:
-
-- Is the core workflow obvious?
-- What deserves attention first?
-- Is any element visually louder than its importance?
-- Is anything present merely because dashboards usually contain it?
-- Does any text exist because the design failed to communicate by itself?
-- Does anything feel generic or AI-generated?
-- Does the interface feel under-designed because restraint became emptiness?
-- Does it feel over-designed because polish became decoration?
-- Are interactions satisfying without delaying the user?
-- Would this interface remain comfortable after hours of use?
-
-Reject your own work when evidence shows the design direction is wrong.
-
-Do not defend a weak design because implementation was expensive.
-
-## 23. Completion criteria
-
-A substantial UI redesign is not complete merely because tests pass.
-
-It is complete when:
-
-- the core workflow is immediately understandable
-- secondary utilities no longer dominate
-- the information hierarchy matches user priorities
-- unnecessary UI and copy have been removed
-- typography is deliberate and readable
-- color is restrained and meaningful
-- desktop and mobile both feel intentional
-- important interactions are discoverable
-- motion feels polished but fast
-- accessibility checks pass
-- performance remains strong
-- browser review caused real refinements
-- remaining visual/interaction issues are minor rather than structural
-- the result does not look like a generic AI-generated dashboard
-- if a ground-up rebuild was requested, the old presentation is no longer visibly the structural basis of the new one
-
-## 24. Final report
-
-Keep the final implementation report concise.
-
-Report only what helps the user validate the result, such as:
-
-- final design direction
-- major structural changes
-- major obsolete UI removed
-- skills/plugins actually used
+- final structural/visual direction
+- major changes
+- obsolete UI removed
 - browser/viewport coverage
-- accessibility result
-- performance result
+- accessibility/performance evidence
 - tests
-- screenshots or review artifacts
+- representative screenshots
+- extensions actually used
 - genuine unresolved limitations
 
-Do not add defensive implementation narration.
+## Reference loading map
 
-## Supporting references
+Load only what the task needs:
 
-Read `references/origin-principles.md` when you need the compact rationale behind the skill.
-
-Read `references/visual-defaults.md` when the user has not supplied a strong art direction.
-
-Read `references/design-system.md` when establishing a new visual language or repairing a fragmented one.
-
-Read `references/layout-spacing-system.md` when establishing or repairing composition, responsive structure, density, or spacing.
-
-Read `references/typography-system.md` when selecting or changing product typography.
-
-Read `references/motion-system.md` for substantial interaction, transition, inspector, navigation, or data-change animation work.
-
-Read `references/review-checklist.md` before final acceptance of a substantial UI build or redesign.
+- shell/structure → `references/structural-direction.md`
+- information density/spatial use → `references/information-design.md`
+- visual world → `references/visual-direction.md`
+- page-scale commitment → `references/visual-commitment.md`
+- identity/browsing/delight → `references/authored-experience.md`
+- media/art/product imagery → `references/art-direction-media.md`
+- font/asset sourcing → `references/asset-strategy.md`
+- design system → `references/design-system.md`
+- semantic role diversity → `references/semantic-diversity.md`
+- linked/shared state → `references/reactive-surfaces.md`
+- relationship planning → `references/information-relationships.md`
+- repeated-task continuity/browse topology → `references/task-continuity.md`
+- color → `references/color-system.md`
+- typography → `references/typography-system.md`
+- responsive structure → `references/layout-responsive.md`
+- states → `references/interaction-states.md`
+- layered input/dismissal → `references/interaction-hierarchy.md`
+- motion → `references/motion-interaction.md`
+- accessibility → `references/accessibility-baseline.md`
+- performance → `references/performance-baseline.md`
+- craft → `references/craft-floor.md`
+- weakest-region coherence → `references/coherence-floor.md`
+- browser QA → `references/browser-qa.md`
+- generated-pattern check → `references/ai-fingerprint-gate.md`
+- objective acceptance → `references/evidence-gate.md`
+- subjective acceptance → `references/taste-gate.md`
+- multiple skills/plugins → `references/extension-protocol.md`
