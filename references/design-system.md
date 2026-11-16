@@ -1,177 +1,68 @@
 # Design System
 
-Use this reference when creating a new UI language or consolidating an inconsistent frontend.
+A design system should make screens feel related without forcing identical composition.
 
-The goal is not to build a giant design-system bureaucracy. The goal is to make the product feel like one deliberate system.
+## Minimal token set
 
-## 1. Start with product hierarchy
+Define only what the product uses.
 
-Define:
+Possible token groups:
 
-- primary workflow
-- secondary workflows
-- utility actions
-- diagnostics / implementation detail
-- contextual detail surfaces
-
-Visual weight should follow this hierarchy.
-
-Do not give every feature the same visual importance.
-
-## 2. Establish tokens before screen-by-screen polish
-
-Define a compact set of tokens for:
-
-- canvas
-- primary surface
-- raised/contextual surface
-- primary text
-- secondary text
-- muted text
-- interaction accent
-- positive
-- negative
-- warning
-- information
-- focus
-- border/divider
-- spacing
+- color roles
+- typography roles
+- spacing steps
 - radius
-- control height
-- type scale
-- motion duration
-- easing
+- border/divider
+- elevation
+- control sizes
+- focus
+- motion duration/easing
+- z-index/layer roles
+- content widths
 
-Use semantic names rather than page-specific names.
+Avoid dozens of tokens before any UI proves they are needed.
 
-## 3. Opinionated fallback palette
+## Semantic ownership
 
-When no brand direction exists, begin from a restrained neutral system:
+Components should consume roles:
 
-- 85–90% neutral charcoal / near-black / gray / off-white
-- 10–15% semantic or interaction color
-- subtle surface deltas instead of heavy card boundaries
-- soft off-white text on dark surfaces
-- muted secondary text
-- one restrained cool interaction accent
-- muted green positive
-- muted coral negative
-- restrained amber warning
-
-Color should communicate state, hierarchy, focus, or selection.
-
-Avoid decorative color.
-
-## 4. Surface grammar
-
-Do not place every object inside a card.
-
-Choose the lightest separation that works:
-
-1. spacing
-2. alignment
-3. typography
-4. divider/rule
-5. subtle background delta
-6. bounded surface/card only when the object genuinely needs containment
-
-Avoid nested rounded rectangles.
-
-Use modest radii unless the product explicitly calls for a softer visual language.
-
-## 5. Typography grammar
-
-When no brand type system exists, prefer a rounded or humanist UI family.
-
-Use a small number of roles:
-
-- page/task title
-- section title
-- primary body/data
-- secondary metadata
-- control text
-- numeric/data emphasis
-
-Do not create hierarchy by endlessly increasing font sizes.
-
-Use weight, contrast, spacing, and alignment together.
-
-## 6. Interaction states
-
-Every interactive element should have coherent states where relevant:
-
-- default
-- hover
-- pressed
-- selected
-- focus-visible
-- disabled
-- loading
-- error/success feedback
-
-Do not invent a new visual language for each component.
-
-Selection should feel stable.
-
-Press feedback should be immediate.
-
-Focus must be visible.
-
-## 7. Motion grammar
-
-Use motion for:
-
-- continuity
-- state change
-- navigation
+- background canvas
+- background surface
+- text primary
+- text secondary
+- border subtle
+- accent solid
 - selection
-- contextual depth
-- cause and effect
+- focus
+- destructive
 
-A useful default family:
+Avoid component names in global semantic tokens unless the role is genuinely component-specific.
 
-- hover / press: 100–160ms
-- selection / tab indicator: 120–180ms
-- filter / small state: 140–200ms
-- inspector / sheet: 160–220ms
-- lightweight page continuity: 160–240ms
+## Component consistency
 
-Prefer `transform` and `opacity`.
+Shared grammar should cover:
 
-Keep travel small.
+- control height
+- label placement
+- state feedback
+- focus
+- spacing rhythm
+- icon sizing
+- selected state
+- error presentation
 
-The static design can remain humble. Motion may carry more personality.
+Do not force unrelated workflows into the same card component.
 
-## 8. Responsive grammar
+## Dark/light variants
 
-Do not merely shrink the desktop system.
+If multiple appearances exist, token remapping should preserve semantic hierarchy.
 
-Define what happens to:
+Do not reverse a light palette mechanically.
 
-- navigation
-- filters
-- tables
-- inspectors
-- toolbars
-- secondary evidence
-- long labels
-- actions
-- multi-column comparison
+## Documentation timing
 
-Mobile may use a structurally different representation while remaining visually related.
+For a brand-new visual world, let the first implementation test the system before treating every token choice as permanent.
 
-## 9. System coherence test
+After the direction proves itself, document the stable system.
 
-Across several unrelated screens, ask:
-
-- Do spacing and type feel related?
-- Do selected states speak the same language?
-- Do inspectors feel connected to their source objects?
-- Do controls share size and feedback logic?
-- Is semantic color consistent?
-- Does motion use the same timing character?
-- Do mobile and desktop feel like the same product?
-- Are there local exceptions that should become shared rules?
-- Are there shared rules that are forcing bad local layouts?
-
-A good system creates coherence without making every screen identical.
+For an established product, preserve and extend the existing system unless the user requests replacement.
