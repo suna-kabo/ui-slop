@@ -47,9 +47,11 @@ For each candidate, specify:
 - 4–6 named palette roles, not just "blue" or "dark"
 - type direction for display/body/utility roles when relevant
 - composition concept
-- surface strategy
+- surface/material strategy
 - interaction character
 - one signature element or memorable behavior
+
+When recent unrelated outputs already share a strong material world, at least one candidate must break from that world at the material/typographic level, not merely by changing accent color.
 
 Do not render ten random themes.
 
@@ -66,17 +68,42 @@ Changing every axis at once teaches you nothing about why a direction works.
 
 ## Detect model-default convergence
 
-Treat these as suspicious defaults unless the subject justifies them:
+Treat recurring material worlds as suspicious when the subject does not justify them.
 
-- warm cream + terracotta + editorial serif
-- near-black + bright green/vermilion
-- purple/blue SaaS gradients
-- soft gray + blue admin cards
-- broadsheet rules + zero radius
-- monochrome minimalism with one green status accent
-- "premium" glass + glow
+Examples include:
 
-They are not banned. They require a product reason.
+- soft SaaS cards with muted blue
+- dark neon technical surfaces
+- glass/glow "premium" shells
+- monochrome terminals with one status accent
+- editorial-paper / archival-instrument surfaces built from warm off-white, dark ink, thin rules, and restrained earthy accents
+- broadsheet-like zero-radius compositions used mainly as an anti-SaaS move
+
+They are not banned. Repetition across unrelated products is the warning.
+
+Do not escape one category rut by repeatedly choosing the same anti-default rut.
+
+## Second-order convergence check
+
+Before locking the visual direction, describe it without product nouns in one short material sentence.
+
+Example shape:
+
+> warm paper field + dark ink + thin rules + archival typography + restrained signal color
+
+If essentially the same sentence could describe several unrelated recent outputs, the direction is probably converging even when the layouts differ.
+
+When recent unrelated work is available, deliberately explore at least one candidate with a materially different:
+
+- surface/material metaphor
+- color temperature and contrast structure
+- typography voice
+- line/elevation language
+- image/texture strategy
+
+Do not merely recolor the same material world.
+
+The goal is not forced novelty. It is to make the product earn its visual world from its own subject, audience, and task.
 
 ## Signature, not decoration
 

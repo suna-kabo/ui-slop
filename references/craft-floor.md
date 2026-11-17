@@ -56,6 +56,14 @@ The same action keeps the same name through the flow.
 Errors identify failure and recovery.
 Empty states distinguish absence from failure.
 
+Run a **layout-explanation test** on labels and helper copy:
+
+- If hierarchy, adjacency, navigation, or a control already makes the region's purpose obvious, remove the extra label/description.
+- Keep secondary copy when it changes a decision, clarifies state, prevents error, or supplies context the layout cannot carry.
+- Do not add micro-labels merely to make a composition feel designed.
+
+Let layout do explanatory work where it can.
+
 ## Data polish
 
 Align comparable numbers.

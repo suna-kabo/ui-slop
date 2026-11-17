@@ -145,6 +145,22 @@ If most visible working copy is around 12px or smaller, investigate rather than 
 
 Read `presentation-rhythm.md`.
 
+## Interaction causality review
+
+For any meaningful motion or transformation, trigger at least one unrelated state change that should **not** replay it.
+
+Examples:
+
+- saving a note should not redraw an unchanged route
+- toggling Saved should not replay a timeline transition if time context did not change
+- opening unrelated detail should not re-run a relationship trace that already settled
+
+If motion replays because a broad render function rebuilt the element rather than because the represented state changed, fix the state/animation ownership.
+
+For spatial or time-based domain objects that users repeatedly edit, test whether at least one direct-manipulation path is appropriate.
+
+If every edit is routed through buttons/selects/forms, confirm that this is deliberate rather than implementation convenience. Keep precise control alternatives and keyboard/touch access.
+
 ## Behavioral silhouette review
 
 Describe only the mechanics of the product, ignoring visual styling.
@@ -154,6 +170,23 @@ Compare with unrelated recent work when available.
 If several products share essentially the same hover, selection, detail, route, and mobile interaction mechanics, return to interaction-concept exploration.
 
 Read `experience-dynamics.md`.
+
+## Cross-product visual-world review
+
+When unrelated recent work is available, compare the current product's material sentence against it.
+
+Describe only:
+
+- surface/material metaphor
+- color temperature and contrast
+- typography voice
+- borders/rules/elevation
+- imagery/texture strategy
+- accent logic
+
+If essentially the same visual-world description fits three unrelated products, return to Visual Direction before polishing.
+
+Do not fix this by swapping accent hue while preserving the same paper/dark/neon/glass/material system.
 
 ## Structural and silhouette review
 

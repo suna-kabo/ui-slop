@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.9.0
+
+Final planned 1.x convergence cleanup.
+
+Fresh v1.8 testing across Research, Travel, Creative, and Operations showed:
+
+- interaction topology now differs materially by domain
+- Task Continuity remains strong
+- Presentation Rhythm materially reduces microtype-heavy density
+- the original small animation-vocabulary poisoning is no longer recurring
+- a new repeated visual-material fingerprint remains: warm paper / dark ink / thin rules / restrained earthy signal colors across 4 / 4 unrelated UI Slop outputs
+
+Added **second-order visual convergence** checks to `references/visual-direction.md` and `references/ai-fingerprint-gate.md`:
+
+- describe the visual direction as a material sentence without product nouns
+- compare that sentence against unrelated recent work
+- reject repeated anti-default material worlds when the product does not justify them
+- require materially different exploration, not merely a new accent hue
+
+Added final QA safeguards:
+
+- layout-explanation test for redundant secondary labels/helper descriptions
+- direct-manipulation opportunity check for spatial/time-based editable objects
+- motion-causality check so unrelated rerenders do not replay meaningful transitions
+- cross-product visual-world review in Browser QA
+
+No new fixed palette, typography, layout, or motion recipe was added.
+
+Evidence:
+
+- `evidence/natural-cross-product-audit-v1.9.md`
+
 ## 1.8.0
 
 Interaction and presentation de-bias release.

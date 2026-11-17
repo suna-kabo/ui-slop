@@ -133,6 +133,8 @@ If a protected visual system exists, use it. Otherwise ground direction in subje
 
 When major axes are open, compare materially different visual/type directions rather than accepting the first safe model default.
 
+If unrelated recent outputs already share a strong material world, at least one candidate must differ materially in surface metaphor, typography voice, contrast/color structure, and rule/elevation language. Do not repeatedly use the same anti-default visual world just because it avoids generic SaaS.
+
 Choose the page-scale commitment level:
 
 - **Quiet instrument**
@@ -290,6 +292,8 @@ Anti-slop does **not** mean minimal. Replace removed decoration with stronger st
 
 Visible copy must help users understand, decide, recover, or act.
 
+Do not add secondary labels or helper descriptions when hierarchy, grouping, navigation, or control labeling already makes the region obvious. Let layout carry explanation where it can.
+
 ## 14. Compose with specialist skills narrowly
 
 UI Slop is complete enough to run alone.
@@ -338,8 +342,12 @@ Also inspect:
 - the three weakest visible regions
 - secondary utility coherence
 - repeated component treatments carrying unrelated meanings
+- whether the visual material world resembles unrelated recent products even when layout differs
+- whether labels/helper copy merely explain an already-obvious layout
 - the three most important domain relationships
 - touch/keyboard equivalents for reactive behavior
+- direct-manipulation opportunity for spatial/time-based editable objects when relevant
+- whether meaningful motion replays on unrelated state changes
 - a recorded interaction sequence, not only endpoint screenshots
 - whether interaction mechanics resemble unrelated recent products
 - whether density is being purchased with microtype
@@ -363,11 +371,11 @@ Read `references/browser-qa.md`.
 
 ## 17. AI Fingerprint Gate
 
-Before final acceptance, inspect for clusters of generated patterns, including repeated opening composition, generic KPI/right-rail structures, universal rounded controls, pill overload, habit-driven search placement, decorative data widgets, identical mobile stacking, generic slogan copy, same font/palette across unrelated work, semantic-to-component collapse, typographic micro-label collapse, isolated widgets with no linked state, browse-heavy products where every path collapses into search/facets, routine next actions far from the selected object, and repeated behavioral fingerprints such as hover lift/image zoom/fade-slide detail across unrelated products.
+Before final acceptance, inspect for clusters of generated patterns, including repeated opening composition, generic KPI/right-rail structures, universal rounded controls, pill overload, habit-driven search placement, decorative data widgets, identical mobile stacking, generic slogan copy, repeated visual-material worlds across unrelated products, semantic-to-component collapse, typographic micro-label collapse, layout-explanation labels/copy, isolated widgets with no linked state, browse-heavy products where every path collapses into search/facets, routine next actions far from the selected object, and repeated behavioral fingerprints such as hover lift/image zoom/fade-slide detail across unrelated products.
 
 No single pattern is automatically wrong. Several without product reasons indicate convergence.
 
-If the gate fails, identify whether the convergence is structural, typographic, semantic, or behavioral and return to that design stage. Do not solve structural slop by changing accent color. Do not solve behavioral slop by changing duration/easing while preserving the same interaction model.
+If the gate fails, identify whether the convergence is structural, visual-material, typographic, semantic, or behavioral and return to that design stage. Do not solve structural slop by changing accent color. Do not solve behavioral slop by changing duration/easing while preserving the same interaction model.
 
 Read `references/ai-fingerprint-gate.md`.
 
@@ -388,6 +396,7 @@ After Evidence Gate passes, ask:
 - Is composition derived from workflow/content?
 - Does typography contribute character?
 - Does color come from the product?
+- Is the visual material world distinct from unrelated recent outputs for a product-grounded reason?
 - Could this shell serve many unrelated products unchanged?
 - Does interaction reveal care beyond the screenshot?
 - Does the interaction logic come from domain objects and relationships rather than a reusable effect bag?

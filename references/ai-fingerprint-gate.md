@@ -40,6 +40,8 @@ Watch for:
 Watch for:
 
 - tiny uppercase eyebrow on every section
+- secondary labels that merely restate what the layout, navigation, or control already communicates
+- helper descriptions whose only job is to explain an obvious region
 - slogan-like headline inside work software
 - helper sentence under every heading
 - "Your X, all in one place"
@@ -50,9 +52,13 @@ Watch for:
 
 ## Visual fingerprints
 
-Watch for repeated model defaults such as familiar dark-neon, pastel-card, gray-blue SaaS, editorial-paper, or glass/glow worlds.
+Watch for repeated material worlds, not only repeated palettes.
 
-They may be correct. Repetition across unrelated work is the warning.
+Examples include dark-neon technical shells, pastel-card SaaS, glass/glow premium surfaces, or paper/editorial/archival instrument worlds built from off-white fields, dark ink, thin rules, and restrained signal colors.
+
+They may be correct once. Repetition across unrelated work is the warning.
+
+A product can fail this gate even when its layout silhouette is different if its material sentence, typography voice, surface treatment, and accent logic are substantially the same as unrelated recent outputs.
 
 ## Typography fingerprints
 
@@ -104,11 +110,26 @@ Mentally remove text, color, imagery, and branding.
 
 If the layout silhouette remains substantially the same as unrelated work, investigate structural convergence.
 
+## Visual-world comparison
+
+Now ignore layout and describe only the visual material system:
+
+- surface metaphor
+- color temperature / contrast
+- typography voice
+- rule / border / elevation language
+- imagery / texture strategy
+- accent logic
+
+If the same description fits several unrelated products, investigate second-order visual convergence even when the layouts are different.
+
+Return to `visual-direction.md` and explore a materially different candidate rather than recoloring the same world.
+
 ## Decision
 
 If several fingerprints appear without strong product reasons:
 
-1. identify whether the convergence is structural, typographic, semantic, or behavioral
+1. identify whether the convergence is structural, visual-material, typographic, semantic, or behavioral
 2. return to the corresponding design stage
 3. replace the underlying logic, not merely the styling token
 4. rerun the relevant silhouette comparison
