@@ -1,38 +1,56 @@
 # UI Slop
 
-A standalone, composable Agent Skill for production UI that resists generic AI composition, component repetition, and shallow interaction design.
+A standalone, composable Agent Skill for production UI that resists generic AI composition, component repetition, shallow interaction design, and fixed generated motion grammar.
 
 UI Slop is not a component library or a fixed visual theme.
 
 It is a UI design and engineering decision system.
 
-Its job is to preserve the product contract while forcing an agent to choose product-specific structure, art direction, typography, information relationships, interaction, responsive behavior, and task continuity, then verify the actual rendered product.
+Its job is to preserve the product contract while forcing an agent to choose product-specific structure, art direction, typography, information relationships, interaction behavior, responsive behavior, and task continuity, then verify the actual rendered product.
 
-## Current release: v1.7
+## Current release: v1.8
 
-v1.6 established three important layers:
+v1.7 established **Task Continuity** and proved useful across fresh research and store samples.
 
-- Semantic Diversity
-- Reactive Surfaces
-- Information Relationships
+The next comparative audit exposed a different problem:
 
-Two independent sample sets showed those changes working, but also exposed a higher-order failure mode:
+> the skill could still prime agents with a small safe animation vocabulary and encourage dense interfaces to buy capacity through microtype.
 
-> the first action can work while the next action, return path, or preserved context still feels accidental.
+v1.8 addresses this upstream instead of adding more animation effects.
 
-v1.7 adds **Task Continuity**.
+### New in v1.8
 
-It asks the agent to design:
+**Experience Dynamics**
 
-- where the next likely action lives
-- how long important state should survive
-- what Back/close should restore
-- how browse-heavy products connect objects beyond filters
-- when relationships need an action
-- how continuity changes on mobile
-- how nested detail/history should behave
+- interaction concepts before effects
+- domain verbs and object manipulation
+- reactive depth
+- surface transformation
+- direct manipulation / action locality
+- motion topology
+- temporal hierarchy
+- behavioral silhouette comparison across unrelated products
 
-The detailed model lives in `references/task-continuity.md` so SKILL.md stays comparatively compact.
+**Presentation Rhythm**
+
+- information budget per viewport
+- typography role economy
+- information-compression order
+- microtype-majority warning
+- density by region
+- coordinated typography + spacing + density
+
+**Motion de-bias**
+
+Removed the old generic recipe that supplied:
+
+- fixed duration bands
+- generic travel distances
+- press-scale defaults
+- transform/opacity as a preferred motion palette
+- "small motion vocabulary" wording
+
+Motion now sits downstream of the interaction model.
 
 ## Core workflow
 
@@ -44,14 +62,15 @@ route task
 → define surface mode + intended feeling
 → establish design thesis
 → explore structural directions
-→ run silhouette check
 → establish visual + typography direction
-→ build coherent system
-→ design semantic diversity + reactive shared state
+→ design presentation rhythm
+→ design reactive shared state
+→ explore interaction directions
 → design task continuity
-→ implement states + responsive + motion
-→ browser QA from first action and live-state follow-up
-→ AI Fingerprint Gate
+→ implement interaction + motion
+→ responsive composition
+→ browser QA with recorded interaction sequence
+→ behavioral + static fingerprint gates
 → Evidence Gate
 → Taste Gate
 → ship
@@ -79,6 +98,7 @@ ui-slop/
 │   ├── craft-floor.md
 │   ├── design-system.md
 │   ├── evidence-gate.md
+│   ├── experience-dynamics.md
 │   ├── extension-protocol.md
 │   ├── information-design.md
 │   ├── information-relationships.md
@@ -87,6 +107,7 @@ ui-slop/
 │   ├── layout-responsive.md
 │   ├── motion-interaction.md
 │   ├── performance-baseline.md
+│   ├── presentation-rhythm.md
 │   ├── reactive-surfaces.md
 │   ├── semantic-diversity.md
 │   ├── structural-direction.md
@@ -97,7 +118,8 @@ ui-slop/
 │   └── visual-direction.md
 └── evidence/
     ├── v1.6.1-candidate-probe.md
-    └── cross-sample-findings-v1.7.md
+    ├── cross-sample-findings-v1.7.md
+    └── fieldnote-compare-audit-v1.8.md
 ```
 
 ## Standalone first
@@ -152,8 +174,10 @@ Other Agent-Skills-compatible environments can copy the whole `ui-slop` director
 
 **Related state should react together.**
 
-**A task is not finished when the first action works.**
+**Interaction logic should come from the domain, not a reusable effect bag.**
 
-**Browse paths are product structure, not just filters.**
+**Density should come from information design before microtype.**
+
+**A task is not finished when the first action works.**
 
 **A clean but interchangeable interface is not finished.**
