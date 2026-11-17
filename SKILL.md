@@ -90,11 +90,11 @@ For substantial work define:
 - primary job
 - intended feeling
 - structural idea
-- density
+- presentation rhythm: what is visible together and how type carries hierarchy
 - type character
-- interaction character
+- interaction model: how domain objects respond and relate, not merely which effects are used
 - one signature idea if useful
-- one generic pattern deliberately avoided
+- one generic structural or behavioral pattern deliberately avoided
 
 Weak: `clean modern dashboard`.
 
@@ -171,7 +171,23 @@ Read:
 - `references/color-system.md`
 - `references/typography-system.md`
 
-## 7. Design reactive relationships, not isolated widgets
+## 7. Design presentation rhythm
+
+Typography, spacing, and density are one information system.
+
+Decide what deserves simultaneous visibility in the important viewport. Compress information through grouping, alignment, shared context, better representation, and progressive disclosure before shrinking type.
+
+Use the fewest typographic roles that make hierarchy unmistakable. Do not let large portions of working UI collapse into tiny uppercase or condensed metadata merely to fit more content.
+
+Density may vary by region. Indexes and comparisons can be compact while reading/evidence surfaces breathe more. Mobile should change information priority rather than preserve desktop density by shrinking everything.
+
+Read:
+
+- `references/presentation-rhythm.md`
+- `references/typography-system.md`
+- `references/information-design.md`
+
+## 8. Design reactive relationships, not isolated widgets
 
 For products with connected state, decide what should react when users select, focus, filter, play, or change context.
 
@@ -186,7 +202,28 @@ Read:
 - `references/reactive-surfaces.md`
 - `references/information-relationships.md`
 
-## 8. Design task continuity
+## 9. Explore experience dynamics before choosing effects
+
+For substantial interactive work, interaction deserves the same exploration as layout.
+
+When the behavior is open-ended, outline at least two materially different interaction models when practical. They must differ in how the user manipulates or traverses the domain, not merely in animation style.
+
+Start from domain verbs and relationships. Decide:
+
+- what the user acts on directly
+- what remains the spatial or conceptual anchor
+- what related regions should react
+- whether the surface should reflow, re-anchor, compress, expand, traverse, or remain still
+- what the next likely action becomes
+- what interaction logic survives desktop, touch, keyboard, and reduced motion
+
+Do not jump directly from "detail opens" to "fade + slide".
+
+Consistency should come from cause/effect, spatial logic, and state ownership, not from reusing a tiny effect vocabulary across every component or product.
+
+Read `references/experience-dynamics.md`.
+
+## 10. Design task continuity
 
 A feature is not complete because its first action works.
 
@@ -206,7 +243,7 @@ Test the second and third action, not only the first.
 
 Read `references/task-continuity.md`.
 
-## 9. Implement complete interaction and motion
+## 11. Implement complete interaction and motion
 
 For each important interactive component, cover applicable default, hover, pressed, focus-visible, selected/current, disabled, loading, empty, error, and success states.
 
@@ -220,15 +257,22 @@ For layered detail:
 - do not bind Space globally to dismissal
 - restore focus to the invoker after transient detail closes
 
-Motion should explain selection, hierarchy, navigation, state change, cause/effect, or spatial continuity. Frequent actions should feel immediate. Respect `prefers-reduced-motion`.
+Motion comes **after** the interaction model. It may explain cause/effect, spatial continuity, relationship traversal, hierarchy, or one product-specific authored moment.
+
+Do not establish a universal UI Slop recipe for duration, travel distance, easing, opacity, scale, or slide direction. Relative timing should follow frequency, distance, consequence, and sequence.
+
+Do not use hover lift, image zoom, fade-and-rise, or small translate as personality by default.
+
+Respect `prefers-reduced-motion` while preserving meaningful state feedback and hierarchy.
 
 Read:
 
 - `references/interaction-states.md`
 - `references/interaction-hierarchy.md`
+- `references/experience-dynamics.md`
 - `references/motion-interaction.md`
 
-## 10. Compose responsive behavior, not desktop stacking
+## 12. Compose responsive behavior, not desktop stacking
 
 Use spacing, alignment, typography, dividers, and surface changes before bounded containers.
 
@@ -238,7 +282,7 @@ Mobile may change representation, order, navigation, detail behavior, action pla
 
 Read `references/layout-responsive.md`.
 
-## 11. Reject AI slop and filler
+## 13. Reject AI slop and filler
 
 Reject unjustified cards-around-everything, pill/badge overload, giant headings in task software, filler subtitles, meaningless icons, decorative charts, generic KPI rows, generic main + right rail, top-right search by habit, slogan copy, repeated identical section layouts, and one aesthetic reused across unrelated products.
 
@@ -246,7 +290,7 @@ Anti-slop does **not** mean minimal. Replace removed decoration with stronger st
 
 Visible copy must help users understand, decide, recover, or act.
 
-## 12. Compose with specialist skills narrowly
+## 14. Compose with specialist skills narrowly
 
 UI Slop is complete enough to run alone.
 
@@ -265,7 +309,7 @@ Do not merge several skills' preferred aesthetics.
 
 Read `references/extension-protocol.md`.
 
-## 13. Harden before taste review
+## 15. Harden before taste review
 
 Verify applicable realistic long content, empty/loading/error/retry, disabled states, permissions, narrow/large widths, 200% text/zoom, keyboard-only flow, reduced motion, localization/RTL, offline/reconnect, and primary-interaction performance.
 
@@ -278,7 +322,7 @@ Read:
 - `references/craft-floor.md`
 - `references/coherence-floor.md`
 
-## 14. Browser QA is mandatory for substantial visual work
+## 16. Browser QA is mandatory for substantial visual work
 
 Use bounded review.
 
@@ -296,6 +340,9 @@ Also inspect:
 - repeated component treatments carrying unrelated meanings
 - the three most important domain relationships
 - touch/keyboard equivalents for reactive behavior
+- a recorded interaction sequence, not only endpoint screenshots
+- whether interaction mechanics resemble unrelated recent products
+- whether density is being purchased with microtype
 - the next likely action from a live selected/filtered state
 - Back/close/reload behavior for continuity state
 - at least one nested detail path when relevant
@@ -314,17 +361,17 @@ Screenshots must be visually inspected, not merely captured. If no browser is av
 
 Read `references/browser-qa.md`.
 
-## 15. AI Fingerprint Gate
+## 17. AI Fingerprint Gate
 
-Before final acceptance, inspect for clusters of generated patterns, including repeated opening composition, generic KPI/right-rail structures, universal rounded controls, pill overload, habit-driven search placement, decorative data widgets, identical mobile stacking, generic slogan copy, same font/palette across unrelated work, semantic-to-component collapse, isolated widgets with no linked state, browse-heavy products where every path collapses into search/facets, and routine next actions far from the selected object.
+Before final acceptance, inspect for clusters of generated patterns, including repeated opening composition, generic KPI/right-rail structures, universal rounded controls, pill overload, habit-driven search placement, decorative data widgets, identical mobile stacking, generic slogan copy, same font/palette across unrelated work, semantic-to-component collapse, typographic micro-label collapse, isolated widgets with no linked state, browse-heavy products where every path collapses into search/facets, routine next actions far from the selected object, and repeated behavioral fingerprints such as hover lift/image zoom/fade-slide detail across unrelated products.
 
 No single pattern is automatically wrong. Several without product reasons indicate convergence.
 
-If the gate fails, stop polish, return to Structural Direction, replace the shell, and rerun silhouette comparison. Do not solve structural slop by changing accent color.
+If the gate fails, identify whether the convergence is structural, typographic, semantic, or behavioral and return to that design stage. Do not solve structural slop by changing accent color. Do not solve behavioral slop by changing duration/easing while preserving the same interaction model.
 
 Read `references/ai-fingerprint-gate.md`.
 
-## 16. Evidence Gate
+## 18. Evidence Gate
 
 Block completion on material failures in core behavior, keyboard/focus, accessible names/roles/states, required contrast, clipping/unreachable actions, required narrow reflow, color-only critical meaning, missing required states, severe performance regression, route/history regression, or broken recovery.
 
@@ -332,7 +379,7 @@ Do not convert personal taste into correctness findings. The bar for "verified" 
 
 Read `references/evidence-gate.md`.
 
-## 17. Taste Gate
+## 19. Taste Gate
 
 After Evidence Gate passes, ask:
 
@@ -343,10 +390,14 @@ After Evidence Gate passes, ask:
 - Does color come from the product?
 - Could this shell serve many unrelated products unchanged?
 - Does interaction reveal care beyond the screenshot?
+- Does the interaction logic come from domain objects and relationships rather than a reusable effect bag?
+- Does motion explain topology/cause/hierarchy rather than only visibility?
 - Is browsing rewarding where exploration matters?
 - Is restraint deliberate rather than under-designed?
 - Is mobile genuinely composed?
 - Are different semantic roles distinguishable without becoming inconsistent?
+- Is typography readable without buying density through microtype?
+- Does information density come from grouping and representation rather than compression alone?
 - Does the interface respond as one connected system?
 - Can the user naturally continue from selection into the next likely action?
 - Does Back/close restore expected context?
@@ -361,7 +412,7 @@ Read:
 - `references/authored-experience.md`
 - `references/coherence-floor.md`
 
-## 18. Preserve behavior tests, not obsolete presentation
+## 20. Preserve behavior tests, not obsolete presentation
 
 Do not weaken product-contract tests.
 
@@ -369,7 +420,7 @@ Presentation tests may change when they freeze obsolete selectors, copy, placeme
 
 Update documentation when removed UI makes it inaccurate.
 
-## 19. Finish with evidence
+## 21. Finish with evidence
 
 For implementation work, report only what helps validate the result:
 
@@ -389,6 +440,7 @@ Load only what the task needs:
 
 - shell/structure → `references/structural-direction.md`
 - information density/spatial use → `references/information-design.md`
+- typography + density rhythm → `references/presentation-rhythm.md`
 - visual world → `references/visual-direction.md`
 - page-scale commitment → `references/visual-commitment.md`
 - identity/browsing/delight → `references/authored-experience.md`
@@ -397,6 +449,7 @@ Load only what the task needs:
 - design system → `references/design-system.md`
 - semantic role diversity → `references/semantic-diversity.md`
 - linked/shared state → `references/reactive-surfaces.md`
+- interaction model / behavioral dynamics → `references/experience-dynamics.md`
 - relationship planning → `references/information-relationships.md`
 - repeated-task continuity/browse topology → `references/task-continuity.md`
 - color → `references/color-system.md`
