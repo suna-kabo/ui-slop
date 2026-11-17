@@ -1,5 +1,56 @@
 # Changelog
 
+## 1.8.0
+
+Interaction and presentation de-bias release.
+
+Evidence from the fresh Fieldnote UI Slop vs Impeccable comparison showed two recurring issues:
+
+- UI Slop v1.7 partially primed agents with a small safe animation recipe
+- working density was often purchased through microtype and control proliferation
+
+Added `references/experience-dynamics.md`:
+
+- domain verbs before effects
+- multiple interaction concepts for substantial open-direction work
+- reactive depth
+- surface transformation
+- direct manipulation / action locality
+- motion topology
+- temporal hierarchy
+- behavioral silhouette comparison
+- interaction-vocabulary-collapse detection
+
+Added `references/presentation-rhythm.md`:
+
+- information budgets
+- typography role economy
+- information-compression order
+- microtype-majority warning
+- density by region
+- typography + spacing + density coordination
+
+Rewrote `references/motion-interaction.md` to remove:
+
+- fixed timing bands
+- generic travel-distance defaults
+- press-scale defaults
+- transform/opacity as a preferred motion palette
+- "small motion vocabulary" wording
+
+Updated:
+
+- `SKILL.md` with an upstream interaction-exploration stage and presentation-rhythm stage
+- `references/typography-system.md` with role economy and typographic semantic-collapse checks
+- `references/information-design.md` with density/compression ordering
+- `references/authored-experience.md` to avoid effect-first examples
+- `references/ai-fingerprint-gate.md` with behavioral silhouette checks
+- `references/browser-qa.md` with interaction-sequence QA and presentation-rhythm review
+
+Evidence:
+
+- `evidence/fieldnote-compare-audit-v1.8.md`
+
 ## 1.7.0
 
 Evidence-driven continuity release.
