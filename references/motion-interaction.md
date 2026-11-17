@@ -1,120 +1,149 @@
 # Motion and Interaction
 
-Motion should explain what changed and where it came from.
+Motion should communicate **cause, relationship, hierarchy, continuity, or authored character**.
 
-## Motion grammar
+Do not begin with a reusable effect vocabulary.
 
-Define a small vocabulary for the product.
+Begin with the interaction concept.
 
-Possible roles:
+Read `experience-dynamics.md` first for substantial interactive work.
 
-- hover/press feedback
-- selection movement
-- filter/list continuity
-- inspector/detail opening
-- navigation continuity
-- page/surface transition
-- staged entrance for rare moments
-- data state change
+## Motion thesis
 
-Do not give every component a unique animation.
+Before implementing meaningful motion, state:
 
-## Timing
+- which interaction or transition deserves authorship
+- what continuity or relationship needs explanation
+- what object remains the anchor
+- what the user should notice first, second, and last
+- which routine feedback should remain nearly immediate
+- what reduced motion should preserve
 
-Useful starting points:
+A thesis such as "fade panels in" or "add hover lift" is not specific enough.
 
-- hover/press: 100–160ms
-- selected indicator: 120–190ms
-- local state/filter: 140–210ms
-- sheet/inspector/detail: 160–230ms
-- lightweight page continuity: 160–260ms
+## Choose material by meaning
 
-Adjust for travel distance and frequency.
+Select the implementation mechanism after deciding what the transition communicates.
 
-Frequent actions should feel faster than rare staged moments.
+Useful families may include:
 
-## Travel
+- spatial continuity
+- shared-element or object continuity
+- layout/reflow continuity
+- crop/mask/reveal
+- relationship/path reveal
+- focus/depth/material change
+- data-state interpolation
+- immediate state feedback
+- no motion
 
-Keep common movement small.
+No family is the default.
 
-Examples:
+Do not stack several techniques merely to appear sophisticated.
 
-- row/content affordance: 2–4px
-- detail transition: roughly 6–16px
-- press scale: subtle, around 0.98–0.995 when appropriate
+## Relative timing, not a recipe
 
-Large travel is for genuinely spatial transitions, not decoration.
+Timing should follow frequency, distance, consequence, and sequence.
 
-## Interruptibility
+Principles:
 
-For interactive state changes, prefer CSS transitions or another mechanism that can reverse smoothly when the user changes intent.
+- feedback to a direct action should feel immediate
+- frequently repeated transitions should complete before they feel like latency
+- larger spatial or structural changes may take longer when the extra time improves comprehension
+- exits usually need less attention than entrances
+- staged sequences must not block the task
 
-Use keyframes for staged sequences that have a real beginning and end.
+Do not copy universal duration bands into every product.
 
-## Properties
+If the project already has a motion system, preserve its established timing unless the redesign explicitly replaces it.
 
-Prefer transform and opacity for high-frequency motion.
+## Spatial logic
 
-Use blur, clip, mask, shadow, or backdrop effects only when:
+Movement should have a reason.
 
-- the direction calls for them
-- they remain smooth on target hardware
-- reduced motion has a sensible alternative
+If an object moves, the direction and distance should follow:
 
-Avoid layout thrashing.
+- origin and destination
+- hierarchy
+- physical/spatial relationship
+- navigation direction
+- content transformation
 
-## One authored moment
+Do not add small arbitrary translates merely to make opacity changes feel animated.
 
-A single strong interaction can define the product more effectively than scattered micro-effects.
+## Interaction response
 
-Examples:
+Hover, focus, press, selection, drag, traversal, and detail do not need the same feedback material.
 
-- contextual detail grows from the selected object
-- active navigation indicator glides across a stable baseline
-- a meaningful flow animates through stages after refresh
-- a media control uses motion grounded in the content
+Use the smallest response that makes the state legible and feels native to the product.
 
-Do not add a "signature animation" if the product benefits from near-static precision.
+Do not turn these into defaults:
 
-## Data movement
+- hover lift
+- image zoom
+- selected accent stripe
+- fade-and-rise
+- generic slide-in detail
+- identical easing everywhere
 
-Animate data only when it helps users understand:
+## Interruption and repeated use
 
-- reorder
-- rank change
-- insertion/removal
-- state transition
-- filter result change
+Interactive transitions should behave correctly when the user changes intent quickly.
 
-Do not animate hundreds of rows just because data changed.
+Where interruption matters, use implementation that can reverse or retarget cleanly.
+
+Repeated use is part of the design test. A transition that feels impressive once can feel obstructive on the twentieth use.
+
+## Data and relationship changes
+
+Animate data only when motion improves understanding of what moved, appeared, disappeared, changed rank, or changed relationship.
+
+Preserve object identity where possible.
+
+Do not redraw the entire surface when a smaller continuity cue would explain the change better.
+
+## Performance
+
+Choose implementation appropriate to the runtime and target devices.
+
+Prefer efficient techniques, but do not mistake "transform and opacity are fast" for an art direction.
+
+Use heavier effects only when the visual world and performance budget justify them.
+
+Measure when the effect is material to the experience.
 
 ## Reduced motion
 
-Respect `prefers-reduced-motion`.
+Respect `prefers-reduced-motion` and platform equivalents.
 
-Remove:
+Reduced motion should preserve:
 
-- unnecessary travel
-- parallax
-- staged cascades
-- ambient loops
+- state confirmation
+- hierarchy
+- selection
+- relationship understanding
+- continuity where a static alternative can express it
 
-Keep:
+Do not blindly set every animation to near-zero if that destroys useful feedback.
 
-- immediate state feedback
-- focus
-- selected state
-- necessary visibility changes
+## Cross-product motion audit
+
+Compare the interaction mechanics with unrelated recent work.
+
+If several products all use the same combination of hover lift, image zoom, fade/slide detail, accent-stripe selection, and identical easing, treat that as convergence even when the palettes and layouts differ.
+
+Return to `experience-dynamics.md` and redesign the interaction concept instead of merely changing duration or easing.
 
 ## Motion test
 
 Ask:
 
-- Is the user learning something from the motion?
-- Is it interruptible?
-- Is it faster than the task?
-- Does it preserve spatial context?
-- Would removing it make the product harder to understand?
-- Does reduced motion remain complete?
+- What meaning would be lost if this motion disappeared?
+- Does the direction come from the interaction model?
+- Does sequence direct attention usefully?
+- Is it interruptible where needed?
+- Does repeated use remain comfortable?
+- Is the same mechanism being reused only because it is convenient?
+- Does reduced motion retain the information?
 
-If not, simplify it.
+If the answer is mostly "it feels smoother," simplify or rethink it.
