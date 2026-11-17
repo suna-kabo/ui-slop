@@ -25,7 +25,7 @@ Watch for:
 
 Watch for:
 
-- every control using the same 8–12px radius
+- every control using the same radius
 - pills for navigation, status, filter, optionality, and actions
 - icon-in-circle everywhere
 - universal border + soft shadow cards
@@ -50,16 +50,7 @@ Watch for:
 
 ## Visual fingerprints
 
-Watch for repeated model defaults:
-
-- charcoal + green
-- charcoal + purple
-- gray + blue SaaS
-- warm cream + terracotta
-- near-black + neon
-- editorial serif + hairline rules
-- glass + glow
-- pastel rounded cards
+Watch for repeated model defaults such as familiar dark-neon, pastel-card, gray-blue SaaS, editorial-paper, or glass/glow worlds.
 
 They may be correct. Repetition across unrelated work is the warning.
 
@@ -67,37 +58,61 @@ They may be correct. Repetition across unrelated work is the warning.
 
 Watch for:
 
-- Arial / Helvetica / Segoe / Roboto / Inter used only because they are easy
+- convenience system fonts used without product reason
 - the same rounded humanist sans across unrelated products
 - neutral sans + mono for every data product
 - oversized bold sans headline as the main identity
 - tiny uppercase metadata doing too much hierarchy work
+- condensed uppercase + tracking used for unrelated secondary roles
+- most visible working copy collapsing into microtype
 
 ## Interaction fingerprints
 
 Watch for:
 
-- every hover is background-color change
-- every transition is exactly the same timing/easing
-- every mobile detail becomes the same bottom sheet
+- every hover lifts, enlarges, brightens, or only changes background
+- every product image zooms on hover
+- every detail uses the same fade + small translate
 - every selected row gets the same accent stripe
-- every state change uses the same fade/slide
+- every mobile detail becomes the same bottom sheet
+- every route uses the same directional slide
+- every state change uses the same easing/duration family
+- interaction personality comes from effects rather than domain behavior
+- unrelated products can be described with the same interaction sequence
 
-## Silhouette comparison
+## Behavioral silhouette comparison
 
 Compare against unrelated recent outputs.
 
+Ignore visual styling and describe only:
+
+- hover/focus behavior
+- selection behavior
+- detail entry/exit
+- related-object traversal
+- mode switching
+- responsive interaction transformation
+- Back/return behavior
+
+If that description is substantially reusable across unrelated products, investigate interaction convergence.
+
+Read `experience-dynamics.md` before choosing replacement mechanics.
+
+## Static silhouette comparison
+
 Mentally remove text, color, imagery, and branding.
 
-If the layout silhouette remains substantially the same, investigate why.
+If the layout silhouette remains substantially the same as unrelated work, investigate structural convergence.
 
 ## Decision
 
 If several fingerprints appear without strong product reasons:
 
-1. stop polish
-2. return to Structural Direction
-3. replace the shell
-4. rerun silhouette comparison
+1. identify whether the convergence is structural, typographic, semantic, or behavioral
+2. return to the corresponding design stage
+3. replace the underlying logic, not merely the styling token
+4. rerun the relevant silhouette comparison
 
-Do not solve a structural fingerprint by changing the accent hue.
+Do not solve structural slop by changing accent hue.
+
+Do not solve behavioral slop by changing duration, easing, or slide direction while keeping the same interaction model.

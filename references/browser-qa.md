@@ -10,10 +10,9 @@ Inspect:
 
 - first viewport
 - primary task flow
-- main navigation
+- navigation
 - selection
-- hover
-- focus
+- hover/focus
 - detail/inspector/dialog
 - long labels
 - dense data
@@ -31,10 +30,11 @@ Repair related findings together.
 
 Examples:
 
-- fix the spacing system rather than four isolated margins
+- fix the spacing/density system rather than isolated margins
 - fix selected/hover/focus as one state family
 - fix mobile information priority rather than one overflow
 - fix token semantics rather than individual colors
+- fix an interaction concept rather than swapping one slide animation for another
 
 ## Pass B: confirmation
 
@@ -47,27 +47,17 @@ Confirm:
 - layout remains coherent
 - keyboard/focus still work
 - mobile remains intentional
+- repeated interactions still feel efficient
 
 Stop when remaining issues are minor.
-
-Continue only when a material issue appears in confirmation.
 
 ## Representative viewport set
 
 Choose widths based on the product.
 
-For a broad responsive web app, a useful default inspection set is:
+For a broad responsive web app, a useful default inspection set may include wide desktop, common desktop, tablet/intermediate, and 320–430px narrow/mobile states.
 
-- 1920
-- 1440
-- 1280
-- 768
-- 430
-- 390
-- 360
-- 320
-
-You do not need a screenshot for every width if browser inspection verifies the intermediate behavior.
+Do not capture every width merely to create evidence. Inspect where the composition or interaction actually changes.
 
 ## Operate, do not only look
 
@@ -78,7 +68,10 @@ Where applicable:
 - type
 - filter
 - sort
+- select
+- compare
 - open/close
+- follow a relationship
 - back/forward
 - resize
 - scroll
@@ -87,6 +80,31 @@ Where applicable:
 - use export/download
 
 A screenshot cannot prove behavior.
+
+## Record one interaction sequence
+
+For a primary workflow, record the actual sequence of states, not only endpoint screenshots.
+
+Example structure:
+
+initial
+→ user expresses interest
+→ selection acknowledged
+→ related context responds
+→ detail or comparison changes
+→ user follows another object
+→ Back/close restores context
+
+For each step note:
+
+- what changed
+- what stayed anchored
+- what moved/reflowed/revealed
+- what the next likely action became
+- whether the same generic effect was reused
+- whether the transition improved understanding
+
+This is the main evidence for interaction quality.
 
 ## Repeat a core task from live state
 
@@ -109,22 +127,33 @@ Record:
 
 Also test one nested path where relevant, such as detail → related detail → Back → Back.
 
-If a routine next step is discoverable only inside unrelated detail, requires re-entering known criteria, or forces the user away from the selected object and back again, compare a more local contextual path.
-
-Keep deliberate depth when it clarifies the task or manages density.
-
 Read `task-continuity.md` for the continuity model.
 
-## Honesty
+## Presentation-rhythm review
 
-If no rendered browser is available:
+At real scale inspect:
 
-- inspect source and available snapshots
-- do not claim visual/browser verification
-- state the limitation
+- first-viewport information value
+- empty/dead regions
+- whether density is bought with microtype
+- whether body/reading text remains comfortable
+- repeated typographic roles
+- spacing cadence
+- desktop versus mobile information priority
 
-If performance was observed but not measured, say observed.
+If most visible working copy is around 12px or smaller, investigate rather than assuming dense UI requires it.
 
+Read `presentation-rhythm.md`.
+
+## Behavioral silhouette review
+
+Describe only the mechanics of the product, ignoring visual styling.
+
+Compare with unrelated recent work when available.
+
+If several products share essentially the same hover, selection, detail, route, and mobile interaction mechanics, return to interaction-concept exploration.
+
+Read `experience-dynamics.md`.
 
 ## Structural and silhouette review
 
@@ -139,9 +168,7 @@ Possible methods:
 
 Ask whether the domain still shapes the page when styling is stripped away.
 
-Compare the silhouette to unrelated recent work when available.
-
-If the same hero/right-rail/card geometry keeps returning, go back to Structural Direction.
+If unrelated work has the same hero/right-rail/card geometry, go back to Structural Direction.
 
 ## Care/detail review
 
@@ -149,8 +176,7 @@ Inspect at 100% scale, not only full-page fit.
 
 Check:
 
-- font rendering
-- wrapping
+- font rendering and wrapping
 - icon alignment
 - control geometry
 - selected/hover/focus behavior
@@ -160,5 +186,16 @@ Check:
 - content density
 - touch targets
 - context preservation when opening detail
+- whether utility surfaces share the same craft level
 
 A screenshot that looks fine at 25% zoom can still feel careless in real use.
+
+## Honesty
+
+If no rendered browser is available:
+
+- inspect source and available snapshots
+- do not claim visual/browser verification
+- state the limitation
+
+If performance was observed but not measured, say observed.
