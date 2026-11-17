@@ -4,6 +4,8 @@ Typography is one of the strongest signals that an interface was actually art-di
 
 A readable font can still make the whole product feel generic.
 
+Read `presentation-rhythm.md` when typography and density are tightly coupled.
+
 ## Start from voice
 
 Before choosing a family, describe the typographic voice.
@@ -52,49 +54,57 @@ A direction includes:
 - line height
 - heading/body/control relationship
 
-Examples:
-
-- warm humanist sans + restrained numeric style
-- soft grotesk with no mono except identifiers
-- expressive display face + calm utility sans
-- narrow technical sans + open body sans
-- serif-led reading system + restrained sans controls
-
 Do not audition two almost-identical sans fonts and call it exploration.
 
-## Product roles
+## Use role economy
 
-Possible roles:
+Start with the fewest roles that make hierarchy unmistakable.
 
-- display/identity
-- task title
-- section
-- body
-- control
-- metadata
-- numeric
-- identifier/code
-- caption
-- collection/promotional title
+A working product often needs only:
 
-Not every product needs every role.
+- primary/task title
+- body/reading
+- controls/labels
+- metadata/data
+- optional identifier or display role when the content requires it
 
-Do not let "large bold sans" carry the entire hierarchy.
+Add a role only when it performs a job the existing system cannot perform clearly.
 
-## Small-size survival
+Do not create a special microtype style for every semantic subtype.
 
-Test:
+Repeated roles should remain consistent across screens and states.
 
-- 12–14px controls
-- 14–16px body
-- changing numbers
+## Avoid typographic semantic collapse
+
+Treat this as a generated-UI failure mode:
+
+- many unrelated roles become tiny uppercase labels
+- condensed uppercase + tracking carries most of the hierarchy
+- metadata, section headings, captions, status, and provenance all look alike
+- mono is used broadly because the product contains data
+
+Consistency should come from the system, not from turning secondary information into one visual texture.
+
+## Reading comfort and small-size survival
+
+Primary reading text should normally remain around ordinary browser body scale or equivalent unless the product has a strong dense-interface reason.
+
+Dense controls and metadata may be smaller when genuinely secondary.
+
+Test the rendered face at real scale with:
+
 - long names
+- prose
+- changing numbers
 - punctuation
 - mixed case
-- non-English content if relevant
-- mobile rendering
+- non-English content when relevant
+- mobile
+- 200% text/zoom
 
-A display face can fail in dense UI.
+Do not assume a nominal size proves readability.
+
+If the majority of visible working copy on desktop is around 12px or smaller, inspect whether the layout is buying density with legibility loss. This is a warning, not a universal numeric ban.
 
 ## Numerals
 
@@ -110,7 +120,7 @@ Use mono when identifiers, code-like values, or product voice justify it.
 
 Use the smallest set of weights that creates the hierarchy.
 
-Avoid 700/800 everywhere.
+Avoid heavy weight everywhere.
 
 Variable font axes can help when they materially improve density, emphasis, responsiveness, or identity.
 
@@ -118,21 +128,18 @@ Do not animate font axes merely because possible.
 
 ## Production behavior
 
-- prefer WOFF2 when self-hosting
+- prefer efficient web font formats such as WOFF2 when self-hosting
 - load only used weights/styles
 - verify licensing
 - avoid synthetic bold/italic when it distorts the face
 - minimize layout shift
 - set useful fallbacks
 - test fallback metrics
-- use `font-variant-numeric: tabular-nums` where appropriate
-- use `text-wrap: balance` selectively for short headings
-- use `text-wrap: pretty` selectively for short prose
-- use `overflow-wrap: break-word` for hostile tokens
+- use tabular figures where appropriate
 - keep important truncated content recoverable
 - keep mobile inputs browser-safe
-- set document `lang`
-- handle mixed direction with `dir` / `bdi`
+- set document language
+- handle mixed direction when relevant
 
 ## Display type does not rescue generic structure
 
@@ -142,21 +149,6 @@ On Workflow surfaces, display type must communicate task-critical state or genui
 
 Do not add slogans merely because the page looks empty.
 
-## Emotional role
-
-For identity-heavy products, test whether typography contributes:
-
-- warmth
-- energy
-- precision
-- nostalgia
-- softness
-- speed
-- collectibility
-- intimacy
-
-If the product should feel cared for and the type feels like a browser default, the system is unfinished.
-
 ## Final type test
 
 Ask:
@@ -164,8 +156,9 @@ Ask:
 - Would I choose this same family for three unrelated products?
 - Is it helping the product voice?
 - Did I compare a materially different direction?
-- Are small UI states still excellent?
+- Are role distinctions clear without a forest of micro-labels?
+- Is body/reading text comfortable at real scale?
 - Do numbers behave properly?
-- Does the type feel intentionally selected?
+- Did typography solve hierarchy, or merely squeeze more content into the viewport?
 
-If not, revisit it.
+If not, revisit the system.
