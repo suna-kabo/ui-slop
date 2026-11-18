@@ -1,0 +1,30 @@
+{
+  "id": "primary-workflow",
+  "description": "Replace with the real product workflow. This file is a contract, not a UI template.",
+  "requirements": [
+    { "id": "r1", "text": "The selected object can be opened and returned from without losing context." }
+  ],
+  "viewports": [
+    { "name": "desktop", "width": 1440, "height": 900 },
+    { "name": "mobile", "width": 390, "height": 844 }
+  ],
+  "mediaVariants": ["normal", "reduced"],
+  "keyboardWalk": { "maxStops": 30 },
+  "steps": [
+    {
+      "action": "click",
+      "locator": { "role": "button", "name": "Open details" },
+      "requirementId": "r1",
+      "capture": true
+    },
+    {
+      "action": "assertVisible",
+      "locator": { "role": "heading", "name": "Details" },
+      "requirementId": "r1"
+    },
+    {
+      "action": "back",
+      "requirementId": "r1"
+    }
+  ]
+}
