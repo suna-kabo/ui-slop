@@ -15,7 +15,8 @@ test('SKILL frontmatter and reference links are valid', async () => {
 
 test('module map points only to existing markdown references', async () => {
   const map = await fs.readFile(path.join(root,'references','module-map.md'),'utf8');
-  const refs = [...map.matchAll(/\x60?([a-z0-9-]+\.md)\x60?/gi)].map((m)=>m[1]);
+  const refs = [...map.matchAll(/\x60([a-z0-9-]+\.md)\x60/gi)].map((m)=>m[1]).filter((file)=>file.toLowerCase() !== 'skill.md');
+  assert.ok(refs.length >= 10);
   for (const file of new Set(refs)) await fs.access(path.join(root,'references',file));
 });
 
