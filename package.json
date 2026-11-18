@@ -9,9 +9,10 @@
   },
   "scripts": {
     "test": "npm run test:unit && npm run test:skill && npm run test:integration",
-    "test:unit": "node --test tests/tool.test.mjs",
+    "test:unit": "node --test tests/tool.test.mjs tests/benchmark.test.mjs",
     "test:skill": "node --test tests/skill.test.mjs",
-    "test:integration": "node --test tests/evidence.integration.test.mjs"
+    "test:integration": "node --test tests/evidence.integration.test.mjs",
+    "test:benchmark": "node --test tests/benchmark.test.mjs"
   },
   "engines": {
     "node": ">=20"
