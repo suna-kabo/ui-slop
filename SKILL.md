@@ -1,169 +1,146 @@
 ---
 name: ui-slop
-description: Standalone UI design and engineering workflow for building, rebuilding, refining, or auditing production interfaces without generic AI composition, fixed aesthetic recipes, or repeated interaction grammar. Protects product behavior, routes only the needed design reasoning, and requires rendered evidence for substantial work.
+description: Standalone UI design and engineering workflow for building, rebuilding, refining, or auditing production interfaces without generic AI composition, fixed aesthetic recipes, or repeated interaction grammar. Protects product behavior, loads only the reasoning a task needs, and separates rendered evidence from taste judgment.
 ---
 
 # UI Slop
 
-UI Slop helps an agent make interfaces that feel specific to the product, usable under repeated real work, and verifiable in the browser.
+UI Slop is a product-specific UI reasoning skill with an evidence loop.
 
-It is not a component library, style catalog, palette generator, or fixed motion system.
+It is not a component library, style catalog, palette generator, house aesthetic, or fixed motion system.
 
-## Route first
+## Route and authority
 
-Choose the smallest mode that fits:
+Choose the smallest task mode:
 
-- **Audit**: inspect and report only.
-- **Refinement**: preserve approved product behavior and visual authority; fix material issues.
-- **Rebuild**: protect product truth and required behavior while allowing structure, interaction model, information architecture, and visual system to change.
+- **Audit**: inspect and report without changing the product.
+- **Refinement**: preserve approved behavior, structure, and visual authority unless the user explicitly changes scope.
+- **Rebuild**: preserve product truth and required behavior while allowing structure, interaction model, information architecture, and visual system to change.
 
-Classify the surface by the user's success condition:
+Classify the surface by what success means:
 
-- **Workflow**: complete repeated tasks accurately and efficiently.
-- **Reading**: understand, navigate, annotate, or compare information.
-- **Persuasion**: decide and act from a narrative or proof.
-- **Immersion**: experience the artifact or content itself.
-- **Browse / Collect**: discover, compare, save, revisit, and move between related objects.
+- **Workflow**: repeated accurate task completion.
+- **Reading**: comprehension, navigation, annotation, comparison.
+- **Persuasion**: decision and action from narrative or proof.
+- **Immersion**: the artifact or content is the experience.
+- **Browse / Collect**: discovery, comparison, saving, revisiting, and traversal.
 
-A product may contain several surface modes.
-
-Read only the modules the task needs. Use `references/module-map.md` as the routing map.
+Use `references/module-map.md` and load only the modules needed by the task or unresolved risk. Historical evidence and release reports are not runtime instructions.
 
 ## Protect the product contract
 
 Before changing presentation, identify what must remain correct:
 
 - domain semantics and data correctness
-- required user workflows
-- auth and permissions
-- saved or persistent state
-- routes, history, deep links, and return behavior
-- imports, exports, downloads, and integrations
-- loading, empty, failure, retry, and offline behavior when applicable
-- keyboard, focus, accessibility, and responsive requirements
-- platform or framework constraints
+- required workflows and second/third actions
+- permissions, saved state, persistence, and reload behavior
+- routes, history, deep links, Back/close behavior, and focus return
+- imports, exports, downloads, integrations, and offline/recovery behavior when applicable
+- keyboard, accessibility, responsive, platform, and framework requirements
 
 Do not weaken behavior because presentation is difficult.
 
-For a rebuild, existing layout and components are evidence, not automatic visual authority.
+For a rebuild, incumbent DOM, layout, cards, navigation, and styling are evidence, not automatic visual authority.
 
-## Model the real product before designing the shell
+## Model real content before the shell
 
-Identify:
+Identify the primary user job, domain objects, important relationships, state changes, and repeated actions.
 
-- primary user job
-- domain objects
-- relationships users need to understand or act on
-- important state changes
-- repeated second and third actions, not only first-click success
-- realistic content variation
+Use representative content before structure locks. Include relevant long, short, missing, mixed, empty, dense, invalid, and similar-looking records instead of designing only around ideal placeholders.
 
-Use representative content before structure locks. Include relevant long, short, missing, mixed, empty, dense, invalid, or similar-looking records rather than designing only around ideal placeholders.
-
-Read `references/real-content-first.md` for substantial data or content surfaces.
+Read `references/real-content-first.md` for substantial content or data surfaces.
 
 ## Choose structure from the domain
 
-For open-direction work, explore materially different spatial concepts when the choice could change the product experience. Do not run a concept tournament for a narrow refinement with an already-set structure.
+When structure is genuinely open, compare materially different spatial concepts. Do not run a concept tournament for a narrow refinement.
 
-Judge structure before styling:
+A useful structure should:
 
-- does the primary job dominate the composition?
-- do important relationships shape the page?
-- are controls near what they control?
-- does the structure still make sense without color, imagery, and branding?
-- is a familiar pattern being used because it helps the task, or only because it is a model habit?
+- make the primary job dominant
+- expose relationships users need to understand or act on
+- keep controls near what they control
+- survive removal of color, branding, and decoration
+- use familiar conventions when they reduce error or learning cost
+- avoid a familiar shell when it exists only because the model reaches for it
 
-Familiar patterns are allowed when they reduce error, learning cost, or inconsistency. Novelty is not a goal.
+Novelty is not a goal. Product fit is.
 
 Read `references/structural-direction.md` and `references/information-design.md` when structure is open.
 
-## Establish a product-grounded visual direction
+## Establish a product-grounded visual world
 
-If a protected visual system exists, inherit it unless the user asked for replacement.
+If an approved visual system exists, inherit it unless replacement is requested.
 
-Otherwise ground the direction in the subject, audience, usage scene, content, culture, materials, tempo, trust level, and interaction frequency. Compare materially different directions only when major visual axes are genuinely open.
+Otherwise derive visual direction from the subject, audience, usage scene, culture, materials, content, tempo, trust level, and interaction frequency.
 
-Do not escape generic SaaS by repeatedly choosing another generic anti-default. Repeated paper/editorial, dark-neon, glass/glow, soft-card, terminal, or other house worlds across unrelated products are evidence of convergence, not proof of originality.
+Do not escape generic SaaS by repeatedly choosing another generic anti-default. Paper/editorial, dark-neon, glass/glow, terminal, soft-card, or any other recurring world requires a product reason.
 
-Read `references/visual-direction.md` when visual authority is missing or being replaced. Load typography, color, media, and asset references only when those decisions are material.
+Read `references/visual-direction.md` when visual authority is missing or being replaced. Load typography, color, media, and asset references only when those axes are material.
 
 ## Design presentation rhythm
 
-Typography, density, spacing, and simultaneous visibility are one information system.
+Typography, density, spacing, grouping, and simultaneous visibility form one information system.
 
-Compress information through grouping, alignment, shared context, representation, and progressive disclosure before shrinking type. Dense work can be compact without turning most visible copy into microtype.
+Compress through grouping, alignment, shared context, better representation, and progressive disclosure before shrinking type. Mobile may change information priority or representation instead of preserving desktop density by making everything smaller.
 
-Mobile should change information priority or representation when needed instead of preserving desktop density by shrinking everything.
+Read `references/presentation-rhythm.md` for workflow, reading, comparison, or data-heavy surfaces.
 
-Read `references/presentation-rhythm.md` for data-heavy, workflow, reading, or comparison surfaces.
+## Design connected state and continuity
 
-## Design connected state and task continuity
+When parts of the product are related, decide what should react together and what should remain anchored.
 
-When state is related, decide what should react together and what should remain anchored.
-
-For repeated workflows, browsing, nested detail, playback, or saved-state flows define:
+For repeated workflows, browse paths, nested detail, playback, or persisted work define:
 
 - state lifetime
 - next-action locality
-- return contract for Back or close
-- browse or traversal topology
+- return contract
+- traversal or browse topology
 - relationship actionability
 - what survives reload and why
 
-A feature is not complete if the user repeatedly reconstructs filters, selection, scroll, playback, or context after each action.
+A feature is incomplete if the user repeatedly reconstructs filters, selection, scroll, playback, or context.
 
-Read `references/task-continuity.md`. Use `references/interaction-contracts.md` for consequential, asynchronous, persistent, nested, or otherwise ambiguous interactions.
+Read `references/task-continuity.md`. For consequential, asynchronous, persistent, nested, or ambiguous interactions, use `references/interaction-contracts.md`.
 
 ## Design interaction before motion
 
-Start from domain verbs and object relationships. Decide how selection, manipulation, traversal, comparison, and return should behave before choosing effects.
+Start from domain verbs and object relationships. Decide how selection, manipulation, traversal, comparison, interruption, completion, and return behave before choosing effects.
 
-Behavioral craft belongs inside the interaction model:
+Behavioral craft is part of the interaction model:
 
-- important input should receive prompt feedback
-- direct manipulation should track input continuously when the domain benefits from it
-- interruptible interactions should not force the user to wait for choreography
-- reversal or retargeting should continue from the current visible state when appropriate
-- spatial relationships should remain understandable
-- boundaries and completion should feel intentional
-- repeated use should remain efficient, not theatrical
+- acknowledge important input promptly
+- track direct manipulation continuously when the domain benefits from it
+- do not trap the user behind choreography
+- continue reversal or retargeting from the visible state when appropriate
+- preserve understandable spatial relationships
+- make boundaries and completion intentional
+- keep repeated use efficient on the tenth use, not only delightful on the first
 
-These are qualities, not universal spring, timing, scale, easing, or gesture values.
+These are qualities, not universal spring, timing, scale, easing, gesture, or travel values.
 
-Motion is downstream of interaction. It may explain cause, hierarchy, spatial continuity, or a product-specific authored moment. Do not establish a reusable UI Slop animation recipe.
+Motion comes after interaction. It may explain cause, hierarchy, spatial continuity, or a product-specific authored moment. UI Slop has no default hover lift, image zoom, fade-and-rise, slide direction, spring, or duration recipe.
 
-Read `references/experience-dynamics.md`, `references/interaction-hierarchy.md`, and `references/motion-interaction.md` only when their scope is relevant.
+Read `references/experience-dynamics.md`, `references/interaction-hierarchy.md`, and `references/motion-interaction.md` only when relevant.
 
-## Keep semantics diverse without losing system coherence
+## Keep semantics coherent without sameness
 
-Consistency means shared rules and predictable behavior, not forcing unrelated meanings into the same pill, badge, card, tiny uppercase label, or metadata treatment.
+Consistency means shared rules and predictable behavior, not forcing unrelated meanings into the same card, pill, badge, micro-label, or metadata treatment.
 
-Different semantic roles may use typography, position, color, shape, image treatment, relationship, or state change rather than another component wrapper.
+Different meanings may use typography, position, color, shape, imagery, relationship, or state rather than another wrapper.
 
 Read `references/semantic-diversity.md` for heterogeneous content or repeated metadata systems.
 
 ## Compose responsive behavior
 
-Breakpoints should respond to content or interaction failure, not habitual device numbers.
+Breakpoints should answer content or interaction failure, not habitual device numbers.
 
-On narrow layouts, representation, navigation, detail behavior, action placement, and information priority may change. Preserve the primary object and task continuity.
+Narrow layouts may change representation, navigation, detail behavior, action placement, and information priority while preserving the primary object and task continuity.
 
 Read `references/layout-responsive.md` for substantial responsive work.
 
 ## Reject filler and generated habits
 
-Reject unjustified:
-
-- cards around everything
-- pills or badges as the default semantic language
-- giant marketing headings in task software
-- filler subtitles and layout-explanation labels
-- decorative charts and generic KPI rows
-- habitual top-right search
-- generic main-plus-right-rail shells
-- repeated section templates
-- one visual world or interaction grammar reused across unrelated products
+Reject unjustified cards-around-everything, pill overload, giant marketing headings in task software, filler subtitles, layout-explanation labels, decorative charts, generic KPI rows, habitual top-right search, generic main-plus-right-rail shells, repeated section templates, and one interaction or visual grammar reused across unrelated products.
 
 Anti-slop does not mean minimal. Replace removed decoration with stronger structure, typography, hierarchy, content, interaction, and subject-specific detail.
 
@@ -171,84 +148,73 @@ Anti-slop does not mean minimal. Replace removed decoration with stronger struct
 
 For substantial visual work, rendered verification is required when browser tooling exists.
 
-Use a bounded evidence loop:
+Use a bounded loop:
 
 1. operate the primary workflow with realistic content
 2. inspect representative wide and narrow states
-3. test keyboard and focus where applicable
-4. test nested detail and return behavior
-5. inspect reduced motion when motion exists
-6. inspect loading, empty, error, or recovery states required by the product
-7. record material findings
-8. fix related findings together
-9. rerun only the affected evidence plus a regression pass
+3. test keyboard/focus and nested return paths when applicable
+4. test reduced motion when motion exists
+5. exercise required loading, empty, failure, recovery, and persistence states
+6. record findings
+7. fix the smallest responsible layer
+8. rerun affected evidence plus a bounded regression pass
 
-When the P0 evidence tooling is available, use `references/evidence-harness.md`. A screenshot alone cannot prove interaction quality.
+When the evidence harness is available, use `references/evidence-harness.md`.
 
-Evidence classifications:
+Classify evidence as:
 
-- **hard_failure**: a specified requirement or independently verifiable standard fails
-- **advisory**: measured pattern that may be a problem but requires product judgment
-- **evidence_only**: neutral measurement with no automatic quality verdict
+- **hard_failure**: a specified requirement or independently verifiable applicable standard failed
+- **advisory**: a measured pattern may be harmful but requires product judgment
+- **evidence_only**: neutral measurement with no quality verdict
 - **blocked**: required evidence could not be executed or observed
 
-Never convert an aesthetic proxy into a hard failure merely because it is measurable.
+A measurable aesthetic proxy is not automatically a failure.
 
-Read `references/evidence-gate.md`, `references/browser-qa.md`, and `references/review-protocol.md` when verifying substantial work.
+Read `references/evidence-gate.md`, `references/browser-qa.md`, and `references/review-protocol.md` for substantial verification.
 
-## AI Fingerprint Gate
+## Check for generated recurrence
 
-Before acceptance, inspect for repeated generated patterns at several layers:
+Before final acceptance, inspect recurring patterns at the relevant layers:
 
 - structural silhouette
 - visual-material world
-- typography role collapse
-- semantic-to-component collapse
-- repeated interaction mechanics
-- repeated motion triggers
-- repeated responsive transformation
+- typography roles
+- semantic-to-component mapping
+- interaction mechanics
+- motion triggers
+- responsive transformation
 - layout-explanation copy
 
-Similarity is evidence, not automatic failure. Ask whether the pattern is product-justified and whether it causes functional, comprehension, identity, or repeated-use harm.
+Similarity is evidence, not failure. Ask whether the pattern is product-justified and whether it causes functional, comprehension, identity, or repeated-use harm.
 
-If no unrelated comparison corpus is available, mark cross-product recurrence as not verified rather than inventing one.
+If no unrelated comparison corpus exists, mark cross-product recurrence as not verified instead of inventing one.
 
 Read `references/ai-fingerprint-gate.md` when recurrence is relevant.
 
-## Taste Gate
+## Final judgment
 
-After objective failures are resolved, judge whether the finished interface is actually authored for this product:
+Objective failures are resolved before taste judgment.
 
-- would the structure still feel specific without the logo?
-- do domain objects and relationships shape the interface?
-- is typography readable and intentional?
+Then ask whether the interface is actually authored for this product:
+
+- do domain objects and relationships shape the experience?
+- is information readable at the density the work needs?
 - does the visual world come from the product rather than a model habit?
-- does interaction reveal relationships and preserve orientation?
-- can the user continue naturally through second and third actions?
+- does interaction preserve orientation and support continued work?
 - is mobile intentionally composed?
 - does repeated use remain efficient?
-- is the weakest visible region part of the same product world?
+- is the weakest visible region still part of the same product?
 
 A clean but interchangeable interface is not finished.
 
-Read `references/taste-gate.md` when making the final qualitative judgment.
+Read `references/taste-gate.md` for final qualitative review.
 
-## Specialist skills
+## Specialists and finish condition
 
-UI Slop must remain useful by itself. Load specialists narrowly for framework implementation, accessibility, performance, motion, image generation, browser automation, or platform-specific guidance.
+UI Slop must remain useful by itself. Load specialists narrowly for framework implementation, accessibility, performance, motion, platform guidance, image work, or browser automation.
 
-Priority:
+Priority is: explicit user instruction, protected product contract, project/platform constraints, then narrower specialist guidance.
 
-1. explicit user instruction
-2. protected product/domain contract
-3. project and platform constraints
-4. narrower specialist guidance inside its specialty
-5. UI Slop reasoning
+Do not merge specialists' preferred aesthetics.
 
-Do not merge several specialists' preferred aesthetics into one product.
-
-## Finish condition
-
-Do not claim verified work without evidence.
-
-Report what was operated, measured, observed, blocked, or not checked. Preserve product behavior tests. Replace presentation tests only when they freeze obsolete presentation rather than current behavior or accessibility.
+Do not claim verified work without executed evidence. Report what was operated, measured, observed, blocked, or not checked.

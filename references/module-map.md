@@ -18,7 +18,7 @@ Load the smallest useful set. The router owns task classification and product co
 | Responsive transformation | layout-responsive.md | task-continuity.md |
 | Accessibility | accessibility-baseline.md | evidence-gate.md |
 | Performance | performance-baseline.md | evidence-gate.md |
-| Browser evidence | browser-qa.md | evidence-harness.md, evidence-gate.md |
+| Browser evidence | browser-qa.md | evidence-harness.md, evidence-schema.md, evidence-gate.md |
 | Independent review | review-protocol.md | evidence-gate.md, taste-gate.md |
 | Cross-product recurrence | ai-fingerprint-gate.md | visual-direction.md, experience-dynamics.md |
 | Final qualitative judgment | taste-gate.md | coherence-floor.md |
