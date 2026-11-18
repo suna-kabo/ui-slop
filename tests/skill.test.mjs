@@ -8,7 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 test('SKILL frontmatter and reference links are valid', async () => {
   const skill = await fs.readFile(path.join(root,'SKILL.md'),'utf8');
-  assert.match(skill,/^---\nname: ui-slop\ndescription:/);
+  assert.match(skill,/^---\\r?\\nname: ui-slop\\r?\\ndescription:/);
   const refs = [...skill.matchAll(/\x60(references\/[^\x60]+\.md)\x60/g)].map((m)=>m[1]);
   assert.ok(refs.length >= 10);
   for (const ref of new Set(refs)) await fs.access(path.join(root,ref));
