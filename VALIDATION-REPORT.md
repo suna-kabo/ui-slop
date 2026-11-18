@@ -217,11 +217,14 @@ The frozen round in `research/benchmark.config.rc2.json` contains:
 - SHA-256 locked briefs and fixtures
 - opaque artifact ids and a private condition key
 - completion metadata validation before scoring
+- condition-contract, generation-seed, request-hash, benchmark-config, and frozen-input drift detection
+- self-review excluded from the independent-review completion floor
+- blind review records rejected if they contain condition identity
 - post-review unblinding and reviewer-agreement reporting
 
 A complete round therefore requires 75 generated artifacts and 150 independent blind review records.
 
-The harness can prove protocol integrity and detect input/model drift. It cannot substitute for actual independent generation and review.
+The harness can prove protocol integrity and detect config, input, model, condition, seed, and request drift. It also enforces that self-review cannot satisfy the independent-review floor. It cannot substitute for actual independent generation and review.
 
 ## What v2 RC deliberately does not claim
 
@@ -257,11 +260,11 @@ The claim threshold remains reproducible improvement in task continuity, grounde
 
 Validated implementation head:
 
-`27dba7a662037da37602fe67d6db35d16c40c113`
+`255d02de8b9095d98ccd98413674efd850abe026`
 
 GitHub Actions run:
 
-`44349144092`
+`44349833156`
 
 Result: **5 / 5 jobs passed**
 
@@ -276,8 +279,8 @@ The browser job completed:
 Uploaded artifact:
 
 - name: `ui-slop-browser-evidence`
-- artifact id: `14448061156`
-- digest: `sha256:b62bdbab2d960aa91b3c69ab2e5e3da84b94dd56324cf262f173cb04be968c5f`
+- artifact id: `14446833729`
+- digest: `sha256:bbe8a1d2cdf48fab71c2da3c316fb4eb54376ad32a6b0ba78d85b7387e300c70`
 
 ## Release-candidate verdict
 
