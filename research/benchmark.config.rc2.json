@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "id": "ui-slop-v2-rc2-predeclared",
+  "randomization_seed": "ui-slop-v2-rc2-2026-11-19-a",
+  "runs_per_condition": 3,
+  "reviewers_per_artifact": 2,
+  "model_contract": {
+    "model": "GPT-5.6 Sol",
+    "thinking": "High",
+    "execution_budget": "Equal generation and verification budget per condition",
+    "context_policy": "Fresh isolated context for every artifact",
+    "tool_policy": "Same base tools for every condition; only ui-slop-v2-full may use the UI Slop evidence loop"
+  },
+  "metrics": [
+    "task_continuity",
+    "product_specificity",
+    "interaction_quality",
+    "information_design",
+    "technical_quality"
+  ],
+  "conditions": [
+    {
+      "id": "no-skill",
+      "label": "No UI/design skill",
+      "tool_policy": "Base model and base tools only"
+    },
+    {
+      "id": "ui-slop-v1.9",
+      "label": "UI Slop v1.9 frozen baseline",
+      "instructions_ref": "https://github.com/suna-kabo/ui-slop/blob/588c9cb2910d3866a4c75f6ccf35a3b95d9c4058/SKILL.md",
+      "tool_policy": "Skill guidance only; no v2 evidence harness"
+    },
+    {
+      "id": "ui-slop-v2-router",
+      "label": "UI Slop v2 compressed router",
+      "instructions_ref": "SKILL.md",
+      "tool_policy": "v2 reasoning only; evidence harness disabled"
+    },
+    {
+      "id": "ui-slop-v2-full",
+      "label": "UI Slop v2 router plus evidence loop",
+      "instructions_ref": "SKILL.md",
+      "tool_policy": "v2 reasoning plus inspect/capture/validate evidence loop"
+    },
+    {
+      "id": "impeccable",
+      "label": "Impeccable frozen comparator",
+      "instructions_ref": "https://github.com/pbakaus/impeccable/blob/d41d9860b0094dcb68030657da63461212835aaa/.agent/skills/impeccable/SKILL.md",
+      "tool_policy": "Comparator skill and its normal documented workflow"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "casewire",
+      "brief": "research/benchmark-corpus/casewire/brief.md",
+      "fixture": "research/benchmark-corpus/casewire/fixture.json"
+    },
+    {
+      "id": "waypoint",
+      "brief": "research/benchmark-corpus/waypoint/brief.md",
+      "fixture": "research/benchmark-corpus/waypoint/fixture.json"
+    },
+    {
+      "id": "cutroom",
+      "brief": "research/benchmark-corpus/cutroom/brief.md",
+      "fixture": "research/benchmark-corpus/cutroom/fixture.json"
+    },
+    {
+      "id": "opswatch",
+      "brief": "research/benchmark-corpus/opswatch/brief.md",
+      "fixture": "research/benchmark-corpus/opswatch/fixture.json"
+    },
+    {
+      "id": "collection",
+      "brief": "research/benchmark-corpus/collection/brief.md",
+      "fixture": "research/benchmark-corpus/collection/fixture.json"
+    }
+  ]
+}

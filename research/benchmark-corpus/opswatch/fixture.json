@@ -1,0 +1,67 @@
+{
+  "filters": {
+    "environment": [
+      "prod"
+    ],
+    "status": [
+      "failed",
+      "degraded"
+    ],
+    "owner": [
+      "platform"
+    ]
+  },
+  "incidents": [
+    {
+      "id": "inc-91",
+      "service": "image-ingest",
+      "severity": "high",
+      "status": "failed",
+      "owner": "platform",
+      "started_at": "2026-11-18T15:03:14Z",
+      "summary": "Derivative generation stalled after source object verification."
+    },
+    {
+      "id": "inc-92",
+      "service": "billing-export",
+      "severity": "medium",
+      "status": "degraded",
+      "owner": null,
+      "started_at": "2026-11-18T15:18:02Z",
+      "summary": "Partner SFTP acknowledgement is delayed; export has not been duplicated."
+    }
+  ],
+  "selected": {
+    "id": "inc-91",
+    "chain": [
+      {
+        "id": "s1",
+        "label": "Verify source object",
+        "state": "success",
+        "retryable": false
+      },
+      {
+        "id": "s2",
+        "label": "Generate derivatives",
+        "state": "failed",
+        "retryable": true,
+        "error": "Worker exited after memory pressure while decoding a 17840 × 11920 TIFF. The original object remains intact and retry is idempotent."
+      },
+      {
+        "id": "s3",
+        "label": "Publish manifest",
+        "state": "blocked",
+        "retryable": false
+      }
+    ],
+    "retry_state": {
+      "step_id": "s2",
+      "state": "idle",
+      "last_attempt": null
+    }
+  },
+  "saved_state": {
+    "queue_scroll_anchor": "inc-92",
+    "selected_incident": "inc-91"
+  }
+}

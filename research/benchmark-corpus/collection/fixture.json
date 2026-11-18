@@ -1,0 +1,71 @@
+{
+  "query": "folding field furniture 1930s-1960s",
+  "records": [
+    {
+      "id": "o1",
+      "type": "dealer-listing",
+      "title": "British campaign folding stool, canvas and ash, attributed to military field supply",
+      "maker": null,
+      "year_range": "1935-1945",
+      "dimensions_cm": [
+        46,
+        38,
+        42
+      ],
+      "price_usd": 480,
+      "availability": "available",
+      "source": "North Quay Objects",
+      "provenance": "Private collection, Devon; acquired by current dealer in 2024."
+    },
+    {
+      "id": "o2",
+      "type": "archive-record",
+      "title": "Portable field chair model 74",
+      "maker": "Artek technical department",
+      "year_range": "1940s",
+      "dimensions_cm": null,
+      "price_usd": null,
+      "availability": "reference-only",
+      "source": "Design Archive Helsinki",
+      "provenance": "Catalog photograph and specification sheet, accession DAH-74-119."
+    },
+    {
+      "id": "o3",
+      "type": "auction-result",
+      "title": "Folding observation chair used by a coastal survey team; documented in three expedition photographs and a handwritten 1958 inventory",
+      "maker": "Unknown workshop",
+      "year_range": "1950-1959",
+      "dimensions_cm": [
+        82,
+        51,
+        57
+      ],
+      "price_usd": 920,
+      "availability": "sold",
+      "source": "Mariner Auctions",
+      "provenance": "Survey office inventory no. 18; family of engineer R. Bell; Mariner Auctions lot 221."
+    }
+  ],
+  "saved": [
+    "o1",
+    "o3"
+  ],
+  "compare": [
+    "o1",
+    "o3"
+  ],
+  "changed_availability": {
+    "id": "o1",
+    "from": "available",
+    "to": "reserved",
+    "observed_at": "2026-11-18T16:05:00Z"
+  },
+  "saved_state": {
+    "browse_scroll_anchor": "o2",
+    "active_compare": [
+      "o1",
+      "o3"
+    ],
+    "open_source": null
+  }
+}

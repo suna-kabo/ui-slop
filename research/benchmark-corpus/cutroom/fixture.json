@@ -1,0 +1,76 @@
+{
+  "project": "Low Tide",
+  "beats": [
+    {
+      "id": "b1",
+      "order": 1,
+      "label": "Cold open",
+      "duration_s": 18.4,
+      "active_take": "t1",
+      "transition_after": "hard cut",
+      "note_after": "Hold room tone for 8 frames."
+    },
+    {
+      "id": "b2",
+      "order": 2,
+      "label": "Witness establishes the night shift",
+      "duration_s": 41.2,
+      "active_take": "t3",
+      "transition_after": "J-cut",
+      "note_after": null
+    },
+    {
+      "id": "b3",
+      "order": 3,
+      "label": "Gate log contradiction",
+      "duration_s": 27.7,
+      "active_take": "t6",
+      "transition_after": "dissolve",
+      "note_after": "Avoid making the contradiction feel conclusive yet."
+    }
+  ],
+  "takes": [
+    {
+      "id": "t3",
+      "beat_id": "b2",
+      "kind": "video",
+      "selected": true,
+      "transcript": "We had already started slowing outbound trucks when the radio call came through."
+    },
+    {
+      "id": "t4",
+      "beat_id": "b2",
+      "kind": "video",
+      "selected": false,
+      "transcript": "I remember the radio first, but the clocks in that room were never synchronized and I would not swear to the minute."
+    },
+    {
+      "id": "t5",
+      "beat_id": "b2",
+      "kind": "audio",
+      "selected": false,
+      "transcript": null
+    },
+    {
+      "id": "t6",
+      "beat_id": "b3",
+      "kind": "scan",
+      "selected": true,
+      "transcript": "22:18 OUTBOUND HOLD / GATE 4"
+    }
+  ],
+  "history": [
+    {
+      "type": "reorder",
+      "beat_id": "b3",
+      "from": 3,
+      "to": 2,
+      "undone": true
+    }
+  ],
+  "saved_state": {
+    "selected_beat": "b2",
+    "audition_take": "t4",
+    "playhead_s": 52.8
+  }
+}

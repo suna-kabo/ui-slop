@@ -1,0 +1,73 @@
+{
+  "claims": [
+    {
+      "id": "c-17",
+      "text": "The harbor closure began before the public safety bulletin was issued.",
+      "status": "contested",
+      "confidence": 0.62,
+      "tags": [
+        "timeline",
+        "public notice"
+      ]
+    },
+    {
+      "id": "c-18",
+      "text": "All outbound freight was stopped during the closure.",
+      "status": "unresolved",
+      "confidence": null,
+      "tags": [
+        "operations"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-1",
+      "claim_id": "c-17",
+      "stance": "supports",
+      "title": "Port authority gate log, shift C",
+      "publisher": "Municipal Port Authority",
+      "author": null,
+      "published_at": "2026-10-04T22:18:00Z",
+      "excerpt": "Gate 4 changed to outbound hold at 22:18. Public bulletin timestamp in the archive is 22:41.",
+      "url": "https://example.invalid/gate-log"
+    },
+    {
+      "id": "e-2",
+      "claim_id": "c-17",
+      "stance": "contradicts",
+      "title": "Interview transcript with night operations supervisor, corrected second edition with appended clarification",
+      "publisher": "Coastal Ledger",
+      "author": "Mina Serrano",
+      "published_at": "2026-10-06T09:00:00Z",
+      "excerpt": "The supervisor recalls the public advisory as preceding the full outbound hold, but could not identify the exact gate state.",
+      "url": "https://example.invalid/interview"
+    },
+    {
+      "id": "e-3",
+      "claim_id": "c-17",
+      "stance": "unresolved",
+      "title": "Dispatch radio archive",
+      "publisher": "Harbor Dispatch",
+      "author": "",
+      "published_at": null,
+      "excerpt": "Audio segment is partially inaudible from 22:29 to 22:37.",
+      "url": "https://example.invalid/radio"
+    }
+  ],
+  "saved_state": {
+    "active_claim": "c-17",
+    "filters": {
+      "stance": [
+        "supports",
+        "contradicts"
+      ],
+      "source_type": [
+        "document",
+        "interview"
+      ]
+    },
+    "scroll_anchor": "e-2",
+    "draft_note": "Check bulletin archive clock drift before resolving."
+  }
+}
