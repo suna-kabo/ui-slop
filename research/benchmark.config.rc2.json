@@ -9,7 +9,7 @@
     "thinking": "High",
     "execution_budget": "Equal generation and verification budget per condition",
     "context_policy": "Fresh isolated context for every artifact",
-    "tool_policy": "Same base tools for every condition; only ui-slop-v2-full may use the UI Slop evidence loop"
+    "tool_policy": "Same base tools for every condition. Native packaged tooling is enabled only for explicitly full-system conditions and must stay inside the equal execution budget; reasoning-only conditions disable native packaged tooling."
   },
   "metrics": [
     "task_continuity",
@@ -75,5 +75,40 @@
       "brief": "research/benchmark-corpus/collection/brief.md",
       "fixture": "research/benchmark-corpus/collection/fixture.json"
     }
-  ]
+  ],
+  "analysis_contract": {
+    "primary_contrasts": [
+      {
+        "id": "compression",
+        "left": "ui-slop-v1.9",
+        "right": "ui-slop-v2-router",
+        "question": "Does the compressed v2 reasoning router match or improve v1.9 without the evidence loop?"
+      },
+      {
+        "id": "evidence-loop",
+        "left": "ui-slop-v2-router",
+        "right": "ui-slop-v2-full",
+        "question": "What incremental value comes from the v2 evidence loop?"
+      },
+      {
+        "id": "full-system",
+        "left": "impeccable",
+        "right": "ui-slop-v2-full",
+        "question": "How do the two end-to-end systems compare when each may use its native packaged tooling inside the same execution budget?"
+      }
+    ],
+    "secondary_contrasts": [
+      {
+        "id": "no-skill-v1.9",
+        "left": "no-skill",
+        "right": "ui-slop-v1.9"
+      },
+      {
+        "id": "no-skill-v2-router",
+        "left": "no-skill",
+        "right": "ui-slop-v2-router"
+      }
+    ],
+    "prohibition": "Do not treat all five conditions as one causal ladder because native-tool access differs in the full-system conditions."
+  }
 }

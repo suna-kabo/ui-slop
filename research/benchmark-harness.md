@@ -37,7 +37,10 @@ After an artifact is produced, create:
   "schema_version": 1,
   "artifact_id": "artifact-...",
   "model_contract_hash": "...",
+  "condition_contract_hash": "...",
   "input_hash": "...",
+  "generation_seed": "...",
+  "request_hash": "...",
   "output_ref": "path-or-immutable-reference-to-the-produced-artifact"
 }
 ```
@@ -73,7 +76,7 @@ At least two valid independent reviews are required per artifact.
 node tools/benchmark.mjs validate .ui-slop/benchmark/rc2
 ```
 
-The validator rejects missing artifacts, model-contract drift, task-input drift, malformed review records, and insufficient review coverage.
+The validator rejects missing artifacts, benchmark-config drift, frozen brief/fixture drift, model-contract drift, condition-contract drift, request/seed drift, condition identity leaked into blind review records, malformed reviews, and insufficient independent-review coverage. Self-review never satisfies the independent-review floor.
 
 For a progress check only:
 
@@ -100,3 +103,17 @@ The benchmark may support a superiority claim only if repeated paired results sh
 A prettier screenshot, unusual styling, or one winning seed is insufficient.
 
 Publish invalid runs and negative results. If independent reviewers or isolated generation contexts are unavailable, mark the empirical round BLOCKED rather than replacing them with self-review.
+
+
+## Causal contrasts
+
+Do not interpret the five conditions as one ordered leaderboard.
+
+Use these predeclared contrasts:
+
+- **compression**: v1.9 versus compressed v2 router. Native evidence tooling is disabled for both.
+- **evidence-loop**: compressed v2 router versus v2 full. The intended treatment difference is the evidence loop.
+- **full-system**: v2 full versus Impeccable full. Each system may use its own packaged tooling, but both stay inside the same execution budget.
+- **secondary baselines**: no-skill versus v1.9 and no-skill versus compressed v2.
+
+This split avoids attributing a tooling advantage to prose compression or treating unequal native tool surfaces as if they were the same causal treatment.

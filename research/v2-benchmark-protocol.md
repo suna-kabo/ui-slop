@@ -141,3 +141,15 @@ Each condition receives three independent runs per task. Each produced artifact 
 See `research/benchmark-harness.md` for the execution procedure.
 
 The presence of this harness is not itself empirical evidence. Until isolated generation runs and independent reviews are actually completed, the superiority question remains untested.
+
+
+## Predeclared causal contrasts
+
+The RC2 five-condition design is not a single causal ladder. Analyze pairwise contrasts according to what actually changes:
+
+- **v1.9 vs compressed v2** tests reasoning compression with native evidence tooling disabled.
+- **compressed v2 vs v2 full** tests the incremental evidence loop.
+- **v2 full vs Impeccable full** is an end-to-end system comparison. Each may use its native packaged tooling inside the same execution budget.
+- **no-skill vs v1.9** and **no-skill vs compressed v2** are secondary skill-effect baselines.
+
+Do not use the full-system comparison to claim the prose router alone caused a difference. Do not disable a competitor's defining packaged tooling and then call the result an end-to-end comparison.

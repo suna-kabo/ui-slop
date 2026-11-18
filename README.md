@@ -186,7 +186,7 @@ See `VALIDATION-REPORT.md` for the exact release-candidate result.
 
 `tools/benchmark.mjs` is research-only tooling. It freezes task inputs and model contracts, creates opaque blind artifact IDs, validates completion metadata and review coverage, and unblinds only for summary. It is intentionally not another public `ui-slop` command.
 
-The RC2 round is 5 tasks × 5 conditions × 3 runs = 75 generated artifacts, with two independent blind reviews required per artifact. The repository contains the protocol and execution harness, not fabricated empirical results.
+The RC2 round is 5 tasks × 5 conditions × 3 runs = 75 generated artifacts, with two independent blind reviews required per artifact. Its analysis is pairwise rather than a single five-way causal ladder: v1.9 vs compressed v2 tests router compression, compressed v2 vs v2 full tests the evidence loop, and v2 full vs Impeccable tests the end-to-end systems with native tooling inside the same budget. The repository contains the protocol and execution harness, not fabricated empirical results.
 
 See `research/benchmark-harness.md` for execution details. The project should not claim superiority from a screenshot, a feature checklist, one seed, or self-review.
 
