@@ -3,3 +3,7 @@ Thumbs.db
 *.log
 tmp/
 runtime/
+node_modules/
+.ui-slop/
+playwright-report/
+test-results/

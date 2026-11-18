@@ -2,233 +2,118 @@
 
 Use bounded rendered review for substantial visual work.
 
-## Pass A: batched critique
+When the P0 evidence harness is available, prefer a repeatable scenario over ad hoc screenshots. The browser is evidence collection, not an automatic taste judge.
 
-Render representative desktop and mobile states together.
+## Pass A
 
-Inspect:
+Operate representative real states and inspect:
 
-- first viewport
-- primary task flow
-- navigation
-- selection
-- hover/focus
-- detail/inspector/dialog
-- long labels
-- dense data
-- empty/loading/error where relevant
-- narrow layout
-- reduced motion
-- 200% zoom/text
-- console/runtime errors
+- first useful viewport
+- primary multi-step workflow
+- selection and detail
+- second and third likely actions
+- nested detail and Back/return
+- realistic long/dense/missing content
+- narrow/mobile transformation
+- keyboard and focus where applicable
+- reduced motion when motion exists
+- required loading, empty, error, retry, or persistence states
+- runtime and console failures
 
 Collect material findings before editing.
 
 ## Fix batch
 
-Repair related findings together.
+Repair the responsible layer, not isolated pixels when the issue is systemic.
 
 Examples:
 
-- fix the spacing/density system rather than isolated margins
-- fix selected/hover/focus as one state family
 - fix mobile information priority rather than one overflow
-- fix token semantics rather than individual colors
-- fix an interaction concept rather than swapping one slide animation for another
+- fix state ownership rather than one lost selection
+- fix interaction causality rather than swapping an animation
+- fix typography roles rather than several unrelated font sizes
 
-## Pass B: confirmation
+## Pass B
 
-Re-render the same representative states.
+Rerun affected evidence and a bounded regression path.
 
-Confirm:
+Confirm no new failure in keyboard, return behavior, responsive composition, or required state.
 
-- material findings resolved
-- no regression created
-- layout remains coherent
-- keyboard/focus still work
-- mobile remains intentional
-- repeated interactions still feel efficient
-
-Stop when remaining issues are minor.
-
-## Representative viewport set
-
-Choose widths based on the product.
-
-For a broad responsive web app, a useful default inspection set may include wide desktop, common desktop, tablet/intermediate, and 320–430px narrow/mobile states.
-
-Do not capture every width merely to create evidence. Inspect where the composition or interaction actually changes.
+Stop when remaining findings are advisory/minor and explicitly understood.
 
 ## Operate, do not only look
 
-Where applicable:
-
-- click
-- hover
-- type
-- filter
-- sort
-- select
-- compare
-- open/close
-- follow a relationship
-- back/forward
-- resize
-- scroll
-- keyboard navigate
-- trigger retry/error recovery
-- use export/download
-
 A screenshot cannot prove behavior.
 
-## Record one interaction sequence
+Where applicable, click, type, filter, select, compare, manipulate, follow relationships, use Back/forward, resize, scroll, keyboard navigate, retry, reload, export, or continue from an already-selected state.
 
-For a primary workflow, record the actual sequence of states, not only endpoint screenshots.
+## Record a state sequence
 
-Example structure:
+For the primary workflow, record:
 
-initial
-→ user expresses interest
-→ selection acknowledged
-→ related context responds
-→ detail or comparison changes
-→ user follows another object
-→ Back/close restores context
-
-For each step note:
-
+- user action
+- selected object or route before/after
 - what changed
 - what stayed anchored
-- what moved/reflowed/revealed
-- what the next likely action became
-- whether the same generic effect was reused
-- whether the transition improved understanding
+- focus target
+- scroll anchor when relevant
+- persistent state changes
+- next likely action
+- screenshot or ARIA evidence id
+- animation or transition observation when relevant
 
-This is the main evidence for interaction quality.
+Test at least one second or third action for repeated-work products.
 
-## Repeat a core task from live state
+## Keyboard walk
 
-When a surface is meant for repeated work or browsing, start a second pass from the selected item, filtered results, or ongoing activity left by the first pass.
+Use actual key input rather than inferring accessibility from source alone.
 
-Follow the next likely comparison, inspection, related destination, or mode switch on desktop and touch.
+Record focus stops and required-action checkpoints. A control that was never reached or activated is not verified.
 
-Record:
+Do not fail a design solely because a computed outline property is absent. Custom focus indicators may require visual review.
 
-- starting selection/filter/mode
-- next-action location
-- intervening layers or routes
-- scroll movement needed to continue
-- Back/close behavior
-- restored selection/filter/sort
-- restored scroll position
-- focus destination
-- ongoing state such as playback
-- reload behavior for state expected to survive
+## Behavioral Craft review
 
-Also test one nested path where relevant, such as detail → related detail → Back → Back.
+When relevant, test:
 
-Read `task-continuity.md` for the continuity model.
+- prompt response to input
+- direct manipulation tracking
+- interruption
+- reversal or retargeting
+- spatial continuity
+- boundary feedback
+- repeated-use comfort
 
-## Presentation-rhythm review
+Do not require gesture physics for ordinary forms or non-manipulative interfaces.
+
+## Motion causality
+
+Trigger at least one unrelated state change that should not replay a meaningful transition.
+
+If a route, timeline, relationship trace, or other meaningful motion replays only because a broad render rebuilt the element, fix state or animation ownership.
+
+## Presentation rhythm
 
 At real scale inspect:
 
-- first-viewport information value
-- empty/dead regions
-- whether density is bought with microtype
-- whether body/reading text remains comfortable
+- information value in the first working viewport
+- dead regions
+- text-size distribution
+- body/reading comfort
 - repeated typographic roles
-- spacing cadence
+- density by region
 - desktop versus mobile information priority
 
-If most visible working copy is around 12px or smaller, investigate rather than assuming dense UI requires it.
+A high small-text ratio is advisory evidence, not automatic failure.
 
-Read `presentation-rhythm.md`.
+## Cross-product recurrence
 
-## Interaction causality review
+When an actual comparison corpus is available, describe structural, visual-material, typography, semantic-component, interaction, motion-trigger, and responsive similarities.
 
-For any meaningful motion or transformation, trigger at least one unrelated state change that should **not** replay it.
+Similarity is not a quality score. Ask whether it is product-justified and harmful.
 
-Examples:
-
-- saving a note should not redraw an unchanged route
-- toggling Saved should not replay a timeline transition if time context did not change
-- opening unrelated detail should not re-run a relationship trace that already settled
-
-If motion replays because a broad render function rebuilt the element rather than because the represented state changed, fix the state/animation ownership.
-
-For spatial or time-based domain objects that users repeatedly edit, test whether at least one direct-manipulation path is appropriate.
-
-If every edit is routed through buttons/selects/forms, confirm that this is deliberate rather than implementation convenience. Keep precise control alternatives and keyboard/touch access.
-
-## Behavioral silhouette review
-
-Describe only the mechanics of the product, ignoring visual styling.
-
-Compare with unrelated recent work when available.
-
-If several products share essentially the same hover, selection, detail, route, and mobile interaction mechanics, return to interaction-concept exploration.
-
-Read `experience-dynamics.md`.
-
-## Cross-product visual-world review
-
-When unrelated recent work is available, compare the current product's material sentence against it.
-
-Describe only:
-
-- surface/material metaphor
-- color temperature and contrast
-- typography voice
-- borders/rules/elevation
-- imagery/texture strategy
-- accent logic
-
-If essentially the same visual-world description fits three unrelated products, return to Visual Direction before polishing.
-
-Do not fix this by swapping accent hue while preserving the same paper/dark/neon/glass/material system.
-
-## Structural and silhouette review
-
-For open-direction substantial work, inspect one visually simplified representation before final polish.
-
-Possible methods:
-
-- grayscale screenshot
-- temporary removal of shadows/radii/background fills
-- zoomed-out screenshot
-- quick wireframe capture
-
-Ask whether the domain still shapes the page when styling is stripped away.
-
-If unrelated work has the same hero/right-rail/card geometry, go back to Structural Direction.
-
-## Care/detail review
-
-Inspect at 100% scale, not only full-page fit.
-
-Check:
-
-- font rendering and wrapping
-- icon alignment
-- control geometry
-- selected/hover/focus behavior
-- image crops
-- dividers
-- empty/loading/error states
-- content density
-- touch targets
-- context preservation when opening detail
-- whether utility surfaces share the same craft level
-
-A screenshot that looks fine at 25% zoom can still feel careless in real use.
+When no comparison corpus is available, mark recurrence as not verified.
 
 ## Honesty
 
-If no rendered browser is available:
-
-- inspect source and available snapshots
-- do not claim visual/browser verification
-- state the limitation
-
-If performance was observed but not measured, say observed.
+If browser execution, auth, fixtures, or a required state are unavailable, mark the check blocked or not verified. Do not claim visual or interaction validation from source alone.

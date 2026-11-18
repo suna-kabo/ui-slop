@@ -1,0 +1,19 @@
+{
+  "name": "ui-slop",
+  "version": "2.0.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-first UI design skill tooling for product-specific interfaces.",
+  "bin": {
+    "ui-slop": "./tools/ui-slop.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}

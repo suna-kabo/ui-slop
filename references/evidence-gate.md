@@ -1,67 +1,96 @@
 # Evidence Gate
 
-Run this before the Taste Gate.
+Run this before qualitative taste review.
 
-Objective failures block completion even when the design looks good.
+The gate separates verifiable failure from measured risk and neutral evidence.
 
-## Blockers
+## Classification model
 
-Treat these as material failures when applicable:
+### hard_failure
 
-- broken core action
-- route/history regression
-- lost data or incorrect domain output
-- inaccessible core control
-- missing accessible name
-- invisible keyboard focus
-- modal focus lost or not restored
-- critical content/action clipped at a supported viewport
-- missing required loading/error/recovery state
-- critical meaning carried only by color
-- required contrast failure
-- severe scroll/render/input lag introduced by the design
-- responsive representation that makes a required task impossible
-- mobile input behavior that prevents normal use
+Use only when a specified product requirement or independently verifiable applicable standard fails in an executed state.
+
+Examples:
+
+- core action cannot be completed
+- required route or history behavior breaks
+- required saved state is lost
+- required control is unreachable by its supported input path
+- interactive control lacks an accessible name when a name is required
+- critical content or action is clipped at a supported viewport
+- required recovery path is absent
+- runtime exception breaks the task
+- applicable required contrast or accessibility criterion is measured and fails
+
+Every hard failure should record reproduction and evidence.
+
+### advisory
+
+Use for measured or observed patterns that may cause a problem but require product-specific judgment.
+
+Examples:
+
+- large share of visible text at small sizes
+- repeated small uppercase labels
+- unusually small target geometry where standards include exceptions
+- repeated cards, pills, or hover treatments
+- motion replay after a state change that may be unrelated
+- weak-looking affordance
+- unusual whitespace or density
+- cross-product visual similarity
+
+Advisory does not block by itself.
+
+### evidence_only
+
+Use for neutral inventory with no automatic quality verdict:
+
+- typography distribution
+- component counts
+- palette and material tokens
+- interaction trace
+- animation inventory
+- focus sequence
+- spacing or geometry measurements
+- responsive state comparison
+
+### blocked
+
+Use when required evidence could not be executed or observed because of missing auth, unstable build, unavailable browser, unsupported platform, inaccessible fixture, or another explicit limitation.
+
+Unknown is not pass.
 
 ## Evidence versus preference
 
-These are not objective failures by themselves:
+Do not turn personal preference into deterministic correctness.
 
-- you prefer a smaller radius
-- you prefer a different font
-- you prefer denser spacing
-- you dislike the brand color
-- you would have used a sidebar
+A font, radius, density, palette, navigation pattern, or familiar component is not wrong solely because another reviewer would choose differently.
 
-Raise them in the Taste Gate only when they undermine the thesis, workflow, or product specificity.
+A familiar pattern may be correct when it reduces error, onboarding cost, or platform inconsistency.
 
 ## Verification matrix
 
-For substantial web work, record what was actually checked:
+For substantial work, record the actual status of applicable checks:
 
-| Area | Evidence |
+| Area | Status examples |
 | --- | --- |
-| Core flows | operated / automated / not verified |
-| Keyboard | operated / not verified |
-| Focus | inspected / not verified |
-| Contrast | measured / not verified |
-| 200% zoom | inspected / not verified |
-| Narrow width | inspected / not verified |
-| Reduced motion | inspected / not verified |
-| Loading/error/empty | inspected / not applicable / not verified |
-| Performance | measured / observed / not verified |
-| Browser console | clean / findings / not checked |
+| Core flows | operated / automated / blocked / not verified |
+| Keyboard | operated / blocked / not verified |
+| Focus | inspected / measured / blocked / not verified |
+| Contrast | measured / blocked / not verified |
+| Zoom or text scaling | inspected / blocked / not verified |
+| Narrow width | inspected / blocked / not verified |
+| Reduced motion | inspected / not applicable / blocked |
+| Required states | inspected / not applicable / blocked |
+| Performance | measured / observed / blocked / not verified |
+| Console/runtime | clean / findings / blocked / not checked |
 
-Never upgrade "observed" to "measured."
+Never upgrade observed to measured.
 
-## Severity
+## Completion
 
-Use a simple scale:
+Fix hard failures before claiming completion.
 
-- **Blocker**: core task, access, correctness, or supported viewport fails
-- **Major**: serious usability or consistency issue with a workaround
-- **Minor**: polish or isolated friction
+Advisories should be resolved, accepted with a product reason, or left explicitly open. Evidence-only measurements remain available to the independent reviewer.
 
-Fix Blockers before completion.
-Major findings should normally be fixed in the same substantial UI task.
-Minor findings should not trigger endless polishing.
+Use `review-protocol.md` for independent review and `evidence-harness.md` when the P0 tooling is available.

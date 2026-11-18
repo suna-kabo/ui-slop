@@ -1,112 +1,151 @@
-# UI Slop v1.9 validation report
+# UI Slop v2 P0 validation report
 
-## Purpose
+## Scope
 
-v1.9 is the final planned 1.x cleanup release.
+This branch is an implementation experiment, not a claim that v2 is already better than Impeccable.
 
-It does not introduce a new UI layer. It closes the remaining repeated convergence issues found after validating v1.8 across unrelated product domains.
+P0 intentionally limits the build to:
 
-## Evidence basis
+- compressed runtime router
+- real-content-first structural guidance
+- compact interaction contracts
+- Behavioral Craft inside Experience Dynamics
+- small browser evidence harness
+- deterministic/advisory/evidence-only finding separation
+- evidence-first independent review protocol
+- reproducible benchmark protocol
 
-The release is based on:
+`compare`, `lab`, and `learn` are not implemented as P0 commands.
 
-- v1.6 controlled multi-skill benchmark
-- v1.6.1 continuity probe
-- v1.7 Task Continuity samples
-- v1.8 Fieldnote comparative interaction audit
-- v1.8 adversarial research benchmark
-- v1.8 Natural Travel benchmark
-- v1.8 Natural Creative benchmark
-- v1.8 Natural Operations benchmark
-- cross-product recurrence analysis across Research / Travel / Creative / Operations
+## Router reduction
 
-See `evidence/natural-cross-product-audit-v1.9.md`.
+v1.9 SKILL.md:
 
-## What the four-domain audit validated
+- 479 lines
+- 22,171 bytes in the candidate branch tree
 
-### Interaction topology
+v2 P0 SKILL.md:
 
-Research, Travel, Creative, and Operations use materially different interaction structures.
+- 254 lines
+- 11,688 bytes
 
-The original v1.7 small animation/effect vocabulary is not recurring across these outputs.
+This is approximately a 47% byte reduction while retaining routing, product contract, structural reasoning, visual direction, Presentation Rhythm, Experience Dynamics, Task Continuity, Evidence Gate, AI Fingerprint Gate, and Taste Gate.
 
-### Presentation Rhythm
+The reduction is a candidate hypothesis. It still requires the predeclared v1.9-versus-v2 ablation before claiming better instruction efficiency.
 
-Fresh rendered measurements show materially improved readable density, especially in Travel, Creative and Operations.
+## Unit tests
 
-Keep the v1.8 Presentation Rhythm model.
+Command:
 
-### Task Continuity
+```bash
+npm test
+```
 
-Selection, nested detail, Back/return and persisted state remain strong across the evaluated products.
+Result:
 
-Keep Task Continuity unchanged.
+- 4 tests passed
+- 0 failed
 
-## Remaining systemic issue
+Covered:
 
-All four recent UI Slop outputs converge visually on a similar material world despite unrelated domains.
+- scenario validation
+- unknown action rejection
+- required locator validation
+- project context observation
+- hard failure versus advisory separation
+- scenario assertion classification
 
-Representative CSS tokens:
+## Browser evidence smoke
 
-- Research: `#f4f1ea` paper / `#15211f` ink
-- Travel: `#f4ecdd` paper / `#1f2d2b` ink
-- Creative: `#f3efe5` paper / `#1c1c1b` ink
-- Operations: `#e9e6dc` paper / `#1d2425` ink
+The execution environment blocked normal browser navigation with Chromium policy, so the harness was exercised through its local HTML-fixture mode using the installed Playwright Core fallback and system Chromium.
 
-The layouts differ, so a silhouette-only gate does not catch this.
+Good fixture:
 
-v1.9 therefore adds a **visual-material / second-order convergence** check.
+- one desktop viewport
+- normal and reduced-motion variants
+- interactive state change
+- screenshot capture
+- focus walk
+- metrics
+- evidence bundle validation
+- 0 hard failures
 
-## Narrow v1.9 changes
+Broken fixture deliberately included:
 
-Updated:
+- runtime exception
+- page-wide horizontal overflow at 390px
+- all visible text at 11px
+- eight uppercase micro-labels
+- 16px interactive target
 
-- `SKILL.md`
-- `references/visual-direction.md`
-- `references/ai-fingerprint-gate.md`
-- `references/browser-qa.md`
-- `references/craft-floor.md`
-- `README.md`
-- `CHANGELOG.md`
+Observed classification:
 
-Added:
+- 2 hard failures: runtime exception, root horizontal overflow
+- advisories: microtype-heavy, uppercase micro-label recurrence, small target geometry
+- evidence-only: text-size distribution, interaction geometry, animation inventory, ARIA coverage state
 
-- `evidence/natural-cross-product-audit-v1.9.md`
+This is the intended separation. Aesthetic proxies did not block the run.
 
-## QA safeguards added
+## Evidence bundle validation
 
-- visual material sentence comparison across unrelated recent work
-- layout-explanation copy test
-- direct-manipulation opportunity review for spatial/time-based objects
-- meaningful-motion replay test on unrelated state changes
+The generated good fixture bundle passed checksum and manifest validation.
 
-## What was deliberately not changed
+Each run contains:
 
-- no fixed visual palette
-- no named aesthetic target
-- no mandatory dark/light mode
-- no fixed font family
-- no new animation timing/easing recipe
-- no Charles UX Animation recipes imported
-- no Task Continuity rewrite
-- no Presentation Rhythm rewrite
-- no Experience Dynamics rewrite
+- manifest
+- findings
+- review packet
+- checksums
+- screenshots
+- ARIA evidence or explicit unsupported coverage
+- focus trace
+- event trace
+- metrics
 
-## Package validation
+## ARIA coverage limitation
 
-The release package must pass:
+The local fallback Playwright Core available in the execution environment predates `page.ariaSnapshotJSON()`. The harness therefore recorded ARIA JSON coverage as evidence-only unavailable rather than silently passing it.
 
-- exactly one `SKILL.md`
-- valid YAML frontmatter with `name` and `description`
-- every reference linked from `SKILL.md` exists
-- clean runtime package contains only `SKILL.md`, `LICENSE`, and `references/`
-- full package contains docs and evidence
-- no benchmark app/screenshots are bundled into runtime
-- no generic fixed motion recipe reintroduced
-- v1.9 evidence file included in full package only
+The repository package declares Playwright 1.63+, where the JSON ARIA snapshot API is available. This path still requires a clean install smoke in CI or another environment before v2 P0 can be called release-ready.
 
-## Final validation status
+## Dependency-install limitation
 
-Source/package validation: **PASS** after packaging checks.
+The environment's npm install attempt timed out. Browser smoke used the preinstalled Playwright Core fallback instead. This validates the harness logic and graceful fallback path, but not a fresh package installation.
 
-Fresh-generation validation: one final run remains appropriate before freezing 1.x. It should test a normal product brief and verify that the visual-material convergence safeguard changes the direction without regressing interaction quality.
+A clean npm install plus browser smoke is therefore still required in CI.
+
+## No aesthetic hard-coding review
+
+P0 does not include:
+
+- industry-to-style mapping
+- palette recommendation database
+- aesthetic quality score
+- universal spacing scale
+- universal motion timing
+- universal spring values
+- default hover lift
+- fixed mobile pattern
+- originality score
+
+Current numeric heuristics are either:
+
+- objective execution constraints, or
+- advisory measurements that explicitly require human/model judgment
+
+## Next validation
+
+Before promoting v2 beyond alpha:
+
+1. clean-install test on Windows and POSIX
+2. Playwright 1.63+ ARIA JSON smoke
+3. v1.9 full-router versus compressed-v2 ablation
+4. no-skill / v1.9 / v2 / Impeccable multi-run blind benchmark
+5. false-positive fixture set for every hard detector rule
+6. independent reviewer test using immutable evidence packet
+
+## Status
+
+P0 implementation smoke: PASS with documented environment limitations.
+
+Best-in-class claim: NOT TESTED.
