@@ -172,6 +172,26 @@ test('self reviews cannot satisfy the independent-review floor and blind reviews
   assert.match(text, /must not contain condition identity/);
 });
 
+test('validation detects frozen input and benchmark config drift', async () => {
+  const root = await makeRoot();
+  const benchDir = path.join(root, 'run');
+  const config = makeConfig();
+  await prepareBenchmark(config, benchDir, { baseDir: root });
+
+  await fs.appendFile(path.join(benchDir, 'inputs', 'alpha', 'brief.md'), 'tamper');
+  let result = await validateBenchmarkDirectory(benchDir, { requireComplete: false });
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join(' '), /Frozen brief hash mismatch/);
+
+  await fs.writeFile(path.join(benchDir, 'inputs', 'alpha', 'brief.md'), '# Alpha\n', 'utf8');
+  const frozenConfig = await readJson(path.join(benchDir, 'benchmark-config.json'));
+  frozenConfig.analysis_contract = { changed_after_prepare: true };
+  await writeJson(path.join(benchDir, 'benchmark-config.json'), frozenConfig);
+  result = await validateBenchmarkDirectory(benchDir, { requireComplete: false });
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join(' '), /Benchmark config hash mismatch/);
+});
+
 test('completion rejects condition-contract or request drift', async () => {
   const root = await makeRoot();
   const benchDir = path.join(root, 'run');
