@@ -1,6 +1,6 @@
 {
   "name": "ui-slop",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0-rc.2",
   "private": true,
   "type": "module",
   "description": "Evidence-first UI design skill tooling for product-specific interfaces.",

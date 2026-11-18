@@ -6,7 +6,7 @@ import path from 'node:path';
 import { TOOL_VERSION, evaluateEvidence, inspectProject, summarizeFindings, validateScenario } from '../tools/ui-slop.mjs';
 
 test('version is release candidate', () => {
-  assert.equal(TOOL_VERSION, '2.0.0-rc.1');
+  assert.equal(TOOL_VERSION, '2.0.0-rc.2');
 });
 
 test('scenario contract validates requirements and focused workflow', () => {

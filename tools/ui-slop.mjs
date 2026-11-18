@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 
-const TOOL_VERSION = '2.0.0-rc.1';
+const TOOL_VERSION = '2.0.0-rc.2';
 const MANIFEST_SCHEMA_VERSION = 2;
 
 // ---- src/utils.mjs ----

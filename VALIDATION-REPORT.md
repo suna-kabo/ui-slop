@@ -1,12 +1,12 @@
-# UI Slop v2.0.0-rc.1 validation report
+# UI Slop v2.0.0-rc.2 validation report
 
 ## Status
 
-Engineering release-candidate validation: **PASS**
+Engineering release-candidate validation: **PENDING RC2 CI**
 
-Empirical claim that UI Slop is better than Impeccable: **NOT TESTED**
+Empirical claim that UI Slop is better than Impeccable: **NOT EXECUTED**
 
-This distinction is deliberate. The branch now has a reproducible evidence loop and cross-platform validation, but the predeclared multi-condition design benchmark has not yet been executed.
+This distinction is deliberate. RC2 makes the predeclared multi-condition benchmark executable and auditable, but the 75 generated artifacts and independent blind reviews have not yet been executed.
 
 ## Baseline
 
@@ -38,7 +38,7 @@ The default router retains:
 
 Detailed reasoning is routed through `references/module-map.md` rather than duplicated into the main skill.
 
-This compression is an engineering change, not proof of better generation quality. The v1.9 versus v2 ablation remains required.
+This compression is an engineering change, not proof of better generation quality. RC2 now predeclares the v1.9 versus compressed-v2 ablation in an executable benchmark, but the empirical ablation result remains required.
 
 ## P0 tool surface
 
@@ -134,7 +134,7 @@ Every matrix entry performs a clean dependency install, then runs:
 - SKILL/reference invariant tests
 - no-fixed-motion-recipe runtime-router invariant
 
-Final RC matrix result: **4 / 4 jobs passed**.
+The RC2 matrix must pass on Ubuntu/Windows and Node 20/22 before this report is promoted from PENDING to PASS. Benchmark integrity tests are part of the unit matrix.
 
 ### Browser integration
 
@@ -146,7 +146,7 @@ Environment:
 - pinned Playwright
 - fresh Chromium install
 
-The integration suite runs two local HTTP fixtures.
+The integration suite runs two local HTTP fixtures. The good workflow is exercised at desktop (1440×900), compact (900×700), and mobile (390×844), each under normal and reduced-motion preferences.
 
 #### Good workflow fixture
 
@@ -189,7 +189,7 @@ Expected classification:
 
 Result: **PASS**
 
-The browser job also uploads generated evidence bundles as a workflow artifact.
+The browser job also prepares and validates the frozen RC2 benchmark corpus in incomplete smoke mode, then uploads generated evidence bundles and benchmark-smoke artifacts for inspection.
 
 ## Cross-platform defects caught during validation
 
@@ -201,6 +201,27 @@ The CI loop caught and corrected several test-harness assumptions before RC:
 - one regex patch incorrectly escaped newline tokens
 
 These were test/validation defects, not hidden passes. The branch was not called release-ready until Windows/Linux and browser validation were green.
+
+
+## RC2 empirical benchmark infrastructure
+
+RC2 adds a research-only harness at `tools/benchmark.mjs`. It is intentionally not part of the public `ui-slop inspect/capture/validate` command surface.
+
+The frozen round in `research/benchmark.config.rc2.json` contains:
+
+- five unrelated product tasks
+- five conditions: no-skill, v1.9, compressed v2, v2 plus evidence loop, frozen Impeccable
+- three generation runs per condition per task
+- two independent blind reviews required per artifact
+- a frozen model/thinking/execution contract
+- SHA-256 locked briefs and fixtures
+- opaque artifact ids and a private condition key
+- completion metadata validation before scoring
+- post-review unblinding and reviewer-agreement reporting
+
+A complete round therefore requires 75 generated artifacts and 150 independent blind review records.
+
+The harness can prove protocol integrity and detect input/model drift. It cannot substitute for actual independent generation and review.
 
 ## What v2 RC deliberately does not claim
 
@@ -234,8 +255,8 @@ The claim threshold remains reproducible improvement in task continuity, grounde
 
 ## Release-candidate verdict
 
-**v2.0.0-rc.1 is complete as an engineering release candidate.**
+**v2.0.0-rc.2 is pending its final GitHub Actions validation run.**
 
-It is ready for the predeclared empirical benchmark.
+The P0 implementation now includes an executable benchmark/ablation harness and three-viewport browser verification. Once RC2 CI is green, the remaining blocker is empirical execution by isolated generators and independent reviewers.
 
 It is not yet justified to label UI Slop better than Impeccable.

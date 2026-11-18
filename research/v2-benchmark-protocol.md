@@ -118,3 +118,26 @@ This determines whether improvements come from less instruction interference, be
 ## Negative results
 
 Publish material failures and invalid comparisons. A benchmark with a missing specialist, broken tool, or incomplete run must be labeled invalid rather than scored as a normal condition.
+
+
+## Executable RC2 round
+
+The predeclared executable round is stored in `research/benchmark.config.rc2.json` and uses `tools/benchmark.mjs`.
+
+The five conditions are:
+
+1. no UI/design skill
+2. frozen UI Slop v1.9 at `588c9cb2910d3866a4c75f6ccf35a3b95d9c4058`
+3. compressed v2 router with the evidence loop disabled
+4. v2 router with the evidence loop enabled
+5. Impeccable frozen at `d41d9860b0094dcb68030657da63461212835aaa`
+
+The five corpus tasks cover investigative research, spatial/time planning, creative sequencing, operational triage, and browse/collect work.
+
+Each condition receives three independent runs per task. Each produced artifact requires two independent blind reviews. This yields 75 generated artifacts and 150 independent review records for a complete RC2 round.
+
+`prepare` freezes brief/fixture hashes and the model contract. Reviewers receive opaque artifact ids, not condition identity. `validate` rejects incomplete coverage and input/model drift. `summarize` unblinds only after reviews exist.
+
+See `research/benchmark-harness.md` for the execution procedure.
+
+The presence of this harness is not itself empirical evidence. Until isolated generation runs and independent reviews are actually completed, the superiority question remains untested.

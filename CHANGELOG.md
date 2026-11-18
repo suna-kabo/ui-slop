@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.0.0-rc.2
+
+Empirical-validation infrastructure release candidate.
+
+### Benchmark execution
+
+- added a research-only reproducible benchmark harness without expanding the public `ui-slop` command surface
+- froze model contract, task inputs, comparator revisions, randomization seed, and opaque blind artifact ids
+- added completion integrity checks for model-contract and input-hash drift
+- added structured independent review records with PASS / FAIL / BLOCKED / ADVISORY requirement outcomes
+- added post-review unblinding summaries and reviewer-agreement reporting
+- froze a five-domain corpus covering investigative research, itinerary planning, creative sequencing, operations, and browse/collect work
+- predeclared five conditions: no-skill, v1.9, compressed v2, v2 plus evidence loop, and frozen Impeccable
+- predeclared 3 runs per condition per task and 2 independent reviews per artifact
+
+### Evidence validation
+
+- expanded the good browser workflow fixture to desktop, compact, and mobile viewports
+- runs normal and reduced-motion variants at all three viewports
+- added benchmark integrity tests to the Windows/Linux Node matrix
+- added CI smoke preparation/validation of the frozen RC2 benchmark corpus
+
+### Claim boundary
+
+RC2 makes the benchmark runnable and auditable. It does not claim the 75-artifact independent empirical round has been executed, and it does not claim superiority over Impeccable.
+
 ## 2.0.0-rc.1
 
 Evidence-first release candidate.

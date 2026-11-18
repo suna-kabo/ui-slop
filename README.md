@@ -6,11 +6,11 @@ It combines a compact product-specific design-reasoning router with a small evid
 
 ## Status
 
-**v2.0.0-rc.1** is the current engineering release candidate on `v2/p0-evidence-engine`.
+**v2.0.0-rc.2** is the current engineering release candidate on `v2/p0-evidence-engine`.
 
 The frozen comparison baseline remains v1.9 on `release/v1.9-final-convergence-cleanup`.
 
-v2 RC does not claim empirical superiority over Impeccable. The predeclared benchmark in `research/v2-benchmark-protocol.md` still has to establish that.
+v2 RC does not claim empirical superiority over Impeccable. RC2 adds an executable blind benchmark harness and frozen five-domain corpus, but the independent multi-run empirical round still has to establish that.
 
 ## What v2 changes
 
@@ -171,7 +171,8 @@ The v2 branch runs:
 - Node.js 20 and 22
 - clean dependency install
 - Chromium installation
-- browser integration tests
+- browser integration tests across desktop, compact, and mobile viewports
+- benchmark-harness integrity tests plus a CI prepare/validate smoke of the frozen RC2 corpus
 - good workflow fixture with Back, persisted state, reload, normal/reduced motion, and checksum tamper detection
 - deliberately broken fixture covering runtime error, overflow, unnamed interactive control, microtype, uppercase labels, and small target geometry
 
@@ -181,14 +182,13 @@ See `VALIDATION-REPORT.md` for the exact release-candidate result.
 
 ## Benchmark discipline
 
-`research/v2-benchmark-protocol.md` predeclares comparison among:
+`research/v2-benchmark-protocol.md` defines the comparison discipline. `research/benchmark.config.rc2.json` freezes the RC2 round across five product modes and five conditions: no-skill, frozen v1.9, compressed v2 without the evidence loop, v2 with the evidence loop, and a frozen Impeccable comparator.
 
-1. no UI/design skill
-2. frozen UI Slop v1.9
-3. UI Slop v2 candidate
-4. current Impeccable
+`tools/benchmark.mjs` is research-only tooling. It freezes task inputs and model contracts, creates opaque blind artifact IDs, validates completion metadata and review coverage, and unblinds only for summary. It is intentionally not another public `ui-slop` command.
 
-The project should not claim superiority from a screenshot, a feature checklist, or one self-reviewed run.
+The RC2 round is 5 tasks × 5 conditions × 3 runs = 75 generated artifacts, with two independent blind reviews required per artifact. The repository contains the protocol and execution harness, not fabricated empirical results.
+
+See `research/benchmark-harness.md` for execution details. The project should not claim superiority from a screenshot, a feature checklist, one seed, or self-review.
 
 ## Philosophy
 

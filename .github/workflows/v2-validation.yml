@@ -36,6 +36,8 @@ jobs:
       - run: npm run test:integration
         env:
           UI_SLOP_TEST_ARTIFACT_DIR: test-artifacts
+      - run: node tools/benchmark.mjs prepare research/benchmark.config.rc2.json --out test-artifacts/benchmark-smoke
+      - run: node tools/benchmark.mjs validate test-artifacts/benchmark-smoke --allow-incomplete
       - uses: actions/upload-artifact@v4
         if: always()
         with:
