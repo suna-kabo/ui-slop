@@ -115,7 +115,7 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
     const condition = config.conditions.find((x) => x.id === item.condition_id);
     const task = config.tasks.find((x) => x.id === item.task_id);
     const frozen = frozenInputs[task.id] || {};
-    return {
+    const request = {
       schema_version:1,
       benchmark_id:config.id,
       artifact_id:item.artifact_id,
