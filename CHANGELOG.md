@@ -1,5 +1,67 @@
 # Changelog
 
+## 2.0.0-rc.1
+
+Evidence-first release candidate.
+
+### Runtime reasoning
+
+- compressed the main SKILL into a routing/product-contract core
+- formalized module ownership through `references/module-map.md`
+- added real-content-first design before structure lock
+- added compact interaction contracts
+- integrated Behavioral Craft inside Experience Dynamics
+- retained Presentation Rhythm, Task Continuity, semantic diversity, responsive transformation, and anti-convergence reasoning
+- kept familiar conventions valid when product/task justified
+- kept all aesthetic and motion decisions free of universal recipe values
+
+### Evidence tooling
+
+Promoted the P0 tool surface to:
+
+- `ui-slop inspect`
+- `ui-slop capture`
+- `ui-slop validate`
+
+Added:
+
+- evidence manifest schema v2
+- requirement-linked scenarios
+- before/after event traces
+- focus and keyboard traces
+- normal/reduced-motion capture
+- bounded accessibility-name inventory
+- runtime/console evidence
+- responsive screenshots and metrics
+- immutable scenario/brief inputs
+- checksums and tamper validation
+- evidence-first review packets
+- explicit blocked coverage
+
+`ui-slop evidence` remains a temporary compatibility alias for `capture`.
+
+### Verification
+
+Added:
+
+- Windows + Linux test matrix
+- Node 20 + 22
+- skill/reference invariant tests
+- browser integration tests with fresh Chromium
+- good multi-step workflow fixture
+- deliberately broken fixture proving hard/advisory separation
+- uploaded CI evidence bundles
+
+### Deliberately not included
+
+- no industry-to-aesthetic lookup
+- no aesthetic quality/originality score
+- no universal motion, spring, hover, radius, spacing, or mobile recipe
+- no `compare`, `lab`, or `learn` command in the RC
+
+The release candidate is an engineering milestone, not an empirical claim of superiority over Impeccable.
+
+
 ## 2.0.0-alpha.1
 
 P0 evidence-engine experiment based on the independent v1.9 systems audit.

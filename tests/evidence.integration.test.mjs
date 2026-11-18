@@ -20,6 +20,16 @@ async function withServer(html, fn) {
   }
 }
 
+const artifactRoot = process.env.UI_SLOP_TEST_ARTIFACT_DIR ? path.resolve(process.env.UI_SLOP_TEST_ARTIFACT_DIR) : null;
+
+async function makeRunRoot(prefix) {
+  if (!artifactRoot) return fs.mkdtemp(path.join(os.tmpdir(), prefix));
+  const root = path.join(artifactRoot, prefix.replace(/-+$/,''));
+  await fs.rm(root, {recursive:true, force:true});
+  await fs.mkdir(root, {recursive:true});
+  return root;
+}
+
 const goodHtml = '<!doctype html><html><head><style>' +
   'body{font:16px system-ui;margin:0;padding:24px}.panel{max-width:640px}.detail[hidden]{display:none}' +
   '@media(prefers-reduced-motion:no-preference){.detail{transition:opacity .15s}}' +
@@ -42,7 +52,7 @@ const brokenHtml = '<!doctype html><html><head><style>body{margin:0;width:900px;
 
 test('browser evidence captures workflow, persistence, reduced motion and validates checksums', async () => {
   await withServer(goodHtml, async (url) => {
-    const out = await fs.mkdtemp(path.join(os.tmpdir(),'ui-slop-run-'));
+    const out = await makeRunRoot('good-run-');
     const runDir = path.join(out,'run');
     const scenario = {
       id:'good-flow',
@@ -86,7 +96,7 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
 
 test('broken fixture produces objective failures without turning style metrics into blockers', async () => {
   await withServer(brokenHtml, async (url) => {
-    const out = await fs.mkdtemp(path.join(os.tmpdir(),'ui-slop-broken-'));
+    const out = await makeRunRoot('broken-run-');
     const result = await runEvidence({
       url,
       outDir:path.join(out,'run'),

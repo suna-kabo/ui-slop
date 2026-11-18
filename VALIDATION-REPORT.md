@@ -1,151 +1,241 @@
-# UI Slop v2 P0 validation report
-
-## Scope
-
-This branch is an implementation experiment, not a claim that v2 is already better than Impeccable.
-
-P0 intentionally limits the build to:
-
-- compressed runtime router
-- real-content-first structural guidance
-- compact interaction contracts
-- Behavioral Craft inside Experience Dynamics
-- small browser evidence harness
-- deterministic/advisory/evidence-only finding separation
-- evidence-first independent review protocol
-- reproducible benchmark protocol
-
-`compare`, `lab`, and `learn` are not implemented as P0 commands.
-
-## Router reduction
-
-v1.9 SKILL.md:
-
-- 479 lines
-- 22,171 bytes in the candidate branch tree
-
-v2 P0 SKILL.md:
-
-- 254 lines
-- 11,688 bytes
-
-This is approximately a 47% byte reduction while retaining routing, product contract, structural reasoning, visual direction, Presentation Rhythm, Experience Dynamics, Task Continuity, Evidence Gate, AI Fingerprint Gate, and Taste Gate.
-
-The reduction is a candidate hypothesis. It still requires the predeclared v1.9-versus-v2 ablation before claiming better instruction efficiency.
-
-## Unit tests
-
-Command:
-
-```bash
-npm test
-```
-
-Result:
-
-- 4 tests passed
-- 0 failed
-
-Covered:
-
-- scenario validation
-- unknown action rejection
-- required locator validation
-- project context observation
-- hard failure versus advisory separation
-- scenario assertion classification
-
-## Browser evidence smoke
-
-The execution environment blocked normal browser navigation with Chromium policy, so the harness was exercised through its local HTML-fixture mode using the installed Playwright Core fallback and system Chromium.
-
-Good fixture:
-
-- one desktop viewport
-- normal and reduced-motion variants
-- interactive state change
-- screenshot capture
-- focus walk
-- metrics
-- evidence bundle validation
-- 0 hard failures
-
-Broken fixture deliberately included:
-
-- runtime exception
-- page-wide horizontal overflow at 390px
-- all visible text at 11px
-- eight uppercase micro-labels
-- 16px interactive target
-
-Observed classification:
-
-- 2 hard failures: runtime exception, root horizontal overflow
-- advisories: microtype-heavy, uppercase micro-label recurrence, small target geometry
-- evidence-only: text-size distribution, interaction geometry, animation inventory, ARIA coverage state
-
-This is the intended separation. Aesthetic proxies did not block the run.
-
-## Evidence bundle validation
-
-The generated good fixture bundle passed checksum and manifest validation.
-
-Each run contains:
-
-- manifest
-- findings
-- review packet
-- checksums
-- screenshots
-- ARIA evidence or explicit unsupported coverage
-- focus trace
-- event trace
-- metrics
-
-## ARIA coverage limitation
-
-The local fallback Playwright Core available in the execution environment predates `page.ariaSnapshotJSON()`. The harness therefore recorded ARIA JSON coverage as evidence-only unavailable rather than silently passing it.
-
-The repository package declares Playwright 1.63+, where the JSON ARIA snapshot API is available. This path still requires a clean install smoke in CI or another environment before v2 P0 can be called release-ready.
-
-## Dependency-install limitation
-
-The environment's npm install attempt timed out. Browser smoke used the preinstalled Playwright Core fallback instead. This validates the harness logic and graceful fallback path, but not a fresh package installation.
-
-A clean npm install plus browser smoke is therefore still required in CI.
-
-## No aesthetic hard-coding review
-
-P0 does not include:
-
-- industry-to-style mapping
-- palette recommendation database
-- aesthetic quality score
-- universal spacing scale
-- universal motion timing
-- universal spring values
-- default hover lift
-- fixed mobile pattern
-- originality score
-
-Current numeric heuristics are either:
-
-- objective execution constraints, or
-- advisory measurements that explicitly require human/model judgment
-
-## Next validation
-
-Before promoting v2 beyond alpha:
-
-1. clean-install test on Windows and POSIX
-2. Playwright 1.63+ ARIA JSON smoke
-3. v1.9 full-router versus compressed-v2 ablation
-4. no-skill / v1.9 / v2 / Impeccable multi-run blind benchmark
-5. false-positive fixture set for every hard detector rule
-6. independent reviewer test using immutable evidence packet
+# UI Slop v2.0.0-rc.1 validation report
 
 ## Status
 
-P0 implementation smoke: PASS with documented environment limitations.
+Engineering release-candidate validation: **PASS**
 
-Best-in-class claim: NOT TESTED.
+Empirical claim that UI Slop is better than Impeccable: **NOT TESTED**
+
+This distinction is deliberate. The branch now has a reproducible evidence loop and cross-platform validation, but the predeclared multi-condition design benchmark has not yet been executed.
+
+## Baseline
+
+v2 RC is based on the frozen v1.9 candidate:
+
+`588c9cb2910d3866a4c75f6ccf35a3b95d9c4058`
+
+The v1.9 baseline remains available independently for ablation.
+
+## Runtime brain
+
+v2 keeps the strongest v1.9 reasoning while reducing default instruction load.
+
+The default router retains:
+
+- protected product contract
+- real-content-first modeling
+- domain-shaped structure
+- product-grounded visual direction
+- Presentation Rhythm
+- Task Continuity
+- Experience Dynamics
+- Behavioral Craft
+- interaction contracts
+- semantic diversity
+- responsive transformation
+- anti-convergence reasoning
+- Evidence Gate / Taste Gate separation
+
+Detailed reasoning is routed through `references/module-map.md` rather than duplicated into the main skill.
+
+This compression is an engineering change, not proof of better generation quality. The v1.9 versus v2 ablation remains required.
+
+## P0 tool surface
+
+Only three public capabilities are shipped:
+
+- `inspect`
+- `capture`
+- `validate`
+
+The older `evidence` verb remains a temporary compatibility alias for `capture`.
+
+No `compare`, `lab`, or `learn` command is part of v2 RC.
+
+## Evidence schema
+
+Manifest schema: **v2**
+
+Each evidence bundle stores:
+
+- immutable scenario input
+- optional brief input
+- manifest with tool/browser/runtime metadata
+- viewport/media run status
+- screenshots
+- bounded accessibility inventory
+- metrics
+- focus trace
+- event-sourced interaction trace
+- findings
+- evidence-first review packet
+- checksums
+
+Trace events record before/after orientation state rather than an unbounded DOM dump.
+
+`validate` checks required files, schema version, finding classifications, completed-run artifacts, and checksums.
+
+## Finding model
+
+### hard_failure
+
+Blocks only when required behavior or a supported independently verifiable condition fails.
+
+Current hard checks:
+
+- failed scenario assertion
+- page runtime exception
+- root horizontal overflow when horizontal scrolling is disallowed
+- visible enabled interactive role with no observed accessible name
+
+### advisory
+
+Current examples:
+
+- console error without proven task impact
+- high share of visible text at 12px or below
+- repeated small uppercase labels
+- small target geometry where applicability/exceptions require judgment
+
+### evidence_only
+
+Current examples:
+
+- typography distribution
+- interaction geometry
+- accessibility inventory coverage
+- animation inventory
+
+### blocked
+
+Required evidence that could not be executed or observed.
+
+No aesthetic count, similarity score, or style frequency can automatically become a hard failure.
+
+## Automated validation
+
+GitHub Actions validation covers:
+
+### Unit / skill matrix
+
+Operating systems:
+
+- Ubuntu
+- Windows
+
+Node versions:
+
+- 20
+- 22
+
+Every matrix entry performs a clean dependency install, then runs:
+
+- tool unit tests
+- SKILL/reference invariant tests
+- no-fixed-motion-recipe runtime-router invariant
+
+Final RC matrix result: **4 / 4 jobs passed**.
+
+### Browser integration
+
+Environment:
+
+- Ubuntu
+- Node 20
+- clean dependency install
+- pinned Playwright
+- fresh Chromium install
+
+The integration suite runs two local HTTP fixtures.
+
+#### Good workflow fixture
+
+Validates:
+
+- detail selection
+- URL/history transition
+- persisted watch state
+- Back behavior
+- reload persistence
+- root overflow assertion
+- normal motion preference
+- reduced-motion preference
+- evidence bundle creation
+- manifest schema v2
+- checksum validation
+- checksum tamper detection
+
+Result: **PASS**
+
+#### Deliberately broken fixture
+
+Contains:
+
+- page runtime exception
+- root horizontal overflow
+- unnamed visible button
+- microtype-heavy text
+- repeated small uppercase labels
+- small interactive target
+
+Expected classification:
+
+- runtime exception: hard failure
+- root overflow: hard failure
+- unnamed interactive: hard failure
+- microtype: advisory
+- uppercase-label recurrence: advisory
+- small target geometry: advisory/evidence, not automatic blocker
+
+Result: **PASS**
+
+The browser job also uploads generated evidence bundles as a workflow artifact.
+
+## Cross-platform defects caught during validation
+
+The CI loop caught and corrected several test-harness assumptions before RC:
+
+- module-map parsing accidentally treated a prose mention of `SKILL.md` as a reference file
+- file URL path handling was not Windows-safe
+- frontmatter tests initially assumed LF line endings
+- one regex patch incorrectly escaped newline tokens
+
+These were test/validation defects, not hidden passes. The branch was not called release-ready until Windows/Linux and browser validation were green.
+
+## What v2 RC deliberately does not claim
+
+It does not prove:
+
+- superior visual taste
+- better output than Impeccable
+- cross-product recurrence detection as an objective quality metric
+- universal accessibility coverage
+- full assistive-technology behavior
+- every framework/route can be inferred statically
+- advisory thresholds are aesthetic truths
+
+The accessibility inventory is deliberately bounded and does not replace the browser accessibility tree, assistive technologies, or applicable standards.
+
+## Remaining research validation
+
+Before claiming UI Slop is better than Impeccable, execute `research/v2-benchmark-protocol.md`:
+
+1. no-skill baseline
+2. frozen v1.9
+3. v2 compressed reasoning without evidence loop
+4. v2 with evidence loop
+5. current Impeccable
+6. same model/settings/brief/fixtures within each round
+7. multiple runs/seeds
+8. blind first-pass review
+9. publish invalid and negative results
+
+The claim threshold remains reproducible improvement in task continuity, grounded product specificity, or interaction quality without material regression in accessibility, technical craft, runtime cost, or developer experience.
+
+## Release-candidate verdict
+
+**v2.0.0-rc.1 is complete as an engineering release candidate.**
+
+It is ready for the predeclared empirical benchmark.
+
+It is not yet justified to label UI Slop better than Impeccable.
