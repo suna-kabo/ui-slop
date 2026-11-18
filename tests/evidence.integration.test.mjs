@@ -60,7 +60,11 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
         {id:'inspect',text:'User can inspect a job and return.'},
         {id:'persist',text:'Watch state survives reload.'}
       ],
-      viewports:[{name:'mobile',width:390,height:844}],
+      viewports:[
+        {name:'desktop',width:1440,height:900},
+        {name:'compact',width:900,height:700},
+        {name:'mobile',width:390,height:844}
+      ],
       mediaVariants:['normal','reduced'],
       keyboardWalk:{maxStops:12},
       steps:[
@@ -78,14 +82,18 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
     const result = await runEvidence({url,scenario,outDir:runDir,briefText:'Keep job context and persisted watch state.'});
     assert.equal(result.findings.filter((f)=>f.classification==='hard_failure').length,0);
     assert.equal(result.findings.filter((f)=>f.classification==='blocked').length,0);
-    assert.equal(result.runs.length,2);
-    assert.equal(result.runs.find((r)=>r.media==='reduced').metrics.media.prefersReducedMotion,true);
+    assert.equal(result.runs.length,6);
+    assert.deepEqual([...new Set(result.runs.map((r)=>r.viewport.name))].sort(),['compact','desktop','mobile']);
+    const reducedRuns = result.runs.filter((r)=>r.media==='reduced');
+    assert.equal(reducedRuns.length,3);
+    assert.ok(reducedRuns.every((r)=>r.metrics.media.prefersReducedMotion===true));
     const validated = await validateBundle(runDir);
     assert.equal(validated.ok,true, validated.errors.join('\n'));
 
     const manifest = JSON.parse(await fs.readFile(path.join(runDir,'manifest.json'),'utf8'));
     assert.equal(manifest.schema_version,2);
     assert.equal(manifest.inputs.brief,'inputs/brief.txt');
+    assert.deepEqual([...new Set(manifest.runs.map((r)=>r.viewport.name))].sort(),['compact','desktop','mobile']);
 
     await fs.appendFile(path.join(runDir,'inputs','brief.txt'),'tamper');
     const tampered = await validateBundle(runDir);
