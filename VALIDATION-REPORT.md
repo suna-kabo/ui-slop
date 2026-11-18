@@ -2,7 +2,7 @@
 
 ## Status
 
-Engineering release-candidate validation: **PENDING RC2 CI**
+Engineering release-candidate validation: **PASS**
 
 Empirical claim that UI Slop is better than Impeccable: **NOT EXECUTED**
 
@@ -134,7 +134,7 @@ Every matrix entry performs a clean dependency install, then runs:
 - SKILL/reference invariant tests
 - no-fixed-motion-recipe runtime-router invariant
 
-The RC2 matrix must pass on Ubuntu/Windows and Node 20/22 before this report is promoted from PENDING to PASS. Benchmark integrity tests are part of the unit matrix.
+Final RC2 unit/skill matrix result: **4 / 4 jobs passed**. Benchmark integrity tests are part of every unit matrix entry.
 
 ### Browser integration
 
@@ -253,10 +253,38 @@ Before claiming UI Slop is better than Impeccable, execute `research/v2-benchmar
 
 The claim threshold remains reproducible improvement in task continuity, grounded product specificity, or interaction quality without material regression in accessibility, technical craft, runtime cost, or developer experience.
 
+## Validation provenance
+
+Validated implementation head:
+
+`27dba7a662037da37602fe67d6db35d16c40c113`
+
+GitHub Actions run:
+
+`44349144092`
+
+Result: **5 / 5 jobs passed**
+
+The browser job completed:
+
+- six good-workflow variants: desktop, compact, and mobile under normal and reduced-motion preferences
+- deliberately broken fixture classification checks
+- RC2 benchmark prepare smoke for all 75 planned artifact slots
+- incomplete-mode benchmark integrity validation
+- evidence artifact upload
+
+Uploaded artifact:
+
+- name: `ui-slop-browser-evidence`
+- artifact id: `14448061156`
+- digest: `sha256:b62bdbab2d960aa91b3c69ab2e5e3da84b94dd56324cf262f173cb04be968c5f`
+
 ## Release-candidate verdict
 
-**v2.0.0-rc.2 is pending its final GitHub Actions validation run.**
+**v2.0.0-rc.2 is complete as an engineering release candidate.**
 
-The P0 implementation now includes an executable benchmark/ablation harness and three-viewport browser verification. Once RC2 CI is green, the remaining blocker is empirical execution by isolated generators and independent reviewers.
+The P0 implementation now includes the compressed runtime router, browser evidence loop, detector separation, independent-review protocol, three-viewport verification, and an executable blinded benchmark/ablation harness.
+
+The remaining blocker is empirical execution by isolated generators and independent reviewers. The repository is ready to collect that evidence without pretending the evidence already exists.
 
 It is not yet justified to label UI Slop better than Impeccable.
