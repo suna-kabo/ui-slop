@@ -91,6 +91,12 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
       for (let run = 1; run <= config.runs_per_condition; run += 1) {
         const seed = hash(config.randomization_seed + '\0' + task.id + '\0' + condition.id + '\0' + run).slice(0,16);
         const artifact = 'artifact-' + hash(config.id + '\0' + task.id + '\0' + condition.id + '\0' + run + '\0' + seed).slice(0,16);
+        const conditionContractHash = hash(stable({
+          condition_id: condition.id,
+          label: condition.label,
+          instructions_ref: condition.instructions_ref || null,
+          tool_policy: condition.tool_policy || null
+        }));
         key.push({
           artifact_id:artifact,
           task_id:task.id,
@@ -98,6 +104,7 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
           run_index:run,
           generation_seed:seed,
           model_contract_hash:modelHash,
+          condition_contract_hash:conditionContractHash,
           expected_input_hash:frozenInputs[task.id] ? frozenInputs[task.id].input_hash : null
         });
       }
@@ -123,8 +130,11 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
       generation_seed:item.generation_seed,
       model_contract:config.model_contract,
       model_contract_hash:modelHash,
+      condition_contract_hash:item.condition_contract_hash,
       input_hash:item.expected_input_hash
     };
+    request.request_hash = hash(stable(request));
+    return request;
   });
 
   return {
@@ -223,6 +233,9 @@ function validateReview(review, metrics, artifactId) {
   if (artifactId && review.artifact_id !== artifactId) errors.push('Review artifact_id mismatch.');
   if (typeof review.reviewer_id !== 'string' || !review.reviewer_id.trim()) errors.push('Review requires reviewer_id.');
   if (!['independent','self'].includes(review.reviewer_role)) errors.push('reviewer_role must be independent or self.');
+  if ('condition_id' in review || 'condition_label' in review || 'instructions_ref' in review) {
+    errors.push('Blind review must not contain condition identity.');
+  }
 
   for (const metric of metrics) {
     const value = review.scores && review.scores[metric];
@@ -269,7 +282,7 @@ export async function validateBenchmarkDirectory(root, options = {}) {
 
   const artifacts = [];
   for (const item of key.artifacts || []) {
-    const result = {artifact_id:item.artifact_id,complete:false,reviews:0,errors:[]};
+    const result = {artifact_id:item.artifact_id,complete:false,reviews:0,independent_reviews:0,self_reviews:0,errors:[]};
     const completionFile = path.join(root,'artifacts',item.artifact_id,'completion.json');
 
     if (await exists(completionFile)) {
@@ -277,7 +290,16 @@ export async function validateBenchmarkDirectory(root, options = {}) {
       if (c.schema_version !== 1) result.errors.push('completion.json schema_version mismatch.');
       if (c.artifact_id !== item.artifact_id) result.errors.push('completion.json artifact_id mismatch.');
       if (c.model_contract_hash !== plan.model_contract_hash) result.errors.push('completion.json model_contract_hash mismatch.');
+      if (c.condition_contract_hash !== item.condition_contract_hash) result.errors.push('completion.json condition_contract_hash mismatch.');
       if (c.input_hash !== item.expected_input_hash) result.errors.push('completion.json input_hash does not match frozen task inputs.');
+      if (c.generation_seed !== item.generation_seed) result.errors.push('completion.json generation_seed mismatch.');
+      const requestFile = path.join(root,'private','generation-requests',item.artifact_id + '.json');
+      if (!(await exists(requestFile))) {
+        result.errors.push('Missing frozen generation request.');
+      } else {
+        const request = await readJson(requestFile);
+        if (c.request_hash !== request.request_hash) result.errors.push('completion.json request_hash mismatch.');
+      }
       if (typeof c.output_ref !== 'string' || !c.output_ref.trim()) result.errors.push('completion.json requires output_ref.');
       result.complete = result.errors.length === 0;
     } else if (requireComplete) {
@@ -294,12 +316,16 @@ export async function validateBenchmarkDirectory(root, options = {}) {
         const reviewErrors = validateReview(review, plan.metrics, item.artifact_id);
         if (review.reviewer_id !== dirent.name) reviewErrors.push('reviewer_id must match review directory name.');
         if (reviewErrors.length) result.errors.push('Review ' + dirent.name + ': ' + reviewErrors.join(' '));
-        else result.reviews += 1;
+        else {
+          result.reviews += 1;
+          if (review.reviewer_role === 'independent') result.independent_reviews += 1;
+          else result.self_reviews += 1;
+        }
       }
     }
 
-    if (requireComplete && result.reviews < plan.reviewers_per_artifact) {
-      result.errors.push('Expected at least ' + plan.reviewers_per_artifact + ' valid reviews, found ' + result.reviews + '.');
+    if (requireComplete && result.independent_reviews < plan.reviewers_per_artifact) {
+      result.errors.push('Expected at least ' + plan.reviewers_per_artifact + ' independent reviews, found ' + result.independent_reviews + '.');
     }
     artifacts.push(result);
   }
@@ -307,7 +333,7 @@ export async function validateBenchmarkDirectory(root, options = {}) {
   for (const item of artifacts) for (const e of item.errors) errors.push(item.artifact_id + ': ' + e);
   return {
     ok:errors.length===0,
-    complete:artifacts.every((x)=>x.complete && x.reviews>=plan.reviewers_per_artifact),
+    complete:artifacts.every((x)=>x.complete && x.independent_reviews>=plan.reviewers_per_artifact),
     errors,
     artifacts,
     expected_artifacts:plan.artifact_count
