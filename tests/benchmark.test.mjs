@@ -60,11 +60,15 @@ async function writeJson(file, value) {
 }
 
 async function completeArtifact(benchDir, item, modelContractHash) {
+  const request = await readJson(path.join(benchDir, 'private', 'generation-requests', item.artifact_id + '.json'));
   await writeJson(path.join(benchDir, 'artifacts', item.artifact_id, 'completion.json'), {
     schema_version: 1,
     artifact_id: item.artifact_id,
     model_contract_hash: modelContractHash,
+    condition_contract_hash: item.condition_contract_hash,
     input_hash: item.expected_input_hash,
+    generation_seed: item.generation_seed,
+    request_hash: request.request_hash,
     output_ref: 'artifacts/' + item.artifact_id + '/output'
   });
 }
@@ -143,6 +147,49 @@ test('prepared benchmark locks task inputs and completion requires enough valid 
   assert.equal(complete.ok, true, complete.errors.join('\n'));
   assert.equal(complete.complete, true);
   assert.equal(complete.expected_artifacts, 8);
+});
+
+test('self reviews cannot satisfy the independent-review floor and blind reviews reject condition identity', async () => {
+  const root = await makeRoot();
+  const benchDir = path.join(root, 'run');
+  const config = makeConfig();
+  const plan = await prepareBenchmark(config, benchDir, { baseDir: root });
+  const item = plan.private.condition_key[0];
+  await completeArtifact(benchDir, item, plan.model_contract_hash);
+
+  const selfReview = reviewFor(item, 'self-reviewer', item.condition_id);
+  selfReview.reviewer_role = 'self';
+  await writeJson(path.join(benchDir, 'reviews', 'self-reviewer', item.artifact_id + '.json'), selfReview);
+
+  const leakedReview = reviewFor(item, 'reviewer-a', item.condition_id);
+  leakedReview.condition_id = item.condition_id;
+  await writeJson(path.join(benchDir, 'reviews', 'reviewer-a', item.artifact_id + '.json'), leakedReview);
+
+  const result = await validateBenchmarkDirectory(benchDir);
+  assert.equal(result.ok, false);
+  const text = result.errors.join(' ');
+  assert.match(text, /independent reviews/);
+  assert.match(text, /must not contain condition identity/);
+});
+
+test('completion rejects condition-contract or request drift', async () => {
+  const root = await makeRoot();
+  const benchDir = path.join(root, 'run');
+  const config = makeConfig();
+  const plan = await prepareBenchmark(config, benchDir, { baseDir: root });
+  const item = plan.private.condition_key[0];
+  await completeArtifact(benchDir, item, plan.model_contract_hash);
+
+  const completionFile = path.join(benchDir, 'artifacts', item.artifact_id, 'completion.json');
+  const completion = await readJson(completionFile);
+  completion.condition_contract_hash = 'wrong';
+  completion.request_hash = 'wrong';
+  await writeJson(completionFile, completion);
+
+  const result = await validateBenchmarkDirectory(benchDir, { requireComplete: false });
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join(' '), /condition_contract_hash mismatch/);
+  assert.match(result.errors.join(' '), /request_hash mismatch/);
 });
 
 test('summary unblinds only after review and reports reviewer agreement', async () => {
