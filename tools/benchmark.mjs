@@ -84,6 +84,7 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
   validateBenchmarkConfig(config);
   const metrics = config.metrics || ['task_continuity','product_specificity','interaction_quality','information_design','technical_quality'];
   const modelHash = hash(stable(config.model_contract));
+  const configHash = hash(stable(config));
   const key = [];
 
   for (const task of config.tasks) {
@@ -130,6 +131,7 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
       generation_seed:item.generation_seed,
       model_contract:config.model_contract,
       model_contract_hash:modelHash,
+      config_hash:configHash,
       condition_contract_hash:item.condition_contract_hash,
       input_hash:item.expected_input_hash
     };
@@ -142,6 +144,7 @@ export function buildBenchmarkPlan(config, frozenInputs = {}) {
     benchmark_id:config.id,
     artifact_count:key.length,
     model_contract_hash:modelHash,
+    config_hash:configHash,
     reviewers_per_artifact:config.reviewers_per_artifact || 2,
     metrics,
     public:{
@@ -215,6 +218,7 @@ export async function prepareBenchmark(config, outDir, options = {}) {
     schema_version:1,
     benchmark_id:config.id,
     model_contract_hash:plan.model_contract_hash,
+    config_hash:plan.config_hash,
     artifacts:plan.private.condition_key
   });
 
@@ -279,6 +283,35 @@ export async function validateBenchmarkDirectory(root, options = {}) {
 
   if (stable(queue.artifacts) !== stable(plan.public.blind_queue)) errors.push('Blind review queue does not match deterministic plan.');
   if (key.model_contract_hash !== plan.model_contract_hash) errors.push('Model contract hash mismatch.');
+  if (key.config_hash !== plan.config_hash) errors.push('Benchmark config hash mismatch.');
+
+  for (const [taskId, locked] of Object.entries(inputLock.tasks || {})) {
+    if (!locked || typeof locked !== 'object') {
+      errors.push('Invalid input lock for task ' + taskId + '.');
+      continue;
+    }
+    const briefPath = locked.brief_path ? path.join(root, locked.brief_path) : null;
+    if (!briefPath || !(await exists(briefPath))) {
+      errors.push('Frozen brief missing for task ' + taskId + '.');
+    } else {
+      const actual = await hashFile(briefPath);
+      if (actual !== locked.brief_sha256) errors.push('Frozen brief hash mismatch for task ' + taskId + '.');
+    }
+    if (locked.fixture_path) {
+      const fixturePath = path.join(root, locked.fixture_path);
+      if (!(await exists(fixturePath))) {
+        errors.push('Frozen fixture missing for task ' + taskId + '.');
+      } else {
+        const actual = await hashFile(fixturePath);
+        if (actual !== locked.fixture_sha256) errors.push('Frozen fixture hash mismatch for task ' + taskId + '.');
+      }
+    }
+    const recomputedInputHash = hash(stable({
+      brief_sha256: locked.brief_sha256,
+      fixture_sha256: locked.fixture_sha256 ?? null
+    }));
+    if (recomputedInputHash !== locked.input_hash) errors.push('Input lock hash mismatch for task ' + taskId + '.');
+  }
 
   const artifacts = [];
   for (const item of key.artifacts || []) {
