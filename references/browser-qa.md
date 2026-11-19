@@ -31,6 +31,8 @@ Record:
 - weak assets, type, controls, wraps, or alignment
 - what appears interactive
 - what the next action seems to be
+- visible eyebrows, kickers, overlines, section numbers, figure labels, helper descriptions, and other secondary copy
+- adjacent descriptor stacks or repeated meanings
 
 Do not defend the design rationale before recording the observation.
 
@@ -82,6 +84,14 @@ Inspect:
 - perceived and measured performance
 - weakest visible regions
 
+Run the supporting-copy subtraction test on at least:
+
+- the first useful viewport
+- the primary detail or focused state
+- one compact or mobile state
+
+Temporarily hide or mentally remove secondary labels and descriptions. Restore only those whose absence creates ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or makes an action meaningfully harder to discover. Record any descriptor stack whose roles can be collapsed.
+
 Use `quality-bar.md`.
 
 ## Fix batch
@@ -92,6 +102,8 @@ Examples:
 
 - reshape the interaction rather than change easing
 - remove an explanatory label rather than restyle it
+- collapse eyebrow + section number + type + mode when one useful descriptor is enough
+- delete a secondary description that paraphrases the heading or image
 - improve or replace the primary asset rather than add chrome
 - fix state ownership rather than one lost selection
 - change mobile priority rather than patch one overflow
@@ -112,6 +124,7 @@ Confirm no regression in:
 - motion ownership
 - loading or performance
 - first useful viewport
+- supporting-copy clarity after subtraction
 
 ## Behavioral craft
 
