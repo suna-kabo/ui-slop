@@ -66,6 +66,28 @@ The v3 Quality Gate can veto readiness for a concrete material issue in:
 
 A quality veto must identify the observed state and explain user or product harm. It is not an aesthetic score or a mechanism for enforcing personal preference.
 
+## Supporting-copy and eyebrow discipline
+
+Secondary labels, descriptions, eyebrow text, kickers, overlines, section numbers, figure labels, category/type/mode labels, captions, and helper copy are now covered by the mandatory core rather than only by an optional authored-experience reference.
+
+The operating model requires a supporting-copy subtraction pass in:
+
+- the first useful viewport
+- the primary detail or focused state
+- one compact or mobile state
+
+The reviewer temporarily removes these layers and restores only those needed for navigation, state, action, error prevention, decision-making, genuine disambiguation, provenance, scope, units, constraints, or risk.
+
+Readiness can be vetoed when:
+
+- descriptor stacks repeat the same meaning
+- helper descriptions paraphrase headings or visible imagery
+- secondary text competes with the primary object or action
+- tiny uppercase or monospace copy is used mainly to simulate editorial, archival, premium, or technical authenticity
+- supporting copy compensates for weak hierarchy
+
+This is not a universal ban. The test is unique information, earned attention, and actual user value.
+
 ## Concept rejection
 
 v3 explicitly permits reshaping or discarding a concept before full implementation when structure, interaction model, visual material, or platform fit cannot reach the required bar.
@@ -84,6 +106,15 @@ Mandatory v3 references:
 - `references/quality-bar.md`
 
 `references/module-map.md` makes the five-stage core mandatory and routes specialist reasoning without duplicating a large handbook into the main skill.
+
+Supporting-copy enforcement is present in:
+
+- `SKILL.md`
+- `references/quality-bar.md`
+- `references/craft-floor.md`
+- `references/browser-qa.md`
+- `references/review-protocol.md`
+- `examples/review-record.template.md`
 
 ## Research provenance
 
@@ -114,13 +145,13 @@ The evidence engine remains objective and evidence-first. Automated aesthetic sc
 
 ## Automated validation
 
-Validated implementation head:
+Validated substantive implementation head:
 
-`af61bb456dfd09b0b6f91f08ce9df403a8e17bbe`
+`c0cf109bd8ce075cb43099093d414da60e700542`
 
 GitHub Actions run:
 
-`44542344830`
+`44545813844`
 
 Result: **5 / 5 jobs passed**
 
@@ -142,6 +173,8 @@ Every matrix entry completed:
 - mandatory five-stage ordering
 - mandatory v3 operating references
 - positive readiness and quality-bar coverage
+- explicit secondary-label / description / eyebrow subtraction coverage
+- review and browser-QA supporting-copy coverage
 - absence of fixed motion recipes
 - v3 CLI version provenance
 
@@ -169,9 +202,9 @@ Validated:
 ### Evidence artifact
 
 - name: `ui-slop-v3-evidence`
-- artifact id: `14537449495`
-- size: `203365` bytes
-- digest: `sha256:739b474016555b09bb2983a0ec0dda01c41f6adeecdb7a704124058715b22fc1`
+- artifact id: `14540996656`
+- size: `203355` bytes
+- digest: `sha256:c7169b067b31f77cc80efa37030c042d1368dca2122b94956d6bc8e0b21c6856`
 - expiry: 2026-12-03
 
 ## Engineering claim boundary
@@ -183,6 +216,7 @@ RC1 may claim only that:
 - mandatory core references and templates exist
 - package and CI entrypoints target v3
 - staged qualitative readiness is represented in the runtime instructions and review protocol
+- supporting-copy subtraction is explicit in runtime, review, browser QA, templates, and tests
 - cross-platform and browser engineering validation passes
 
 RC1 does not yet prove:
@@ -205,7 +239,7 @@ At minimum test:
 4. one dense reading or research surface
 5. one mobile-first interaction-heavy product
 
-Use multiple seeds for decisive claims. Review first impressions, protected behavior, problem/solution/implementation outcomes, and quality vetoes independently.
+Use multiple seeds for decisive claims. Review first impressions, protected behavior, problem/solution/implementation outcomes, supporting-copy subtraction, and quality vetoes independently.
 
 ## RC1 verdict
 
@@ -213,4 +247,4 @@ Use multiple seeds for decisive claims. Review first impressions, protected beha
 
 It is not empirically justified to claim that v3 consistently produces interfaces where nothing feels obviously wrong.
 
-The architecture now makes that outcome an explicit, reviewable readiness condition, provides a rejection path before full build, and prevents technical validity from being mistaken for product readiness.
+The architecture makes that outcome an explicit, reviewable readiness condition, provides a rejection path before full build, requires supporting-copy subtraction, and prevents technical validity from being mistaken for product readiness.
