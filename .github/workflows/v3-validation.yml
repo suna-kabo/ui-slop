@@ -1,4 +1,4 @@
-name: v2 validation
+name: v3 validation
 
 on:
   pull_request:
@@ -23,6 +23,7 @@ jobs:
       - run: npm install --ignore-scripts
       - run: npm run test:unit
       - run: npm run test:skill
+      - run: node tools/ui-slop-v3.mjs --version
 
   browser:
     runs-on: ubuntu-latest
@@ -41,7 +42,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ui-slop-browser-evidence
+          name: ui-slop-v3-evidence
           path: test-artifacts/
           if-no-files-found: error
           retention-days: 14

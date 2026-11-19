@@ -3,10 +3,16 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { TOOL_VERSION, evaluateEvidence, inspectProject, summarizeFindings, validateScenario } from '../tools/ui-slop.mjs';
+import {
+  TOOL_VERSION,
+  evaluateEvidence,
+  inspectProject,
+  summarizeFindings,
+  validateScenario
+} from '../tools/ui-slop-v3.mjs';
 
-test('version is release candidate', () => {
-  assert.equal(TOOL_VERSION, '2.0.0-rc.2');
+test('version is v3 release candidate', () => {
+  assert.equal(TOOL_VERSION, '3.0.0-rc.1');
 });
 
 test('scenario contract validates requirements and focused workflow', () => {
@@ -63,11 +69,11 @@ test('scenario assertion failure carries requirement id', () => {
 });
 
 test('project inspection reports source evidence without choosing design', async () => {
-  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'ui-slop-context-'));
-  await fs.writeFile(path.join(root,'package.json'), JSON.stringify({dependencies:{react:'1','framer-motion':'1'},scripts:{dev:'vite'}}));
-  await fs.mkdir(path.join(root,'src','pages'),{recursive:true});
-  await fs.writeFile(path.join(root,'src','pages','home.tsx'),'export default null');
-  const report = await inspectProject(root);
+  const project = await fs.mkdtemp(path.join(os.tmpdir(), 'ui-slop-context-'));
+  await fs.writeFile(path.join(project,'package.json'), JSON.stringify({dependencies:{react:'1','framer-motion':'1'},scripts:{dev:'vite'}}));
+  await fs.mkdir(path.join(project,'src','pages'),{recursive:true});
+  await fs.writeFile(path.join(project,'src','pages','home.tsx'),'export default null');
+  const report = await inspectProject(project);
   assert.ok(report.framework_stack.value.includes('react'));
   assert.ok(report.motion_libraries.value.includes('framer-motion'));
   assert.ok(report.route_candidates.value.includes('src/pages/home.tsx'));

@@ -4,7 +4,7 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { runEvidence, validateBundle } from '../tools/ui-slop.mjs';
+import { runEvidence, validateBundle } from '../tools/ui-slop-v3.mjs';
 
 async function withServer(html, fn) {
   const server = http.createServer((req, res) => {
@@ -25,8 +25,8 @@ const artifactRoot = process.env.UI_SLOP_TEST_ARTIFACT_DIR ? path.resolve(proces
 async function makeRunRoot(prefix) {
   if (!artifactRoot) return fs.mkdtemp(path.join(os.tmpdir(), prefix));
   const root = path.join(artifactRoot, prefix.replace(/-+$/,''));
-  await fs.rm(root, {recursive:true, force:true});
-  await fs.mkdir(root, {recursive:true});
+  await fs.rm(root,{recursive:true,force:true});
+  await fs.mkdir(root,{recursive:true});
   return root;
 }
 
@@ -79,7 +79,7 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
         {action:'assertNoOverflow'}
       ]
     };
-    const result = await runEvidence({url,scenario,outDir:runDir,briefText:'Keep job context and persisted watch state.'});
+    const result = await runEvidence({url,scenario,outDir:runDir,briefText:'Keep job context and persisted watch state.',toolVersion:'3.0.0-rc.1'});
     assert.equal(result.findings.filter((f)=>f.classification==='hard_failure').length,0);
     assert.equal(result.findings.filter((f)=>f.classification==='blocked').length,0);
     assert.equal(result.runs.length,6);
@@ -92,6 +92,7 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
 
     const manifest = JSON.parse(await fs.readFile(path.join(runDir,'manifest.json'),'utf8'));
     assert.equal(manifest.schema_version,2);
+    assert.equal(manifest.tool_version,'3.0.0-rc.1');
     assert.equal(manifest.inputs.brief,'inputs/brief.txt');
     assert.deepEqual([...new Set(manifest.runs.map((r)=>r.viewport.name))].sort(),['compact','desktop','mobile']);
 
@@ -108,6 +109,7 @@ test('broken fixture produces objective failures without turning style metrics i
     const result = await runEvidence({
       url,
       outDir:path.join(out,'run'),
+      toolVersion:'3.0.0-rc.1',
       scenario:{
         id:'broken',
         viewports:[{name:'mobile',width:390,height:844}],

@@ -1,41 +1,100 @@
 # Independent Review Protocol
 
-For substantial work, the strongest review separates evidence collection from the generator's self-justification.
+For substantial work, separate generator reasoning from reviewer judgment.
+
+## Inputs
+
+Give the reviewer:
+
+1. original user request
+2. Experience Brief
+3. product principles
+4. runnable artifact or immutable evidence
+5. protected requirements
+6. known blocked checks
+
+Do not begin with the generator’s rationale or victory narrative.
 
 ## Review order
 
-1. Give the reviewer the original brief or protected contract.
-2. Give the reviewer the immutable evidence bundle and only source snippets needed to verify behavior.
-3. Reviewer records unprompted findings first.
-4. Only then expose detector/advisory findings.
-5. Classify each requirement as PASS, FAIL, BLOCKED, or ADVISORY.
-6. Cite evidence ids, trace steps, screenshots, or source evidence for material findings.
-7. Fix the smallest responsible layer.
-8. Rerun affected checks plus a bounded regression pass.
+1. Uncoached first impression
+2. Problem review
+3. Solution review
+4. Implementation review
+5. Supporting-copy subtraction audit
+6. Protected requirement outcomes
+7. Detector and advisory evidence
+8. Generator explanation, only after unprompted findings
 
-Do not give the reviewer the generator's victory narrative before the first critique.
+The supporting-copy audit covers the first useful viewport, primary detail state, and one compact or mobile state. It examines eyebrow text, kickers, overlines, section and figure labels, category/type/mode labels, captions, helper descriptions, subtitles, and repeated metadata. Temporarily remove these layers and restore only those that perform a unique necessary job.
 
-## Classification
+## Requirement outcomes
 
-- **PASS**: executed evidence supports the requirement.
-- **FAIL**: executed evidence contradicts a required behavior or standard.
-- **BLOCKED**: evidence could not be executed or observed.
-- **ADVISORY**: qualitative or measured concern requiring product judgment.
+- **PASS** — executed evidence supports the requirement
+- **FAIL** — executed evidence contradicts it
+- **BLOCKED** — evidence unavailable
+- **ADVISORY** — risk requiring product judgment
 
 Unknown is not PASS.
 
-## Reviewer scope
+## Quality readiness
 
-The reviewer may judge:
+Separately record:
 
-- product specificity
-- hierarchy and information design
-- interaction continuity
-- behavioral craft
-- visual coherence
-- responsive composition
-- whether advisory patterns cause actual harm
+- **READY**
+- **NOT_READY**
+- **BLOCKED**
 
-The reviewer must not convert frequency counts or similarity scores into automatic aesthetic failures.
+`NOT_READY` requires at least one concrete quality veto tied to user or product harm.
 
-If no isolated reviewer is available, mark the review process as degraded rather than claiming independence.
+A quality veto may concern:
+
+- attention
+- editing
+- concept
+- material fidelity
+- typography
+- affordance
+- interaction response
+- continuity
+- motion
+- responsive/platform fit
+- performance
+- weakest-link quality
+
+Do not convert preference into a veto.
+
+Secondary labels and descriptions are not failed by category. They become a veto when they repeat meaning, simulate authenticity, compete with the primary object or task, or expose weak hierarchy. They remain valid when they are necessary for navigation, state, action, error prevention, disambiguation, provenance, scope, units, constraints, or risk.
+
+## Reviewer record
+
+For each material finding include:
+
+- stage: problem / solution / implementation
+- affected state or viewport
+- observation
+- user/product harm
+- evidence
+- responsible layer
+- recommendation: keep / revise / reshape / reject
+- severity: material / minor
+
+For supporting copy, also record:
+
+- text or role inspected
+- unique job claimed
+- result after subtraction
+- keep / shorten / merge / remove
+
+## Fix and rerun
+
+Fix the smallest responsible layer that can solve the issue.
+
+Rerun:
+
+- affected evidence
+- one bounded regression path
+- first-impression inspection if the visible composition changed
+- supporting-copy subtraction if labels or descriptions changed
+
+Do not mark READY while a material issue is merely “understood.”
