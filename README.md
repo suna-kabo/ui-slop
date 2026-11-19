@@ -139,6 +139,20 @@ The Quality Gate can veto readiness for:
 
 A veto requires concrete product reasoning. It is not permission to enforce personal taste.
 
+## Secondary labels, descriptions, and eyebrow text
+
+They are covered explicitly and are not treated as harmless decoration.
+
+Eyebrows, kickers, overlines, section numbers, figure labels, category/type/mode labels, captions, helper descriptions, and secondary subtitles must each perform a unique job.
+
+For substantial work, UI Slop requires a supporting-copy subtraction pass:
+
+1. temporarily remove those layers from the first useful viewport and primary detail state
+2. restore only what prevents ambiguity or error, communicates state, enables action, or supplies necessary provenance, scope, units, or risk
+3. reject descriptor stacks when title, layout, imagery, control state, or conventional semantics already communicate the same meaning
+
+This is not a universal ban. Necessary navigation, status, disambiguation, provenance, and action guidance remain valid. Tiny uppercase or monospace copy used mainly to simulate editorial, archival, premium, or technical authenticity does not.
+
 ## Runtime references
 
 The v3 core lives in `SKILL.md`.
