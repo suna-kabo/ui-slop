@@ -1,0 +1,1 @@
+Build a responsive reading-room workspace for a small investigative newsroom. Reporters track documents, locate evidence, connect passages to claims, and compare sources before publishing. An editor needs to see what supports each claim and what still needs corroboration. Populate it with believable example records and make the main workflows usable.

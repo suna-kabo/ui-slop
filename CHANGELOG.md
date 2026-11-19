@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Tie reference observations to consequential design decisions and verify the result before selecting a concept proof.
+- Route specialist guidance before choosing a direction when the proof needs it.
+- Record rendered and operated findings before opening design rationale. Check intermediate response when a transition is disputed.
+- Recompose the layout during copy subtraction and verify that the affected task still works.
+- Add controlled browser fixtures and independent review records for the quality investigation.
+
 ## 3.0.1
 
 - Require evidence for both the job and visual prominence of supporting copy. Clickability alone is insufficient.

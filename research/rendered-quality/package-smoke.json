@@ -1,0 +1,17 @@
+{
+  "id": "portable-hold-fixture",
+  "description": "Exercise the evidence CLI from the clean installed bundle against the shipped checkout fixture.",
+  "requirements": [
+    {"id": "hold-status", "text": "The two known hold statuses appear without page overflow."}
+  ],
+  "viewports": [
+    {"name": "desktop", "width": 1440, "height": 900},
+    {"name": "narrow", "width": 320, "height": 640}
+  ],
+  "mediaVariants": ["normal", "reduced"],
+  "steps": [
+    {"action": "assertText", "locator": {"selector": "main li:first-child"}, "contains": "Ready for pickup", "requirementId": "hold-status"},
+    {"action": "assertText", "locator": {"selector": "main li:last-child"}, "contains": "Second in line", "requirementId": "hold-status"},
+    {"action": "assertNoOverflow", "requirementId": "hold-status"}
+  ]
+}

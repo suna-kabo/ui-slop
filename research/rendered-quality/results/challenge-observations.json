@@ -1,0 +1,953 @@
+[
+  {
+    "name": "conventional",
+    "id": "29586c3344",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 12,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 41,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 275,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 510,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "conventional",
+    "id": "29586c3344",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 1,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 27,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 33,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 287,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "redundant",
+    "id": "2019986ed5",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 1,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 8,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 21,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 269,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 558,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "redundant",
+    "id": "2019986ed5",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 3,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 19,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 270,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 419,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "hierarchy",
+    "id": "e2cf2cea11",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 12,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 29,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 278,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 419,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "hierarchy",
+    "id": "e2cf2cea11",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 7,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 22,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 269,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 438,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "recovery",
+    "id": "c0535708e8",
+    "width": 1440,
+    "canCancel": false,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 7,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 23,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 274,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "close"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 463,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "recovery",
+    "id": "c0535708e8",
+    "width": 390,
+    "canCancel": false,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 10,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 26,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 277,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "close"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 680,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "continuity",
+    "id": "d21f137e39",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": false,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 6,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 40,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 270,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 503,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "close"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 519,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "continuity",
+    "id": "d21f137e39",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": false,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 12,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 30,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 280,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 411,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "close"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 437,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "response",
+    "id": "cf0b32dd24",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 8,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 709,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 898,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "response",
+    "id": "cf0b32dd24",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 7,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 707,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 907,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "detail",
+    "id": "9b693a1024",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 37,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 43,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 294,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 832,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "detail",
+    "id": "9b693a1024",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 15,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 34,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 284,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 496,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "unusual",
+    "id": "f03158301a",
+    "width": 1440,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 11,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 27,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 278,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 411,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "unusual",
+    "id": "f03158301a",
+    "width": 390,
+    "canCancel": true,
+    "restoresFocus": true,
+    "frames": [
+      {
+        "event": "press",
+        "ms": 0,
+        "state": [
+          "",
+          "2 shelf slots free",
+          "detail"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 14,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          "reserve"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 28,
+        "state": [
+          "Reserving one shelf slot…",
+          "2 shelf slots free",
+          ""
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 286,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          "cancel"
+        ]
+      },
+      {
+        "event": "frame",
+        "ms": 479,
+        "state": [
+          "One shelf slot reserved.",
+          "1 shelf slot free",
+          ""
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "name": "copy subtraction",
+    "width": 1440,
+    "before": 360,
+    "recomposed": 220
+  },
+  {
+    "name": "copy subtraction",
+    "width": 390,
+    "before": 346,
+    "recomposed": 206
+  },
+  {
+    "name": "conventional regression",
+    "width": 1440,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 1440,
+    "reduced": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 1440,
+    "scaled": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 768,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 768,
+    "reduced": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 768,
+    "scaled": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 390,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 390,
+    "reduced": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 390,
+    "scaled": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 320,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 320,
+    "reduced": true,
+    "errors": []
+  },
+  {
+    "name": "conventional regression",
+    "width": 320,
+    "scaled": true,
+    "errors": []
+  }
+]

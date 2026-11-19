@@ -1,0 +1,30 @@
+[
+  {
+    "width": 320,
+    "version": "original",
+    "chartY": -137.84375,
+    "focus": "load-B-207",
+    "neighborReturn": "load-G-318"
+  },
+  {
+    "width": 320,
+    "version": "corrected",
+    "chartY": 0.15625,
+    "focus": "load-B-207",
+    "neighborReturn": "load-G-318"
+  },
+  {
+    "width": 390,
+    "version": "original",
+    "chartY": -137.84375,
+    "focus": "load-B-207",
+    "neighborReturn": "load-G-318"
+  },
+  {
+    "width": 390,
+    "version": "corrected",
+    "chartY": 0.15625,
+    "focus": "load-B-207",
+    "neighborReturn": "load-G-318"
+  }
+]

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Studio kiln booking</title>
+<style>
+:root{font:100%/1.5 system-ui,sans-serif;color:#242824;background:#f1f3ee}
+*{box-sizing:border-box}
+body{margin:0}
+header{background:#283d35;color:#fff;padding:14px max(16px,calc((100vw - 1040px)/2));font-weight:700}
+main{max-width:1080px;margin:auto;padding:24px}
+h1,h2,h3,p{margin:0}
+h1{font-size:1.9rem;line-height:1.15}
+h2{font-size:1.35rem}
+h3{font-size:1rem}
+.heading{margin-bottom:24px}
+.heading p,.muted{color:#4a5850}
+.workspace{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start}
+.panel{min-width:0;background:white;border:1px solid #c7d1c7;border-radius:10px;padding:20px;overflow-wrap:anywhere}
+ul{padding:0;margin:8px 0 16px;list-style:none}
+li+li{margin-top:8px}
+button{font:inherit;color:inherit;cursor:pointer;border:1px solid #87998d;border-radius:6px;background:white;padding:8px 12px}
+button:focus-visible{outline:3px solid #086baf;outline-offset:2px}
+button:active{background:#d6e4da}
+button:disabled,button[aria-disabled=true]{cursor:wait}
+.load{width:100%;text-align:left;display:grid;gap:2px}
+.load[aria-expanded=true]{border-color:#315d43;box-shadow:inset 3px 0 #315d43;background:#edf4eb}
+.state{color:#375948;font-weight:650}
+.capacity{font-weight:700}
+.detail>*+*{margin-top:12px}
+.detail:focus{outline:none}
+.detail:focus-visible{outline:3px solid #086baf;outline-offset:2px}
+[hidden]{display:none!important}
+.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.primary{background:#283d35;color:white;border-color:#283d35;font-weight:650}
+.primary:active{background:#425f51}
+#feedback:empty{margin:0}
+#feedback{color:#375948;font-weight:650}
+.extra{display:none}
+@media (max-width:690px){main{padding:16px}.workspace{grid-template-columns:1fr;gap:16px}.panel{padding:14px}}
+</style>
+<style id="treatment"></style>
+<header>Wick Street Ceramics</header>
+<main>
+  <div class="heading">
+    <p class="extra">Studio operations · Firings</p>
+    <h1>Firing schedule</h1>
+    <p>Week of 16–22 November</p>
+    <p class="extra">Plan your studio firings for this week.</p>
+  </div>
+  <div class="workspace">
+    <section class="panel schedule" aria-labelledby="upcoming">
+      <h2 id="upcoming">Upcoming loads</h2>
+      <div class="extra redundant"><h3>Weekly plan</h3><p>Your kiln loads scheduled for the week.</p></div>
+      <ul id="loads">
+        <li><button class="load" aria-controls="detail" aria-expanded="false" data-load="0"><strong>North kiln · Cone 6 glaze</strong><span>Tue 17, 16:00 → Wed 18, 09:00</span><span><span class="state">Loading</span> · <span class="capacity" id="north-count"></span></span></button></li>
+        <li><button class="load" aria-controls="detail" aria-expanded="false" data-load="1"><strong>South kiln · Cone 04 bisque</strong><span>Thu 19, 12:00–18:30</span><span><span class="state">Scheduled</span> · <span class="capacity">4 shelf slots free</span></span></button></li>
+      </ul>
+    </section>
+    <section class="panel detail" id="detail" tabindex="-1" aria-labelledby="detail-title" hidden>
+      <h2 id="detail-title"></h2>
+      <p id="detail-state"></p>
+      <h3>On the shelves</h3>
+      <ul id="pieces"></ul>
+      <div class="extra redundant"><h3>Reservation</h3><p>Manage your firing reservation below.</p></div>
+      <p id="fit"></p>
+      <div class="actions"><button class="primary" id="reserve">Reserve one slot</button><button id="cancel">Cancel reservation</button><button id="close">Back to loads</button></div>
+      <p id="feedback" role="status"></p>
+    </section>
+  </div>
+</main>
+<script>
+const config = /* CONFIG */ {};
+const storageKey = 'wick-street-reservation';
+const versions = [
+  {title:'North kiln · Cone 6 glaze', status:'Loading', pieces:['Mara’s speckled serving bowls','Jules’s cobalt test tiles']},
+  {title:'South kiln · Cone 04 bisque', status:'Scheduled', pieces:['Lina’s small amphora']}
+];
+const work = 'Porcelain breakfast set with hand-painted fern handles';
+const byId = id => document.getElementById(id);
+const buttons = Array.from(document.querySelectorAll('.load'));
+let reserved = localStorage.getItem(storageKey) === 'true';
+let selected = null;
+let busy = false;
+
+function render() {
+  const remaining = reserved ? 1 : 2;
+  byId('north-count').textContent = remaining + (remaining === 1 ? ' shelf slot free' : ' shelf slots free');
+  buttons.forEach((button,index) => button.setAttribute('aria-expanded',String(index === selected)));
+  byId('detail').hidden = selected === null;
+  if (selected === null) return;
+  const current = versions[selected];
+  byId('detail-title').textContent = current.title;
+  byId('detail-state').textContent = current.status + (selected === 0 ? ' · ' + byId('north-count').textContent : '');
+  const pieces = [...current.pieces];
+  if (reserved && selected === 0) pieces.push(work);
+  byId('pieces').replaceChildren(...pieces.map(name => Object.assign(document.createElement('li'),{textContent:name})));
+  byId('fit').textContent = selected === 0
+    ? (reserved ? 'Reserved · ' : 'Fits Cone 6 glaze · ') + work
+    : 'Your glazed porcelain is incompatible with this bisque load.';
+  byId('reserve').hidden = selected !== 0 || reserved;
+  if (config.preservePendingFocus) byId('reserve').setAttribute('aria-disabled', String(busy));
+  else byId('reserve').disabled = busy;
+  byId('cancel').hidden = selected !== 0 || !reserved || Boolean(config.noCancel);
+}
+
+function clearDetail() {
+  const origin = selected;
+  selected = null;
+  render();
+  if (!config.loseFocus && origin !== null) buttons[origin].focus();
+}
+
+for (const [index,button] of buttons.entries()) button.addEventListener('click', () => {
+  if (config.delayed) {
+    window.clearTimeout(window.selectionTimer);
+    window.selectionTimer = window.setTimeout(() => openLoad(index), 700);
+    return;
+  }
+  openLoad(index);
+});
+
+function openLoad(index) {
+  selected = index;
+  byId('feedback').textContent = '';
+  render();
+  if (!config.loseFocus) byId('detail').focus();
+}
+
+byId('close').addEventListener('click',clearDetail);
+byId('detail').addEventListener('keydown',event => {
+  if (event.key === 'Escape') clearDetail();
+});
+byId('reserve').addEventListener('click', async () => {
+  if (busy) return;
+  busy = true;
+  const origin = selected;
+  if (!config.delayed) {
+    byId('reserve').textContent = 'Reserving…';
+    byId('feedback').textContent = 'Reserving one shelf slot…';
+    render();
+  }
+  await new Promise(resolve => setTimeout(resolve,config.delayed ? 700 : 260));
+  reserved = true;
+  localStorage.setItem(storageKey,'true');
+  busy = false;
+  byId('reserve').textContent = 'Reserve one slot';
+  if (selected === origin) byId('feedback').textContent = 'One shelf slot reserved.';
+  render();
+  if (selected === origin) (byId('cancel').hidden ? byId('close') : byId('cancel')).focus();
+});
+byId('cancel').addEventListener('click', () => {
+  reserved = false;
+  localStorage.removeItem(storageKey);
+  byId('feedback').textContent = 'Reservation cancelled. One shelf slot released.';
+  render();
+  byId('reserve').focus();
+});
+render();
+</script>
+</html>

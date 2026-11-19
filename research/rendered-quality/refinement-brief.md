@@ -1,0 +1,1 @@
+Members tell us they miss whether a kiln load is still accepting work when they scan the schedule on a phone. Add a clear indication to each load without changing the existing layout, visual palette, navigation, real capacity, reservation and cancellation behavior, or desktop and mobile fit. Keep the rest of the approved UI intact.

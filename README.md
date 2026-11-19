@@ -45,4 +45,6 @@ node "<skill-dir>/tools/ui-slop-v3.mjs" inspect .
 
 On Linux runners that need system libraries, use `playwright install --with-deps chromium`. Set `UI_SLOP_CHROMIUM_PATH` to use a system Chromium executable. See the [Evidence Harness](references/evidence-harness.md) for capture and validation commands.
 
+During proof, connect the decision that matters most to an observed reference mechanism and test the result at working scale. Start rendered review with the task and runnable product. Compare recomposed layouts when subtracting copy and inspect intermediate response when screenshots leave timing unclear. [Rendered quality investigation](research/rendered-quality/INVESTIGATION.md)
+
 Evidence Gate status comes from executed requirements and independently verifiable standards. Rendered micro-label findings are advisory, including when CSS creates the uppercase treatment. Quality Gate status requires rendered and operated observations. When a separate reviewer is unavailable, complete the adversarial self-review before declaring READY. [Skill workflow](SKILL.md)
