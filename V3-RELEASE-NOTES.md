@@ -43,6 +43,16 @@ Quality readiness can be vetoed by:
 
 A veto must be concrete and tied to product harm.
 
+## Supporting-copy discipline
+
+Secondary labels, descriptions, eyebrow text, kickers, overlines, section numbers, figure labels, captions, and helper copy are explicitly covered by the mandatory core.
+
+They are not globally banned. They must perform a unique necessary job.
+
+Substantial work now requires a supporting-copy subtraction pass in the first useful viewport, primary detail state, and a compact or mobile state. The reviewer temporarily removes these layers and restores only those needed for state, decisions, action, error prevention, provenance, scope, units, risk, or genuine disambiguation.
+
+Descriptor stacks, repeated descriptions, and tiny uppercase or monospace authenticity tokens can block readiness when they compete with the primary object or task.
+
 ## Familiar foundation plus signature
 
 v3 uses familiar, platform-appropriate foundations for ordinary behavior and concentrates custom work in one to three domain-derived signature experiences.
@@ -59,7 +69,7 @@ Polish is no longer the fallback for concept failure.
 
 The existing Node/Playwright evidence engine remains intentionally separate from qualitative readiness.
 
-The package now exposes `tools/ui-slop-v3.mjs`, which records v3 tool provenance while reusing the validated evidence engine.
+The package exposes `tools/ui-slop-v3.mjs`, which records v3 tool provenance while reusing the validated evidence engine.
 
 ## Claim boundary
 
