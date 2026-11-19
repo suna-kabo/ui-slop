@@ -1,14 +1,6 @@
 # Module Map
 
-The v3 core sequence is mandatory for substantial new, rebuild, or replacement work:
-
-1. Shape
-2. Product principles and calibration
-3. Concept proof
-4. Foundation plus signature
-5. Problem / solution / implementation review
-
-References support the sequence. They do not replace it.
+Follow the mandatory core sequence in `SKILL.md`. Load additional references for the needs below.
 
 ## Core owners
 

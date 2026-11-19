@@ -7,3 +7,6 @@ node_modules/
 .ui-slop/
 playwright-report/
 test-results/
+
+/dist/
+/.agents/skills/ui-slop/

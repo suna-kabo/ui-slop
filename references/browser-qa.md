@@ -84,15 +84,7 @@ Inspect:
 - perceived and measured performance
 - weakest visible regions
 
-Run the supporting-copy subtraction test on at least:
-
-- the first useful viewport
-- the primary detail or focused state
-- one compact or mobile state
-
-Temporarily hide or mentally remove secondary labels and descriptions. Restore only those whose absence creates ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or makes an action meaningfully harder to discover. Record any descriptor stack whose roles can be collapsed.
-
-Use `quality-bar.md`.
+Run the mandatory supporting-copy subtraction pass in `quality-bar.md` in the rendered states. Record the observations in the implementation review.
 
 ## Fix batch
 

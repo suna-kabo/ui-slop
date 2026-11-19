@@ -1,95 +1,60 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = (file) => fs.readFile(new URL('../' + file, import.meta.url), 'utf8');
 
-test('SKILL frontmatter and reference links are valid', async () => {
-  const skill = await fs.readFile(path.join(root,'SKILL.md'),'utf8');
-  assert.match(skill,/^---\r?\nname: ui-slop\r?\ndescription:/);
-  const refs = [...skill.matchAll(/`(references\/[^`]+\.md)`/g)].map((m)=>m[1]);
-  assert.ok(refs.length >= 10);
-  for (const ref of new Set(refs)) await fs.access(path.join(root,ref));
+test('substantial work gates full build and completion on recorded stage outcomes', async () => {
+  const skill = await read('SKILL.md');
+  const stages = [...skill.matchAll(/^## Stage (\d) — (.+)$/gm)].map((match) => match[1]);
+  assert.deepEqual(stages, ['1', '2', '3', '4', '5']);
+  assert.match(skill, /Experience Brief[\s\S]*problem review[\s\S]*Advance on PASS/);
+  assert.match(skill, /three to five product-specific principles[\s\S]*calibration notes/);
+  assert.match(skill, /runnable vertical slice[\s\S]*artifact path or URL[\s\S]*SELECT \/ REVISE \/ REJECT[\s\S]*Only SELECT unlocks the full build/);
+  assert.match(skill, /passing problem review, selected proof, ready implementation review, Evidence Gate PASS, and Quality Gate READY/);
+  const template = await read('examples/review-record.template.md');
+  for (const field of ['Calibration notes', 'Runnable concept-proof', '| Problem', '| Solution', '| Implementation',
+    'Evidence Gate', 'Quality Gate', 'hard failures, quality vetoes, advisories, and blocked checks']) {
+    assert.ok(template.includes(field), field);
+  }
 });
 
-test('v3 core sequence is explicit and ordered', async () => {
-  const skill = await fs.readFile(path.join(root,'SKILL.md'),'utf8');
-  const stages = [
-    'Stage 1 — Shape the outcome',
-    'Stage 2 — Set product principles and calibration',
-    'Stage 3 — Prove the core experience',
-    'Stage 4 — Build foundation plus signature',
-    'Stage 5 — Review problem, solution, and implementation'
+test('both gates require evidence and readiness remains qualitative', async () => {
+  const skill = await read('SKILL.md');
+  const quality = await read('references/quality-bar.md');
+  assert.match(skill, /Evidence Gate.*PASS, FAIL, or BLOCKED against executed evidence/);
+  assert.match(skill, /Quality Gate.*READY, NOT_READY, or BLOCKED with specific observations.*qualitative judgment/);
+  for (const term of ['concrete observations', 'operated primary flow', 'first-impression', 'weakest visible region',
+    'observed material veto', 'user or product harm', 'could not be assessed', 'Ten-second veto']) {
+    assert.ok(quality.includes(term), term);
+  }
+  assert.match(skill, /The product contract is protected, the core experience is proven, and no material part of the primary experience feels obviously wrong\./);
+});
+
+test('mandatory supporting-copy rules cover all layers, rendered states and restoration grounds', async () => {
+  const skill = await read('SKILL.md');
+  const quality = await read('references/quality-bar.md');
+  assert.match(skill, /mandatory \*\*supporting-copy subtraction pass\*\* in `references\/quality-bar\.md` on the first useful viewport, primary detail or focused state, and a compact or mobile state/);
+  const section = quality.split('## Mandatory supporting-copy subtraction')[1]?.split('\n## ')[0];
+  assert.ok(section);
+  const concepts = [
+    'Secondary labels are not default layers', 'Descriptions must supply unique information',
+    'first useful viewport', 'primary detail or focused state', 'compact or mobile state', 'temporarily hide',
+    'eyebrow text', 'kickers', 'overlines', 'section numbers', 'figure labels', 'captions',
+    'category/type/mode labels', 'repeated subtitles', 'helper descriptions', 'duplicated metadata',
+    'Collapse descriptor stacks', 'tiny uppercase or monospace', 'premium, editorial, archival, or technical authenticity',
+    'Restore copy only if', 'genuine ambiguity', 'hides state', 'weakens a decision', 'necessary provenance',
+    'increases error risk', 'meaningfully hurts action discovery', 'There is no universal ban',
+    'Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints'
   ];
-  let previous = -1;
-  for (const stage of stages) {
-    const index = skill.indexOf(stage);
-    assert.ok(index > previous, `missing or out-of-order stage: ${stage}`);
-    previous = index;
+  for (const concept of concepts) assert.ok(section.includes(concept), concept);
+  for (const reference of ['craft-floor', 'browser-qa', 'review-protocol']) {
+    assert.match(await read(`references/${reference}.md`), /mandatory supporting-copy subtraction pass in `quality-bar\.md`/);
   }
 });
 
-test('v3 core blocks concept rescue by polish and defines positive readiness', async () => {
-  const skill = await fs.readFile(path.join(root,'SKILL.md'),'utf8');
-  assert.match(skill,/reshape or discard/i);
-  assert.match(skill,/Evidence Gate passes/i);
-  assert.match(skill,/Quality Gate is ready/i);
-  assert.match(skill,/nothing feels obviously wrong/i);
-  assert.match(skill,/first-impression veto/i);
-  assert.match(skill,/weakest-link veto/i);
-});
-
-test('mandatory v3 operating references exist', async () => {
-  const required = [
-    'shaping.md',
-    'product-principles.md',
-    'reference-calibration.md',
-    'concept-proof.md',
-    'review-stages.md',
-    'quality-bar.md'
-  ];
-  for (const file of required) await fs.access(path.join(root,'references',file));
-});
-
-test('module map points only to existing markdown references', async () => {
-  const map = await fs.readFile(path.join(root,'references','module-map.md'),'utf8');
-  const refs = [...map.matchAll(/`([a-z0-9-]+\.md)`/gi)].map((m)=>m[1]).filter((file)=>file.toLowerCase() !== 'skill.md');
-  assert.ok(refs.length >= 20);
-  for (const file of new Set(refs)) await fs.access(path.join(root,'references',file));
-  assert.match(map,/core sequence is mandatory/i);
-});
-
-test('quality bar covers attention, material, behavior, platform, and weakest-link quality', async () => {
-  const quality = (await fs.readFile(path.join(root,'references','quality-bar.md'),'utf8')).toLowerCase();
-  for (const term of ['attention','visual material','interaction response','continuity','motion','responsive and platform fit','performance perception','weakest-link','ten-second veto']) {
-    assert.match(quality,new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
-  }
-});
-
-test('secondary labels, descriptions, and eyebrow text require earned information', async () => {
-  const skill = (await fs.readFile(path.join(root,'SKILL.md'),'utf8')).toLowerCase();
-  const quality = (await fs.readFile(path.join(root,'references','quality-bar.md'),'utf8')).toLowerCase();
-  const browser = (await fs.readFile(path.join(root,'references','browser-qa.md'),'utf8')).toLowerCase();
-  const craft = (await fs.readFile(path.join(root,'references','craft-floor.md'),'utf8')).toLowerCase();
-
-  for (const text of [skill, quality, browser, craft]) {
-    assert.match(text,/supporting-copy subtraction|subtraction test|subtraction pass/);
-  }
-
-  assert.match(skill,/secondary labels, descriptions, eyebrow text/);
-  assert.match(skill,/decorative authenticity does not/);
-  assert.match(quality,/descriptor stack/);
-  assert.match(quality,/tiny uppercase or monospace text/);
-  assert.match(quality,/there is no universal ban/);
-  assert.match(browser,/first useful viewport/);
-  assert.match(browser,/primary detail or focused state/);
-});
-
-test('runtime router does not introduce fixed motion recipes', async () => {
-  const skill = (await fs.readFile(path.join(root,'SKILL.md'),'utf8')).toLowerCase();
-  assert.doesNotMatch(skill,/\b\d{2,4}\s*ms\b/);
-  assert.doesNotMatch(skill,/scale\(0\.\d+/);
-  assert.match(skill,/motion may express this logic\. it is not the logic/);
+test('workflow expresses interaction logic without fixed motion recipes', async () => {
+  const skill = await read('SKILL.md');
+  assert.match(skill, /Motion can express interaction logic\. The workflow must make sense without it/);
+  assert.doesNotMatch(skill, /cubic-bezier\(|scale\(0\.\d+|\b\d+ms\b/i);
 });

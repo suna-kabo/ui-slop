@@ -1,14 +1,14 @@
 # Evidence Harness
 
-The v2 evidence tooling collects reproducible browser facts around a product-specific workflow. It does not choose a visual style or turn taste into a score.
+The UI Slop evidence tooling collects reproducible browser facts around a product-specific workflow. It does not choose a visual style or turn taste into a score.
 
 ## Install
 
-Requires Node.js 20+.
+Requires Node.js 20+. Use the directory containing the resolved SKILL.md as `<skill-dir>`. In the development checkout, use the repository root.
 
 ```bash
-npm install
-npx playwright install chromium
+npm --prefix "<skill-dir>" ci --ignore-scripts
+npm --prefix "<skill-dir>" exec --no -- playwright install chromium
 ```
 
 A system Chromium may be supplied with `UI_SLOP_CHROMIUM_PATH`.
@@ -16,18 +16,18 @@ A system Chromium may be supplied with `UI_SLOP_CHROMIUM_PATH`.
 ## Commands
 
 ```bash
-node ./tools/ui-slop.mjs inspect <project-root> --out .ui-slop/context.json
+node "<skill-dir>/tools/ui-slop-v3.mjs" inspect <project-root> --out .ui-slop/context.json
 
-node ./tools/ui-slop.mjs capture <url> \
+node "<skill-dir>/tools/ui-slop-v3.mjs" capture <url> \
   --scenario <scenario.json> \
   --brief <brief.txt> \
   --out .ui-slop/runs/<run-id>
 
-node ./tools/ui-slop.mjs capture --html <fixture.html> \
+node "<skill-dir>/tools/ui-slop-v3.mjs" capture --html <fixture.html> \
   --scenario <scenario.json> \
   --out .ui-slop/runs/<run-id>
 
-node ./tools/ui-slop.mjs validate .ui-slop/runs/<run-id>
+node "<skill-dir>/tools/ui-slop-v3.mjs" validate .ui-slop/runs/<run-id>
 ```
 
 `evidence` remains a compatibility alias for `capture` during the release-candidate period.

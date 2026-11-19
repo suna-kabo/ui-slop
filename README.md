@@ -1,269 +1,48 @@
-# UI Slop
+# UI Slop v3
 
-UI Slop is a standalone Agent Skill for shaping, proving, building, and reviewing production interfaces.
+UI Slop is a Codex skill for shaping, proving, building, and reviewing production interfaces. Its finish condition is:
 
-It is designed for cases where a merely correct, responsive, accessible, or visually defensible interface is not enough.
+> The product contract is protected, the core experience is proven, and no material part of the primary experience feels obviously wrong.
 
-The v3 finish condition is:
+## Install and invoke
 
-> **The product contract is protected, the core experience is proven, and no material part of the primary experience feels obviously wrong.**
+With Node.js 20 or newer, clone or update the repository and run these commands from the checkout.
 
-UI Slop is not a component library, style catalog, house aesthetic, palette generator, or fixed motion system.
-
-## Status
-
-**v3.0.0-rc.1** is the design-operating-model release candidate on `v3/shape-prove-build`.
-
-It replaces the v2 runtime sequence without discarding the v2 evidence engine.
-
-The v1.9 and v2 branches remain historical baselines.
-
-This release does not claim empirical superiority over other design systems. The new architecture is a falsifiable response to benchmark findings and must be tested on unrelated product modes.
-
-## Why v3 exists
-
-v2 accumulated substantial knowledge about:
-
-- product-specific structure
-- real content
-- task continuity
-- interaction models
-- visual direction
-- authored experience
-- responsive behavior
-- browser evidence
-- taste and craft review
-
-Exploratory benchmarks showed that much of this knowledge was optional, loaded late, or unable to reject a weak concept before a complete interface had already been built.
-
-Technically complete outputs could still expose obvious quality cliffs within seconds:
-
-- unearned labels and explanatory chrome
-- detached controls
-- generic modals
-- inert or decorative interaction
-- low-fidelity primary assets
-- responsive reflow without platform adaptation
-- one unfinished utility region undermining the whole result
-
-v3 changes the operating sequence rather than adding another final checklist.
-
-## The five-stage core
-
-### 1. Shape
-
-Write a short Experience Brief:
-
-- user and context
-- meaningful outcome
-- irreducible core
-- protected truth
-- non-goals
-- quality risks
-
-Start from the need, not the requested page or feature list.
-
-### 2. Product principles and calibration
-
-Create three to five product-specific decision principles.
-
-Calibrate against:
-
-- platform conventions
-- relevant best-in-class references
-- incumbent strengths
-- category defaults and anti-defaults
-
-References set a bar; they are not templates.
-
-### 3. Concept proof
-
-Before completing the full surface, prove a vertical slice with:
-
-- real content
-- primary visual material at near-final fidelity
-- highest-risk interaction
-- entry, action, result, and return
-- wide and narrow behavior
-- pointer, touch, and keyboard implications
-- one second action
-
-Reshape or discard a concept that cannot meet the bar. Do not defer concept failure as polish.
-
-### 4. Foundation plus signature
-
-Use familiar, native, accessible foundations for ordinary behavior.
-
-Concentrate custom design and engineering in one to three domain-derived signature experiences.
-
-Motion may express the interaction logic. It is not the logic.
-
-### 5. Staged review
-
-Review separately:
-
-1. problem
-2. solution
-3. implementation
-
-Then require both:
-
-- Evidence Gate pass
-- Quality Gate ready
-
-## “Nothing feels obviously wrong”
-
-This does not mean perfection or infinite iteration.
-
-A material issue is one a skilled reviewer can point to and explain as harmful to:
-
-- trust
-- comprehension
-- agency
-- continuity
-- visual quality
-- repeated-use efficiency
-- platform fit
-- performance
-- intended feeling
-
-The Quality Gate can veto readiness for:
-
-- unearned attention
-- a weak concept
-- low-fidelity visual material
-- detached or inert behavior
-- platform afterthoughts
-- visible weakest-link quality cliffs
-- immediate first-impression problems
-
-A veto requires concrete product reasoning. It is not permission to enforce personal taste.
-
-## Secondary labels, descriptions, and eyebrow text
-
-They are covered explicitly and are not treated as harmless decoration.
-
-Eyebrows, kickers, overlines, section numbers, figure labels, category/type/mode labels, captions, helper descriptions, and secondary subtitles must each perform a unique job.
-
-For substantial work, UI Slop requires a supporting-copy subtraction pass:
-
-1. temporarily remove those layers from the first useful viewport and primary detail state
-2. restore only what prevents ambiguity or error, communicates state, enables action, or supplies necessary provenance, scope, units, or risk
-3. reject descriptor stacks when title, layout, imagery, control state, or conventional semantics already communicate the same meaning
-
-This is not a universal ban. Necessary navigation, status, disambiguation, provenance, and action guidance remain valid. Tiny uppercase or monospace copy used mainly to simulate editorial, archival, premium, or technical authenticity does not.
-
-## Runtime references
-
-The v3 core lives in `SKILL.md`.
-
-Mandatory operating references:
-
-- `references/shaping.md`
-- `references/product-principles.md`
-- `references/reference-calibration.md`
-- `references/concept-proof.md`
-- `references/review-stages.md`
-- `references/quality-bar.md`
-
-`references/module-map.md` routes specialist concerns such as structure, typography, media, interaction, continuity, responsive behavior, accessibility, performance, and evidence.
-
-Templates:
-
-- `examples/experience-brief.template.md`
-- `examples/product-principles.template.md`
-- `examples/review-record.template.md`
-
-## Evidence tooling
-
-The public tool surface remains small:
-
-```text
-ui-slop inspect
-ui-slop capture
-ui-slop validate
+```sh
+git clone https://github.com/suna-kabo/ui-slop.git
+cd ui-slop
+npm ci
+npm run skill:install:user
 ```
 
-Requires Node.js 20+.
+The user install goes to `~/.agents/skills/ui-slop/`. On Windows, `~` is your user profile. Start a fresh Codex desktop local session or Codex CLI session. To select the skill explicitly, ask: “Use `$ui-slop` to review this interface.” The installed `SKILL.md` is at the root of the skill directory.
 
-```bash
-npm install
-npx playwright install chromium
+For project scope, run `npm run skill:install:project -- "/path/to/project"`. The command defaults to the directory you invoked npm from. It installs into `<project>/.agents/skills/ui-slop/`. Both installers replace only the UI Slop directory. Use the same install command to update after pulling the latest changes and running `npm ci`. To uninstall, remove the corresponding `ui-slop/` directory and start a fresh session.
+
+Use the bounded [Codex smoke prompt](examples/codex-skill-smoke-prompt.txt) from this checkout to verify discovery and file loading. The installer prints the installed version. You can also read `skill-manifest.json` alongside the resolved `SKILL.md` or run `node "<skill-dir>/tools/ui-slop-v3.mjs" --version`.
+
+## Pack and diagnose
+
+```sh
+npm run skill:pack
+npm run skill:doctor
+npm run skill:doctor -- "/path/to/project"
 ```
 
-### Inspect project facts
+`skill:pack` rebuilds the portable `dist/ui-slop/` directory from the root skill, references, templates, and evidence scripts. The generated manifest records the version, source digest, and file hashes. `skill:doctor` checks that output and any user or target project copies, then checks the Playwright runtime and launches Chromium. It reports repairs without editing files.
 
-```bash
-ui-slop inspect . --out .ui-slop/context.json
+## Browser evidence
+
+Skill discovery uses local files and requires no custom MCP. Built-in Codex browser and computer-use tools are optional. UI Slop uses Playwright for repeatable workflow evidence.
+
+To enable capture from an installed copy, run the following using the directory containing the resolved `SKILL.md`. Repeat the dependency step after reinstalling the skill. To run from the checkout, use its root as `<skill-dir>`.
+
+```sh
+npm --prefix "<skill-dir>" ci --ignore-scripts
+npm --prefix "<skill-dir>" exec --no -- playwright install chromium
+node "<skill-dir>/tools/ui-slop-v3.mjs" inspect .
 ```
 
-### Capture a workflow
+On Linux runners that need system libraries, use `playwright install --with-deps chromium`. Set `UI_SLOP_CHROMIUM_PATH` to use a system Chromium executable. See the [Evidence Harness](references/evidence-harness.md) for capture and validation commands.
 
-```bash
-ui-slop capture http://localhost:3000 \
-  --scenario ./scenario.json \
-  --brief ./brief.txt \
-  --out .ui-slop/runs/example
-```
-
-Or:
-
-```bash
-ui-slop capture \
-  --html ./fixture.html \
-  --scenario ./scenario.json \
-  --out .ui-slop/runs/example
-```
-
-### Validate a bundle
-
-```bash
-ui-slop validate .ui-slop/runs/example
-```
-
-The evidence engine collects executed behavior, responsive screenshots, focus and state traces, accessibility inventory, typography and interaction geometry, animation inventory, runtime findings, checksums, and an evidence-first review packet.
-
-Automated evidence does not issue aesthetic verdicts.
-
-## Review discipline
-
-For substantial work, the reviewer receives:
-
-1. original request
-2. Experience Brief
-3. product principles
-4. runnable artifact or immutable evidence
-5. protected requirements
-6. blocked checks
-
-The reviewer records unprompted findings before seeing the generator’s rationale.
-
-Requirements use PASS / FAIL / BLOCKED / ADVISORY.
-
-Quality readiness separately uses READY / NOT_READY / BLOCKED.
-
-## Research record
-
-- `research/v3-design-operating-model.md`
-- `research/v3-benchmark-findings.md`
-- `research/v2-benchmark-protocol.md`
-
-The v3 research record documents why the architecture changed and what remains unproven.
-
-## Philosophy
-
-**Shape before UI.**
-
-**Use a few product principles to make decisions.**
-
-**Prove the core experience before completing the surface.**
-
-**Use familiar foundations and concentrated signature behavior.**
-
-**Treat visual material, motion, copy, performance, and platform fit as design materials.**
-
-**Review problem, solution, and implementation separately.**
-
-**A valid interface can still be not ready.**
-
-**Do not ship while an obvious quality cliff remains.**
+Evidence Gate status comes from executed requirements and independently verifiable standards. Quality Gate status requires a qualitative review of the rendered and operated experience. [Skill workflow](SKILL.md)

@@ -1,6 +1,6 @@
 {
   "name": "ui-slop",
-  "version": "3.0.0-rc.1",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "description": "Shape-prove-build UI design operating model with evidence tooling.",
@@ -9,10 +9,14 @@
   },
   "scripts": {
     "test": "npm run test:unit && npm run test:skill && npm run test:integration",
-    "test:unit": "node --test tests/tool.test.mjs tests/benchmark.test.mjs",
+    "test:unit": "node --test tests/tool.test.mjs tests/benchmark.test.mjs tests/skill-package.test.mjs",
     "test:skill": "node --test tests/skill.test.mjs",
     "test:integration": "node --test tests/evidence.integration.test.mjs",
-    "test:benchmark": "node --test tests/benchmark.test.mjs"
+    "test:benchmark": "node --test tests/benchmark.test.mjs",
+    "skill:pack": "node tools/skill-package.mjs pack",
+    "skill:install:user": "node tools/skill-package.mjs install-user",
+    "skill:install:project": "node tools/skill-package.mjs install-project",
+    "skill:doctor": "node tools/skill-package.mjs doctor"
   },
   "engines": {
     "node": ">=20"

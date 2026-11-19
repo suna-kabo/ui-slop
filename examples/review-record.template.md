@@ -1,40 +1,17 @@
 # UI Slop Review Record
 
-## Problem review
+- Experience Brief and principles:
+- Calibration notes:
+- Runnable concept-proof path, states exercised, and observations:
 
-- Outcome: pass / reshape / blocked
-- Findings:
-- Decision:
-
-## Solution review
-
-- Outcome: select / revise / reject / blocked
-- Product-principle fidelity:
-- Core interaction:
-- Visual material:
-- Wide/narrow:
-- Decision:
-
-## Implementation review
-
-- Outcome: ready / not ready / blocked
-- Evidence Gate:
-- First-impression findings:
-- Attention findings:
-- Secondary-label / description subtraction findings:
-- Descriptor stacks collapsed or retained with reason:
-- Quality vetoes:
-- Weakest three regions:
-- Regression evidence:
-
-## Protected requirements
-
-| ID | Outcome | Evidence |
+| Review | Outcome | Evidence and next decision |
 | --- | --- | --- |
+| Problem | PASS / RESHAPE / BLOCKED | |
+| Solution | SELECT / REVISE / REJECT / BLOCKED | |
+| Implementation | READY / NOT_READY / BLOCKED | |
 
-## Unresolved items
-
-- Hard failures:
-- Quality vetoes:
-- Advisories:
-- Blocked checks:
+- First impression, weakest region, and reviewer:
+- Supporting-copy subtraction in the first useful viewport, focused/detail state, and compact/mobile state:
+- Evidence Gate (PASS / FAIL / BLOCKED) and executed requirements:
+- Quality Gate (READY / NOT_READY / BLOCKED) and rendered observations:
+- Unresolved hard failures, quality vetoes, advisories, and blocked checks:

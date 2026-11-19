@@ -4,9 +4,22 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { runEvidence, validateBundle } from '../tools/ui-slop-v3.mjs';
+import { pathToFileURL } from 'node:url';
+import { TOOL_VERSION, runEvidence, validateBundle } from '../tools/ui-slop-v3.mjs';
 
-async function withServer(html, fn) {
+async function withFixture(html, fn) {
+  // Local file navigation exercises history and persistence on hosts that block loopback.
+  // CI uses the default HTTP transport.
+  if (process.env.UI_SLOP_TEST_FILE_FIXTURES === '1') {
+    const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'ui-slop-file-'));
+    try {
+      const file = path.join(directory, 'index.html');
+      await fs.writeFile(file, html);
+      return await fn(pathToFileURL(file).href);
+    } finally {
+      await fs.rm(directory, { recursive: true, force: true });
+    }
+  }
   const server = http.createServer((req, res) => {
     res.writeHead(200, {'content-type':'text/html; charset=utf-8'});
     res.end(html);
@@ -51,7 +64,7 @@ const brokenHtml = '<!doctype html><html><head><style>body{margin:0;width:900px;
   '<script>setTimeout(()=>{throw new Error("fixture boom")},0)</script></body></html>';
 
 test('browser evidence captures workflow, persistence, reduced motion and validates checksums', async () => {
-  await withServer(goodHtml, async (url) => {
+  await withFixture(goodHtml, async (url) => {
     const out = await makeRunRoot('good-run-');
     const runDir = path.join(out,'run');
     const scenario = {
@@ -79,7 +92,7 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
         {action:'assertNoOverflow'}
       ]
     };
-    const result = await runEvidence({url,scenario,outDir:runDir,briefText:'Keep job context and persisted watch state.',toolVersion:'3.0.0-rc.1'});
+    const result = await runEvidence({url,scenario,outDir:runDir,briefText:'Keep job context and persisted watch state.'});
     assert.equal(result.findings.filter((f)=>f.classification==='hard_failure').length,0);
     assert.equal(result.findings.filter((f)=>f.classification==='blocked').length,0);
     assert.equal(result.runs.length,6);
@@ -92,7 +105,7 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
 
     const manifest = JSON.parse(await fs.readFile(path.join(runDir,'manifest.json'),'utf8'));
     assert.equal(manifest.schema_version,2);
-    assert.equal(manifest.tool_version,'3.0.0-rc.1');
+    assert.equal(manifest.tool_version,TOOL_VERSION);
     assert.equal(manifest.inputs.brief,'inputs/brief.txt');
     assert.deepEqual([...new Set(manifest.runs.map((r)=>r.viewport.name))].sort(),['compact','desktop','mobile']);
 
@@ -104,12 +117,11 @@ test('browser evidence captures workflow, persistence, reduced motion and valida
 });
 
 test('broken fixture produces objective failures without turning style metrics into blockers', async () => {
-  await withServer(brokenHtml, async (url) => {
+  await withFixture(brokenHtml, async (url) => {
     const out = await makeRunRoot('broken-run-');
     const result = await runEvidence({
       url,
       outDir:path.join(out,'run'),
-      toolVersion:'3.0.0-rc.1',
       scenario:{
         id:'broken',
         viewports:[{name:'mobile',width:390,height:844}],
@@ -124,4 +136,35 @@ test('broken fixture produces objective failures without turning style metrics i
     assert.ok(result.findings.some((f)=>f.id==='microtype-heavy' && f.classification==='advisory'));
     assert.ok(result.findings.some((f)=>f.id==='uppercase-micro-label-recurrence' && f.classification==='advisory'));
   });
+});
+
+test('local HTML capture runs without a fixture server and records public provenance', async () => {
+  const fixture = await fs.mkdtemp(path.join(os.tmpdir(), 'ui-slop-html-'));
+  try {
+    const htmlPath = path.join(fixture, 'fixture.html');
+    await fs.writeFile(htmlPath, '<!doctype html><html lang="en"><body><button onclick="this.nextElementSibling.hidden=false">Show status</button><p hidden>Ready</p></body></html>');
+    const outDir = await makeRunRoot('local-html-');
+    const result = await runEvidence({
+      htmlPath,
+      outDir,
+      scenario: {
+        id: 'local-html',
+        requirements: [{ id: 'status', text: 'The status can be revealed.' }],
+        viewports: [{ name: 'mobile', width: 390, height: 844 }],
+        mediaVariants: ['reduced'],
+        steps: [
+          { action: 'click', locator: { role: 'button', name: 'Show status' }, requirementId: 'status' },
+          { action: 'assertVisible', locator: { text: 'Ready' }, requirementId: 'status' },
+          { action: 'assertNoOverflow' }
+        ]
+      }
+    });
+    assert.equal(result.runs.length, 1);
+    assert.deepEqual(result.findings.filter((item) => ['blocked', 'hard_failure'].includes(item.classification)), []);
+    const manifest = JSON.parse(await fs.readFile(path.join(outDir, 'manifest.json'), 'utf8'));
+    assert.equal(manifest.tool_version, TOOL_VERSION);
+    assert.equal((await validateBundle(outDir)).ok, true);
+  } finally {
+    await fs.rm(fixture, { recursive: true, force: true });
+  }
 });

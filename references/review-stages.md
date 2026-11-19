@@ -10,9 +10,9 @@ Review the Experience Brief, not mockups.
 
 Outcomes:
 
-- **pass** — the user need, outcome, scope, and constraints are clear
-- **reshape** — the problem or scope needs change
-- **blocked** — material evidence or authority is missing
+- **PASS** — the user need, outcome, scope, and constraints are clear
+- **RESHAPE** — the problem or scope needs change
+- **BLOCKED** — material evidence or authority is missing
 
 Questions:
 
@@ -23,7 +23,7 @@ Questions:
 - Should the product do less or use an existing convention?
 - Are we solving a user problem or decorating a requested UI?
 
-Do not debate colors or components here.
+Record the finding and decision. RESHAPE returns to the brief. BLOCKED pauses concept commitment.
 
 ## Solution review
 
@@ -31,10 +31,10 @@ Review the concept proof.
 
 Outcomes:
 
-- **select** — concept is strong enough to build
-- **revise** — responsible layer can be improved without changing the model
-- **reject** — structure, interaction model, material strategy, or platform fit is wrong
-- **blocked** — proof fidelity or required state is insufficient
+- **SELECT** — concept is strong enough to build
+- **REVISE** — responsible layer can be improved without changing the model
+- **REJECT** — structure, interaction model, material strategy, or platform fit is wrong
+- **BLOCKED** — proof fidelity or required state is insufficient
 
 Questions:
 
@@ -48,7 +48,7 @@ Questions:
 - Does narrow width change the model intentionally?
 - Is the concept worth its technical and performance cost?
 
-Do not approve a weak concept because implementation has already begun.
+SELECT permits full build. REVISE requires another proof. REJECT returns to shaping or calibration before proving another concept. BLOCKED pauses the build.
 
 ## Implementation review
 
@@ -56,9 +56,11 @@ Review the built product on intended platforms and inputs.
 
 Outcomes:
 
-- **ready**
-- **not ready**
-- **blocked**
+- **READY**
+- **NOT_READY**
+- **BLOCKED**
+
+Record what you operated and what the evidence showed. NOT_READY requires correction and re-review. BLOCKED requires obtaining the missing evidence.
 
 Inspect:
 

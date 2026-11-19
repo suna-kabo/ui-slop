@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -11,7 +12,7 @@ import {
   validateBundle
 } from './ui-slop.mjs';
 
-const TOOL_VERSION = '3.0.0-rc.1';
+const { version: TOOL_VERSION } = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 
 const HELP = 'UI Slop v3 evidence tooling\n\nUsage:\n' +
   '  ui-slop inspect [project-root] [--out <context.json>]\n' +

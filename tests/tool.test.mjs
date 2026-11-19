@@ -11,8 +11,9 @@ import {
   validateScenario
 } from '../tools/ui-slop-v3.mjs';
 
-test('version is v3 release candidate', () => {
-  assert.equal(TOOL_VERSION, '3.0.0-rc.1');
+test('public tool version comes from the v3 package', async () => {
+  const { version } = JSON.parse(await fs.readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  assert.equal(TOOL_VERSION, version);
 });
 
 test('scenario contract validates requirements and focused workflow', () => {

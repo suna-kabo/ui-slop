@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+- Added deterministic local Codex skill packaging, scoped installation, and diagnostics.
+- Required an operated concept proof, explicit review decisions, and separate Evidence and Quality Gate results.
+- Consolidated mandatory supporting-copy subtraction and added installation and browser verification coverage.
+
 ## 2.0.0-rc.2
 
 Empirical-validation infrastructure release candidate.

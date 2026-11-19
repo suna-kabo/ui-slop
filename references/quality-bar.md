@@ -6,14 +6,11 @@ The target is not universal perfection. The target is that no material part of t
 
 ## Readiness
 
-A substantial surface is ready only when:
+Assess independently of the Evidence Gate.
 
-- Evidence Gate has no unresolved hard failure
-- required evidence is not silently unknown
-- the selected concept still solves the shaped problem
-- no unresolved quality veto remains
-- the weakest visible region is within the quality range of the strongest
-- the primary experience remains strong on relevant platforms and inputs
+- **READY** requires concrete observations from an operated primary flow, first useful viewport, primary detail or focused state, and relevant compact/mobile and signature states. Record first-impression findings, the supporting-copy pass, and the weakest visible region. Resolve every material veto.
+- **NOT_READY** means an observed material veto remains. Cite the state or interaction, the issue, and the user or product harm.
+- **BLOCKED** means a required state or interaction could not be assessed. Identify the missing evidence. Record any observed vetoes even when coverage is blocked.
 
 ## What counts as a material quality issue
 
@@ -45,54 +42,13 @@ Reject when:
 
 Every element must earn attention.
 
-## Editing
+## Mandatory supporting-copy subtraction
 
-Remove text or chrome when hierarchy, adjacency, imagery, behavior, or conventional semantics already communicate the meaning.
+Secondary labels are not default layers. Descriptions must supply unique information. For each first useful viewport, primary detail or focused state, and compact or mobile state, temporarily hide supporting copy and inspect the resulting interface.
 
-Keep secondary content when it:
+Include eyebrow text, kickers, overlines, section numbers, figure labels, captions, category/type/mode labels, repeated subtitles, helper descriptions, and duplicated metadata. Collapse descriptor stacks and remove descriptions that paraphrase titles, imagery, layout, or visible control state. Remove tiny uppercase or monospace text used mainly for premium, editorial, archival, or technical authenticity.
 
-- changes a decision
-- clarifies state
-- prevents error
-- supplies provenance or context unavailable elsewhere
-- enables action
-
-Repeated description is not editorial depth.
-
-## Secondary labels, descriptions, and eyebrow text
-
-Secondary labels are not automatically wrong, but they are a high-risk support layer rather than a default visual ingredient.
-
-This includes:
-
-- eyebrows, kickers, overlines, and small uppercase labels
-- section numbers and figure labels
-- category, type, mode, and status descriptors
-- helper descriptions and explanatory subtitles
-- institutional, archive, source, or provenance labels
-- captions that repeat nearby content
-
-For every visible instance, name its unique job. Then run a subtraction test: temporarily remove it and restore it only when removal creates real ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or makes an action meaningfully harder to discover.
-
-Reject when:
-
-- a descriptor stack appears before the primary content, such as section number + eyebrow + type + mode + title
-- a label names a page, section, object type, or mode that layout, title, control state, or imagery already makes clear
-- a description paraphrases the heading or narrates what the composition already shows
-- tiny uppercase or monospace text is used mainly to simulate premium, archival, technical, or editorial authenticity
-- several labels express the same meaning at different levels
-- supporting text visually outranks the object, task, or next action
-- secondary copy compensates for weak hierarchy instead of supplying unique information
-
-Keep it when it performs a necessary role such as:
-
-- navigation or indexing that users actively use
-- live status or mode that cannot be inferred safely
-- category disambiguation among genuinely similar objects
-- essential provenance, scope, units, constraints, or risk
-- concise action guidance unavailable from the control or surrounding context
-
-There is no universal ban and no fixed count. The test is unique information, earned attention, and actual user value.
+Restore copy only if removal creates genuine ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or meaningfully hurts action discovery. There is no universal ban. Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints can justify secondary copy. Record the consequential removals and restorations by state.
 
 ## Composition
 

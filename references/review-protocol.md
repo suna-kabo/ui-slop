@@ -26,7 +26,7 @@ Do not begin with the generator’s rationale or victory narrative.
 7. Detector and advisory evidence
 8. Generator explanation, only after unprompted findings
 
-The supporting-copy audit covers the first useful viewport, primary detail state, and one compact or mobile state. It examines eyebrow text, kickers, overlines, section and figure labels, category/type/mode labels, captions, helper descriptions, subtitles, and repeated metadata. Temporarily remove these layers and restore only those that perform a unique necessary job.
+Perform the mandatory supporting-copy subtraction pass in `quality-bar.md` and record the observed effect in each required state.
 
 ## Requirement outcomes
 
@@ -39,32 +39,7 @@ Unknown is not PASS.
 
 ## Quality readiness
 
-Separately record:
-
-- **READY**
-- **NOT_READY**
-- **BLOCKED**
-
-`NOT_READY` requires at least one concrete quality veto tied to user or product harm.
-
-A quality veto may concern:
-
-- attention
-- editing
-- concept
-- material fidelity
-- typography
-- affordance
-- interaction response
-- continuity
-- motion
-- responsive/platform fit
-- performance
-- weakest-link quality
-
-Do not convert preference into a veto.
-
-Secondary labels and descriptions are not failed by category. They become a veto when they repeat meaning, simulate authenticity, compete with the primary object or task, or expose weak hierarchy. They remain valid when they are necessary for navigation, state, action, error prevention, disambiguation, provenance, scope, units, constraints, or risk.
+Use the READY / NOT_READY / BLOCKED criteria in `quality-bar.md` and cite the rendered evidence. Keep the Evidence Gate outcome separate.
 
 ## Reviewer record
 

@@ -1,8 +1,8 @@
 # Concept Proof
 
-Use this before completing a substantial new or replacement surface.
+Complete this proof before starting the full build of a substantial new or replacement surface.
 
-A concept proof is a high-information vertical slice, not a miniature finished website and not a low-fidelity wireframe alone.
+Build a runnable vertical slice that a reviewer can operate.
 
 ## What to prove
 
@@ -63,7 +63,7 @@ Operate:
 7. repeat at narrow width
 8. use keyboard or touch-equivalent input where applicable
 
-Record what remains anchored and what changes.
+Link the runnable artifact in the concept-proof record. Record operated states, what remains anchored, what changes, and any missing proof. Apply the solution decision in `review-stages.md` before advancing.
 
 ## Pass criteria
 
