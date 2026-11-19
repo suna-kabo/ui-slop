@@ -1,7 +1,7 @@
 # UI Slop Review Record
 
 - Experience Brief and principles:
-- Calibration notes:
+- Calibration notes and the rendered or operated proof that resolved each consequential decision:
 - Runnable concept-proof path, states exercised, and observations:
 
 | Review | Outcome | Evidence and next decision |
@@ -11,7 +11,7 @@
 | Implementation | READY / NOT_READY / BLOCKED | |
 
 - Review mode (INDEPENDENT_REVIEW / SELF_REVIEW) and reviewer:
-- Uncoached desktop and mobile first impressions, first attention, and weakest visible region:
+- Uncoached desktop and mobile first impressions, first attention, and weakest visible region. Record before reading design and detector records:
 - Supporting-copy subtraction in the first useful viewport, focused/detail state, and compact/mobile state. Record removal or relocation effects and retained job, placement, prominence, and treatment:
 - Primary response and continuity judgment, with operated evidence of action, result, recovery, focus, and next action:
 - Separate compact/mobile operation and adaptation:

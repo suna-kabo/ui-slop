@@ -8,29 +8,14 @@ Record **INDEPENDENT_REVIEW** when a separate reviewer can inspect the rendered 
 
 ## Inputs
 
-Give the reviewer:
-
-1. original user request
-2. Experience Brief
-3. product principles
-4. runnable artifact or immutable evidence
-5. protected requirements
-6. known blocked checks
-
-Do not begin with the generator’s rationale or victory narrative.
+Start with the original request, protected requirements, and a runnable artifact or immutable evidence. Include anything needed to operate it safely. Hold the Experience Brief, principles, implementation rationale, and detector findings until the reviewer records the first findings.
 
 ## Review order
 
-1. Uncoached ten-second pass in `quality-bar.md` on the first useful desktop and mobile viewports
-2. Problem review
-3. Solution review
-4. Implementation review
-5. Supporting-copy subtraction audit
-6. Protected requirement outcomes
-7. Detector and advisory evidence
-8. Generator explanation, only after unprompted findings
-
-Perform the mandatory supporting-copy subtraction pass in `quality-bar.md` and record the observed effect in each required state.
+1. Run the ten-second pass in `quality-bar.md` on the first useful desktop and mobile states.
+2. Operate the primary action, a second action, and return or recovery. Inspect the weakest detail or secondary state. Record the observed consequence before opening the supporting records.
+3. Use the brief, principles, and evidence to complete the stage reviews. Follow `review-stages.md`, inspect protected outcomes and blocked checks, and perform the mandatory supporting-copy subtraction pass in `quality-bar.md`.
+4. Consider the generator’s explanation once findings are on record.
 
 ## Adversarial self-review
 
@@ -72,7 +57,7 @@ For supporting copy, also record:
 
 ## Fix and rerun
 
-Fix the smallest responsible layer that can solve the issue.
+Fix the smallest responsible layer that can solve the issue. When the right correction is uncertain, render a bounded alternative on the same content and compare both in use. Preserve the first observation and the result after correction.
 
 Rerun:
 

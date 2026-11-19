@@ -37,7 +37,7 @@ Where applicable:
 - keyboard navigation
 - reduced motion
 
-Test at least one second or third action.
+Test at least one second or third action. When response is in doubt, retarget, repeat, or reverse before settlement. Compare what appears at activation, while work or motion is in progress, and on completion. Use a recording, frame sample, or trace when two endpoint screenshots cannot show the difference. Record the next action the interface makes possible.
 
 Record for each step:
 

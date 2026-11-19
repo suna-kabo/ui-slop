@@ -44,15 +44,11 @@ Every element must earn attention.
 
 ## Mandatory supporting-copy subtraction
 
-Secondary labels are not default layers. Descriptions must supply unique information. For each first useful viewport, primary detail or focused state, and compact or mobile state, temporarily hide supporting copy and inspect the resulting interface.
+For the first useful viewport, primary detail or focused state, and compact or mobile state, render the interface with candidate copy removed or consolidated. Collapse the vacated space and any wrapper that only served the copy. Compare the intact and recomposed states at the same width, then operate the affected task. Look for changes to attention, spacing, visibility, and action discovery.
 
-Include eyebrow text, kickers, overlines, section numbers, figure labels, captions, category/type/mode labels, repeated subtitles, helper descriptions, and duplicated metadata. Collapse descriptor stacks and remove descriptions that paraphrase titles, imagery, layout, or visible control state. Remove tiny uppercase or monospace text used mainly for premium, editorial, archival, or technical authenticity.
+Start with eyebrows, kickers, numbering, captions, stacked descriptors, helper text that repeats the title or state, and duplicated metadata. A category, mode, filter, or deep link can be useful while its current placement competes with the task. Try moving it to the title, a conventional control, nearby state, or an on-demand surface.
 
-Restore copy only if removal creates genuine ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or meaningfully hurts action discovery. There is no universal ban. Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints can justify secondary copy. Record the consequential removals and restorations by state.
-
-Clickability alone is insufficient. Serving as a category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot. Before restoring copy, test whether users can infer it from context, read it through a conventional control or visible state, find it on a quieter surface or on demand, or get it from the primary title or content. Include removing it entirely as an option.
-
-Justify both the information or action and its placement, prominence, and visual treatment. A newly added secondary function is subject to the same test. Restore a prominent treatment only when removing or relocating it materially harms the primary task, comprehension, decision quality, provenance, safety, or state awareness. Apply particular scrutiny to eyebrows, kickers, overlines, tiny uppercase or monospace authenticity labels, section and figure labels, redundant category/type/mode labels, restating subtitles, and descriptor stacks.
+Preserve accessible names, live feedback, safety, provenance, units, and context needed for a decision. Restore visible text or prominence where the comparison shows that users lose information or discover an action less reliably. Record the consequential change and its effect in each inspected state.
 
 ## Composition
 

@@ -1,74 +1,15 @@
 # Reference Calibration
 
-Use this when quality, visual authority, interaction feel, or platform behavior is open.
+Calibrate where visual, interaction, or platform decisions are open. Choose one or two risks that could survive a technically correct build. Start with a comparable part of a product, a platform pattern, or a strong region of the incumbent.
 
-Calibration sets a quality bar. It does not provide a template.
+For each risk, record:
 
-## Build a small set
+- **Observation.** Name the exact state or action and what the reference does at working size. Operate it when making a behavioral claim.
+- **Decision.** Explain the tradeoff, what carries over to this product, and what stays specific to the reference.
+- **Evidence.** State what users should see or be able to do in the proof, and what would make you reconsider the choice.
 
-Use:
+For example, a comparison view preserves the selected row when the inspector closes, so users can continue scanning. Keep the selected load and restore its focus after closing the manifest. If this pushes the next load offscreen on narrow screens, compare a return path that keeps the active row in view.
 
-- relevant platform conventions
-- two to four best-in-class references for the same quality problem
-- incumbent strengths worth preserving
-- the category default
-- the category's obvious anti-default
+When two treatments are credible and the decision materially affects the task, render both with the same difficult content and compare them at the intended size before choosing. A bounded comparison of one region is enough. Apply this to typography, density, material, or interaction as the risk warrants. For a constrained refinement use the existing product as the comparison and preserve the approved direction.
 
-Do not collect a large inspiration board and average it into sameness.
-
-## Compare mechanisms, not screenshots
-
-For each reference record:
-
-- what user need or feeling it serves
-- what receives attention
-- what remains familiar
-- what is custom
-- how content shapes composition
-- how a primary action responds
-- how detail opens and returns
-- how mobile changes the model
-- what makes it feel finished
-- what would be inappropriate to copy
-
-A beautiful screenshot is weak evidence for interaction quality.
-
-## Set explicit bars
-
-Write one sentence for each relevant axis:
-
-- typography
-- visual material
-- interaction response
-- continuity
-- motion
-- density
-- mobile/platform fit
-- performance perception
-
-Example:
-
-> Object imagery must remain convincing at hero scale; diagrammatic treatment is acceptable only if construction and material are legible without explanatory copy.
-
-## Avoid prestige imitation
-
-Do not copy:
-
-- another product’s brand tokens
-- signature interaction without the underlying relationship
-- arbitrary motion values
-- editorial labels used only to signal taste
-- a visual world that conflicts with the product’s audience or task
-
-References are evidence of possible quality, not authority over the product.
-
-## When external research is unavailable
-
-Use:
-
-- incumbent high-quality regions
-- platform conventions
-- established component behavior
-- comparable products already supplied by the user
-
-Mark external calibration as blocked rather than inventing a best-in-class claim.
+Prefer a small number of observations that can change the proof. If external behavior cannot be inspected, record the limitation and use an available platform or incumbent example. Attribute only behavior you observed.

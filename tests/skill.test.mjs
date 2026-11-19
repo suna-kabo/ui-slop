@@ -37,17 +37,11 @@ test('mandatory supporting-copy rules cover all layers, rendered states and rest
   assert.match(skill, /mandatory \*\*supporting-copy subtraction pass\*\* in `references\/quality-bar\.md` on the first useful viewport, primary detail or focused state, and a compact or mobile state/);
   const section = quality.split('## Mandatory supporting-copy subtraction')[1]?.split('\n## ')[0];
   assert.ok(section);
-  const concepts = [
-    'Secondary labels are not default layers', 'Descriptions must supply unique information',
-    'first useful viewport', 'primary detail or focused state', 'compact or mobile state', 'temporarily hide',
-    'eyebrow text', 'kickers', 'overlines', 'section numbers', 'figure labels', 'captions',
-    'category/type/mode labels', 'repeated subtitles', 'helper descriptions', 'duplicated metadata',
-    'Collapse descriptor stacks', 'tiny uppercase or monospace', 'premium, editorial, archival, or technical authenticity',
-    'Restore copy only if', 'genuine ambiguity', 'hides state', 'weakens a decision', 'necessary provenance',
-    'increases error risk', 'meaningfully hurts action discovery', 'There is no universal ban',
-    'Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints'
-  ];
-  for (const concept of concepts) assert.ok(section.includes(concept), concept);
+  for (const term of ['first useful viewport', 'primary detail or focused state', 'compact or mobile state',
+    'removed or consolidated', 'Collapse the vacated space and any wrapper', 'intact and recomposed states',
+    'operate the affected task', 'accessible names', 'live feedback', 'safety', 'provenance']) {
+    assert.ok(section.includes(term), term);
+  }
   for (const reference of ['craft-floor', 'browser-qa', 'review-protocol']) {
     assert.match(await read(`references/${reference}.md`), /mandatory supporting-copy subtraction pass in `quality-bar\.md`/);
   }
@@ -59,14 +53,12 @@ test('workflow expresses interaction logic without fixed motion recipes', async 
   assert.doesNotMatch(skill, /cubic-bezier\(|scale\(0\.\d+|\b\d+ms\b/i);
 });
 
-test('making a category eyebrow clickable cannot satisfy the burden for keeping it prominent', async () => {
+test('a useful secondary action may still need a different placement', async () => {
   const quality = await read('references/quality-bar.md');
   const subtraction = quality.split('## Mandatory supporting-copy subtraction')[1].split('\n## ')[0];
-  assert.match(subtraction, /Clickability alone is insufficient/);
-  assert.match(subtraction, /category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot/);
-  assert.match(subtraction, /infer it from context[\s\S]*conventional control or visible state[\s\S]*quieter surface or on demand[\s\S]*primary title or content[\s\S]*removing it entirely/);
-  assert.match(subtraction, /Justify both the information or action and its placement, prominence, and visual treatment/);
-  assert.match(subtraction, /A newly added secondary function is subject to the same test[\s\S]*removing or relocating it materially harms/);
+  assert.match(subtraction, /category, mode, filter, or deep link can be useful while its current placement competes/);
+  assert.match(subtraction, /title, a conventional control, nearby state, or an on-demand surface/);
+  assert.match(subtraction, /Restore visible text or prominence where the comparison shows that users lose information or discover an action less reliably/);
 });
 
 test('a generic crop toggle cannot establish a signature claim and continuity is judged in use', async () => {
@@ -102,4 +94,16 @@ test('READY without an independent reviewer requires an adversarial rendered rev
   const evidence = await read('references/evidence-gate.md');
   assert.match(evidence, /Evidence proves that an observed state exists and was exercised\. It does not prove that the state is well designed/);
   assert.match(evidence, /Disclose unavailable required evidence and mark the gate BLOCKED/);
+});
+
+test('proof resolves calibration risks and rendered observations precede supporting records', async () => {
+  const skill = await read('SKILL.md');
+  const stage = skill.split('## Stage 3')[1].split('## Stage 4')[0];
+  assert.match(stage, /references\/module-map\.md.*before choosing the direction/);
+  const calibration = await read('references/reference-calibration.md');
+  assert.match(calibration, /Observation\.[\s\S]*Decision\.[\s\S]*Evidence\.[\s\S]*same difficult content/);
+  assert.match(await read('references/concept-proof.md'), /Resolve the calibration risk with an observed result before SELECT/);
+  const protocol = await read('references/review-protocol.md');
+  assert.match(protocol, /records the first findings[\s\S]*a second action, and return or recovery[\s\S]*before opening the supporting records/);
+  assert.match(await read('references/browser-qa.md'), /at activation, while work or motion is in progress, and on completion/);
 });

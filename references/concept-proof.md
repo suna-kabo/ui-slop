@@ -69,7 +69,7 @@ Operate:
 7. repeat at narrow width
 8. use keyboard or touch-equivalent input where applicable
 
-Link the runnable artifact in the concept-proof record. Record operated states, what remains anchored, what changes, whether special continuity is warranted, and any missing proof. Apply the solution decision in `review-stages.md` before advancing.
+Link the runnable artifact in the concept-proof record. Resolve the calibration risk with an observed result before SELECT. Record operated states, what remains anchored, what changes, whether special continuity is warranted, and any missing proof. Apply the solution decision in `review-stages.md` before advancing.
 
 ## Pass criteria
 

@@ -19,11 +19,11 @@ Record the **problem review** before committing to a concept. Follow `references
 
 Read `references/product-principles.md` and `references/reference-calibration.md`. Write **three to five product-specific principles** that resolve actual tensions and change decisions. Use `examples/product-principles.template.md`.
 
-Record **calibration notes** covering relevant platform conventions, reference qualities, incumbent strengths, and category defaults to avoid. Identify where the core experience earns custom work.
+Record **calibration notes** connecting an observed reference or incumbent mechanism to a decision and the result that would make you reconsider it. Identify where the core experience earns custom work.
 
 ## Stage 3 — Prove the core experience
 
-Read `references/concept-proof.md` and `references/craft-floor.md`. Build and operate a **runnable vertical slice** with representative content and near-final primary visual material. Exercise the highest-risk interaction through entry, action, result, second action, and return at wide and narrow sizes, with relevant inputs. A written explanation, static mockup, or screenshot alone cannot pass.
+Read `references/concept-proof.md` and `references/craft-floor.md`. Use `references/module-map.md` to load specialist guidance for the highest proof risk before choosing the direction. Build and operate a **runnable vertical slice** with representative content and near-final primary visual material. Exercise the highest-risk interaction through entry, action, result, second action, and return at wide and narrow sizes, with relevant inputs. A written explanation, static mockup, or screenshot alone cannot pass.
 
 Record the **concept-proof** artifact path or URL, exercised states, observations, and unresolved risks. Record the **solution review** and its **SELECT / REVISE / REJECT** decision, or BLOCKED if required proof is unavailable. Only SELECT unlocks the full build. Revise and re-prove, or reject and reshape.
 
@@ -31,7 +31,7 @@ Record the **concept-proof** artifact path or URL, exercised states, observation
 
 Use accessible platform conventions for ordinary behavior. Claim a signature experience only when the shaped problem earns it under `references/concept-proof.md`. Define response, continuity, boundaries, recovery, focus, and the next action for the primary flow. Motion can express interaction logic. The workflow must make sense without it.
 
-Use `references/module-map.md` to route specialist guidance. Apply the supporting-copy pass in `references/quality-bar.md` during proof and build so supporting text earns its place early.
+Use the module map for implementation risks. Apply the supporting-copy pass in `references/quality-bar.md` during proof and build so supporting text earns its place early.
 
 ## Stage 5 — Review problem, solution, and implementation
 
