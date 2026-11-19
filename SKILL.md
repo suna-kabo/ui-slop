@@ -1,220 +1,293 @@
 ---
 name: ui-slop
-description: Standalone UI design and engineering workflow for building, rebuilding, refining, or auditing production interfaces without generic AI composition, fixed aesthetic recipes, or repeated interaction grammar. Protects product behavior, loads only the reasoning a task needs, and separates rendered evidence from taste judgment.
+description: Standalone UI design and engineering operating model for shaping, proving, building, and reviewing production interfaces. Use for new UI, redesigns, refinements, or audits when the result must be product-specific, behaviorally responsive, visually authored, technically sound, and free of obvious quality cliffs.
 ---
 
 # UI Slop
 
-UI Slop is a product-specific UI reasoning skill with an evidence loop.
+UI Slop is a product-design operating model with an evidence loop.
 
-It is not a component library, style catalog, palette generator, house aesthetic, or fixed motion system.
+It is not a house aesthetic, component library, style catalog, palette generator, motion recipe, or promise that more polish will rescue a weak concept.
 
-## Route and authority
+The finish condition is:
 
-Choose the smallest task mode:
+> **The product contract is protected, the core experience is proven, and no material part of the primary experience feels obviously wrong.**
 
-- **Audit**: inspect and report without changing the product.
-- **Refinement**: preserve approved behavior, structure, and visual authority unless the user explicitly changes scope.
-- **Rebuild**: preserve product truth and required behavior while allowing structure, interaction model, information architecture, and visual system to change.
+“Nothing feels obviously wrong” does not mean personal perfection or endless polishing. It means no unresolved issue in the first useful viewport or primary flow materially damages trust, comprehension, control, continuity, visual quality, platform fit, or the intended feeling.
 
-Classify the surface by what success means:
+## Working depth
 
-- **Workflow**: repeated accurate task completion.
-- **Reading**: comprehension, navigation, annotation, comparison.
-- **Persuasion**: decision and action from narrative or proof.
-- **Immersion**: the artifact or content is the experience.
-- **Browse / Collect**: discovery, comparison, saving, revisiting, and traversal.
+Choose the smallest mode that fits:
 
-Use `references/module-map.md` and load only the modules needed by the task or unresolved risk. Historical evidence and release reports are not runtime instructions.
+- **Audit**: inspect and report. Do not redesign by implication.
+- **Refinement**: preserve approved product behavior and visual authority; reshape only the responsible layer.
+- **Rebuild / new surface**: shape the problem, establish product principles, prove the core experience, then build.
+- **System work**: improve shared foundations without forcing every product into one visual or behavioral grammar.
 
-## Protect the product contract
+For a narrow fix, compress the sequence. For substantial new or replacement work, all five stages below are mandatory.
 
-Before changing presentation, identify what must remain correct:
+Use `references/module-map.md` to load only supporting references. The five-stage core is not optional.
 
-- domain semantics and data correctness
-- required workflows and second/third actions
-- permissions, saved state, persistence, and reload behavior
-- routes, history, deep links, Back/close behavior, and focus return
-- imports, exports, downloads, integrations, and offline/recovery behavior when applicable
-- keyboard, accessibility, responsive, platform, and framework requirements
+# Stage 1 — Shape the outcome
 
-Do not weaken behavior because presentation is difficult.
+Do not begin with a page type, component inventory, visual trend, or feature list.
 
-For a rebuild, incumbent DOM, layout, cards, navigation, and styling are evidence, not automatic visual authority.
+Write a short **Experience Brief** that states:
 
-## Model real content before the shell
+1. **User and context** — who is here, on what platform/input, under what conditions.
+2. **Outcome** — what meaningful result the person reaches, including the second or third action when relevant.
+3. **Irreducible core** — the smallest experience that creates the value.
+4. **Protected truth** — data, domain semantics, routes, permissions, persistence, accessibility, recovery, integrations, and platform constraints that must remain correct.
+5. **Non-goals** — what this work should deliberately not become.
+6. **Quality risk** — the one or two ways a superficially competent solution would still fail.
 
-Identify the primary user job, domain objects, important relationships, state changes, and repeated actions.
+Distinguish user need from requested UI. Ask whether the product should do less, use an existing convention, or remove a layer rather than redesign it.
 
-Use representative content before structure locks. Include relevant long, short, missing, mixed, empty, dense, invalid, and similar-looking records instead of designing only around ideal placeholders.
+For redesigns, incumbent DOM, cards, navigation, copy, and visual styling are evidence, not automatic authority.
 
-Read `references/real-content-first.md` for substantial content or data surfaces.
+Read `references/shaping.md`.
 
-## Choose structure from the domain
+# Stage 2 — Set product principles and calibration
 
-When structure is genuinely open, compare materially different spatial concepts. Do not run a concept tournament for a narrow refinement.
+Create **three to five product-specific decision principles** before choosing a detailed direction.
 
-A useful structure should:
+A useful principle contains:
 
-- make the primary job dominant
-- expose relationships users need to understand or act on
-- keep controls near what they control
-- survive removal of color, branding, and decoration
-- use familiar conventions when they reduce error or learning cost
-- avoid a familiar shell when it exists only because the model reaches for it
+- a short name
+- the tension it resolves
+- the decision rule
+- one implication
+- one thing it rejects
 
-Novelty is not a goal. Product fit is.
+Example:
 
-Read `references/structural-direction.md` and `references/information-design.md` when structure is open.
+> **Object before archive chrome** — When object identity and institutional metadata compete, the object wins until metadata changes interpretation or action.
 
-## Establish a product-grounded visual world
+Do not write universal advice such as “be clean,” “use whitespace,” or “make it modern.”
 
-If an approved visual system exists, inherit it unless replacement is requested.
+Then establish a small **quality calibration set**:
 
-Otherwise derive visual direction from the subject, audience, usage scene, culture, materials, content, tempo, trust level, and interaction frequency.
+- relevant platform conventions
+- two to four best-in-class references for the same quality problem
+- incumbent strengths worth preserving
+- known category defaults and obvious anti-defaults
 
-Do not escape generic SaaS by repeatedly choosing another generic anti-default. Paper/editorial, dark-neon, glass/glow, terminal, soft-card, or any other recurring world requires a product reason.
+References set a bar; they are not templates to copy or average together.
 
-Read `references/visual-direction.md` when visual authority is missing or being replaced. Load typography, color, media, and asset references only when those axes are material.
+Decide where familiarity is valuable and where one concentrated signature experience can earn custom work. Do not attempt originality in every control.
 
-## Design presentation rhythm
+Read `references/product-principles.md` and `references/reference-calibration.md`.
 
-Typography, density, spacing, grouping, and simultaneous visibility form one information system.
+# Stage 3 — Prove the core experience
 
-Compress through grouping, alignment, shared context, better representation, and progressive disclosure before shrinking type. Mobile may change information priority or representation instead of preserving desktop density by making everything smaller.
+Before building the complete surface, prove a vertical slice with real or representative content.
 
-Read `references/presentation-rhythm.md` for workflow, reading, comparison, or data-heavy surfaces.
+The proof must include, when applicable:
 
-## Design connected state and continuity
+- the primary object or task
+- the primary visual material at near-final fidelity
+- the highest-risk interaction
+- entry, action, result, and return
+- a wide and narrow representation
+- pointer, touch, and keyboard implications
+- loading or transition behavior if it affects the concept
+- one second action that reveals whether continuity survives
 
-When parts of the product are related, decide what should react together and what should remain anchored.
+Explore materially different models only where the solution is genuinely open. Do not create several fully polished sites.
 
-For repeated workflows, browse paths, nested detail, playback, or persisted work define:
+A concept passes only when:
 
-- state lifetime
+- the product principles are visible in the experience
+- the main content or object shapes the composition
+- the interaction feels immediate and understandable
+- the visual material is good enough to carry the direction
+- mobile is a deliberate representation
+- a skilled reviewer cannot identify a concept-level flaw that polishing would merely decorate
+
+If the proof fails at the level of structure, interaction model, visual material, or platform fit, reshape or discard it. Do not complete the site and hope a final pass will save it.
+
+Read `references/concept-proof.md`.
+
+# Stage 4 — Build foundation plus signature
+
+Use familiar, native, accessible foundations for ordinary behavior. Concentrate custom design and engineering where the product earns it.
+
+Build from:
+
+- real content and real states
+- semantic HTML and platform conventions
+- a coherent type, spacing, color, image, and motion system
+- direct controls near the objects they affect
+- explicit state ownership and return behavior
+- responsive behavior derived from content and input failure
+- performance budgets appropriate to the platform
+- one to three domain-derived signature behaviors when the product benefits
+
+A signature behavior starts from a relationship, object, or ritual, not from an effect. It may be almost static. It must improve understanding, control, memory, discovery, or feeling.
+
+Interaction is not complete when a state variable changes. For primary actions define:
+
+- prompt response
+- what remains anchored
+- what changes locally and globally
+- interruption or reversal where relevant
+- boundary and failure behavior
+- focus and scroll behavior
+- touch and keyboard equivalents
 - next-action locality
-- return contract
-- traversal or browse topology
-- relationship actionability
-- what survives reload and why
+- repeated-use cost
 
-A feature is incomplete if the user repeatedly reconstructs filters, selection, scroll, playback, or context.
+Motion may express this logic. It is not the logic.
 
-Read `references/task-continuity.md`. For consequential, asynchronous, persistent, nested, or ambiguous interactions, use `references/interaction-contracts.md`.
+Read relevant specialist references such as `references/structural-direction.md`, `references/visual-direction.md`, `references/experience-dynamics.md`, `references/task-continuity.md`, `references/layout-responsive.md`, `references/accessibility-baseline.md`, `references/performance-baseline.md`, and `references/art-direction-media.md`.
 
-## Design interaction before motion
+# Stage 5 — Review problem, solution, and implementation
 
-Start from domain verbs and object relationships. Decide how selection, manipulation, traversal, comparison, interruption, completion, and return behave before choosing effects.
+Do not collapse every critique into a polish pass.
 
-Behavioral craft is part of the interaction model:
+Run three distinct reviews:
 
-- acknowledge important input promptly
-- track direct manipulation continuously when the domain benefits from it
-- do not trap the user behind choreography
-- continue reversal or retargeting from the visible state when appropriate
-- preserve understandable spatial relationships
-- make boundaries and completion intentional
-- keep repeated use efficient on the tenth use, not only delightful on the first
+## Problem review
 
-These are qualities, not universal spring, timing, scale, easing, gesture, or travel values.
+- Are we solving the right user need and end-to-end outcome?
+- Is the scope smaller or different than the requested UI?
+- Is the irreducible core still visible?
+- Should anything be removed rather than redesigned?
 
-Motion comes after interaction. It may explain cause, hierarchy, spatial continuity, or a product-specific authored moment. UI Slop has no default hover lift, image zoom, fade-and-rise, slide direction, spring, or duration recipe.
+## Solution review
 
-Read `references/experience-dynamics.md`, `references/interaction-hierarchy.md`, and `references/motion-interaction.md` only when relevant.
+- Does the structure express the product principles?
+- Is the content or domain object the main design material?
+- Is the signature experience worth its complexity?
+- Does interaction preserve agency, causality, and orientation?
+- Is the concept strong on wide and narrow screens?
+- Does the chosen visual material reach the quality implied by the direction?
+- Would another concept be materially better?
 
-## Keep semantics coherent without sameness
+## Implementation review
 
-Consistency means shared rules and predictable behavior, not forcing unrelated meanings into the same card, pill, badge, micro-label, or metadata treatment.
+- Is the built result faithful to the approved solution?
+- Are typography, copy, assets, controls, motion, responsive behavior, and platform details executed with care?
+- Are there dropped frames, delayed feedback, layout shifts, dead zones, weak affordances, awkward wrapping, accidental empty space, generic utility surfaces, or quality cliffs?
+- Do keyboard, touch, pointer, Back, reload, persistence, loading, empty, error, and recovery states behave correctly where applicable?
 
-Different meanings may use typography, position, color, shape, imagery, relationship, or state rather than another wrapper.
+Use rendered evidence for substantial work. Operate the interface; do not review only screenshots or source. Read `references/evidence-gate.md` before qualitative readiness and `references/craft-floor.md` while proving and implementing the selected direction.
 
-Read `references/semantic-diversity.md` for heterogeneous content or repeated metadata systems.
+Read `references/review-stages.md`, `references/browser-qa.md`, and `references/quality-bar.md`.
 
-## Compose responsive behavior
+# The quality bar
 
-Breakpoints should answer content or interaction failure, not habitual device numbers.
+A substantial result is not ready merely because it is valid, accessible, responsive, product-specific, or aesthetically defensible.
 
-Narrow layouts may change representation, navigation, detail behavior, action placement, and information priority while preserving the primary object and task continuity.
+It is ready when both are true:
 
-Read `references/layout-responsive.md` for substantial responsive work.
+1. **Evidence Gate passes** — required behavior and independently verifiable standards are supported by executed evidence.
+2. **Quality Gate is ready** — no unresolved material quality issue remains in the first useful viewport, primary flow, core responsive states, or signature experience.
 
-## Reject filler and generated habits
+A material quality issue is one a skilled reviewer can point to and explain as harmful to attention, hierarchy, editing, affordance, continuity, interaction response, visual material, typography, responsive behavior, performance, platform fit, or the intended feeling.
 
-Reject unjustified cards-around-everything, pill overload, giant marketing headings in task software, filler subtitles, layout-explanation labels, decorative charts, generic KPI rows, habitual top-right search, generic main-plus-right-rail shells, repeated section templates, and one interaction or visual grammar reused across unrelated products.
+Use these vetoes:
 
-Anti-slop does not mean minimal. Replace removed decoration with stronger structure, typography, hierarchy, content, interaction, and subject-specific detail.
+- **Attention veto**: unearned labels, chrome, copy, or decoration compete with the primary experience.
+- **Concept veto**: the product idea is only visible in styling, not structure or behavior.
+- **Material veto**: imagery, illustration, type, iconography, or data representation is below the fidelity the composition demands.
+- **Behavior veto**: a primary action feels delayed, detached, generic, discontinuous, or inert.
+- **Platform veto**: mobile, touch, keyboard, browser, or device behavior feels like an afterthought.
+- **Weakest-link veto**: one visible region is materially below the quality of the rest.
+- **First-impression veto**: in a brief, uncoached inspection, a reviewer immediately finds an awkward, unnecessary, cheap, confusing, or obviously unfinished element.
 
-## Evidence before taste
+A veto requires a concrete observation and product reason. It is not permission to enforce personal taste.
 
-For substantial visual work, rendered verification is required when browser tooling exists.
+Minor imperfections may remain when they are understood and do not materially lower trust or experience quality. Unknown evidence is blocked, not passed.
 
-Use a bounded loop:
+# Editing rules
 
-1. operate the primary workflow with realistic content
-2. inspect representative wide and narrow states
-3. test keyboard/focus and nested return paths when applicable
-4. test reduced motion when motion exists
-5. exercise required loading, empty, failure, recovery, and persistence states
-6. record findings
-7. fix the smallest responsible layer
-8. rerun affected evidence plus a bounded regression pass
+Before adding another element, ask what job it performs.
 
-When the evidence harness is available, use `references/evidence-harness.md`.
+Remove or reduce:
 
-Classify evidence as:
+- layout-explanation labels
+- duplicated metadata
+- filler subtitles
+- curatorial or marketing prose that repeats the composition
+- decorative badges and section numbering
+- controls detached from their targets
+- generic cards, modals, drawers, and right rails chosen by habit
+- hover lift, image zoom, fade-up, and transition presets used to simulate vitality
+- empty space that does not create focus, rhythm, or anticipation
 
-- **hard_failure**: a specified requirement or independently verifiable applicable standard failed
-- **advisory**: a measured pattern may be harmful but requires product judgment
-- **evidence_only**: neutral measurement with no quality verdict
-- **blocked**: required evidence could not be executed or observed
+Simplicity is exactly enough, not the fewest elements.
 
-A measurable aesthetic proxy is not automatically a failure.
+# Interaction vitality
 
-Read `references/evidence-gate.md`, `references/browser-qa.md`, and `references/review-protocol.md` for substantial verification.
+For every primary surface ask:
 
-## Check for generated recurrence
+- What changes when the user approaches, focuses, presses, selects, drags, or returns?
+- Does response begin at the point of action?
+- Is the object itself a better control than separate chrome?
+- Does the state change preserve spatial and conceptual continuity?
+- Does the rest of the interface react only where it reduces understanding cost?
+- Can the user interrupt, reverse, or continue naturally where appropriate?
+- Does the experience reveal more character through use?
+- Would the behavior still make sense without animation?
+- Is any animation explaining cause, relationship, hierarchy, or topology?
 
-Before final acceptance, inspect recurring patterns at the relevant layers:
+An interface can contain motion and still feel dead. It can be nearly static and still feel responsive.
 
-- structural silhouette
-- visual-material world
-- typography roles
-- semantic-to-component mapping
-- interaction mechanics
-- motion triggers
-- responsive transformation
-- layout-explanation copy
+# Evidence and honesty
 
-Similarity is evidence, not failure. Ask whether the pattern is product-justified and whether it causes functional, comprehension, identity, or repeated-use harm.
+For substantial work, capture representative wide, compact, and narrow states plus the primary interaction sequence.
 
-If no unrelated comparison corpus exists, mark cross-product recurrence as not verified instead of inventing one.
+Operate applicable:
 
-Read `references/ai-fingerprint-gate.md` when recurrence is relevant.
+- hover/focus/press
+- selection and deselection
+- direct manipulation
+- open, close, Back, and forward
+- save, filter, compare, and reorder
+- loading, empty, error, retry, and success
+- reload and persistence
+- pointer, touch-sized viewport, and keyboard
+- normal and reduced motion
 
-## Final judgment
+Separate:
 
-Objective failures are resolved before taste judgment.
+- **hard failure** — specified contract or independently verifiable standard failed
+- **quality veto** — material qualitative issue blocks readiness
+- **advisory** — observed risk requiring product judgment
+- **evidence only** — neutral inventory
+- **blocked** — required evidence unavailable
 
-Then ask whether the interface is actually authored for this product:
+Do not claim a browser, device, performance, or quality review that was not executed.
 
-- do domain objects and relationships shape the experience?
-- is information readable at the density the work needs?
-- does the visual world come from the product rather than a model habit?
-- does interaction preserve orientation and support continued work?
-- is mobile intentionally composed?
-- does repeated use remain efficient?
-- is the weakest visible region still part of the same product?
+# Specialists
 
-A clean but interchangeable interface is not finished.
+UI Slop must remain useful by itself.
 
-Read `references/taste-gate.md` for final qualitative review.
+Use specialists narrowly for framework implementation, platform guidance, accessibility, performance, motion engineering, assets, 3D, browser automation, or image work.
 
-## Specialists and finish condition
+Priority:
 
-UI Slop must remain useful by itself. Load specialists narrowly for framework implementation, accessibility, performance, motion, platform guidance, image work, or browser automation.
+1. explicit user instruction
+2. protected product truth
+3. approved Experience Brief and product principles
+4. platform/framework constraints
+5. narrower specialist guidance inside its specialty
+6. UI Slop fallback guidance
 
-Priority is: explicit user instruction, protected product contract, project/platform constraints, then narrower specialist guidance.
+Do not merge specialists’ house aesthetics.
 
-Do not merge specialists' preferred aesthetics.
+# Finish report
 
-Do not claim verified work without executed evidence. Report what was operated, measured, observed, blocked, or not checked.
+Report only what helps validate the result:
+
+- Experience Brief and product principles
+- selected concept and rejected material alternative, when relevant
+- signature behavior
+- major structural or behavioral decisions
+- evidence operated
+- problem / solution / implementation review status
+- unresolved hard failures, quality vetoes, advisories, or blocked checks
+- genuine limitations
+
+Do not write a victory narrative before independent review.
