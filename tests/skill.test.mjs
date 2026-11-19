@@ -68,6 +68,25 @@ test('quality bar covers attention, material, behavior, platform, and weakest-li
   }
 });
 
+test('secondary labels, descriptions, and eyebrow text require earned information', async () => {
+  const skill = (await fs.readFile(path.join(root,'SKILL.md'),'utf8')).toLowerCase();
+  const quality = (await fs.readFile(path.join(root,'references','quality-bar.md'),'utf8')).toLowerCase();
+  const browser = (await fs.readFile(path.join(root,'references','browser-qa.md'),'utf8')).toLowerCase();
+  const craft = (await fs.readFile(path.join(root,'references','craft-floor.md'),'utf8')).toLowerCase();
+
+  for (const text of [skill, quality, browser, craft]) {
+    assert.match(text,/supporting-copy subtraction|subtraction test|subtraction pass/);
+  }
+
+  assert.match(skill,/secondary labels, descriptions, eyebrow text/);
+  assert.match(skill,/decorative authenticity does not/);
+  assert.match(quality,/descriptor stack/);
+  assert.match(quality,/tiny uppercase or monospace text/);
+  assert.match(quality,/there is no universal ban/);
+  assert.match(browser,/first useful viewport/);
+  assert.match(browser,/primary detail or focused state/);
+});
+
 test('runtime router does not introduce fixed motion recipes', async () => {
   const skill = (await fs.readFile(path.join(root,'SKILL.md'),'utf8')).toLowerCase();
   assert.doesNotMatch(skill,/\b\d{2,4}\s*ms\b/);
