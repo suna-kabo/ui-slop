@@ -1,6 +1,6 @@
 # Evidence Schema
 
-UI Slop v2 uses a versioned, evidence-first bundle. Schema changes must be explicit and backward compatibility must never be assumed silently.
+UI Slop uses a versioned, evidence-first bundle. Schema changes must be explicit and backward compatibility must never be assumed silently.
 
 ## Manifest v2
 
@@ -36,6 +36,10 @@ Every finding contains:
 - viewport and media context after aggregation
 
 Frequency alone must not promote an advisory to a hard failure.
+
+For captures from 3.0.1 onward, `rendered-micro-label-candidates` is an advisory with checkpoint, viewport, count, and up to 20 samples. Samples report source text and casing inferred from computed text transform, CSS locator, font size in CSS pixels, letter spacing, font family and weight, text geometry, role and interactivity, repetition within the sampled document, and nearby heading context when available. The heuristic surfaces short, small uppercase text with tracking or proximity before a heading in the sampled viewport. Ordinary status or controls can appear here. Candidate presence or absence cannot establish quality.
+
+Final typography remains in `metrics.json` under `typography`. Initial and explicitly captured step observations are additive in `typographyCheckpoints`. Earlier bundles remain valid.
 
 ## Trace
 

@@ -34,7 +34,13 @@ Low-style sketches are useful for structure, but they cannot prove:
 - platform feel
 - whether a premium direction survives implementation
 
-The primary visual material and signature interaction must be near enough to final quality that the team can reject them honestly.
+The primary visual material and any claimed signature interaction must be near enough to final quality that the team can reject them honestly.
+
+## Signature experience
+
+Use a conventional solution when it serves the shaped problem. A signature experience is optional. When claiming one, record the domain truth it expresses, the user capability it improves, why a conventional treatment is insufficient, and what distinct observable behavior the reviewer operated. The benefit might be understanding, manipulation, comparison, exploration, decision-making, continuity, perceiving material or state, or repeated-use efficiency.
+
+A renamed or custom-coded gallery, modal, carousel, tab switch, crop toggle, or decorative animation does not qualify on its own. If the claimed benefit is material to the concept and the slice does not demonstrate it, revise or reject before SELECT. A conventional pattern can remain useful once the unsupported claim is dropped.
 
 ## Alternatives
 
@@ -63,7 +69,7 @@ Operate:
 7. repeat at narrow width
 8. use keyboard or touch-equivalent input where applicable
 
-Link the runnable artifact in the concept-proof record. Record operated states, what remains anchored, what changes, and any missing proof. Apply the solution decision in `review-stages.md` before advancing.
+Link the runnable artifact in the concept-proof record. Record operated states, what remains anchored, what changes, whether special continuity is warranted, and any missing proof. Apply the solution decision in `review-stages.md` before advancing.
 
 ## Pass criteria
 

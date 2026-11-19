@@ -29,13 +29,13 @@ Record the **concept-proof** artifact path or URL, exercised states, observation
 
 ## Stage 4 — Build foundation plus signature
 
-Use accessible platform conventions for ordinary behavior. Concentrate custom work in one to three domain-derived signature experiences when the product benefits. Define response, continuity, boundaries, recovery, focus, and the next action for the primary flow. Motion can express interaction logic. The workflow must make sense without it.
+Use accessible platform conventions for ordinary behavior. Claim a signature experience only when the shaped problem earns it under `references/concept-proof.md`. Define response, continuity, boundaries, recovery, focus, and the next action for the primary flow. Motion can express interaction logic. The workflow must make sense without it.
 
 Use `references/module-map.md` to route specialist guidance. Apply the supporting-copy pass in `references/quality-bar.md` during proof and build so supporting text earns its place early.
 
 ## Stage 5 — Review problem, solution, and implementation
 
-Record the **implementation review** against the shaped problem and selected concept. If either changed materially, revisit its review before assessing readiness. Use `references/review-stages.md`, `references/review-protocol.md`, `references/browser-qa.md`, and `examples/review-record.template.md`. Operate the interface. Record first impressions before considering the generator's rationale and disclose whether a separate reviewer was available.
+Record the **implementation review** against the shaped problem and selected concept. If either changed materially, revisit its review before assessing readiness. Use `references/review-stages.md`, `references/review-protocol.md`, `references/browser-qa.md`, and `examples/review-record.template.md`. Operate the interface, including at narrow width. Record `INDEPENDENT_REVIEW` or `SELF_REVIEW` and complete the applicable protocol before declaring Quality Gate READY.
 
 Run the mandatory **supporting-copy subtraction pass** in `references/quality-bar.md` on the first useful viewport, primary detail or focused state, and a compact or mobile state. Record what was removed or restored and why.
 

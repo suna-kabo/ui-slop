@@ -8,7 +8,7 @@ The target is not universal perfection. The target is that no material part of t
 
 Assess independently of the Evidence Gate.
 
-- **READY** requires concrete observations from an operated primary flow, first useful viewport, primary detail or focused state, and relevant compact/mobile and signature states. Record first-impression findings, the supporting-copy pass, and the weakest visible region. Resolve every material veto.
+- **READY** requires concrete observations from an operated primary flow, first useful viewport, primary detail or focused state, and relevant compact/mobile and signature states. Complete the applicable mode in `review-protocol.md`, record first-impression findings, the supporting-copy pass, and the weakest visible region, and resolve every material veto.
 - **NOT_READY** means an observed material veto remains. Cite the state or interaction, the issue, and the user or product harm.
 - **BLOCKED** means a required state or interaction could not be assessed. Identify the missing evidence. Record any observed vetoes even when coverage is blocked.
 
@@ -49,6 +49,10 @@ Secondary labels are not default layers. Descriptions must supply unique informa
 Include eyebrow text, kickers, overlines, section numbers, figure labels, captions, category/type/mode labels, repeated subtitles, helper descriptions, and duplicated metadata. Collapse descriptor stacks and remove descriptions that paraphrase titles, imagery, layout, or visible control state. Remove tiny uppercase or monospace text used mainly for premium, editorial, archival, or technical authenticity.
 
 Restore copy only if removal creates genuine ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or meaningfully hurts action discovery. There is no universal ban. Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints can justify secondary copy. Record the consequential removals and restorations by state.
+
+Clickability alone is insufficient. Serving as a category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot. Before restoring copy, test whether users can infer it from context, read it through a conventional control or visible state, find it on a quieter surface or on demand, or get it from the primary title or content. Include removing it entirely as an option.
+
+Justify both the information or action and its placement, prominence, and visual treatment. A newly added secondary function is subject to the same test. Restore a prominent treatment only when removing or relocating it materially harms the primary task, comprehension, decision quality, provenance, safety, or state awareness. Apply particular scrutiny to eyebrows, kickers, overlines, tiny uppercase or monospace authenticity labels, section and figure labels, redundant category/type/mode labels, restating subtitles, and descriptor stacks.
 
 ## Composition
 
@@ -147,11 +151,13 @@ Judge:
 - next-action locality
 - repeated-use comfort
 
-A state variable changing after a click is not sufficient.
+Functional state change is not automatically sufficient behavioral quality. Operate press and activation as well as hover. Review abrupt image or content replacement, text or color changes that carry the whole response to a meaningful action, and transitions with no clear result or next action. Tie any veto to observed harm.
 
 ## Continuity
 
 Open, close, select, filter, compare, reorder, save, navigate, and return should preserve the relationships the user needs.
+
+When the flow depends on understanding a transformation, relationship, mechanism, object state, navigation context, or manipulated content, record what binds the action to its result, what stays anchored, and whether users can recover, find focus, and continue efficiently. Record whether special continuity is warranted and what the operated result shows. Ordinary immediate behavior can be right when it communicates enough. Animation is optional.
 
 Reject when:
 
@@ -208,7 +214,7 @@ Inspect:
 - motion distance and performance
 - browser and device conventions
 
-Mobile is not stacked desktop.
+Operate the compact or mobile flow separately. Record how its priorities, input, and continuation suit that context. Passing an overflow check or watching the layout reflow cannot establish adaptation.
 
 ## Performance perception
 
@@ -229,7 +235,7 @@ Fast completion cannot compensate for late feedback; smooth animation cannot com
 
 ## Weakest-link pass
 
-Name the three weakest visible or interactive regions.
+Inspect the weakest visible region directly and record the evidence and consequence. Include other weak points where they threaten the primary experience.
 
 Fix the responsible system, not isolated pixels.
 
@@ -237,27 +243,6 @@ The result is not ready while one obvious quality cliff exposes the rest as unfi
 
 ## Ten-second veto
 
-Give the first useful viewport and one primary interaction state to a skilled reviewer without explanation.
+Inspect the rendered first useful viewport separately on desktop and mobile before considering the implementation rationale. Record what attracts attention first and whether it should. Name what first looks generic, awkward, unnecessary, cheap, detached, over-described, under-resolved, or inconsistent. Look for small supporting elements competing with the primary task, mechanically styled type, controls detached from their targets, the weakest visible region, and anything that needs a designer's explanation to defend.
 
-A veto is valid when they can point to a concrete issue and explain its harm.
-
-Common vetoes:
-
-- awkward gap
-- unearned label
-- stacked eyebrow or descriptor text
-- repeated secondary description
-- cheap asset
-- generic modal
-- detached action
-- weak button
-- accidental wrapping
-- inconsistent radius or icon
-- inert hover/press
-- discontinuous transition
-- mobile afterthought
-- placeholder copy
-- unexplained density
-- visibly unfinished utility surface
-
-Do not defend the issue with the design rationale before deciding whether the artifact actually communicates that rationale.
+Use the first impression to direct deeper inspection, without a style score. An unresolved material finding blocks READY.

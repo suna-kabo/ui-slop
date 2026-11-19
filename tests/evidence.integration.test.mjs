@@ -168,3 +168,60 @@ test('local HTML capture runs without a fixture server and records public proven
     await fs.rm(fixture, { recursive: true, force: true });
   }
 });
+
+test('computed uppercase micro-labels surface as contextual advisories at captured states', async () => {
+  const html = `<!doctype html><html lang="en"><style>
+    body { font: 16px system-ui; }
+    .micro { font: 600 10px monospace; letter-spacing: 1px; text-transform: uppercase; }
+    h1 { margin: 4px 0; }
+  </style><main>
+    <header><a id="eyebrow" class="micro" href="#collection">Field collection</a><h1>Field notes</h1></header>
+    <p id="collection"><span class="micro">Field collection</span> holds the field team's annotated specimens.</p>
+    <output id="status" class="micro" role="status">READY</output>
+    <div style="opacity:0"><span id="hidden" class="micro">Hidden label</span></div>
+    <span id="lowercase" class="micro" style="text-transform:lowercase">LOWERED LABEL</span>
+    <button id="open" onclick="document.querySelector('#detail').hidden=false">Open detail</button>
+    <button id="close" onclick="document.querySelector('#detail').hidden=true">Close detail</button>
+    <section id="detail" hidden><span id="detail-label" class="micro">Detail collection</span><h2>Specimen detail</h2></section>
+  </main></html>`;
+  await withFixture(html, async (url) => {
+    const out = await makeRunRoot('computed-labels-');
+    const { findings, runs } = await runEvidence({
+      url,
+      outDir: path.join(out, 'run'),
+      scenario: {
+        id: 'computed-labels',
+        viewports: [{ name: 'mobile', width: 390, height: 844 }],
+        steps: [
+          { action: 'click', locator: { selector: '#open' }, capture: true, label: 'focused-detail' },
+          { action: 'click', locator: { selector: '#close' } }
+        ]
+      }
+    });
+    assert.equal(runs.length, 1);
+    assert.deepEqual(findings.filter((item) => ['blocked', 'hard_failure'].includes(item.classification)), []);
+    const candidates = findings.filter((item) => item.id === 'rendered-micro-label-candidates');
+    assert.deepEqual(candidates.map((item) => item.evidence.state), ['initial', 'focused-detail', 'final']);
+    assert.ok(candidates.every((item) => item.classification === 'advisory' && item.viewport === 'mobile'));
+
+    const initial = candidates[0].evidence;
+    assert.deepEqual(initial.viewport, { width: 390, height: 844 });
+    const eyebrow = initial.candidates.find((item) => item.selector === '#eyebrow');
+    assert.equal(eyebrow.text, 'Field collection');
+    assert.equal(eyebrow.renderedText, 'FIELD COLLECTION');
+    assert.equal(eyebrow.textTransform, 'uppercase');
+    assert.equal(eyebrow.size, 10);
+    assert.equal(eyebrow.fontFamily, 'monospace');
+    assert.equal(eyebrow.fontWeight, '600');
+    assert.equal(eyebrow.letterSpacing, '1px');
+    assert.equal(eyebrow.repeatedCount, 2);
+    assert.equal(eyebrow.nearbyHeading.position, 'before');
+    assert.ok(eyebrow.box.width > 0 && eyebrow.box.height > 0);
+    assert.equal(eyebrow.role, 'link');
+    assert.equal(eyebrow.interactive, true);
+    assert.ok(initial.candidates.some((item) => item.selector === '#status' && item.role === 'status'));
+    assert.ok(!initial.candidates.some((item) => ['#hidden', '#lowercase'].includes(item.selector)));
+    assert.ok(candidates[1].evidence.candidates.some((item) => item.selector === '#detail-label'));
+    assert.ok(!candidates[2].evidence.candidates.some((item) => item.selector === '#detail-label'));
+  });
+});

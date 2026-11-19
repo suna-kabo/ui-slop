@@ -1,4 +1,4 @@
-# UI Slop v3
+# UI Slop 3.0.1
 
 UI Slop is a Codex skill for shaping, proving, building, and reviewing production interfaces. Its finish condition is:
 
@@ -45,4 +45,4 @@ node "<skill-dir>/tools/ui-slop-v3.mjs" inspect .
 
 On Linux runners that need system libraries, use `playwright install --with-deps chromium`. Set `UI_SLOP_CHROMIUM_PATH` to use a system Chromium executable. See the [Evidence Harness](references/evidence-harness.md) for capture and validation commands.
 
-Evidence Gate status comes from executed requirements and independently verifiable standards. Quality Gate status requires a qualitative review of the rendered and operated experience. [Skill workflow](SKILL.md)
+Evidence Gate status comes from executed requirements and independently verifiable standards. Rendered micro-label findings are advisory, including when CSS creates the uppercase treatment. Quality Gate status requires rendered and operated observations. When a separate reviewer is unavailable, complete the adversarial self-review before declaring READY. [Skill workflow](SKILL.md)

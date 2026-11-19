@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.1
+
+- Require evidence for both the job and visual prominence of supporting copy. Clickability alone is insufficient.
+- Surface computed-style uppercase micro-label candidates at browser checkpoints as advisories.
+- Require an operated continuity judgment, evidence for claimed signature experiences, and adversarial self-review before READY when a separate reviewer is unavailable.
+
 ## 3.0.0
 
 - Added deterministic local Codex skill packaging, scoped installation, and diagnostics.

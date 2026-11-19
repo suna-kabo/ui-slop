@@ -256,27 +256,121 @@ function resolveLocator(page, spec) {
   throw new Error('Locator needs testId, role, label, placeholder, text, or selector.');
 }
 // ---- src/metrics.mjs ----
-async function collectPageMetrics(page) {
-  return page.evaluate(() => {
+async function collectPageMetrics(page, typographyOnly = false) {
+  return page.evaluate((typographyOnly) => {
     const visible = (el) => {
       const s = getComputedStyle(el);
       const r = el.getBoundingClientRect();
       return s.display !== 'none' && s.visibility !== 'hidden' && Number(s.opacity || 1) > 0 && r.width > 0 && r.height > 0;
     };
+    const headingSelector = 'h1,h2,h3,h4,h5,h6,[role="heading"]';
+    const interactiveSelector = 'a[href],button,input,select,textarea,summary,[role="button"],[role="link"],[role="tab"],[role^="menuitem"],[tabindex]';
+    const landmarkSelector = 'section,article,header,main,[role="region"]';
+    const semanticSelector = `${interactiveSelector},${headingSelector},[role],output`;
+    const nativeRoles = { a: 'link', button: 'button', output: 'status', summary: 'button' };
+    const headingBoxes = new Map();
+    const round = (n) => Math.round(n * 10) / 10;
+    const box = (rect) => ({ x: round(rect.x), y: round(rect.y), width: round(rect.width), height: round(rect.height) });
+    const selectorFor = (element) => {
+      const segments = [];
+      for (let el = element; el && el !== document.body; el = el.parentElement) {
+        if (el.id) {
+          const id = '#' + CSS.escape(el.id);
+          if (document.querySelectorAll(id).length === 1) return [id, ...segments].join(' > ');
+        }
+        const tag = CSS.escape(el.localName);
+        const siblings = Array.from(el.parentElement.children).filter((sibling) => sibling.localName === el.localName);
+        segments.unshift(siblings.length === 1 ? tag : `${tag}:nth-of-type(${siblings.indexOf(el) + 1})`);
+      }
+      return ['body', ...segments].join(' > ');
+    };
+    const nearbyHeading = (parent, rect, size) => {
+      const region = parent.closest(landmarkSelector) ?? document.body;
+      if (!headingBoxes.has(region)) {
+        headingBoxes.set(region, Array.from(region.querySelectorAll(headingSelector))
+          .filter(visible)
+          .map((element) => ({ element, rect: element.getBoundingClientRect() })));
+      }
+      let nearest = null;
+      for (const heading of headingBoxes.get(region)) {
+        if (heading.element.contains(parent) || heading.rect.right <= rect.left || heading.rect.left >= rect.right) continue;
+        const gap = Math.max(heading.rect.top - rect.bottom, rect.top - heading.rect.bottom, 0);
+        if (gap <= 4 * size && (!nearest || gap < nearest.gap)) nearest = { ...heading, gap };
+      }
+      return nearest && {
+        selector: selectorFor(nearest.element),
+        position: rect.top < nearest.rect.top ? 'before' : 'after',
+        gap: round(nearest.gap)
+      };
+    };
     const textNodes = [];
+    const uppercaseMicro = [];
+    const range = document.createRange();
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let node;
     while ((node = walker.nextNode())) {
       const text = node.textContent?.replace(/\s+/g, ' ').trim();
       const parent = node.parentElement;
       if (!text || !parent || !visible(parent)) continue;
-      const size = parseFloat(getComputedStyle(parent).fontSize) || 0;
-      textNodes.push({ chars: text.length, size, text: text.slice(0, 120) });
+      const style = getComputedStyle(parent);
+      const size = parseFloat(style.fontSize) || 0;
+      textNodes.push({ chars: text.length, size });
+
+      if (size > 12 || text.length < 3 || text.length > 64) continue;
+      const transform = style.textTransform.split(' ');
+      const renderedText = transform.includes('uppercase') ? text.toUpperCase()
+        : transform.includes('lowercase') ? text.toLowerCase() : text;
+      if (renderedText === renderedText.toLowerCase() || renderedText !== renderedText.toUpperCase()) continue;
+      if (!parent.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) continue;
+      range.selectNodeContents(node);
+      const rect = range.getBoundingClientRect();
+      if (!rect.width || !rect.height) continue;
+
+      const owner = parent.closest(semanticSelector);
+      const role = owner?.getAttribute('role') || nativeRoles[owner?.localName]
+        || (owner?.matches(headingSelector) ? 'heading' : null);
+      const interactive = Boolean(parent.closest(interactiveSelector));
+      const inViewport = rect.right > 0 && rect.bottom > 0 && rect.left < innerWidth && rect.top < innerHeight;
+      const heading = inViewport ? nearbyHeading(parent, rect, size) : null;
+      const tracked = parseFloat(style.letterSpacing) >= size * 0.045;
+      uppercaseMicro.push({
+        text,
+        renderedText,
+        selector: selectorFor(parent),
+        size,
+        letterSpacing: style.letterSpacing,
+        textTransform: style.textTransform,
+        fontFamily: style.fontFamily,
+        fontWeight: style.fontWeight,
+        box: box(rect),
+        inViewport,
+        role,
+        interactive,
+        nearbyHeading: heading,
+        candidate: inViewport && (tracked || (!interactive && heading?.position === 'before'))
+      });
     }
     const totalChars = textNodes.reduce((n, x) => n + x.chars, 0);
     const charsLe12 = textNodes.filter((x) => x.size <= 12).reduce((n, x) => n + x.chars, 0);
     const charsGe15 = textNodes.filter((x) => x.size >= 15).reduce((n, x) => n + x.chars, 0);
-    const uppercaseMicro = textNodes.filter((x) => x.size <= 12 && /[A-Z]/.test(x.text) && x.text === x.text.toUpperCase() && x.text.length >= 3);
+    const repetitions = new Map();
+    for (const label of uppercaseMicro) {
+      repetitions.set(label.renderedText, (repetitions.get(label.renderedText) ?? 0) + 1);
+    }
+    for (const label of uppercaseMicro) label.repeatedCount = repetitions.get(label.renderedText);
+    const candidates = uppercaseMicro.filter((label) => label.candidate);
+    const typography = {
+      visibleChars: totalChars,
+      charsLe12,
+      charsGe15,
+      pctLe12: totalChars ? charsLe12 / totalChars : 0,
+      pctGe15: totalChars ? charsGe15 / totalChars : 0,
+      uppercaseMicroLabels: uppercaseMicro.length,
+      samples: uppercaseMicro.slice(0, 20),
+      microLabelCandidateCount: candidates.length,
+      microLabelCandidates: candidates.slice(0, 20)
+    };
+    if (typographyOnly) return typography;
 
     const interactives = [...document.querySelectorAll('a[href],button,input,select,textarea,[role="button"],[role="link"],[role="tab"],[role="menuitem"],[tabindex]')]
       .filter((el) => visible(el))
@@ -320,19 +414,11 @@ async function collectPageMetrics(page) {
         scrollHeight: document.documentElement.scrollHeight,
         clientHeight: document.documentElement.clientHeight
       },
-      typography: {
-        visibleChars: totalChars,
-        charsLe12,
-        charsGe15,
-        pctLe12: totalChars ? charsLe12 / totalChars : 0,
-        pctGe15: totalChars ? charsGe15 / totalChars : 0,
-        uppercaseMicroLabels: uppercaseMicro.length,
-        samples: uppercaseMicro.slice(0, 20)
-      },
+      typography,
       interactives,
       animationInventory
     };
-  });
+  }, typographyOnly);
 }
 
 async function collectFocusState(page) {
@@ -497,6 +583,19 @@ function evaluateEvidence({ metrics, accessibility, runtimeErrors = [], consoleE
       add('advisory', 'copy', 'uppercase-micro-label-recurrence', metrics.typography.uppercaseMicroLabels + ' visible small uppercase text nodes were observed. Review whether they represent real semantic roles or layout-explanation labels.', { evidence: metrics.typography.samples, confidence: 'medium' });
     }
   }
+  const typographyStates = [
+    ...(metrics?.typographyCheckpoints ?? []),
+    { state: 'final', typography: metrics?.typography }
+  ];
+  for (const { state, typography } of typographyStates) {
+    if (!typography?.microLabelCandidateCount) continue;
+    add('advisory', 'copy', 'rendered-micro-label-candidates',
+      typography.microLabelCandidateCount + ' small uppercase text runs with tracking or heading proximity were observed. Review their task value and placement in context.',
+      {
+        evidence: { state, viewport: metrics.viewport, count: typography.microLabelCandidateCount, candidates: typography.microLabelCandidates },
+        confidence: 'medium'
+      });
+  }
 
   if (metrics?.interactives) {
     const small = metrics.interactives.filter((x) => x.width > 0 && x.height > 0 && (x.width < 24 || x.height < 24));
@@ -604,7 +703,7 @@ async function launchBrowser(headed = false) {
 
 async function ensureDir(p) { await fs.mkdir(p, { recursive: true }); }
 
-async function checkpoint(page, outDir, label, redact = []) {
+async function checkpoint(page, outDir, label, redact = [], observeTypography = false) {
   const safe = slug(label);
   const img = path.join(outDir, 'captures', safe + '.png');
   const accessibilityFile = path.join(outDir, 'accessibility', safe + '.json');
@@ -617,7 +716,8 @@ async function checkpoint(page, outDir, label, redact = []) {
   return {
     screenshot: path.relative(outDir, img).replaceAll('\\','/'),
     accessibility: path.relative(outDir, accessibilityFile).replaceAll('\\','/'),
-    accessibilityData: accessibility
+    accessibilityData: accessibility,
+    typography: observeTypography ? await collectPageMetrics(page, true) : undefined
   };
 }
 
@@ -651,7 +751,7 @@ async function collectUiState(page) {
   return { url: page.url(), focus, ...rest };
 }
 
-async function executeStep(page, step, stepIndex, outDir, redact) {
+async function executeStep(page, step, stepIndex, outDir, redact, typographyCheckpoints) {
   const started = Date.now();
   const base = {
     step: stepIndex + 1,
@@ -696,14 +796,12 @@ async function executeStep(page, step, stepIndex, outDir, redact) {
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1);
       if (overflow) throw new Error('Expected no root horizontal overflow.');
     }
-    else if (step.action === 'snapshot') {
-      const cp = await checkpoint(page, outDir, step.label ?? 'step-' + (stepIndex + 1), redact);
-      base.evidence = { screenshot: cp.screenshot, accessibility: cp.accessibility };
-    }
 
-    if (step.capture === true && step.action !== 'snapshot') {
-      const cp = await checkpoint(page, outDir, step.label ?? 'step-' + (stepIndex + 1), redact);
+    if (step.action === 'snapshot' || step.capture === true) {
+      const state = step.label ?? 'step-' + (stepIndex + 1);
+      const cp = await checkpoint(page, outDir, state, redact, true);
       base.evidence = { screenshot: cp.screenshot, accessibility: cp.accessibility };
+      typographyCheckpoints.push({ state, typography: cp.typography });
     }
   } catch (error) {
     base.status = 'fail';
@@ -760,12 +858,13 @@ async function runVariant(browser, url, htmlPath, scenario, viewport, media, out
 
     const variantDir = path.join(outDir, slug(viewport.name) + '-' + media);
     await ensureDir(variantDir);
-    const initial = await checkpoint(page, variantDir, 'initial', scenario.redact ?? []);
+    const initial = await checkpoint(page, variantDir, 'initial', scenario.redact ?? [], true);
+    const typographyCheckpoints = [{ state: 'initial', typography: initial.typography }];
     const trace = [];
     const scenarioFailures = [];
 
     for (let i = 0; i < scenario.steps.length; i += 1) {
-      const record = await executeStep(page, scenario.steps[i], i, variantDir, scenario.redact ?? []);
+      const record = await executeStep(page, scenario.steps[i], i, variantDir, scenario.redact ?? [], typographyCheckpoints);
       trace.push(record);
       if (record.status === 'fail') {
         scenarioFailures.push({
@@ -780,6 +879,7 @@ async function runVariant(browser, url, htmlPath, scenario, viewport, media, out
 
     const final = await checkpoint(page, variantDir, 'final', scenario.redact ?? []);
     const metrics = await collectPageMetrics(page);
+    metrics.typographyCheckpoints = typographyCheckpoints;
     metrics.media = {
       prefersReducedMotion: await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches),
       colorScheme: scenario.colorScheme ?? 'light'

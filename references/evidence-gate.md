@@ -6,7 +6,7 @@ Evidence Gate answers:
 
 > Did required behavior and independently verifiable standards actually work in executed states?
 
-It does not answer whether the product is excellent, authored, alive, or ready to ship. That belongs to `quality-bar.md`.
+Evidence proves that an observed state exists and was exercised. It does not prove that the state is well designed. Readiness belongs to `quality-bar.md`.
 
 ## Classification
 
@@ -35,7 +35,7 @@ Use for measured or observed risk requiring product judgment.
 Examples:
 
 - high small-text share
-- repeated uppercase micro-labels
+- rendered micro-label candidates, including repeated uppercase labels
 - unusually small target geometry where exceptions may apply
 - weak-looking affordance
 - repeated cards, pills, or generic motion
@@ -91,8 +91,8 @@ Never upgrade observed to measured.
 Evidence Gate passes when:
 
 - no unresolved hard failure remains
-- required evidence is not blocked without disclosure
-- every protected requirement has executed support or an explicit limitation
+- every protected requirement has executed support
+- no required check is blocked. Disclose unavailable required evidence and mark the gate BLOCKED.
 
 Passing Evidence Gate is necessary but insufficient.
 
@@ -100,6 +100,6 @@ Overall readiness additionally requires:
 
 - Solution review selected the concept
 - Implementation review is ready
-- Quality Gate has no unresolved veto
+- Quality Gate is READY
 
 A valid but obviously unfinished interface does not pass overall readiness.

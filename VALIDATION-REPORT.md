@@ -1,26 +1,25 @@
-# UI Slop 3.0.0 validation report
+# UI Slop 3.0.1 validation report
 
-## Source and scope
+## Release scope
 
-The release starts from validated v3 documentation head `b7caf39c789f0c55db146ee532d3d133d697a561`. The checkout's divergent v3 tip, `bbb5df8ee06fcc8786dca8c2fa98cea25aa3ea63`, had the identical file tree. The release commit preserves both histories. The previous report and its recorded GitHub Actions results remain available at the validated head.
+The hardening release starts from canonical `main` at `5b243fcb38be83457fc430f0a8700353b54c25be`. The five-stage workflow, runnable concept proof, portable skill package, and separate Evidence and Quality Gates remain the release contract.
 
-The canonical source is root `SKILL.md` and the runtime files it routes to. The generated bundle records version 3.0.0, normalized content hashes, and a deterministic source digest. Evidence manifests use the version of the package that captured them.
+The browser regression reproduced a zero count on 3.0.0 for normal-case DOM text rendered with uppercase CSS, small type, and tracking. On 3.0.1 the fixture produces a structured advisory with the observed computed styles. Stateful captures also surface a label present only at a recorded intermediate checkpoint. A genuine uppercase status is observed without a hard failure, and a hidden label and a CSS-lowercased label are excluded.
 
-Substantial work requires a recorded problem review, a runnable vertical proof with a selection decision before full build, and an implementation review before readiness. Supporting-copy subtraction is mandatory in three representative states. The objective Evidence Gate and qualitative Quality Gate remain separate.
+Skill invariants cover the burden of proof for a clickable eyebrow, the domain justification and observable proof required for a signature claim, the primary interaction continuity decision, separate mobile operation, and the strongest plausible veto required for adversarial self-review.
 
 ## Local validation
 
-Windows, Node 22.18.0, npm 10.9.3, Playwright 1.63.0 and Chromium 151.0.7922.34.
+Windows, Node 22.18.0, npm 10.9.3, Playwright 1.63.0 and Playwright-managed Chromium 153.0.8010.12.
 
 | Check | Result |
 | --- | --- |
-| Clean lockfile install | PASS with `npm ci --offline --ignore-scripts` from a populated npm cache |
-| Unit and package tests | 14 passed. Exercised deterministic packaging, stale file removal, user/project update isolation, Windows paths with spaces and Unicode, installed hashes, and CLI version provenance. |
-| Skill invariants | 4 passed. Covered stage and readiness gates, copy subtraction, and absence of fixed motion recipes. |
-| Doctor | PASS against the generated bundle and temporary user and project installations with installed evidence dependencies. Broken fixtures correctly failed for stale output, injected MCP configuration, dependency mismatch, a missing reference, version drift, and malformed frontmatter. |
-| Browser integration | 3 passed with `UI_SLOP_TEST_FILE_FIXTURES=1`. Exercises wide/compact/mobile views, normal/reduced motion, primary workflow, Back, persistence, overflow, objective/advisory separation, checksums, and standalone HTML capture. |
-| Default HTTP integration | BLOCKED by Chromium `ERR_NETWORK_ACCESS_DENIED` on local loopback here. CI continues to run HTTP fixtures by default. |
+| Clean dependency install | `npm ci` passed. |
+| Unit and package tests | 14 passed, including Windows-safe user and project installs and broken Doctor fixtures. |
+| Skill invariants | 7 passed. |
+| Playwright browser integration | 4 passed, using the default HTTP fixture transport and the standalone HTML capture path. |
+| Package and Doctor | Two packs produced identical manifests. Doctor passed for the generated bundle and temporary user and project installs, including a Chromium launch. |
+| CLI and compatibility | Packed and installed CLIs reported `3.0.1`. The 3.0.1 validator accepted the 3.0.0 reproduction bundle. |
 | Benchmark harness | Prepare and validate with `--allow-incomplete` passed. |
-| Codex discovery | The bounded CLI smoke reached local startup and was blocked by access to the Codex state database. The manual prompt remains available for a fresh local session. |
 
-This validation concerns the packaging and executable skill workflow. Product readiness remains a judgment tied to the rendered and operated experience.
+The detector samples rendered text at the initial, final, and explicitly captured steps. Its output informs review. Quality readiness still requires rendered and operated evidence of the experience.

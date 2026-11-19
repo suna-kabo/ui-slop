@@ -41,7 +41,7 @@ Questions:
 - Are product principles visible in structure and behavior?
 - Does the primary content receive the best space?
 - Is custom work concentrated where it matters?
-- Is the signature experience specific and useful?
+- If a signature is claimed, did the operated proof establish the domain benefit under `concept-proof.md`?
 - Is interaction more understandable in use than in a screenshot?
 - Does detail preserve origin and return?
 - Is the visual material credible at required scale?
@@ -77,28 +77,4 @@ Inspect:
 
 ## First-impression review
 
-At solution and final implementation stages, give a reviewer the real viewport with no generator explanation.
-
-Allow a brief inspection, then ask:
-
-- What feels obviously wrong?
-- What looks unnecessary?
-- What looks cheap, generic, awkward, or unfinished?
-- What receives attention without earning it?
-- What would stop you trusting or wanting to continue?
-- Where does the product feel alive or dead?
-
-A first impression is not the whole review, but material issues found immediately are high-priority evidence.
-
-## Independent review
-
-For substantial work, prefer a reviewer who did not generate the concept.
-
-Give them:
-
-1. original brief and product principles
-2. runnable artifact or immutable evidence
-3. no victory narrative
-4. generator explanation only after unprompted findings
-
-A reviewer must explain a quality veto in product terms. “I do not like it” is insufficient.
+At solution and final implementation stages, follow the ten-second pass in `quality-bar.md` and the mode-specific procedure in `review-protocol.md`.

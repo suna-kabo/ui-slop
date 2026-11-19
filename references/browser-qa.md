@@ -20,21 +20,7 @@ Do not review a premium concept with placeholders and call the direction verifie
 
 ## Pass A — uncoached first impression
 
-Open the first useful viewport without generator explanation.
-
-Record:
-
-- first object or action noticed
-- elements competing for attention
-- obvious awkwardness, cheapness, genericness, or incompleteness
-- dead or accidental space
-- weak assets, type, controls, wraps, or alignment
-- what appears interactive
-- what the next action seems to be
-- visible eyebrows, kickers, overlines, section numbers, figure labels, helper descriptions, and other secondary copy
-- adjacent descriptor stacks or repeated meanings
-
-Do not defend the design rationale before recording the observation.
+Run the ten-second pass in `quality-bar.md` on the first useful desktop and mobile viewports before reading the implementation rationale.
 
 ## Pass B — operate the primary sequence
 

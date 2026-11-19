@@ -58,3 +58,48 @@ test('workflow expresses interaction logic without fixed motion recipes', async 
   assert.match(skill, /Motion can express interaction logic\. The workflow must make sense without it/);
   assert.doesNotMatch(skill, /cubic-bezier\(|scale\(0\.\d+|\b\d+ms\b/i);
 });
+
+test('making a category eyebrow clickable cannot satisfy the burden for keeping it prominent', async () => {
+  const quality = await read('references/quality-bar.md');
+  const subtraction = quality.split('## Mandatory supporting-copy subtraction')[1].split('\n## ')[0];
+  assert.match(subtraction, /Clickability alone is insufficient/);
+  assert.match(subtraction, /category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot/);
+  assert.match(subtraction, /infer it from context[\s\S]*conventional control or visible state[\s\S]*quieter surface or on demand[\s\S]*primary title or content[\s\S]*removing it entirely/);
+  assert.match(subtraction, /Justify both the information or action and its placement, prominence, and visual treatment/);
+  assert.match(subtraction, /A newly added secondary function is subject to the same test[\s\S]*removing or relocating it materially harms/);
+});
+
+test('a generic crop toggle cannot establish a signature claim and continuity is judged in use', async () => {
+  const proof = await read('references/concept-proof.md');
+  assert.match(proof, /A signature experience is optional/);
+  assert.match(proof, /domain truth[\s\S]*user capability[\s\S]*conventional treatment is insufficient[\s\S]*distinct observable behavior the reviewer operated/);
+  assert.match(proof, /gallery, modal, carousel, tab switch, crop toggle, or decorative animation does not qualify on its own/);
+  assert.match(proof, /slice does not demonstrate it, revise or reject before SELECT/);
+  assert.match(await read('references/review-stages.md'), /did the operated proof establish the domain benefit under `concept-proof\.md`/);
+  const quality = await read('references/quality-bar.md');
+  assert.match(quality, /Functional state change is not automatically sufficient behavioral quality/);
+  assert.match(quality, /Record whether special continuity is warranted and what the operated result shows[\s\S]*Ordinary immediate behavior can be right[\s\S]*Animation is optional/);
+  assert.match(quality, /Operate the compact or mobile flow separately[\s\S]*watching the layout reflow cannot establish adaptation/);
+});
+
+test('READY without an independent reviewer requires an adversarial rendered review', async () => {
+  const skill = await read('SKILL.md');
+  assert.match(skill, /Record `INDEPENDENT_REVIEW` or `SELF_REVIEW` and complete the applicable protocol before declaring Quality Gate READY/);
+  const protocol = await read('references/review-protocol.md');
+  assert.match(protocol, /When one is unavailable, record \*\*SELF_REVIEW\*\* and complete the adversarial pass below before declaring Quality Gate READY/);
+  const adversarial = protocol.split('## Adversarial self-review')[1].split('\n## ')[0];
+  for (const requirement of ['rendered and operated states before revisiting implementation rationale',
+    'first-impression problems', 'reasons the result should be NOT_READY', 'weakest visible region directly',
+    'supporting-copy candidates', 'response and continuity', 'mobile adaptation separately', 'operate any claimed signature experience']) {
+    assert.ok(adversarial.includes(requirement), requirement);
+  }
+  assert.match(adversarial, /strongest plausible veto[\s\S]*mark NOT_READY[\s\S]*rebut it with concrete rendered or operated evidence/);
+  assert.match(adversarial, /Unresolved material uncertainty bars READY\. Mark BLOCKED when required observations are unavailable/);
+  assert.match(await read('examples/review-record.template.md'), /SELF_REVIEW only\. Strongest plausible veto, accepted or rebutted, with concrete evidence/);
+  const quality = await read('references/quality-bar.md');
+  assert.match(quality, /first useful viewport separately on desktop and mobile before considering the implementation rationale/);
+  assert.match(quality, /An unresolved material finding blocks READY/);
+  const evidence = await read('references/evidence-gate.md');
+  assert.match(evidence, /Evidence proves that an observed state exists and was exercised\. It does not prove that the state is well designed/);
+  assert.match(evidence, /Disclose unavailable required evidence and mark the gate BLOCKED/);
+});
