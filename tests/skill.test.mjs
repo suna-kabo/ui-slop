@@ -72,5 +72,5 @@ test('runtime router does not introduce fixed motion recipes', async () => {
   const skill = (await fs.readFile(path.join(root,'SKILL.md'),'utf8')).toLowerCase();
   assert.doesNotMatch(skill,/\b\d{2,4}\s*ms\b/);
   assert.doesNotMatch(skill,/scale\(0\.\d+/);
-  assert.match(skill,/not a fixed motion system/);
+  assert.match(skill,/motion may express this logic\. it is not the logic/);
 });
