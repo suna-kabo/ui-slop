@@ -105,8 +105,18 @@ Empty states distinguish absence from failure.
 Run the layout-explanation test:
 
 - If hierarchy, adjacency, imagery, navigation, or conventional semantics already explain the region, remove the label or helper copy.
-- Keep secondary copy only when it changes a decision, clarifies state, prevents error, or supplies necessary context.
+- Keep secondary copy only when it changes a decision, clarifies state, prevents error, supplies necessary context, or enables action.
 - Do not add micro-labels to make a composition look designed.
+
+Run a supporting-copy subtraction pass in the rendered first viewport and primary detail state:
+
+- temporarily remove eyebrows, kickers, overlines, section numbers, figure labels, category/type/mode labels, helper descriptions, and repeated captions
+- restore only those that perform a unique necessary job
+- reject adjacent descriptor stacks when title, layout, image, or control state already communicates the same meaning
+- reject descriptions that paraphrase nearby headings or narrate visible imagery
+- reject tiny uppercase or monospace copy used mainly as an editorial, archival, premium, or technical costume
+
+Necessary secondary copy is allowed. Decorative authenticity is not a necessary role.
 
 ## Data
 
@@ -157,6 +167,8 @@ Remove:
 - redundant headings
 - repeated subtitles
 - duplicated metadata
+- stacked eyebrow or descriptor text
+- repeated secondary descriptions
 - accidental one-off colors
 - inconsistent radii
 - placeholder icons
