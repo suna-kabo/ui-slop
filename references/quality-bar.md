@@ -59,6 +59,41 @@ Keep secondary content when it:
 
 Repeated description is not editorial depth.
 
+## Secondary labels, descriptions, and eyebrow text
+
+Secondary labels are not automatically wrong, but they are a high-risk support layer rather than a default visual ingredient.
+
+This includes:
+
+- eyebrows, kickers, overlines, and small uppercase labels
+- section numbers and figure labels
+- category, type, mode, and status descriptors
+- helper descriptions and explanatory subtitles
+- institutional, archive, source, or provenance labels
+- captions that repeat nearby content
+
+For every visible instance, name its unique job. Then run a subtraction test: temporarily remove it and restore it only when removal creates real ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or makes an action meaningfully harder to discover.
+
+Reject when:
+
+- a descriptor stack appears before the primary content, such as section number + eyebrow + type + mode + title
+- a label names a page, section, object type, or mode that layout, title, control state, or imagery already makes clear
+- a description paraphrases the heading or narrates what the composition already shows
+- tiny uppercase or monospace text is used mainly to simulate premium, archival, technical, or editorial authenticity
+- several labels express the same meaning at different levels
+- supporting text visually outranks the object, task, or next action
+- secondary copy compensates for weak hierarchy instead of supplying unique information
+
+Keep it when it performs a necessary role such as:
+
+- navigation or indexing that users actively use
+- live status or mode that cannot be inferred safely
+- category disambiguation among genuinely similar objects
+- essential provenance, scope, units, constraints, or risk
+- concise action guidance unavailable from the control or surrounding context
+
+There is no universal ban and no fixed count. The test is unique information, earned attention, and actual user value.
+
 ## Composition
 
 The viewport should read as one composition, not a collection of individually reasonable components.
@@ -254,6 +289,8 @@ Common vetoes:
 
 - awkward gap
 - unearned label
+- stacked eyebrow or descriptor text
+- repeated secondary description
 - cheap asset
 - generic modal
 - detached action
