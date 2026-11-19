@@ -2,7 +2,7 @@
 
 ## Status
 
-Engineering validation: **PENDING CI**
+Engineering validation: **PASS**
 
 Design-operating-model implementation: **COMPLETE FOR RC1**
 
@@ -108,27 +108,38 @@ Public commands remain:
 - `capture`
 - `validate`
 
-The package entrypoint is now `tools/ui-slop-v3.mjs`. The wrapper records v3 tool provenance while reusing the validated v2 Node/Playwright evidence engine.
+The package entrypoint is `tools/ui-slop-v3.mjs`. The wrapper binds v3 provenance at both the CLI and public module boundary while reusing the validated v2 Node/Playwright evidence engine.
 
 The evidence engine remains objective and evidence-first. Automated aesthetic scoring was not added.
 
-## Automated validation plan
+## Automated validation
 
-GitHub Actions must pass:
+Validated implementation head:
+
+`af61bb456dfd09b0b6f91f08ce9df403a8e17bbe`
+
+GitHub Actions run:
+
+`44542344830`
+
+Result: **5 / 5 jobs passed**
 
 ### Unit / skill matrix
+
+Passed:
 
 - Ubuntu, Node 20
 - Ubuntu, Node 22
 - Windows, Node 20
 - Windows, Node 22
 
-Checks include:
+Every matrix entry completed:
 
+- clean dependency installation
 - evidence-tool unit tests
 - benchmark integrity tests
-- SKILL/reference link integrity
-- mandatory stage ordering
+- SKILL/reference integrity
+- mandatory five-stage ordering
 - mandatory v3 operating references
 - positive readiness and quality-bar coverage
 - absence of fixed motion recipes
@@ -136,15 +147,32 @@ Checks include:
 
 ### Browser integration
 
-- fresh Chromium installation
-- desktop, compact, and mobile viewports
+Passed on Ubuntu / Node 20 with fresh Chromium.
+
+Validated:
+
+- desktop 1440×900
+- compact 900×700
+- mobile 390×844
 - normal and reduced-motion variants
-- detail selection and history
-- persistence and reload
+- detail selection and URL/history transition
+- persisted state and reload
+- Back behavior
 - focus and keyboard traces
-- overflow and runtime findings
-- evidence bundle integrity and checksum tamper detection
-- benchmark prepare/validate smoke
+- root overflow assertion
+- objective/advisory finding separation
+- evidence bundle schema and checksum validation
+- checksum tamper detection
+- v3 manifest tool provenance
+- RC2 benchmark prepare/validate smoke
+
+### Evidence artifact
+
+- name: `ui-slop-v3-evidence`
+- artifact id: `14537449495`
+- size: `203365` bytes
+- digest: `sha256:739b474016555b09bb2983a0ec0dda01c41f6adeecdb7a704124058715b22fc1`
+- expiry: 2026-12-03
 
 ## Engineering claim boundary
 
@@ -155,6 +183,7 @@ RC1 may claim only that:
 - mandatory core references and templates exist
 - package and CI entrypoints target v3
 - staged qualitative readiness is represented in the runtime instructions and review protocol
+- cross-platform and browser engineering validation passes
 
 RC1 does not yet prove:
 
@@ -166,7 +195,7 @@ RC1 does not yet prove:
 
 ## Required empirical validation
 
-After engineering CI passes, run fresh unrelated tasks that do not repeat the furniture-exhibition benchmark.
+Run fresh unrelated tasks that do not repeat the furniture-exhibition benchmark.
 
 At minimum test:
 
@@ -178,10 +207,10 @@ At minimum test:
 
 Use multiple seeds for decisive claims. Review first impressions, protected behavior, problem/solution/implementation outcomes, and quality vetoes independently.
 
-## Current verdict
+## RC1 verdict
 
-**v3.0.0-rc.1 is implemented as a design-operating-model release candidate.**
+**v3.0.0-rc.1 is complete and passes engineering validation as a design-operating-model release candidate.**
 
-It is not release-validated until the current branch passes the full CI matrix.
+It is not empirically justified to claim that v3 consistently produces interfaces where nothing feels obviously wrong.
 
-It is not empirically justified to claim that v3 consistently produces interfaces where nothing feels obviously wrong. The architecture now makes that outcome an explicit, reviewable readiness condition rather than an implicit aspiration.
+The architecture now makes that outcome an explicit, reviewable readiness condition, provides a rejection path before full build, and prevents technical validity from being mistaken for product readiness.
