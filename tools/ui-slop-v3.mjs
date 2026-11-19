@@ -7,7 +7,7 @@ import {
   validateScenario,
   evaluateEvidence,
   summarizeFindings,
-  runEvidence,
+  runEvidence as runEvidenceEngine,
   validateBundle
 } from './ui-slop.mjs';
 
@@ -48,6 +48,13 @@ function parseArgs(argv) {
 async function writeJson(file, value) {
   await fs.mkdir(path.dirname(file), { recursive: true });
   await fs.writeFile(file, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+}
+
+async function runEvidence(options) {
+  return runEvidenceEngine({
+    ...options,
+    toolVersion: options?.toolVersion ?? TOOL_VERSION
+  });
 }
 
 async function runCli(argv) {
@@ -98,7 +105,6 @@ async function runCli(argv) {
         scenario,
         outDir: path.resolve(args.out),
         headed: args.headed === true,
-        toolVersion: TOOL_VERSION,
         briefText,
         briefSource
       });
