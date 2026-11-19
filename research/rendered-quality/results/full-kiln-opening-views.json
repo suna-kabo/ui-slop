@@ -1,0 +1,182 @@
+[
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 1440,
+    "variant": "normal",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "16px",
+    "overflow": false,
+    "file": "21edf6f096ae-1440-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 768,
+    "variant": "normal",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "16px",
+    "overflow": false,
+    "file": "21edf6f096ae-768-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "normal",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "16px",
+    "overflow": false,
+    "file": "21edf6f096ae-390-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "reduced",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "16px",
+    "overflow": false,
+    "file": "21edf6f096ae-390-reduced.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "text-200",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "32px",
+    "overflow": false,
+    "file": "21edf6f096ae-390-text-200.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "21edf6f096ae",
+    "task": "kiln-full",
+    "width": 320,
+    "variant": "normal",
+    "title": "Kiln Room · Cedar & Clay",
+    "headings": [
+      "My pieces"
+    ],
+    "fontSize": "16px",
+    "overflow": false,
+    "file": "21edf6f096ae-320-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 1440,
+    "variant": "normal",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "15px",
+    "overflow": false,
+    "file": "8507d1bf853c-1440-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 768,
+    "variant": "normal",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "15px",
+    "overflow": false,
+    "file": "8507d1bf853c-768-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "normal",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "15px",
+    "overflow": false,
+    "file": "8507d1bf853c-390-normal.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "reduced",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "15px",
+    "overflow": false,
+    "file": "8507d1bf853c-390-reduced.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 390,
+    "variant": "text-200",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "32px",
+    "overflow": false,
+    "file": "8507d1bf853c-390-text-200.png",
+    "errors": [],
+    "failedResponses": []
+  },
+  {
+    "id": "8507d1bf853c",
+    "task": "kiln-full",
+    "width": 320,
+    "variant": "normal",
+    "title": "Kilnroom · Alder Clay Studio",
+    "headings": [
+      "Kiln schedule"
+    ],
+    "fontSize": "15px",
+    "overflow": false,
+    "file": "8507d1bf853c-320-normal.png",
+    "errors": [],
+    "failedResponses": []
+  }
+]

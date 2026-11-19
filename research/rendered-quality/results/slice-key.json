@@ -1,0 +1,58 @@
+{
+  "fdbfac2606e1": {
+    "label": "A/kiln",
+    "task": "kiln",
+    "files": {
+      "index.html": "9b0f628e59472b94dcdea0517ec4e8db2d3c758bc871f57ba08c39088ce21f5d"
+    }
+  },
+  "0623ccc1ed48": {
+    "label": "A/music",
+    "task": "music",
+    "files": {
+      "index.html": "52df8ad70ed1caabd353a5bf9dc438c27b99566524402173080af45089fac99d"
+    }
+  },
+  "4a5f4341e91a": {
+    "label": "B/kiln",
+    "task": "kiln",
+    "files": {
+      "index.html": "6e4c6a6a141c8bcb4a51206d0dfc10d8f0b0ccadd13b35ed8167602a04cfc3c9"
+    }
+  },
+  "d4dc73ccc979": {
+    "label": "B/music",
+    "task": "music",
+    "files": {
+      "index.html": "643241219430775a7466f6b0579f4f9a16e82446680ba5658cf2c9afa467e9d3"
+    }
+  },
+  "a26f7ea4d4cb": {
+    "label": "C/kiln",
+    "task": "kiln",
+    "files": {
+      "index.html": "77ec488fe1a9532e98939d4cf4e7c6a06b2c4ee2148f5283cbd5097ed30f1a16"
+    }
+  },
+  "faa5b437b4b3": {
+    "label": "C/music",
+    "task": "music",
+    "files": {
+      "index.html": "af8b49fa6ac11dc7255d784eec358f7a5a9933cbaff8cb1b9937a74a6f93dd48"
+    }
+  },
+  "4a2ac1cd9f81": {
+    "label": "D/kiln",
+    "task": "kiln",
+    "files": {
+      "index.html": "e87f9847ce66ecbcf9f3dd58ebf28d530652a63aef5e99519c8064a6752a42ef"
+    }
+  },
+  "8d42cf6249b7": {
+    "label": "D/music",
+    "task": "music",
+    "files": {
+      "index.html": "d14359c39db8095ec36cb720bd50fe2282156af188fecdd6531519f60755b4d8"
+    }
+  }
+}

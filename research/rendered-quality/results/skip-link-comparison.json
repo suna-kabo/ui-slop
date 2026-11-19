@@ -1,0 +1,30 @@
+[
+  {
+    "variant": "frozen",
+    "width": 1440,
+    "hash": "#main",
+    "focus": "main",
+    "heading": "Kiln schedule"
+  },
+  {
+    "variant": "frozen",
+    "width": 320,
+    "hash": "#main",
+    "focus": "main",
+    "heading": "Kiln schedule"
+  },
+  {
+    "variant": "repaired",
+    "width": 1440,
+    "hash": "#member/pieces",
+    "focus": "main",
+    "heading": "My pieces"
+  },
+  {
+    "variant": "repaired",
+    "width": 320,
+    "hash": "#member/pieces",
+    "focus": "main",
+    "heading": "My pieces"
+  }
+]

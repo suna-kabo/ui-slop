@@ -1,0 +1,22 @@
+{
+  "a6824a518591": {
+    "label": "dense-original",
+    "task": "newsroom",
+    "files": {
+      "app.js": "77b726f545d1549168f466029ccae6ad66085354ce338d7d6d8b0b397776c7fc",
+      "data.js": "1589a7fd6b9cfd1aae93a83f5d8387c6c3e2b01574b69bd312b5182caf4e01b8",
+      "index.html": "5c244215619547dd184f070fb7c490eb1dcd4717b16bf6dd364b53491d604d4d",
+      "styles.css": "3b668934a993d248fbd90a70d55d381520e8314158f06030d000c27baa8981c4"
+    }
+  },
+  "c6a547c98e2e": {
+    "label": "dense-candidate",
+    "task": "newsroom",
+    "files": {
+      "app.js": "e47ca3faa9f204bdef1f5ae4b1351c6e3060adc4dd697b4d6ea9c0c32e3a5e7a",
+      "data.js": "a851bce17595fe21b804190562e63350bfa43570c9c17b37df43b72f25d436a4",
+      "index.html": "e520b904a55ee3f6c455d55610ad611673878a2b7e71955f63b2cd539f3e5b70",
+      "style.css": "90ab3d73b4f9c4319c30f7f519bbacfbd22f6d9001914b39674d4b1e9df63b53"
+    }
+  }
+}
