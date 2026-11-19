@@ -204,6 +204,16 @@ Minor imperfections may remain when they are understood and do not materially lo
 
 Before adding another element, ask what job it performs.
 
+Secondary labels, descriptions, eyebrow text, kickers, overlines, section numbers, figure labels, category labels, and helper copy are not default layers. Each visible instance must perform a unique job that is not already performed by the title, layout, imagery, control state, conventional semantics, or surrounding context.
+
+Run a supporting-copy subtraction pass on the first useful viewport and primary detail state:
+
+1. temporarily remove secondary labels and descriptions
+2. restore only those whose absence creates ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or makes an action meaningfully harder to discover
+3. reject descriptor stacks such as section number + eyebrow + type + mode + title when fewer roles communicate the same meaning
+
+Do not ban necessary labels. Navigation, live status, units, scope, risk, category disambiguation, and essential provenance may justify them. Decorative authenticity does not.
+
 Remove or reduce:
 
 - layout-explanation labels
@@ -211,6 +221,8 @@ Remove or reduce:
 - filler subtitles
 - curatorial or marketing prose that repeats the composition
 - decorative badges and section numbering
+- tiny uppercase or monospace eyebrow text used mainly to simulate editorial, archival, premium, or technical character
+- repeated secondary descriptions that paraphrase a heading or image
 - controls detached from their targets
 - generic cards, modals, drawers, and right rails chosen by habit
 - hover lift, image zoom, fade-up, and transition presets used to simulate vitality
