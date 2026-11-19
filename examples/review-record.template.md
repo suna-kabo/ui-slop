@@ -20,6 +20,9 @@
 - Outcome: ready / not ready / blocked
 - Evidence Gate:
 - First-impression findings:
+- Attention findings:
+- Secondary-label / description subtraction findings:
+- Descriptor stacks collapsed or retained with reason:
 - Quality vetoes:
 - Weakest three regions:
 - Regression evidence:
