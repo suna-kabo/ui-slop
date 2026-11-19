@@ -1,10 +1,14 @@
 # Evidence Gate
 
-Run this before qualitative taste review.
+Run this before qualitative readiness judgment.
 
-The gate separates verifiable failure from measured risk and neutral evidence.
+Evidence Gate answers:
 
-## Classification model
+> Did required behavior and independently verifiable standards actually work in executed states?
+
+It does not answer whether the product is excellent, authored, alive, or ready to ship. That belongs to `quality-bar.md`.
+
+## Classification
 
 ### hard_failure
 
@@ -13,37 +17,39 @@ Use only when a specified product requirement or independently verifiable applic
 Examples:
 
 - core action cannot be completed
-- required route or history behavior breaks
-- required saved state is lost
-- required control is unreachable by its supported input path
-- interactive control lacks an accessible name when a name is required
-- critical content or action is clipped at a supported viewport
+- required route, history, return, or saved state breaks
+- required control is unreachable by a supported input path
+- interactive control lacks a required accessible name
+- critical content or action is clipped
 - required recovery path is absent
 - runtime exception breaks the task
-- applicable required contrast or accessibility criterion is measured and fails
+- applicable measured contrast or accessibility criterion fails
+- required input response misses an explicit performance budget
 
-Every hard failure should record reproduction and evidence.
+Record reproduction and evidence.
 
 ### advisory
 
-Use for measured or observed patterns that may cause a problem but require product-specific judgment.
+Use for measured or observed risk requiring product judgment.
 
 Examples:
 
-- large share of visible text at small sizes
-- repeated small uppercase labels
-- unusually small target geometry where standards include exceptions
-- repeated cards, pills, or hover treatments
-- motion replay after a state change that may be unrelated
+- high small-text share
+- repeated uppercase micro-labels
+- unusually small target geometry where exceptions may apply
 - weak-looking affordance
+- repeated cards, pills, or generic motion
 - unusual whitespace or density
-- cross-product visual similarity
+- cross-product similarity
+- a response that feels late without a measured budget
 
-Advisory does not block by itself.
+Advisory does not become a hard failure merely because it is frequent.
+
+A material advisory may still become a **quality veto** during qualitative review when its product harm is concrete.
 
 ### evidence_only
 
-Use for neutral inventory with no automatic quality verdict:
+Neutral inventory with no automatic verdict:
 
 - typography distribution
 - component counts
@@ -51,37 +57,30 @@ Use for neutral inventory with no automatic quality verdict:
 - interaction trace
 - animation inventory
 - focus sequence
-- spacing or geometry measurements
-- responsive state comparison
+- spacing and geometry
+- responsive comparison
+- timing measurements
 
 ### blocked
 
-Use when required evidence could not be executed or observed because of missing auth, unstable build, unavailable browser, unsupported platform, inaccessible fixture, or another explicit limitation.
+Required evidence could not be executed or observed.
 
 Unknown is not pass.
 
-## Evidence versus preference
-
-Do not turn personal preference into deterministic correctness.
-
-A font, radius, density, palette, navigation pattern, or familiar component is not wrong solely because another reviewer would choose differently.
-
-A familiar pattern may be correct when it reduces error, onboarding cost, or platform inconsistency.
-
 ## Verification matrix
 
-For substantial work, record the actual status of applicable checks:
+Record actual status:
 
 | Area | Status examples |
 | --- | --- |
 | Core flows | operated / automated / blocked / not verified |
-| Keyboard | operated / blocked / not verified |
-| Focus | inspected / measured / blocked / not verified |
-| Contrast | measured / blocked / not verified |
-| Zoom or text scaling | inspected / blocked / not verified |
-| Narrow width | inspected / blocked / not verified |
+| Pointer/touch | operated / blocked / not verified |
+| Keyboard/focus | operated / blocked / not verified |
+| Back/return/persistence | operated / blocked / not verified |
+| Contrast/text scaling | measured / inspected / blocked / not verified |
+| Wide/compact/narrow | inspected / blocked / not verified |
 | Reduced motion | inspected / not applicable / blocked |
-| Required states | inspected / not applicable / blocked |
+| Loading/error/recovery | inspected / not applicable / blocked |
 | Performance | measured / observed / blocked / not verified |
 | Console/runtime | clean / findings / blocked / not checked |
 
@@ -89,8 +88,18 @@ Never upgrade observed to measured.
 
 ## Completion
 
-Fix hard failures before claiming completion.
+Evidence Gate passes when:
 
-Advisories should be resolved, accepted with a product reason, or left explicitly open. Evidence-only measurements remain available to the independent reviewer.
+- no unresolved hard failure remains
+- required evidence is not blocked without disclosure
+- every protected requirement has executed support or an explicit limitation
 
-Use `review-protocol.md` for independent review and `evidence-harness.md` when the P0 tooling is available.
+Passing Evidence Gate is necessary but insufficient.
+
+Overall readiness additionally requires:
+
+- Solution review selected the concept
+- Implementation review is ready
+- Quality Gate has no unresolved veto
+
+A valid but obviously unfinished interface does not pass overall readiness.
