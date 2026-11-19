@@ -2,118 +2,146 @@
 
 Use bounded rendered review for substantial visual work.
 
-When the P0 evidence harness is available, prefer a repeatable scenario over ad hoc screenshots. The browser is evidence collection, not an automatic taste judge.
+The browser is evidence collection and product inspection, not an automatic taste judge.
 
-## Pass A
+## Prepare
 
-Operate representative real states and inspect:
+Use:
 
-- first useful viewport
-- primary multi-step workflow
-- selection and detail
-- second and third likely actions
-- nested detail and Back/return
-- realistic long/dense/missing content
-- narrow/mobile transformation
-- keyboard and focus where applicable
-- reduced motion when motion exists
-- required loading, empty, error, retry, or persistence states
-- runtime and console failures
+- realistic content
+- representative long, missing, dense, and similar-looking records
+- intended fonts and visual assets
+- the real interaction model
+- wide, compact, and narrow viewports when applicable
+- normal and reduced motion
+- intended color schemes and input modes
 
-Collect material findings before editing.
+Do not review a premium concept with placeholders and call the direction verified.
 
-## Fix batch
+## Pass A — uncoached first impression
 
-Repair the responsible layer, not isolated pixels when the issue is systemic.
+Open the first useful viewport without generator explanation.
 
-Examples:
+Record:
 
-- fix mobile information priority rather than one overflow
-- fix state ownership rather than one lost selection
-- fix interaction causality rather than swapping an animation
-- fix typography roles rather than several unrelated font sizes
+- first object or action noticed
+- elements competing for attention
+- obvious awkwardness, cheapness, genericness, or incompleteness
+- dead or accidental space
+- weak assets, type, controls, wraps, or alignment
+- what appears interactive
+- what the next action seems to be
 
-## Pass B
+Do not defend the design rationale before recording the observation.
 
-Rerun affected evidence and a bounded regression path.
+## Pass B — operate the primary sequence
 
-Confirm no new failure in keyboard, return behavior, responsive composition, or required state.
+Operate, do not only look.
 
-Stop when remaining findings are advisory/minor and explicitly understood.
+Where applicable:
 
-## Operate, do not only look
+- hover, focus, press, and touch-sized interaction
+- select, deselect, save, filter, compare, reorder, drag, or manipulate
+- open detail, continue, close, Back, forward, and return
+- type, submit, wait, retry, cancel, undo, or recover
+- resize and rotate
+- reload and resume
+- keyboard navigation
+- reduced motion
 
-A screenshot cannot prove behavior.
+Test at least one second or third action.
 
-Where applicable, click, type, filter, select, compare, manipulate, follow relationships, use Back/forward, resize, scroll, keyboard navigate, retry, reload, export, or continue from an already-selected state.
-
-## Record a state sequence
-
-For the primary workflow, record:
+Record for each step:
 
 - user action
-- selected object or route before/after
+- selected object or route before and after
+- immediate response
 - what changed
 - what stayed anchored
 - focus target
-- scroll anchor when relevant
-- persistent state changes
+- scroll anchor
+- persistent state
 - next likely action
-- screenshot or ARIA evidence id
-- animation or transition observation when relevant
+- screenshot or trace evidence
+- transition observation
 
-Test at least one second or third action for repeated-work products.
+## Pass C — quality inspection
 
-## Keyboard walk
+Inspect:
 
-Use actual key input rather than inferring accessibility from source alone.
+- attention and hierarchy
+- copy editing
+- composition and crop
+- visual material fidelity
+- typography
+- control locality and affordance
+- response chain: input → acknowledgment → transition → state → next action
+- spatial and conceptual continuity
+- motion causality
+- responsive and platform fit
+- perceived and measured performance
+- weakest visible regions
 
-Record focus stops and required-action checkpoints. A control that was never reached or activated is not verified.
+Use `quality-bar.md`.
 
-Do not fail a design solely because a computed outline property is absent. Custom focus indicators may require visual review.
+## Fix batch
 
-## Behavioral Craft review
+Repair the responsible layer.
+
+Examples:
+
+- reshape the interaction rather than change easing
+- remove an explanatory label rather than restyle it
+- improve or replace the primary asset rather than add chrome
+- fix state ownership rather than one lost selection
+- change mobile priority rather than patch one overflow
+- discard a generic modal when object-anchored detail is the real solution
+
+Do not pixel-polish a concept-level failure.
+
+## Regression pass
+
+Rerun affected evidence and a bounded primary path.
+
+Confirm no regression in:
+
+- keyboard/focus
+- return behavior
+- state persistence
+- responsive composition
+- motion ownership
+- loading or performance
+- first useful viewport
+
+## Behavioral craft
 
 When relevant, test:
 
-- prompt response to input
-- direct manipulation tracking
+- prompt response
+- continuous manipulation
 - interruption
 - reversal or retargeting
-- spatial continuity
 - boundary feedback
 - repeated-use comfort
 
-Do not require gesture physics for ordinary forms or non-manipulative interfaces.
-
-## Motion causality
-
 Trigger at least one unrelated state change that should not replay a meaningful transition.
 
-If a route, timeline, relationship trace, or other meaningful motion replays only because a broad render rebuilt the element, fix state or animation ownership.
+## Performance
 
-## Presentation rhythm
+Observe and measure when possible:
 
-At real scale inspect:
+- response to input
+- layout shifts
+- long tasks
+- dropped frames
+- font and image stability
+- animation frame consistency
+- mobile-device behavior
 
-- information value in the first working viewport
-- dead regions
-- text-size distribution
-- body/reading comfort
-- repeated typographic roles
-- density by region
-- desktop versus mobile information priority
-
-A high small-text ratio is advisory evidence, not automatic failure.
-
-## Cross-product recurrence
-
-When an actual comparison corpus is available, describe structural, visual-material, typography, semantic-component, interaction, motion-trigger, and responsive similarities.
-
-Similarity is not a quality score. Ask whether it is product-justified and harmful.
-
-When no comparison corpus is available, mark recurrence as not verified.
+A recorded animation can look smooth while input response is late.
 
 ## Honesty
 
-If browser execution, auth, fixtures, or a required state are unavailable, mark the check blocked or not verified. Do not claim visual or interaction validation from source alone.
+If browser execution, assets, auth, fixtures, device input, or a required state are unavailable, mark the check blocked or not verified.
+
+Do not claim a quality review from source code alone.
