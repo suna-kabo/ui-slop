@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f5ed"><title>Coast &amp; Current</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head>
+<body>
+<header class="mast"><div class="frame bar">
+<a class="brand" href="#browse" aria-label="Coast and Current home"><span class="seal" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none"><path d="M4 13q3-4 7 0t7 0 6 0M4 19q3-4 7 0t7 0 6 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 9a5 5 0 0 1 10 0" stroke="currentColor" stroke-width="1.6"/></svg></span>Coast &amp; Current</a>
+<nav aria-label="Main navigation"><a href="#browse" id="nav-browse">Explore</a><a href="#shortlist" id="nav-shortlist"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z" stroke="currentColor" stroke-width="1.65" stroke-linejoin="round"/></svg>Shortlist <span id="saved-count">0</span></a></nav>
+</div></header>
+<main class="frame" id="main">
+<section id="collection" aria-labelledby="collection-title">
+<div class="hero" id="hero"><div class="hero-copy"><div class="kicker"><span></span> THE COASTAL FIELD GUIDE</div><h1>Find your<br>next <em>shore.</em></h1><p>Harbors, beaches and wetlands for a half-day by the water.</p></div><div class="hero-art"><img id="hero-image" alt="" width="800" height="400"><span aria-hidden="true">THE WATER’S EDGE</span></div></div>
+<div class="index-title"><h2 id="collection-title" tabindex="-1">Explore places</h2><p id="index-note">Find a place that fits your day.</p></div>
+<div class="filters" id="filters"><fieldset><legend class="sr">Setting</legend><div class="segments">
+<label><input type="radio" name="setting" value="All" checked><span>All places</span></label><label><input type="radio" name="setting" value="Harbor"><span>Harbor</span></label><label><input type="radio" name="setting" value="Beach"><span>Beach</span></label><label><input type="radio" name="setting" value="Wetland"><span>Wetland</span></label>
+</div></fieldset><label class="access"><input type="checkbox" id="step-free"> Step-free only</label></div>
+<div class="resultbar"><p id="result-count" role="status"></p><label id="sort-label" for="sort">Sort by <select id="sort"><option value="guide">Guide order</option><option value="duration">Shortest visit</option><option value="name">Name A–Z</option></select></label></div>
+<div id="cards" class="cards"></div>
+</section>
+<article id="detail" hidden></article>
+</main>
+<footer class="frame footer"><span>Coast &amp; Current</span><span>A field guide to the water’s edge</span></footer>
+<div id="announcement" class="sr" role="status" aria-live="polite"></div>
+</body></html>

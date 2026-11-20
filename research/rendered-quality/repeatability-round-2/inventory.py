@@ -2,6 +2,7 @@
 
 import argparse
 import json
+from datetime import datetime
 from pathlib import Path
 
 from cohort import digest, hashes, save
@@ -44,10 +45,26 @@ def run_record(root, case, selections):
                              actionErrors=sum("error" in row for row in raw["rows"]),
                              runtimeErrors=raw["errors"]))
     status = log.with_suffix(".status.json")
+    runtime = json.loads(status.read_text()) if status.is_file() else None
+    if runtime:
+        start = datetime.fromisoformat(runtime["started"])
+        end = datetime.fromisoformat(runtime["finished"])
+        runtime["elapsedSeconds"] = round((end - start).total_seconds(), 1)
+    writes = []
+    for row in records:
+        item = row.get("item") or {}
+        args = item.get("arguments") or {}
+        if row.get("type") != "item.completed" or item.get("error") or (item.get("result") or {}).get("isError"):
+            continue
+        if item.get("tool") == "copy_tree":
+            writes.append(args.get("to"))
+        elif item.get("tool") == "write_files":
+            writes.extend(file["path"].split("/")[0] for file in args.get("files", []))
+    initial_after_final = "initial" in writes[writes.index("final") + 1:] if "final" in writes else None
     return {**case, "snapshots": snapshots, "workspace": origin, "hasProof": (path / "proof/index.html").is_file(),
             "thread": next((row.get("thread_id") for row in records if row["type"] == "thread.started"), None),
             "usage": next((row.get("usage") for row in reversed(records) if row["type"] == "turn.completed"), None),
-            "runtime": json.loads(status.read_text()) if status.is_file() else None,
+            "runtime": runtime, "initialWritesAfterFinalStarted": initial_after_final,
             "browserToolFailures": sum(bool(call.get("error") or (call.get("result") or {}).get("isError"))
                                        for call in calls),
             "browserEvidence": evidence,

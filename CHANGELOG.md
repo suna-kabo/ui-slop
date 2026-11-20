@@ -7,6 +7,7 @@
 - Record rendered and operated findings before opening design rationale. Check intermediate response when a transition is disputed.
 - Recompose the layout during copy subtraction and verify that the affected task still works.
 - Add controlled browser fixtures and independent review records for the quality investigation.
+- Verify a changed fact in a second affected view when the task depends on both. Check that intentional distinctions such as planned and actual times are clear where users act.
 
 ## 3.0.1
 

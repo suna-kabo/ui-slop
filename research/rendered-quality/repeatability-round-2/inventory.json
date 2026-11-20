@@ -1,0 +1,1980 @@
+[
+  {
+    "id": "384f4cd8fa",
+    "family": "ceramics",
+    "repeat": 1,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/384f4cd8fa/index.html",
+        "entrySha256": "c10c1df592a362c293b0456c9682df818c6b552fb5463b067874ba490756a798",
+        "treeSha256": "048eddfd200b034b86a231df617207649546fb0f196e3f1d72d5640ee9be2af9"
+      },
+      "final": {
+        "entry": "review-packet/final/384f4cd8fa/index.html",
+        "entrySha256": "34ac9e6c054a716fa0ad2ad2ac305c78f710eff4ac59db9c387789eb6916a854",
+        "treeSha256": "36dc829333b68c3902568db957df75e0c925352d7aaa0d36e10937b1242826be"
+      }
+    },
+    "workspace": "scoped-workspaces-retry1/384f4cd8fa",
+    "hasProof": true,
+    "thread": "01a1f9ca-835a-78a0-8ed9-6358187c7302",
+    "usage": {
+      "input_tokens": 1162440,
+      "cached_input_tokens": 1096576,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19682,
+      "reasoning_output_tokens": 2259
+    },
+    "runtime": {
+      "id": "384f4cd8fa",
+      "started": "2026-11-20T16:29:20.938975+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:37:12.390645+00:00",
+      "elapsedSeconds": 471.5
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-lead-window",
+        "state": "final/index.html",
+        "width": 360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-member-recovery",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-lead-window-probe",
+        "state": "final/index.html",
+        "width": 1260,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-dialog-and-manifest",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-exact-capacity-topoff",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-short-window-keyboard-regression",
+        "state": "final/index.html",
+        "width": 360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-tablet-wide-transition",
+        "state": "final/index.html",
+        "width": 860,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-end-state-regression",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-shared-lifecycle",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-review-compact",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-review-wide",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-keyboard-choice",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-slot",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-slot",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-compact-arrival-and-focused",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-wide-arrival-and-focused",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces-retry1/384f4cd8fa/process/implementation-review.md",
+      "scoped-workspaces-retry1/384f4cd8fa/process/proof.md",
+      "scoped-workspaces-retry1/384f4cd8fa/process/review-record.md",
+      "scoped-workspaces-retry1/384f4cd8fa/process/workflow.md"
+    ]
+  },
+  {
+    "id": "0b0915fde5",
+    "family": "ceramics",
+    "repeat": 1,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/0b0915fde5/index.html",
+        "entrySha256": "d970c5ab77e3a89360787d5fe6b5b739338b40e39a3ba5cba57c7cb62d77ab16",
+        "treeSha256": "0311bbab14cdcbd3d5d430db6024a0d0bf146b14ac056229bdce0f0d131485c4"
+      },
+      "final": {
+        "entry": "review-packet/final/0b0915fde5/index.html",
+        "entrySha256": "b59c5428fad509c849cebcaafcd9e7d4e29a6dd5839b236e22df09db4626c4d0",
+        "treeSha256": "ef0612d8e8b07e600126e1c2b89a85b480308431c301bf74ed3e2487bc366a76"
+      }
+    },
+    "workspace": "scoped-workspaces/0b0915fde5",
+    "hasProof": true,
+    "thread": "01a1f9c3-2191-7fa1-ba04-353509481b57",
+    "usage": {
+      "input_tokens": 1241320,
+      "cached_input_tokens": 1166336,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 17288,
+      "reasoning_output_tokens": 917
+    },
+    "runtime": {
+      "id": "0b0915fde5",
+      "started": "2026-11-20T16:21:16.823378+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:37.692052+00:00",
+      "elapsedSeconds": 440.9
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-keyboard-walk",
+        "state": "final/index.html",
+        "width": 782,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-shared-desk-wide",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-tight-ash-boundary",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-touch-reduced",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-verified-touch",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-verified-wide",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-review",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-review",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-ledger-touch",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-ledger-touch-retry",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-ledger-wide",
+        "state": "proof/index.html",
+        "width": 1400,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/0b0915fde5/process/01-shaping.md",
+      "scoped-workspaces/0b0915fde5/process/02-principles.md",
+      "scoped-workspaces/0b0915fde5/process/03-proof.md",
+      "scoped-workspaces/0b0915fde5/process/04-build.md",
+      "scoped-workspaces/0b0915fde5/process/05-initial-review.md",
+      "scoped-workspaces/0b0915fde5/process/06-final-review.md"
+    ]
+  },
+  {
+    "id": "0eb8ac9098",
+    "family": "ceramics",
+    "repeat": 2,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/0eb8ac9098/index.html",
+        "entrySha256": "bee67966a74d09a8611a5ec6ec0af23dc2b692180c92920afa005daaf2e62851",
+        "treeSha256": "9fb8e5d213acbd9350c904990e32018571c257cfeb1dbb29c56c80bb43a22fd0"
+      },
+      "final": {
+        "entry": "review-packet/final/0eb8ac9098/index.html",
+        "entrySha256": "0b4abb8792877a32d2b18e888b281be9ed20c0b280ca1c9cb817f436d5ad1b16",
+        "treeSha256": "7005e3d50ac288ac1d19c30636aeabda8a2afbafbd049007f78aa5a303415165"
+      }
+    },
+    "workspace": "scoped-workspaces/0eb8ac9098",
+    "hasProof": true,
+    "thread": "01a1f9c3-2199-7db2-a657-fd36d92b0dd5",
+    "usage": {
+      "input_tokens": 1388219,
+      "cached_input_tokens": 1275648,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 18929,
+      "reasoning_output_tokens": 1449
+    },
+    "runtime": {
+      "id": "0eb8ac9098",
+      "started": "2026-11-20T16:21:16.830872+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:46.397681+00:00",
+      "elapsedSeconds": 449.6
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-closed-regression",
+        "state": "final/index.html",
+        "width": 1360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-recovery",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-keyboard-edges",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-layout-regression",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-tablet-registration-to-load",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-contract",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-window-conflicts",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-phone-review",
+        "state": "initial/index.html",
+        "width": 375,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-review",
+        "state": "initial/index.html",
+        "width": 1360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-ledger",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-touch",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-keyboard",
+        "state": "proof/index.html",
+        "width": 1380,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-ledger",
+        "state": "proof/index.html",
+        "width": 1380,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-compact-rendered",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-wide-rendered",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/0eb8ac9098/process/01-shape.md",
+      "scoped-workspaces/0eb8ac9098/process/02-principles.md",
+      "scoped-workspaces/0eb8ac9098/process/03-proof.md",
+      "scoped-workspaces/0eb8ac9098/process/04-initial-review.md",
+      "scoped-workspaces/0eb8ac9098/process/05-final-review.md",
+      "scoped-workspaces/0eb8ac9098/process/README.md"
+    ]
+  },
+  {
+    "id": "86cf04199e",
+    "family": "ceramics",
+    "repeat": 2,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/86cf04199e/index.html",
+        "entrySha256": "5bacc18fcf9c054ea09a9f0388903a4ec1f0a1e32fe4c6f9dd9d88455093178e",
+        "treeSha256": "4fd79df060e60c9b1972e888c7820f6a91b622c75342aef7913ff79248414ccc"
+      },
+      "final": {
+        "entry": "review-packet/final/86cf04199e/index.html",
+        "entrySha256": "52a27e188e53e77b66ad481efe71b2e8fc0f50589f5c0707f600add595f27fb8",
+        "treeSha256": "5cb9464475e8fe8241bc31d21eca5afaac7649475b48cebb321468c6c93268b9"
+      }
+    },
+    "workspace": "scoped-workspaces/86cf04199e",
+    "hasProof": true,
+    "thread": "01a1f9c3-2187-70f1-ad1e-709560142a4b",
+    "usage": {
+      "input_tokens": 2400585,
+      "cached_input_tokens": 2318336,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21092,
+      "reasoning_output_tokens": 1543
+    },
+    "runtime": {
+      "id": "86cf04199e",
+      "started": "2026-11-20T16:21:16.828331+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:30:10.888654+00:00",
+      "elapsedSeconds": 534.1
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-recovery-v1",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": [
+          "id is not defined"
+        ]
+      },
+      {
+        "label": "final-compact-recovery-v2",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-recovery-v4",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-recovery-v7",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-registration-v1",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-registration-v2",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-registration-v3",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-form-draft-diagnosis-v3",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-kiln-select-diagnosis-v1",
+        "state": "final/index.html",
+        "width": 870,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-overlap-recovery-diagnosis-v2",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-handoff-v6",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-lead-v1",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-lead-v2",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-lead-v3",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-lead-v4",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-lead-v5",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-window-validation-v6",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-self-review-v1",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-detail-diagnosis-v2",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-operated-review-v3",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-self-review-v1",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-sequence-v4",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-board-v1",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-board-v1",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/86cf04199e/process/01-shaping.md",
+      "scoped-workspaces/86cf04199e/process/02-principles.md",
+      "scoped-workspaces/86cf04199e/process/03-proof.md",
+      "scoped-workspaces/86cf04199e/process/04-initial-review.md",
+      "scoped-workspaces/86cf04199e/process/05-final-review.md"
+    ]
+  },
+  {
+    "id": "056ef57731",
+    "family": "collection",
+    "repeat": 1,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/056ef57731/index.html",
+        "entrySha256": "97694adf1c25f507c191249c56019d86749a97d143e22f9e675bc01b8fb6f2a9",
+        "treeSha256": "b5cf101c3c0fd800100ba12d9fae873b8f38b6c3d5637a00a3b2ef547e91f892"
+      },
+      "final": {
+        "entry": "review-packet/final/056ef57731/index.html",
+        "entrySha256": "064fc6fc3ad2c927d1e89dac634e9639c3c20c740759e5f9477e24fb5630bf80",
+        "treeSha256": "e5688f48a59c1da90b629df075a8f1dd450ab1064a338b3f31950377694f4d10"
+      }
+    },
+    "workspace": "scoped-workspaces/056ef57731",
+    "hasProof": true,
+    "thread": "01a1f9c3-2198-7342-a4e5-27d76f914195",
+    "usage": {
+      "input_tokens": 1496932,
+      "cached_input_tokens": 1427712,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19538,
+      "reasoning_output_tokens": 1143
+    },
+    "runtime": {
+      "id": "056ef57731",
+      "started": "2026-11-20T16:21:16.828039+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:56.599510+00:00",
+      "elapsedSeconds": 459.8
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-after-focus-fallback-scroll",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-after-focus-fallback-wide",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-after-narrow-spacing",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-keyboard-scroll",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-touch-recovery",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-shortlist-persistence",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-records-pair-1",
+        "state": "final/index.html",
+        "width": 1120,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-records-pair-2",
+        "state": "final/index.html",
+        "width": 1120,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-records-pair-3",
+        "state": "final/index.html",
+        "width": 1120,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-records-pair-4",
+        "state": "final/index.html",
+        "width": 1120,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-sort-and-compare",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-review",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-review",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-comparison",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-comparison",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-keyboard-repeat",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-compact",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-wide",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/056ef57731/process/01-shaping.md",
+      "scoped-workspaces/056ef57731/process/02-calibration.md",
+      "scoped-workspaces/056ef57731/process/03-proof.md",
+      "scoped-workspaces/056ef57731/process/04-initial-review.md",
+      "scoped-workspaces/056ef57731/process/05-final-review.md"
+    ]
+  },
+  {
+    "id": "fc2950d5d4",
+    "family": "collection",
+    "repeat": 1,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/fc2950d5d4/index.html",
+        "entrySha256": "f2a093d6637e33cc51cb510fee6f688265ef7a67098c19557bfac5bf3b1d5dbb",
+        "treeSha256": "d867013c7ce0274d73ea5e5c36a06aa812c33cd04e53570c40cb89702d85a68f"
+      },
+      "final": {
+        "entry": "review-packet/final/fc2950d5d4/index.html",
+        "entrySha256": "3c90895ca438dfdefc362733c4c564917d12f60a25a390720bdd6032ca7d3a25",
+        "treeSha256": "d5686be7a5c1f772ccbbde2c0573abd380a18fdeee5f93b3d7738bd5e326ce01"
+      }
+    },
+    "workspace": "scoped-workspaces/fc2950d5d4",
+    "hasProof": true,
+    "thread": "01a1f9c3-2158-7821-898d-83b20dfd4ed6",
+    "usage": {
+      "input_tokens": 1130092,
+      "cached_input_tokens": 1009536,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 17672,
+      "reasoning_output_tokens": 651
+    },
+    "runtime": {
+      "id": "fc2950d5d4",
+      "started": "2026-11-20T16:21:16.827944+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:11.028347+00:00",
+      "elapsedSeconds": 414.2
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "facts-breakwater",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-cove",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-dune",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-ebb",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-gull",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-hide",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-pilot",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "facts-reeds",
+        "state": "final/index.html",
+        "width": 1200,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-harbor-access-inventory",
+        "state": "final/index.html",
+        "width": 1280,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-scroll-anchor",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-phone-touch-recovery",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-shortlist-persistence",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-continuity",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-review",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-review",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-phone-touch",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-keyboard",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-native-sort",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/fc2950d5d4/process/01-experience.md",
+      "scoped-workspaces/fc2950d5d4/process/02-principles.md",
+      "scoped-workspaces/fc2950d5d4/process/03-proof.md",
+      "scoped-workspaces/fc2950d5d4/process/04-initial-review.md",
+      "scoped-workspaces/fc2950d5d4/process/05-final-review.md"
+    ]
+  },
+  {
+    "id": "4a749aeccf",
+    "family": "collection",
+    "repeat": 2,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/4a749aeccf/index.html",
+        "entrySha256": "404b077d797a8715078447b22841dc66582c9e96b10a936b6f7e1d13c0a6cf46",
+        "treeSha256": "cc8f7c226cb14a8afbdb36af458b693260e390242457ed01f1cb77a2d1d71333"
+      },
+      "final": {
+        "entry": "review-packet/final/4a749aeccf/index.html",
+        "entrySha256": "ea7129bee783caa7fbc0dafa75496c36d42d54a61fb9cfa02f31f2931be720f1",
+        "treeSha256": "a09d2b7b1d22c25b5215e3dcfe939e2a3532654c325d2cea978a9ad6fcf9a51f"
+      }
+    },
+    "workspace": "scoped-workspaces/4a749aeccf",
+    "hasProof": true,
+    "thread": "01a1f9c3-2158-7103-a91f-141c024c1bd3",
+    "usage": {
+      "input_tokens": 1634951,
+      "cached_input_tokens": 1558400,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 18374,
+      "reasoning_output_tokens": 1050
+    },
+    "runtime": {
+      "id": "4a749aeccf",
+      "started": "2026-11-20T16:21:16.830600+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:29:42.722661+00:00",
+      "elapsedSeconds": 505.9
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-path-and-storage",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-storage-recheck",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-tide-flow",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-tide-recheck",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-native-link-compact-regression",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-native-link-wide-regression",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-tablet-filter-history",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-behavior-and-crop",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-click-surface-and-facts",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-detail-and-skip",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-shortlist-review",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-full-review",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-keyboard-sort-return",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-touch",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-touch-recheck",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-continuity",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-compact",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "subtraction-wide-and-detail",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/4a749aeccf/process/01-shape.md",
+      "scoped-workspaces/4a749aeccf/process/02-principles.md",
+      "scoped-workspaces/4a749aeccf/process/03-proof.md",
+      "scoped-workspaces/4a749aeccf/process/04-initial-review.md",
+      "scoped-workspaces/4a749aeccf/process/05-final-review.md"
+    ]
+  },
+  {
+    "id": "60122cbb0c",
+    "family": "collection",
+    "repeat": 2,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/60122cbb0c/index.html",
+        "entrySha256": "1f8314194eec0e3492f5fcab46fa2dc589a0fa2feebcc292230fa3b073c0079b",
+        "treeSha256": "fa763606f357858dc061496a374c699d819cced30057dc71ac910debab623074"
+      },
+      "final": {
+        "entry": "review-packet/final/60122cbb0c/index.html",
+        "entrySha256": "e212d825d76a2f2be89c90f03d166c91639e9457ef5e15ee0d34b83dff17f3da",
+        "treeSha256": "0b13e951f705f3ce1c9a4132c2393ba42e62739c9dc13c4d2aaff922c339a478"
+      }
+    },
+    "workspace": "scoped-workspaces/60122cbb0c",
+    "hasProof": true,
+    "thread": "01a1f9c3-2145-7040-a45a-5ccc1ef26c6a",
+    "usage": {
+      "input_tokens": 1972595,
+      "cached_input_tokens": 1893504,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21198,
+      "reasoning_output_tokens": 1855
+    },
+    "runtime": {
+      "id": "60122cbb0c",
+      "started": "2026-11-20T16:21:16.828107+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:29:39.264049+00:00",
+      "elapsedSeconds": 502.4
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "coast-final-phone-regression-01",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-final-scroll-matched-01",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-final-small-phone-01",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-final-tablet-access-01",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-final-wide-regression-01",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-initial-phone-review-01",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-initial-wide-flow-02",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-initial-wide-review-01",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-proof-compact-01",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-proof-wide-01",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-release-320-scan-01",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-release-phone-continuity-01",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-release-tablet-crop-01",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-release-wide-01",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-facts-1",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-facts-2",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-facts-3",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-facts-4",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-phone-02",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-small-phone-02",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-tablet-access-02",
+        "state": "final/index.html",
+        "width": 768,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "coast-verified-wide-02",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/60122cbb0c/process/01-shaping.md",
+      "scoped-workspaces/60122cbb0c/process/02-principles.md",
+      "scoped-workspaces/60122cbb0c/process/03-proof.md",
+      "scoped-workspaces/60122cbb0c/process/04-initial-review.md",
+      "scoped-workspaces/60122cbb0c/process/05-review-and-evidence.md"
+    ]
+  },
+  {
+    "id": "95ecf55b80",
+    "family": "operations",
+    "repeat": 1,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/95ecf55b80/index.html",
+        "entrySha256": "15e0395e28f96dd4e051302b80d4e03b32a3fa0dd0501f7a51e65ef4ae52c106",
+        "treeSha256": "34fb93b4c0528de5f4f01c211337f353eb5150882ad3dec8e06edafe4c093010"
+      },
+      "final": {
+        "entry": "review-packet/final/95ecf55b80/index.html",
+        "entrySha256": "677966390d7cbb9467a9a1a1dc1c9a4c9d51c80338f15710d5a25a06bf9755b0",
+        "treeSha256": "0e3b7d81c417687a9da9b12d3a5120fa1fc52beb827cd0db850ea42e77c2e882"
+      }
+    },
+    "workspace": "scoped-workspaces/95ecf55b80",
+    "hasProof": true,
+    "thread": "01a1f9c3-213a-7062-86b1-a61b4234e659",
+    "usage": {
+      "input_tokens": 1684948,
+      "cached_input_tokens": 1604736,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 19117,
+      "reasoning_output_tokens": 1782
+    },
+    "runtime": {
+      "id": "95ecf55b80",
+      "started": "2026-11-20T16:21:16.831227+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:50.173239+00:00",
+      "elapsedSeconds": 453.3
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-continuation-11",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-handoff-07",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-compare-08",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-reflow-09",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-register-12",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-handoff-06",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-regression-10",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-review-04",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compare-review-05",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-review-03",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-riverwatch-02",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-riverwatch-01",
+        "state": "proof/index.html",
+        "width": 1360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/95ecf55b80/process/01-experience.md",
+      "scoped-workspaces/95ecf55b80/process/02-principles.md",
+      "scoped-workspaces/95ecf55b80/process/03-proof.md",
+      "scoped-workspaces/95ecf55b80/process/04-initial-review.md",
+      "scoped-workspaces/95ecf55b80/process/05-final-review.md"
+    ]
+  },
+  {
+    "id": "894aed0fda",
+    "family": "operations",
+    "repeat": 1,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/894aed0fda/index.html",
+        "entrySha256": "5d6827631b15421c1da917f0b8b3015707ec3b676da37a4561b6ff700909959e",
+        "treeSha256": "d344f8fe3b23207e7315a5d2cb8a9d22082d4609a49af960fc03cc87b2f811ae"
+      },
+      "final": {
+        "entry": "review-packet/final/894aed0fda/index.html",
+        "entrySha256": "76c62382a2dcf4e8c62614eb3f142af9fcb942bdb3dc68719143c928950beb1d",
+        "treeSha256": "9184683588a36bade951d19f907fb31548e0826600f7716a789dc493726e5333"
+      }
+    },
+    "workspace": "scoped-workspaces/894aed0fda",
+    "hasProof": true,
+    "thread": "01a1f9c3-218d-79c3-bb35-1bceb8316071",
+    "usage": {
+      "input_tokens": 1330234,
+      "cached_input_tokens": 1269504,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 18714,
+      "reasoning_output_tokens": 1118
+    },
+    "runtime": {
+      "id": "894aed0fda",
+      "started": "2026-11-20T16:21:16.826831+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:28:41.474520+00:00",
+      "elapsedSeconds": 444.6
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-filtered-handoff-regression",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-compact-hold-and-repeat",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-intermediate-keyboard-and-pins",
+        "state": "final/index.html",
+        "width": 800,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-comparison-undo-isolation",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-revised-comparison-labels",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-wide-comparison-persistence",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-compact-first-and-detail",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-wide-first-and-comparison",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-compact-repeat-return",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-wide-queue-handoff",
+        "state": "proof/index.html",
+        "width": 1360,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/894aed0fda/process/01-shaping.md",
+      "scoped-workspaces/894aed0fda/process/02-principles.md",
+      "scoped-workspaces/894aed0fda/process/03-proof.md",
+      "scoped-workspaces/894aed0fda/process/04-initial-review.md",
+      "scoped-workspaces/894aed0fda/process/05-review-and-evidence.md"
+    ]
+  },
+  {
+    "id": "561ebb39e0",
+    "family": "operations",
+    "repeat": 2,
+    "condition": "A",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/561ebb39e0/index.html",
+        "entrySha256": "ae7bb5335e62c63183d2bfecff9d065414369375b822651615880af9ad9e7cb4",
+        "treeSha256": "f6f0fe71f289eb7eb00c621d286c03be1b144e3c341351c3acad5827ca51f941"
+      },
+      "final": {
+        "entry": "review-packet/final/561ebb39e0/index.html",
+        "entrySha256": "da28ddf9d2fd4aaf31d0fd4170e5a4f4391a55a4bffcc33e790cd7a66ad1efee",
+        "treeSha256": "39eb1d8f9715d1c0a72b9a4d3762715e27fa4af83c9e781dcddf9b96957251c6"
+      }
+    },
+    "workspace": "scoped-workspaces/561ebb39e0",
+    "hasProof": true,
+    "thread": "01a1f9c3-2160-7650-a9b3-ed0e0cb3c442",
+    "usage": {
+      "input_tokens": 1773218,
+      "cached_input_tokens": 1700608,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 21956,
+      "reasoning_output_tokens": 2386
+    },
+    "runtime": {
+      "id": "561ebb39e0",
+      "started": "2026-11-20T16:21:16.831666+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:30:05.562673+00:00",
+      "elapsedSeconds": 528.7
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "rw-copy-trial-compact-06",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-copy-trial-wide-06",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-compact-10",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-compact-contrast-11",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-context-11",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-narrow-10",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-narrow-contrast-11",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-wide-10",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-delivery-wide-contrast-11",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-compact-07",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-fixtures-09-0",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-fixtures-09-1",
+        "state": "final/index.html",
+        "width": 1024,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-keyboard-08",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-keyboard-09",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-narrow-07",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-narrow-rerun-08",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-wide-07",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-final-wide-rerun-08",
+        "state": "final/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-initial-compact-review-04",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-initial-wide-label-retest-05",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-initial-wide-review-04",
+        "state": "initial/index.html",
+        "width": 1440,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-proof-compact-01",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-proof-compact-retest-03",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-proof-compact-undo-02",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-proof-wide-01",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "rw-proof-wide-retest-03",
+        "state": "proof/index.html",
+        "width": 1440,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/561ebb39e0/process/01-shaping.md",
+      "scoped-workspaces/561ebb39e0/process/02-principles.md",
+      "scoped-workspaces/561ebb39e0/process/03-proof.md",
+      "scoped-workspaces/561ebb39e0/process/04-selection.md",
+      "scoped-workspaces/561ebb39e0/process/05-initial-review.md",
+      "scoped-workspaces/561ebb39e0/process/06-review-record.md"
+    ]
+  },
+  {
+    "id": "a08e70c127",
+    "family": "operations",
+    "repeat": 2,
+    "condition": "B",
+    "snapshots": {
+      "initial": {
+        "entry": "review-packet/initial/a08e70c127/index.html",
+        "entrySha256": "31a3702634ec358d5859d204984bc7a022a1ba71bca9d99c44ac9c47117bad31",
+        "treeSha256": "274f49ea3b4f8e784ec68618781a03f0789273275fd5d0ddec2e3cf364025f9d"
+      },
+      "final": {
+        "entry": "review-packet/final/a08e70c127/index.html",
+        "entrySha256": "8ccd190e596c0d37b3e1f154a5646e05834b50ceeb2e9ddfe0530c5caca93e58",
+        "treeSha256": "94f7a4382dec016f7997470f0c68cf742fb6df924c3d9793c00798d4f1b61bfb"
+      }
+    },
+    "workspace": "scoped-workspaces/a08e70c127",
+    "hasProof": true,
+    "thread": "01a1f9c3-21b6-7df1-8c3e-c6664dd8239a",
+    "usage": {
+      "input_tokens": 1444793,
+      "cached_input_tokens": 1362816,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 20090,
+      "reasoning_output_tokens": 1843
+    },
+    "runtime": {
+      "id": "a08e70c127",
+      "started": "2026-11-20T16:21:16.827203+00:00",
+      "timeout": false,
+      "returncode": 0,
+      "finished": "2026-11-20T16:29:06.042079+00:00",
+      "elapsedSeconds": 469.2
+    },
+    "initialWritesAfterFinalStarted": false,
+    "browserToolFailures": 0,
+    "browserEvidence": [
+      {
+        "label": "final-compact-hold-12",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-desk-regression-06",
+        "state": "final/index.html",
+        "width": 1366,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-keyboard-id-10",
+        "state": "final/index.html",
+        "width": 1280,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-mid-filters-08",
+        "state": "final/index.html",
+        "width": 740,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-ids-11",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-narrow-reflow-09",
+        "state": "final/index.html",
+        "width": 320,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "final-phone-touch-07",
+        "state": "final/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-first-desk-03",
+        "state": "initial/index.html",
+        "width": 1366,
+        "actionErrors": 1,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-first-phone-04",
+        "state": "initial/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "initial-middle-05",
+        "state": "initial/index.html",
+        "width": 740,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-desk-core-01",
+        "state": "proof/index.html",
+        "width": 1366,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      },
+      {
+        "label": "proof-phone-core-02",
+        "state": "proof/index.html",
+        "width": 390,
+        "actionErrors": 0,
+        "runtimeErrors": []
+      }
+    ],
+    "reviewRecords": [
+      "scoped-workspaces/a08e70c127/process/workflow.md"
+    ]
+  }
+]

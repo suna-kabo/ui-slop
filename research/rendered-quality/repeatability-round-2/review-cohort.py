@@ -86,7 +86,7 @@ def prepare(root, source, extend, ready_only):
     save(root / "artifact-selections.json", selections)
 
 
-def review(root, workers, extend):
+def review(root, workers, extend, only_pairs):
     packet = root / "review-packet"
     if hashes(packet) != json.loads((root / "runnable-output-hashes.json").read_text()):
         raise ValueError("Review packet changed after freeze")
@@ -98,6 +98,8 @@ def review(root, workers, extend):
         raise ValueError("Existing reviewer records changed after freeze")
     jobs = []
     for index, pair in enumerate(pairs, 1):
+        if only_pairs and index not in only_pairs:
+            continue
         if not any(len(ready) == 2 for ready in pair["states"].values()):
             continue
         for number in (1, 2):
@@ -141,17 +143,39 @@ def review(root, workers, extend):
     save(root / "frozen-review-hashes.json", hashes(review_root))
 
 
+def combine(root, waves):
+    def verify(wave):
+        directory = wave / "reviewers"
+        frozen = json.loads((wave / "frozen-review-hashes.json").read_text())
+        if hashes(directory) != frozen:
+            raise ValueError(f"Review records changed after freeze: {wave.name}")
+        return directory
+
+    target = verify(root)
+    for wave in waves:
+        source = verify(wave)
+        for folder in sorted(source.iterdir()):
+            if (target / folder.name).exists():
+                raise FileExistsError(f"Reviewer ID already present: {folder.name}")
+            shutil.copytree(folder, target / folder.name)
+    save(root / "frozen-review-hashes.json", hashes(target))
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("phase", choices=("prepare", "review"))
+    parser.add_argument("phase", choices=("prepare", "review", "combine"))
     parser.add_argument("root", type=Path)
     parser.add_argument("--workspaces", default="scoped-workspaces")
     parser.add_argument("--workers", type=int, default=12)
     parser.add_argument("--extend", action="store_true")
     parser.add_argument("--ready-only", action="store_true")
+    parser.add_argument("--pair", type=int, action="append")
+    parser.add_argument("--wave", type=Path, action="append", default=[])
     args = parser.parse_args()
     root = args.root.resolve()
     if args.phase == "prepare":
         prepare(root, root / args.workspaces, args.extend, args.ready_only)
+    elif args.phase == "review":
+        review(root, args.workers, args.extend, args.pair)
     else:
-        review(root, args.workers, args.extend)
+        combine(root, args.wave)

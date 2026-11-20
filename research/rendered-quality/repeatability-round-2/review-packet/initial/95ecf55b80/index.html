@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12392f"><title>Riverwatch · Sample review</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head>
+<body>
+<header><div class="mast"><div class="wrap"><div class="brand"><span class="mark" aria-hidden="true">≈</span>Riverwatch</div><button id="open-compare" data-act="compare" hidden>Compare samples</button></div></div>
+<div class="hero"><svg viewBox="0 0 820 160" preserveAspectRatio="xMaxYMid slice" aria-hidden="true"><g fill="none" stroke="#7ba78e" stroke-width="1.05"><path d="M164,-32 C393,-20 204,126 512,93 S673,3 875,36"/><path d="M176,-32 C400,-13 224,122 524,98 S683,9 875,46"/><path d="M188,-32 C407,-6 244,118 536,103 S693,15 875,56"/><path d="M200,-32 C414,1 264,114 548,108 S703,21 875,66"/><path d="M212,-32 C421,8 284,110 560,113 S713,27 875,76"/><path d="M224,-32 C428,15 304,106 572,118 S723,33 875,86"/><path d="M236,-32 C435,22 324,102 584,123 S733,39 875,96"/><path d="M248,-32 C442,29 344,98 596,128 S743,45 875,106"/><path d="M260,-32 C449,36 364,94 608,133 S753,51 875,116"/><path d="M272,-32 C456,43 384,90 620,138 S763,57 875,126"/><path d="M284,-32 C463,50 404,86 632,143 S773,63 875,136"/><path d="M296,-32 C470,57 424,82 644,148 S783,69 875,146"/><path d="M308,-32 C477,64 444,78 656,153 S793,75 875,156"/></g></svg><div class="wrap"><h1>Sample review</h1><p>Morning handoff <span aria-hidden="true">·</span> June 3–4</p></div></div></header>
+<main id="workspace" class="wrap layout">
+<section id="register" class="panel" aria-labelledby="register-title">
+<div class="register-head"><div class="spread"><h2 id="register-title">Sample register</h2><span class="muted small" id="count" aria-live="polite"></span></div>
+<div class="filters"><label>Search samples<input type="search" id="search" placeholder="ID or lab note"></label><label>Station<select id="station"><option value="">All stations</option></select></label><label>Disposition<select id="status"><option value="">All dispositions</option><option>Review</option><option>Accepted</option><option>Hold</option></select></label></div></div>
+<div class="table-head" aria-hidden="true"><span>Sample</span><span>Station</span><span class="measure">Turbidity</span><span class="measure">Conductivity</span><span>Disposition</span></div><div id="rows"></div>
+</section>
+<section id="detail" class="panel" aria-label="Sample detail"></section>
+<section id="compare" class="panel compare" aria-label="Sample comparison" hidden></section>
+</main><footer class="wrap foot">Synthetic records <span aria-hidden="true">·</span> Stored in this browser</footer>
+</body></html>

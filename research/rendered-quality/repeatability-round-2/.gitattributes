@@ -1,0 +1,2 @@
+benchmark/** -text
+review-packet/** -text -whitespace

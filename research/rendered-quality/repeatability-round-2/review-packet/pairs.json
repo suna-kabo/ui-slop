@@ -1,0 +1,104 @@
+[
+  {
+    "family": "collection",
+    "ids": [
+      "4a749aeccf",
+      "60122cbb0c"
+    ],
+    "states": {
+      "initial": [
+        "4a749aeccf",
+        "60122cbb0c"
+      ],
+      "final": [
+        "4a749aeccf",
+        "60122cbb0c"
+      ]
+    }
+  },
+  {
+    "family": "ceramics",
+    "ids": [
+      "384f4cd8fa",
+      "0b0915fde5"
+    ],
+    "states": {
+      "initial": [
+        "384f4cd8fa",
+        "0b0915fde5"
+      ],
+      "final": [
+        "384f4cd8fa",
+        "0b0915fde5"
+      ]
+    }
+  },
+  {
+    "family": "ceramics",
+    "ids": [
+      "86cf04199e",
+      "0eb8ac9098"
+    ],
+    "states": {
+      "initial": [
+        "86cf04199e",
+        "0eb8ac9098"
+      ],
+      "final": [
+        "86cf04199e",
+        "0eb8ac9098"
+      ]
+    }
+  },
+  {
+    "family": "collection",
+    "ids": [
+      "fc2950d5d4",
+      "056ef57731"
+    ],
+    "states": {
+      "initial": [
+        "fc2950d5d4",
+        "056ef57731"
+      ],
+      "final": [
+        "fc2950d5d4",
+        "056ef57731"
+      ]
+    }
+  },
+  {
+    "family": "operations",
+    "ids": [
+      "561ebb39e0",
+      "a08e70c127"
+    ],
+    "states": {
+      "initial": [
+        "561ebb39e0",
+        "a08e70c127"
+      ],
+      "final": [
+        "561ebb39e0",
+        "a08e70c127"
+      ]
+    }
+  },
+  {
+    "family": "operations",
+    "ids": [
+      "95ecf55b80",
+      "894aed0fda"
+    ],
+    "states": {
+      "initial": [
+        "95ecf55b80",
+        "894aed0fda"
+      ],
+      "final": [
+        "95ecf55b80",
+        "894aed0fda"
+      ]
+    }
+  }
+]

@@ -1,6 +1,7 @@
 """Create portable ZIPs with file-level SHA-256 evidence manifests."""
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 from pathlib import Path, PurePosixPath
 import zipfile
@@ -53,7 +54,7 @@ def evidence_zip(staging, output, slug, members):
             files.update(file_tree(source, member))
     manifest = staging / f"{slug}-file-hashes.json"
     save(manifest, {name: digest(path.read_bytes()) for name, path in sorted(files.items())})
-    files["SHA256.json"] = manifest
+    files[f"SHA256-{slug}.json"] = manifest
     make_zip(output / f"{slug}.zip", files)
 
 
@@ -67,15 +68,33 @@ if __name__ == "__main__":
     skill_zip(args.skill, args.output)
     evidence_zip(args.staging, args.output, "ui-slop-kilnroom-historical-replay", [
         "history", "historical-source-hashes.json", "historical-captures", "historical-replay.txt",
-        "history-verification", "historical-findings.md",
+        "history-verification", "HISTORICAL.md",
     ])
+    pairs = json.loads((args.staging / "review-packet" / "pairs.json").read_text())
+    reviewer_summary = []
+    by_family = {}
+    for index, pair in enumerate(pairs, 1):
+        folders = [f"reviewers/{index}-{number}" for number in (1, 2)]
+        by_family.setdefault(pair["family"], []).extend(folders)
+        for folder in folders:
+            reviewer_summary += [f"{folder}/{name}" for name in (
+                "pair.json", "brief.md", "protocol.md", "status.json", "process/review.md",
+            )]
     evidence_zip(args.staging, args.output, "ui-slop-repeatability-evidence", [
         "sealed", "frozen-input-hashes.json", "generation-logs", "scoped-generation-logs",
         "generator-environment.json", "scoped-workspaces", "scoped-workspaces-retry1",
         "scoped-generation-logs-retry1", "fallback-evidence", "review-packet", "artifact-selections.json",
-        "runnable-output-hashes.json", "reviewers", "frozen-review-hashes.json", "opening-views",
+        "runnable-output-hashes.json", "frozen-review-hashes.json", "opening-views", *reviewer_summary,
         "repository-tests.txt", "package-doctor.txt", "package-smoke", "installed-skill-model-smoke.jsonl",
-        "investigation.md", "reproduction.md", "inventory.json", "targeted-retests",
+        "final-repository-tests.txt", "final-package-doctor.txt", "final-package-smoke",
+        "final-package-validate.json", "final-installed-skill-model-smoke.jsonl",
+        "INVESTIGATION.md", "REPRODUCE.md", "HISTORICAL.md", "benchmark", "inventory.json",
+        "targeted", "targeted-retests",
     ])
+    with ThreadPoolExecutor(max_workers=len(by_family)) as pool:
+        results = [pool.submit(evidence_zip, args.staging, args.output, f"ui-slop-blind-traces-{family}", folders)
+                   for family, folders in by_family.items()]
+        for result in results:
+            result.result()
     save(args.output / "archive-sha256.json", {file.name: digest(file.read_bytes())
          for file in sorted(args.output.glob("*.zip"))})

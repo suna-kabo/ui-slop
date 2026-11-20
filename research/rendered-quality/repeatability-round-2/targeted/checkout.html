@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipment desk</title>
+  <style>
+    body { margin: 0; color: #172b28; background: #f4f6f2; font: 1rem/1.5 system-ui, sans-serif; }
+    main { max-width: 43rem; margin: auto; padding: 1.25rem; }
+    h1 { line-height: 1.1; margin: 0 0 1rem; }
+    h2 { margin: 0; }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+    button { padding: .65rem .9rem; font: inherit; color: inherit; background: white; border: 1px solid #63746c; border-radius: .35rem; }
+    button:hover { background: #e7efe8; }
+    button:focus-visible { outline: 3px solid #27558b; outline-offset: 3px; }
+    button[aria-pressed="true"] { background: #183e33; color: white; }
+    section { padding: 1rem; background: white; border: 1px solid #b9c4ba; border-radius: .5rem; }
+    dl { display: grid; gap: .4rem 1rem; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    dd { margin: 0; font-weight: 650; }
+    #feedback { color: #174a35; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Equipment desk</h1>
+  <nav aria-label="Desk views">
+    <button id="pickup-tab" aria-pressed="true">Pickup desk</button>
+    <button id="inventory-tab" aria-pressed="false">Equipment inventory</button>
+  </nav>
+  <section id="content" aria-labelledby="content-title"></section>
+  <p id="feedback" role="status" tabindex="-1"></p>
+</main>
+<script>
+  const inventoryUsesOpeningStatus = new URLSearchParams(location.search).get('case') === '62';
+  const key = 'checkout-proof-issued-' + location.search;
+  let issued = localStorage.getItem(key) === 'true';
+  let view = location.hash === '#inventory' ? 'inventory' : 'desk';
+  const content = document.getElementById('content');
+  const feedback = document.getElementById('feedback');
+  const pickup = document.getElementById('pickup-tab');
+  const inventory = document.getElementById('inventory-tab');
+
+  function render() {
+    pickup.setAttribute('aria-pressed', view === 'desk');
+    inventory.setAttribute('aria-pressed', view === 'inventory');
+    if (view === 'inventory') {
+      content.innerHTML = `<h2 id="content-title">Camera kit EQ-18</h2><dl>
+        <dt>Availability</dt><dd id="availability">${issued && !inventoryUsesOpeningStatus ? 'Unavailable · issued' : 'Available at desk'}</dd>
+        <dt>Location</dt><dd>East counter</dd></dl>`;
+      return;
+    }
+    content.innerHTML = `<h2 id="content-title">Camera kit EQ-18</h2><dl>
+      <dt>Reserved pickup</dt><dd>12:00</dd>
+      <dt>Actual issue</dt><dd>${issued ? '10:20' : 'Awaiting pickup'}</dd>
+      <dt>Loan status</dt><dd>${issued ? 'Issued' : 'Reserved'}</dd>
+      <dt>Return deadline</dt><dd>15:00</dd></dl>
+      <button id="change">${issued ? 'Reverse issue' : 'Issue kit now'}</button>`;
+    document.getElementById('change').onclick = () => {
+      issued = !issued;
+      localStorage.setItem(key, String(issued));
+      render();
+      feedback.textContent = issued ? 'EQ-18 issued at 10:20.' : 'Issue reversed. EQ-18 is back at the desk.';
+      feedback.focus();
+    };
+  }
+
+  function navigate(next) {
+    view = next;
+    history.replaceState(null, '', '#' + next);
+    feedback.textContent = '';
+    render();
+  }
+  pickup.onclick = () => navigate('desk');
+  inventory.onclick = () => navigate('inventory');
+  render();
+</script>
+</body>
+</html>

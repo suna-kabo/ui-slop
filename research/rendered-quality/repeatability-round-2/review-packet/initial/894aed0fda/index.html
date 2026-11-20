@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#122d37"><title>Riverwatch · Sample Review</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body><header class="mast"><div class="mast-inner"><a class="brand" href="./index.html"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Riverwatch</a><span class="mast-divider"></span><span class="mast-label">Field operations</span><span class="local"><i></i> Local workspace</span></div></header>
+<main><section class="intro"><canvas id="contours" aria-hidden="true"></canvas><div class="intro-copy"><div class="eyebrow">Monitoring workspace</div><h1>Sample review</h1><p>Inspect lab records and record dispositions for the morning handoff.</p></div><div class="summary" id="summary"></div></section>
+<div class="desk" id="desk" data-view="queue">
+<section class="ledger" aria-label="Sample queue"><div class="queue-head"><div class="queue-title"><h2>Sample queue</h2><span id="count"></span></div><label class="search"><span aria-hidden="true" class="lens"></span><span class="sr">Search samples</span><input id="search" type="search" placeholder="Search ID or lab note"></label><div class="filters"><label><span>Station</span><select id="station"><option value="">All stations</option></select></label><label><span>Disposition</span><select id="status"><option value="">All dispositions</option><option>Review</option><option>Accepted</option><option>Hold</option></select></label></div></div><div id="queue"></div></section>
+<aside class="inspector" aria-label="Sample detail" id="detail"></aside>
+</div><div id="comparison"></div>
+<footer><span>Riverwatch monitoring records</span><span>Synthetic sample data</span></footer><div id="announce" class="sr" role="status" aria-live="polite"></div>
+</main></body></html>

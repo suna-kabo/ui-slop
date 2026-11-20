@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#173e36"><title>Coast &amp; Current</title><style>
+:root{color-scheme:light;--paper:#f7f4eb;--cream:#fffdf6;--ink:#183b34;--mute:#4c6256;--line:#d8d9cb;--dark:#173e36;--accent:#edcb85;--serif:Georgia,'Times New Roman',serif;font-family:system-ui,sans-serif;font-size:16px}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink)}a{color:inherit}button,select,input{font:inherit}button,select{color:inherit}button,a,select,label:has(input){-webkit-tap-highlight-color:#edcb8560}button{cursor:pointer}button:active,a:active{filter:brightness(.86)}:focus-visible{outline:3px solid #ac581e;outline-offset:4px}header{background:var(--dark);color:var(--cream)}.wrap{width:min(1200px,calc(100% - 88px));margin-inline:auto}.top{display:flex;justify-content:space-between;min-height:72px;align-items:center;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:25px;text-decoration:none;white-space:nowrap}.brand svg{color:var(--accent);width:34px;height:34px}nav{display:flex;align-items:center;gap:7px}nav a{padding:11px 14px;min-height:44px;text-decoration:none;font-size:14px;display:flex;align-items:center;gap:8px;border-radius:4px}nav a:hover,nav a[aria-current]{background:#ffffff19}nav b{font-size:12px;border-radius:20px;padding:2px 7px;background:#ffffff20;font-variant-numeric:tabular-nums}
+.hero{background:#e8e9da;border-bottom:1px solid var(--line);overflow:hidden}.hero-inner{min-height:276px;display:grid;grid-template-columns: .86fr 1fr;align-items:stretch}.hero-copy{padding:44px 25px 43px 0;align-self:center}.kicker{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin:0 0 12px}.kicker:before{content:'';width:27px;border-top:1px solid}.hero h1,h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:400}.hero h1{font-size:clamp(48px,6.2vw,92px);line-height:.98;letter-spacing:-.066em;margin-bottom:15px}.hero p:last-child{font-size:17px;color:var(--mute);max-width:31ch;margin:0;line-height:1.5}.hero img{width:100%;height:100%;min-height:276px;object-fit:cover;display:block;aspect-ratio:2.35;object-position:center 48%}.catalog{padding-block:32px 60px}.sectionhead{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:15px}.sectionhead h2,.sectionhead h1{font-size:clamp(32px,4vw,47px);letter-spacing:-.045em;margin:0}.count{color:var(--mute);font-size:14px;margin:0;font-variant-numeric:tabular-nums;white-space:nowrap}.controls{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 0;border-block:1px solid var(--line);margin-bottom:22px}.filters,.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill,.clear,.toggle,select,.save{border:1px solid #c3cbbc;background:transparent;border-radius:4px;min-height:44px;padding:8px 13px;font-size:14px;font-weight:650}.pill:hover,.clear:hover,.toggle:hover,select:hover,.save:hover{background:#e6ebde}.pill[aria-pressed=true]{background:var(--dark);border-color:var(--dark);color:white}.toggle{display:flex;gap:8px;align-items:center;cursor:pointer}.toggle:has(:checked){background:#e2eadc;border-color:#819783}.toggle input{accent-color:var(--dark);width:17px;height:17px;margin:0}.tools label:has(select){display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mute)}select{padding-right:6px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.card{background:var(--cream);border:1px solid var(--line);border-radius:5px;overflow:hidden;position:relative}.art-link{display:block}.art-link:focus-visible{outline-offset:-5px}.card img{display:block;width:100%;aspect-ratio:2.02;object-fit:cover;object-position:50% 50%}.card-body{padding:16px 17px 15px}.meta{font-size:13px;font-weight:680;color:var(--mute);margin:0 0 6px;display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}.meta .dot{font-weight:400;color:#667e70}.card h3{font-size:clamp(24px,2.45vw,35px);letter-spacing:-.038em;line-height:1.08;margin:0 0 9px}.card h3 a{text-decoration:none}.card h3 a:hover{text-decoration:underline;text-underline-offset:4px}.terrain{font-size:14px;margin:0 0 13px}.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:7px;border-top:1px solid var(--line);padding-top:11px}.note{font-size:13px;color:#5a4930;margin:0;line-height:1.35}.save{display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;flex-shrink:0}.save svg{width:17px;height:17px}.save[aria-pressed=true]{background:#e2eadc;border-color:#9cab97}.save[aria-pressed=true] svg{fill:currentColor}.detail{padding-block:24px 60px}.back{display:inline-flex;align-items:center;min-height:44px;gap:8px;text-underline-offset:4px;font-weight:650;margin-bottom:16px}.spread{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,4vw,60px);align-items:start}.spread img{width:100%;aspect-ratio:1.23;object-fit:cover;border-radius:5px;display:block}.detail h1{font-size:clamp(40px,5vw,71px);letter-spacing:-.055em;line-height:.98;margin:6px 0 14px}.detail .meta{font-size:15px}.detail .save{margin:0 0 17px}.facts{margin:0 0 16px;border-top:1px solid var(--line);font-size:15px}.facts div{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:100px 1fr;gap:12px}.facts dt{color:var(--mute)}.facts dd{margin:0;font-weight:630}.visit{padding:14px;background:#f1e6cc;border-left:3px solid #b38549;line-height:1.45}.visit strong{display:block;margin-bottom:3px;font-size:13px}.empty{background:var(--cream);border:1px solid var(--line);padding:34px 22px;text-align:center}.empty h3{font-size:32px;margin-bottom:7px}.empty p{color:var(--mute);margin-bottom:17px}.skip{position:absolute;left:12px;top:12px;padding:10px;transform:translateY(-200%);background:white;color:var(--ink);z-index:2}.skip:focus{transform:none}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.shortlist{min-height:65vh}footer{border-top:1px solid var(--line);padding:19px 0;color:var(--mute);font-size:13px}
+@media(max-width:1000px){.wrap{width:calc(100% - 56px)}.grid{gap:16px}.card-body{padding:13px}.hero h1{font-size:clamp(46px,7vw,70px)}}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{min-height:215px}.hero img{min-height:215px}.hero-copy{padding-block:30px}}
+@media(max-width:560px){.wrap{width:calc(100% - 32px)}.top{min-height:61px;gap:6px}.brand{font-size:20px;gap:6px}.brand svg{width:25px;height:25px}nav{gap:0}nav a{font-size:13px;padding:8px;gap:5px}.hero-inner{width:100%;display:flex;flex-direction:column}.hero-copy{padding:23px 16px 20px;align-self:start}.hero h1{font-size:clamp(40px,10vw,54px);margin-bottom:9px}.hero p:last-child{font-size:15px}.hero img{min-height:0;height:107px;object-position:center 54%}.kicker{font-size:11px;margin-bottom:8px}.catalog{padding-block:22px 40px}.sectionhead{margin-bottom:12px}.sectionhead h2,.sectionhead h1{font-size:34px}.controls{gap:8px;margin-bottom:16px;padding-block:8px}.filters,.tools{gap:6px}.pill,.toggle,select,.clear{padding-inline:10px}.grid{grid-template-columns:1fr;gap:14px}.card h3{font-size:30px}.card img{aspect-ratio:2.18}.spread{display:flex;flex-direction:column;gap:16px}.spread>div{width:100%}.spread img{aspect-ratio:2.05}.detail{padding-top:12px}.back{margin-bottom:9px}.detail h1{font-size:45px}.detail .save{margin-bottom:12px}}
+@media(max-width:350px){.brand svg{display:none}.top nav a{padding-inline:6px}.tools label:has(select){gap:4px}.pill,.toggle,select{padding-inline:7px}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap top"><a class="brand" data-route href="#" id="brand"><span id="mark"></span>Coast &amp; Current</a><nav aria-label="Primary"><a data-route href="#" id="browse-link">Explore</a><a data-route href="#shortlist" id="saved-link">Shortlist <b id="saved-count">0</b></a></nav></div></header><p id="storage" class="wrap visit" hidden>Browser storage is unavailable. Saves last for this visit.</p><main id="main" tabindex="-1"></main><p id="announcer" class="sr" role="status"></p><footer><div class="wrap">Coast &amp; Current</div></footer><script>
+const places=[
+['Breakwater Steps','Harbor',35,'Stairs','Open daily','Bus 4 to Pier Road','Best at slack tide','A stone stairway descends beside a harbor breakwater.',false],
+['Salt Reed Loop','Wetland',55,'Step-free boardwalk','Open daily','Bus 6 to Marsh Gate','Bring binoculars','A boardwalk winds through tawny reeds and tidal channels.',true],
+['Lark Cove','Beach',80,'Loose shingle','Weekends only','Limited parking','Reach only at low tide','A shingle cove sits between two steep headlands.',false],
+['Old Pilot House','Harbor',45,'Steep approach','Thu–Sun','Bus 4 to Pilot Lane','Staffed exhibit','A white pilot house overlooks a sheltered harbor.',false],
+['Dune Glass Trail','Beach',70,'Sandy grades','Open daily','Bus 11 to Dune Road','Dogs on lead','A sandy trail curves through grass-covered dunes.',false],
+['Dovetail Hide','Wetland',25,'Step-free path','Tue–Sun','No bus','Closes at dusk','A timber bird hide sits beside a reed-fringed pool.',true],
+['Gull Point','Harbor',60,'Level pavement','Open daily','Bus 6 to Ferry Yard','Exposed to wind','Gulls fly over a paved point that reaches into open water.',true],
+['Ebb Pools','Beach',50,'Slippery rocks','Open daily','No bus','Check tide before setting out','Blue rock pools fill a dark shelf along the shore.',false]
+];
+const paths=[
+'<path fill="#37564f" d="M0 115L94 96l77 8 83 39 78 9 79 34H0Z"/><path fill="#759382" d="M0 139l125-24 70 24 85 17 65 31H0Z"/><path fill="#354c48" d="M0 197l104-37 144 20 70 13 322 20v29l-321-10L0 283Z"/><path fill="#92927d" d="M0 181l104-31 105 16 97 26 334 20-39 9-288-17-131-15L0 238Z"/><path fill="#d3ba91" d="M52 178h156l32 10H96v9h161l36 11H126v11h174l21 12H151v11h189l23 14H169v13H38Z"/><path fill="#475850" d="M0 247l42-26 36 3 38 24 28 112H0Z"/>',
+'<path fill="#6f8061" d="M0 147q101-32 170-6t181 3 289-12v52H0Z"/><path fill="#a4a15c" d="M0 185q101-28 251 24t389-21v31q-128 31-237 20T0 271ZM0 284q184-55 331 15t309-25v86H0Z"/><path fill="#c1ad73" d="M0 218q86-27 230 4t248 11 162-20v21q-94 22-212 22T0 273Z"/><path fill="#555345" d="M271 360h-121l124-89 115-30-28-30 76-37 24 2-69 36 43 35-126 45Z"/><path fill="#d7bc91" d="M150 351l124-89 115-30-28-30 76-36 24 3-69 34 43 36-126 44-39 68Z"/>',
+'<path fill="#354e4b" d="M0 73l70 14 65 31 29 47 80 20 15 21-107 20L0 255ZM640 91l-66 25-46 70-98 33 210 41Z"/><path fill="#687863" d="M0 69l63 12 82 40 20 37-38-12-58-38L0 96ZM640 86l-70 26-45 70 40-27 41-29 34-6Z"/><path fill="#c8ae83" d="M0 244q158-51 240-41-86 33-60 53 61 45 325 28l135-9v85H0Z"/><path fill="none" stroke="#e9dcca" stroke-width="5" d="M199 219q-88 50 109 66 113 9 332-7"/>',
+'<path fill="#517064" d="M0 188q70-49 153-33t174 49L0 247Z"/><path fill="#777f68" d="M0 224q111-53 241-37l137 61L0 360Z"/><path fill="#d5be95" d="M0 360l224-153 30 1L112 360Z"/><path fill="#e6dbc2" d="M132 153h111v58H132zM225 104h27v105h-27z"/><path fill="#a4553d" d="M119 155l66-40 66 40zM219 104l19-19 21 19z"/><path fill="#45635b" d="M154 170h15v20h-15zM191 170h13v41h-13zM231 114h15v17h-15z"/>',
+'<path fill="#567b72" d="M0 151l139-18 119 24 164 3 218-23v76H0Z"/><path fill="#9e9d66" d="M0 207q134-64 264-24t376-11v188H0Z"/><path fill="#cfb889" d="M0 273q123-67 241-47t239-27 160-3v164H0Z"/><path fill="#e9d6ac" d="M249 360q141-74 88-100t24-44q-39 19 25 38t-18 106Z"/><path fill="#817e4c" d="M0 305q123-49 251-3L168 360H0ZM640 245q-90 14-137 66l-57 49h194Z"/>',
+'<path fill="#71805c" d="M0 161q100-32 210 1t288-13l142 1v60H0Z"/><path fill="#9a965b" d="M0 215q81 24 180 3t194-13 266 13v21q-171-27-315-1T0 264ZM0 299q158-32 285-22t355-18v101H0Z"/><path fill="#694f3a" d="M339 162h108v68H339z"/><path fill="#916d4c" d="M447 162l46 25v46l-46-3z"/><path fill="#454f41" d="M325 163l63-32 77 32 36 24-54-18z"/><path fill="#263d36" d="M361 174h64v13h-64z"/><path fill="#cfb185" d="M420 360h-91l93-129h22z"/>',
+'<path fill="#546b60" d="M0 111l125-13 189 60 113 23 213-14v39l-222 13L0 167Z"/><path fill="#344e48" d="M0 185l179 32 178-9 88 17-43 25L201 278 0 355Z"/><path fill="#aaa891" d="M0 201l176 34 232-14 37 4-62 19-206 15L0 318Z"/><path fill="#d5d1b5" d="M0 234l168 13 209-17-200 24L0 260Z"/><path fill="#f5e7cd" d="M403 106q22-9 40 7 9-19 30-19-18 8-27 28-19-13-43-16ZM477 136q16-8 31 1 6-14 22-16-12 7-19 22-16-8-34-7Z"/>',
+'<path fill="#667967" d="M0 146l110-29 140 37 152 13 99 24H0Z"/><path fill="#455b50" d="M0 190l94 11 45-8 137 37 159-10 106 30 99 6v104H0Z"/><path fill="#827a64" d="M0 225l111-7 147 47 103-21 102 26 177 15v75H0Z"/><path fill="#526861" d="M0 276l98-9 57 21 128-5 66 77H0ZM411 299l103-14 126 21v54H461Z"/><path fill="#578f8a" stroke="#a1ac8e" stroke-width="4" d="M29 298l47-16 61 11 55 23-64 17-96-8zM237 312l48-11 44 23-32 14-72-9zM487 316l45-10 80 17-23 18-67-2z"/>'
+];
+function illustration(index, hero=false){
+ const p=places[index], wet=p[1]==='Wetland', seed=index+4;
+ let n=seed; const random=()=>((n=n*16807%2147483647)/2147483647);
+ const cloud=Array.from({length:12},()=>{const x=random()*620,y=18+random()*105,w=20+random()*100;return '<path d="M'+x+' '+y+'h'+w+'" stroke="#fff3cf" opacity=".23" stroke-width="'+(1+random()*3)+'"/>';}).join('');
+ const ripples=Array.from({length:90},()=>{const x=random()*640,y=158+random()*198,w=4+random()*57;return '<path d="M'+x+' '+y+'q'+w/2+' -2 '+w+' 0" stroke="'+(random()>.45?'#c1d6bb':'#2f685f')+'" opacity=".39" fill="none"/>';}).join('');
+ const accents=Array.from({length:wet||index===4?108:46},()=>{const x=random()*640,y=254+random()*107,b=5+random()*25;return wet||index===4?'<path d="M'+x+' '+y+'q-1 -'+b/2+' -'+b/3+' -'+b+'" fill="none" stroke="'+(random()>.5?'#666b43':'#bfb57b')+'" stroke-width="1.6"/>':'<ellipse cx="'+x+'" cy="'+y+'" rx="'+(1+random()*5)+'" ry="1.5" fill="#d7cab0" opacity=".34"/>';}).join('');
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="'+['#88aaa6','#aabb9a','#b9b29a','#9fb4a7','#a4b8ad','#bdb59b','#8aafad','#a3b1a2'][index]+'"/><stop offset="1" stop-color="#e4d2ab"/></linearGradient><linearGradient id="water" x2="0" y2="1"><stop stop-color="#7da299"/><stop offset="1" stop-color="#487d78"/></linearGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".58" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter></defs><path fill="url(#sky)" d="M0 0h640v360H0z"/><circle cx="'+(469-index*9)+'" cy="'+(74+index%3*9)+'" r="'+(25+index%3*6)+'" fill="#f1dbac"/>'+cloud+'<path d="M0 151q99-13 170 0t170-3 300 2v210H0Z" fill="url(#water)"/>'+ripples+paths[index]+accents+'<path fill="#fff" filter="url(#grain)" opacity=".25" style="mix-blend-mode:multiply" d="M0 0h640v360H0z"/></svg>';
+ return 'data:image/svg+xml,'+encodeURIComponent(svg);
+}
+
+places.splice(8);
+
+const icons={
+ brand:'<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="20" cy="20" r="18"/><path d="M4 22q8-8 16 0t16 0M6 28q7-7 14 0t14 0M15 15a5 5 0 0 1 10 0"/></svg>',
+ bookmark:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>'
+};
+const $=s=>document.querySelector(s);
+const ids=places.map(p=>p[0].toLowerCase().replaceAll(' ','-'));
+const imagery=places.map((_,i)=>illustration(i));
+const settings=['All places','Harbor','Wetland','Beach'];
+const key='coast-current-shortlist-v1';
+let saved=new Set(), storageFailed=false;
+try{const value=JSON.parse(localStorage.getItem(key)||'[]');if(Array.isArray(value))saved=new Set(value.filter(id=>ids.includes(id)));}catch{storageFailed=true;}
+let filter='All places', stepFree=false, order='guide';
+let current='', pendingReturn=null;
+history.scrollRestoration='manual';
+const route=()=>decodeRoute(location.hash.slice(1));
+function decodeRoute(hash){return hash==='shortlist'||ids.includes(hash)?hash:'';}
+function navState(){
+ const count=saved.size;
+ $('#saved-count').textContent=count;
+ $('#saved-link').setAttribute('aria-label','Shortlist, '+count+' saved');
+ for(const item of document.querySelectorAll('nav a'))item.toggleAttribute('aria-current',item.getAttribute('href')==='#'+(current==='shortlist'?'shortlist':''));
+}
+function saveButton(id){
+ const index=ids.indexOf(id), on=saved.has(id);
+ return '<button class="save" type="button" data-save="'+id+'" aria-label="Save '+places[index][0]+'" aria-pressed="'+on+'">'+icons.bookmark+'<span>'+(on?'Saved':'Save')+'</span></button>';
+}
+function card(p){
+ const index=places.indexOf(p),id=ids[index];
+ return '<article class="card"><a class="art-link" data-route href="#'+id+'" tabindex="-1" aria-hidden="true"><img src="'+imagery[index]+'" alt="" loading="lazy"></a><div class="card-body"><p class="meta">'+p[1]+' <span class="dot" aria-hidden="true">/</span> '+p[2]+' min</p><h3><a data-route id="link-'+id+'" href="#'+id+'">'+p[0]+'</a></h3><p class="terrain">'+p[3]+'</p><div class="card-bottom"><p class="note">'+p[6]+'</p>'+saveButton(id)+'</div></div></article>';
+}
+function list(){
+ const shortlist=current==='shortlist';
+ const all=places.filter((p,i)=>shortlist?saved.has(ids[i]):(filter==='All places'||p[1]===filter)&&(!stepFree||p[8]));
+ if(!shortlist&&order==='duration')all.sort((a,b)=>a[2]-b[2]);
+ if(!shortlist&&order==='name')all.sort((a,b)=>a[0].localeCompare(b[0]));
+ $('#count').textContent=shortlist?all.length+' saved':all.length+' of '+places.length+' places';
+ $('#results').innerHTML=all.length?'<div class="grid">'+all.map(card).join('')+'</div>':'<section class="empty"><h3>'+(shortlist?'Your shortlist is empty':'No matching places')+'</h3><p>'+(shortlist?'Save an outing to find it here later.':'Try another setting or clear the access filter.')+'</p>'+(shortlist?'<a class="back" data-route href="#">Browse places</a>':'<button class="clear" data-reset>Clear filters</button>')+'</section>';
+}
+function browse(shortlist){
+ return (shortlist?'':'<section class="hero"><div class="wrap hero-inner"><div class="hero-copy"><p class="kicker">The coastal field guide</p><h1>Coast &amp; Current</h1><p>Find a half-day outing by the water.</p></div><img src="'+imagery[0]+'" alt=""></div></section>')+
+ '<section class="wrap catalog'+(shortlist?' shortlist':'')+'"><div class="sectionhead">'+(shortlist?'<h1 tabindex="-1">Shortlist</h1>':'<h2 tabindex="-1">Explore the coast</h2>')+'<p id="count" class="count" role="status"></p></div>'+
+ (shortlist?'':'<div class="controls"><div class="filters" role="group" aria-label="Setting">'+settings.map(x=>'<button type="button" class="pill" data-setting="'+x+'" aria-pressed="'+(filter===x)+'">'+x+'</button>').join('')+'</div><div class="tools"><label class="toggle"><input id="access" type="checkbox" '+(stepFree?'checked':'')+'> Step-free</label><label>Sort by <select id="sort"><option value="guide">Guide order</option><option value="duration">Shortest visit</option><option value="name">Name A–Z</option></select></label></div></div>')+'<div id="results"></div></section>';
+}
+function detail(index){
+ const p=places[index], origin=history.state?.origin;
+ return '<article class="wrap detail"><a class="back" data-close href="#'+(origin==='shortlist'?'shortlist':'')+'"><span aria-hidden="true">←</span> '+(origin==='shortlist'?'Back to shortlist':'Back to places')+'</a><div class="spread"><img src="'+imagery[index]+'" alt="'+p[7]+'"><div><p class="meta">'+p[1]+' <span class="dot" aria-hidden="true">/</span> '+p[2]+' min</p><h1 tabindex="-1">'+p[0]+'</h1>'+saveButton(ids[index])+'<dl class="facts"><div><dt>Terrain</dt><dd>'+p[3]+'</dd></div><div><dt>Open</dt><dd>'+p[4]+'</dd></div><div><dt>Getting there</dt><dd>'+p[5]+'</dd></div></dl><p class="visit"><strong>Visit note</strong>'+p[6]+'</p></div></div></article>';
+}
+function render(next, restore=null, moveFocus=true){
+ current=next;
+ document.title=(ids.includes(next)?places[ids.indexOf(next)][0]+' | ':next==='shortlist'?'Shortlist | ':'')+'Coast & Current';
+ $('main').innerHTML=ids.includes(next)?detail(ids.indexOf(next)):browse(next==='shortlist');
+ if(!ids.includes(next)){if($('#sort'))$('#sort').value=order;list();}
+ navState();
+ if(moveFocus){
+   const focus=restore?.focus?document.getElementById(restore.focus):null;
+   (focus||$('main .detail h1, main .sectionhead :is(h1,h2)'))?.focus({preventScroll:true});
+   window.scrollTo(0,restore?.y||0);
+ }
+}
+function go(next, focus){
+ if(next===current)return;
+ history.replaceState({...history.state,focus,y:window.scrollY},'');
+ history.pushState({origin:current,inside:true},'','#'+next);
+ render(next);
+}
+window.addEventListener('popstate',()=>{
+ const next=route();
+ if(next!==current)render(next,history.state);
+});
+document.addEventListener('click',event=>{
+ const target=event.target.closest('button,a');
+ if(!target)return;
+ if(target.matches('[data-close]')){
+  event.preventDefault();
+  if(history.state?.inside)history.back();else go('',null);
+ }else if(target.matches('[data-route]')&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey&&!event.altKey){
+  event.preventDefault();
+  const next=decodeRoute(target.hash.slice(1));
+  go(next,ids.includes(next)?'link-'+next:target.id||null);
+ }else if(target.matches('[data-setting]')){
+  filter=target.dataset.setting;
+  for(const button of document.querySelectorAll('[data-setting]'))button.setAttribute('aria-pressed',button===target);
+  list();
+ }else if(target.matches('[data-reset]')){
+  filter='All places';stepFree=false;$('#access').checked=false;
+  for(const button of document.querySelectorAll('[data-setting]'))button.setAttribute('aria-pressed',button.dataset.setting===filter);
+  list();$('[data-setting]').focus();
+ }else if(target.matches('[data-save]')){
+  const id=target.dataset.save,remove=saved.has(id), name=places[ids.indexOf(id)][0];
+  if(remove)saved.delete(id);else saved.add(id);
+  try{localStorage.setItem(key,JSON.stringify([...saved]));storageFailed=false;}catch{storageFailed=true;}
+  if(current==='shortlist'&&remove){
+   const card=target.closest('.card');
+   const neighbor=card.nextElementSibling?.querySelector('.save')||card.previousElementSibling?.querySelector('.save');
+   const nextId=neighbor?.dataset.save;
+   list();
+   (nextId?$('[data-save="'+nextId+'"]'):$('[data-route].back'))?.focus();
+  }else{
+   target.setAttribute('aria-pressed',!remove);target.querySelector('span').textContent=remove?'Save':'Saved';
+  }
+  navState();
+  $('#announcer').textContent=(remove?'Removed '+name+' from shortlist.':'Saved '+name+' to shortlist.')+(storageFailed?' Browser storage is unavailable.':'');
+  $('#storage').hidden=!storageFailed;
+ }
+});
+document.addEventListener('change',event=>{
+ if(event.target.id==='access'){stepFree=event.target.checked;list();}
+ if(event.target.id==='sort'){order=event.target.value;list();}
+});
+render(route(),null,false);
+$('#storage').hidden=!storageFailed;
+
+$("#mark").innerHTML=icons.brand;</script></body></html>

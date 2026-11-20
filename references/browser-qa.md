@@ -39,6 +39,8 @@ Where applicable:
 
 Test at least one second or third action. When response is in doubt, retarget, repeat, or reverse before settlement. Compare what appears at activation, while work or motion is in progress, and on completion. Use a recording, frame sample, or trace when two endpoint screenshots cannot show the difference. Record the next action the interface makes possible.
 
+When the task relies on a changed fact in multiple views, follow the same record to another affected view before declaring the action verified. Check that shared facts agree and that intentionally different facts, such as planned and actual times, have clear meanings where users act on them.
+
 Record for each step:
 
 - user action
