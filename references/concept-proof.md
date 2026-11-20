@@ -44,17 +44,7 @@ A renamed or custom-coded gallery, modal, carousel, tab switch, crop toggle, or 
 
 ## Alternatives
 
-When the solution is open, compare two or three materially different models.
-
-They should differ in:
-
-- spatial model
-- interaction model
-- content priority
-- visual material strategy
-- signature opportunity
-
-Do not spend the budget making several complete polished sites.
+When a consequential choice remains unsettled after calibration, render the smallest comparison that exposes the tradeoff. Hold the content and task constant. Judge what users can see or do in each version at the affected width or state. Carry the better-supported choice into the slice. An incumbent or first slice can settle the choice on its own.
 
 ## Proof sequence
 
@@ -63,7 +53,7 @@ Operate:
 1. arrive
 2. identify the primary object or task
 3. act
-4. observe local and global response
+4. observe the response before, during, and after the change as described in `browser-qa.md`
 5. continue to a second action
 6. return or reverse
 7. repeat at narrow width

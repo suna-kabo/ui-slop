@@ -8,7 +8,7 @@ Follow the mandatory core sequence in `SKILL.md`. Load additional references for
 | --- | --- | --- |
 | Shape user need, outcome, irreducible core, non-goals | `shaping.md` | `real-content-first.md`, `task-continuity.md` |
 | Create product-specific decision principles | `product-principles.md` | `origin-principles.md` |
-| Calibrate against platform and best-in-class quality | `reference-calibration.md` | `visual-direction.md`, `craft-floor.md` |
+| Calibrate consequential design choices | `reference-calibration.md` | `visual-direction.md`, `craft-floor.md` |
 | Prove the vertical slice before full build | `concept-proof.md` | `structural-direction.md`, `experience-dynamics.md`, `art-direction-media.md` |
 | Separate problem, solution, and implementation critique | `review-stages.md` | `review-protocol.md` |
 | Positive readiness and “nothing obviously wrong” bar | `quality-bar.md` | `craft-floor.md`, `coherence-floor.md`, `taste-gate.md` |
@@ -33,7 +33,7 @@ Follow the mandatory core sequence in `SKILL.md`. Load additional references for
 | Responsive transformation | `layout-responsive.md` | `task-continuity.md`, `quality-bar.md` |
 | Accessibility | `accessibility-baseline.md` | `evidence-gate.md` |
 | Performance | `performance-baseline.md` | `evidence-gate.md`, `quality-bar.md` |
-| Browser evidence | `browser-qa.md` | `evidence-harness.md`, `evidence-schema.md`, `evidence-gate.md` |
+| Rendered inspection and correction | `browser-qa.md` | `evidence-harness.md`, `evidence-schema.md`, `evidence-gate.md` |
 | Independent review | `review-protocol.md` | `review-stages.md`, `quality-bar.md` |
 | Cross-product recurrence | `ai-fingerprint-gate.md` | `visual-direction.md`, `experience-dynamics.md` |
 | Final qualitative judgment | `quality-bar.md` | `taste-gate.md`, `coherence-floor.md` |

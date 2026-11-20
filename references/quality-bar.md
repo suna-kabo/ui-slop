@@ -44,15 +44,11 @@ Every element must earn attention.
 
 ## Mandatory supporting-copy subtraction
 
-Secondary labels are not default layers. Descriptions must supply unique information. For each first useful viewport, primary detail or focused state, and compact or mobile state, temporarily hide supporting copy and inspect the resulting interface.
+In the first useful viewport, primary detail or focused state, and compact or mobile state, render candidate copy removed or consolidated. Collapse any wrapper, gap, or grid row that served only that content. Compare at the same viewport size, then operate the affected task. Check where attention goes, what space becomes useful, and whether actions are still discoverable.
 
-Include eyebrow text, kickers, overlines, section numbers, figure labels, captions, category/type/mode labels, repeated subtitles, helper descriptions, and duplicated metadata. Collapse descriptor stacks and remove descriptions that paraphrase titles, imagery, layout, or visible control state. Remove tiny uppercase or monospace text used mainly for premium, editorial, archival, or technical authenticity.
+Start with eyebrows, numbering, repeated subtitles, stacked descriptors, helper text that restates visible content, and duplicated metadata. Clickability alone is insufficient. Test whether useful secondary information or actions work in the title, a conventional control, nearby state, or on demand.
 
-Restore copy only if removal creates genuine ambiguity, hides state, weakens a decision, removes necessary provenance, increases error risk, or meaningfully hurts action discovery. There is no universal ban. Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints can justify secondary copy. Record the consequential removals and restorations by state.
-
-Clickability alone is insufficient. Serving as a category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot. Before restoring copy, test whether users can infer it from context, read it through a conventional control or visible state, find it on a quieter surface or on demand, or get it from the primary title or content. Include removing it entirely as an option.
-
-Justify both the information or action and its placement, prominence, and visual treatment. A newly added secondary function is subject to the same test. Restore a prominent treatment only when removing or relocating it materially harms the primary task, comprehension, decision quality, provenance, safety, or state awareness. Apply particular scrutiny to eyebrows, kickers, overlines, tiny uppercase or monospace authenticity labels, section and figure labels, redundant category/type/mode labels, restating subtitles, and descriptor stacks.
+Preserve accessible names, live feedback, safety, provenance, units, and decision context. Restore visible copy or prominence when the operated comparison exposes lost meaning, discoverability, or protection. Record the consequential layout changes and their observed effects.
 
 ## Composition
 
@@ -102,7 +98,7 @@ Judge:
 
 ## Typography
 
-Inspect actual rendering, not token names.
+Compare what draws attention with what the task needs. Read headings, primary information, data, status, controls, and supporting text together at the actual size. Check whether an oversized title, tiny status, repeated emphasis, or unused space crowds out useful content. When those relationships fail, change the grouping, proportions, or type roles and render again.
 
 Check:
 
@@ -134,11 +130,7 @@ Reject:
 
 ## Interaction response
 
-For every primary action inspect the chain:
-
-> input → acknowledgment → transition → state → next action
-
-Response should begin promptly at the point of action.
+Use the operated sequence in `browser-qa.md`. Response should begin promptly at the point of action.
 
 Judge:
 

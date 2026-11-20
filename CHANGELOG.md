@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.1.0
+
+- Calibrate consequential design choices against real usage and load specialist guidance before selecting a direction. Render a comparison when the first proof leaves an important choice open.
+- Use a bounded rendered correction loop. Judge typography in composition, inspect the full interaction response, and follow consequential changes across affected views.
+- Recompose layouts after subtracting supporting copy and reoperate the affected state.
+- Report the exact verified project skill path when an older user installation conflicts. Validate the workflow against an archived Kilnroom app at desktop and mobile sizes.
+
 ## 3.0.1
 
 - Require evidence for both the job and visual prominence of supporting copy. Clickability alone is insufficient.

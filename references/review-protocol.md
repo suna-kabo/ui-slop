@@ -1,10 +1,10 @@
 # Review Protocol
 
-For substantial work, separate generator reasoning from reviewer judgment.
+For substantial work, begin with the rendered and operated product. Use `browser-qa.md` for the inspection and correction loop.
 
 ## Review mode
 
-Record **INDEPENDENT_REVIEW** when a separate reviewer can inspect the rendered and operated product. When one is unavailable, record **SELF_REVIEW** and complete the adversarial pass below before declaring Quality Gate READY.
+Record **INDEPENDENT_REVIEW** when a separate reviewer inspects the rendered and operated product. Otherwise record **SELF_REVIEW** and complete the adversarial pass below before declaring Quality Gate READY.
 
 ## Inputs
 
@@ -69,16 +69,3 @@ For supporting copy, also record:
 - text or role inspected
 - observed impact of removing it and of a quieter alternative
 - evidence for restoring the job and its visual treatment, or the decision to merge, relocate, or remove it
-
-## Fix and rerun
-
-Fix the smallest responsible layer that can solve the issue.
-
-Rerun:
-
-- affected evidence
-- one bounded regression path
-- first-impression inspection if the visible composition changed
-- supporting-copy subtraction if labels or descriptions changed
-
-Do not mark READY while a material issue is merely “understood.”

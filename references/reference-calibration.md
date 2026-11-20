@@ -1,74 +1,9 @@
 # Reference Calibration
 
-Use this when quality, visual authority, interaction feel, or platform behavior is open.
+Choose a visual and interaction direction before full implementation. Start with who uses the surface, where and how often, the domain objects they act on, and which facts and controls they need together. Decide what should draw the eye at entry and during repeated use, including at narrow width. Let those decisions shape typography, density, composition, and response. A category association or a familiar control pattern leaves those choices open.
 
-Calibration sets a quality bar. It does not provide a template.
+Calibrate only consequential choices. Use an incumbent strength, a platform convention, or a relevant reference that you can inspect. Record what works there, the decision it informs here, and the rendered or operated result that would make you change course. Reuse the mechanism that serves the task and give custom treatment where it changes the outcome.
 
-## Build a small set
+For example, a technician needs stage and capacity together to choose a load. If the shared stage treatment works in the detail view, bring it to the timetable and render a crowded week. Reconsider the grouping if the status and capacity cannot both be read without opening the load.
 
-Use:
-
-- relevant platform conventions
-- two to four best-in-class references for the same quality problem
-- incumbent strengths worth preserving
-- the category default
-- the category's obvious anti-default
-
-Do not collect a large inspiration board and average it into sameness.
-
-## Compare mechanisms, not screenshots
-
-For each reference record:
-
-- what user need or feeling it serves
-- what receives attention
-- what remains familiar
-- what is custom
-- how content shapes composition
-- how a primary action responds
-- how detail opens and returns
-- how mobile changes the model
-- what makes it feel finished
-- what would be inappropriate to copy
-
-A beautiful screenshot is weak evidence for interaction quality.
-
-## Set explicit bars
-
-Write one sentence for each relevant axis:
-
-- typography
-- visual material
-- interaction response
-- continuity
-- motion
-- density
-- mobile/platform fit
-- performance perception
-
-Example:
-
-> Object imagery must remain convincing at hero scale; diagrammatic treatment is acceptable only if construction and material are legible without explanatory copy.
-
-## Avoid prestige imitation
-
-Do not copy:
-
-- another product’s brand tokens
-- signature interaction without the underlying relationship
-- arbitrary motion values
-- editorial labels used only to signal taste
-- a visual world that conflicts with the product’s audience or task
-
-References are evidence of possible quality, not authority over the product.
-
-## When external research is unavailable
-
-Use:
-
-- incumbent high-quality regions
-- platform conventions
-- established component behavior
-- comparable products already supplied by the user
-
-Mark external calibration as blocked rather than inventing a best-in-class claim.
+Use available product evidence when external references are unavailable. Distinguish observed evidence from assumptions. See `concept-proof.md` when a consequential decision remains open.

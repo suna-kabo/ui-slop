@@ -1,6 +1,6 @@
 {
   "name": "ui-slop",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "private": true,
   "type": "module",
   "description": "Shape-prove-build UI design operating model with evidence tooling.",

@@ -19,7 +19,7 @@ Record the **problem review** before committing to a concept. Follow `references
 
 Read `references/product-principles.md` and `references/reference-calibration.md`. Write **three to five product-specific principles** that resolve actual tensions and change decisions. Use `examples/product-principles.template.md`.
 
-Record **calibration notes** covering relevant platform conventions, reference qualities, incumbent strengths, and category defaults to avoid. Identify where the core experience earns custom work.
+Before choosing a direction, use `references/module-map.md` to load guidance for the hardest open design decision. Record **calibration notes** linking a real usage condition, an observed mechanism, and a design choice with a result that would make you reconsider it.
 
 ## Stage 3 — Prove the core experience
 
@@ -29,15 +29,15 @@ Record the **concept-proof** artifact path or URL, exercised states, observation
 
 ## Stage 4 — Build foundation plus signature
 
-Use accessible platform conventions for ordinary behavior. Claim a signature experience only when the shaped problem earns it under `references/concept-proof.md`. Define response, continuity, boundaries, recovery, focus, and the next action for the primary flow. Motion can express interaction logic. The workflow must make sense without it.
+Use accessible platform conventions for ordinary behavior. Claim a signature experience only when the shaped problem earns it under `references/concept-proof.md`. Implement the response from input through feedback, transition, result, and continuation. Motion can express interaction logic. The workflow must make sense without it.
 
-Use `references/module-map.md` to route specialist guidance. Apply the supporting-copy pass in `references/quality-bar.md` during proof and build so supporting text earns its place early.
+Use the module map for implementation risks. Apply the supporting-copy pass in `references/quality-bar.md` as the affected surfaces take shape.
 
 ## Stage 5 — Review problem, solution, and implementation
 
-Record the **implementation review** against the shaped problem and selected concept. If either changed materially, revisit its review before assessing readiness. Use `references/review-stages.md`, `references/review-protocol.md`, `references/browser-qa.md`, and `examples/review-record.template.md`. Operate the interface, including at narrow width. Record `INDEPENDENT_REVIEW` or `SELF_REVIEW` and complete the applicable protocol before declaring Quality Gate READY.
+Use the rendered refinement loop in `references/browser-qa.md`. Inspect at desktop and mobile sizes, correct the highest-impact defects, and reoperate the affected state and a neighboring task. Default to at most two focused correction passes. Record the outcome in the **implementation review** using `references/review-stages.md` and `examples/review-record.template.md`. Revisit the problem or solution review if it changed materially. Use `references/review-protocol.md` for the review mode.
 
-Run the mandatory **supporting-copy subtraction pass** in `references/quality-bar.md` on the first useful viewport, primary detail or focused state, and a compact or mobile state. Record what was removed or restored and why.
+Run the mandatory **supporting-copy subtraction pass** in `references/quality-bar.md` and inspect its effect on the rendered layout and task.
 
 - **Evidence Gate** — Apply `references/evidence-gate.md`. Record PASS, FAIL, or BLOCKED against executed evidence. Use `references/evidence-harness.md` for repeatable Playwright capture. Preserve advisories separately.
 - **Quality Gate** — Apply `references/quality-bar.md`. Record READY, NOT_READY, or BLOCKED with specific observations from rendered, operated states. Each veto must identify user or product harm. Quality readiness is a qualitative judgment.

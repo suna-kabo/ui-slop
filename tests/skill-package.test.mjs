@@ -96,6 +96,13 @@ test('pack, install and doctor operate on isolated paths and report actionable f
   assert.equal(await fs.readFile(path.join(other, 'SKILL.md'), 'utf8'), 'other');
   assert.equal(await fs.readFile(path.join(home, '.agents', '.mcp.json'), 'utf8'), '{}');
 
+  const userManifest = path.join(destination(home), 'skill-manifest.json');
+  await fs.writeFile(userManifest, JSON.stringify({ ...manifest, version: '3.0.1' }));
+  const conflict = fail(/FAIL User install/, 'doctor');
+  assert.match(conflict, /PASS Project install/);
+  assert.ok(conflict.includes(`explicitly load ${path.join(destination(project), 'SKILL.md')} (UI Slop ${version})`));
+  assert.equal((await readJson(userManifest)).version, '3.0.1');
+
   const reference = path.join(checkout, 'references', 'quality-bar.md');
   await fs.rename(reference, reference + '.saved');
   fail(/Required source file.*quality-bar\.md/, 'pack');

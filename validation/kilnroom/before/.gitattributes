@@ -1,0 +1,3 @@
+*.html -text whitespace=cr-at-eol,-blank-at-eof
+*.js -text whitespace=cr-at-eol,-blank-at-eof
+*.css -text whitespace=cr-at-eol,-blank-at-eof

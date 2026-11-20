@@ -248,16 +248,21 @@ async function doctor(project) {
     [project, 'Project', `npm run skill:install:project -- "${project}"`]
   ];
   const seen = new Set();
+  let userMismatch = false;
   for (const [target, label, fix] of targets) {
     const directory = path.join(target, '.agents', 'skills', name);
     if (seen.has(directory)) continue;
     seen.add(directory);
-    await check(`${label} install (${directory})`, fix, async () => {
+    const result = await check(`${label} install (${directory})`, fix, async () => {
       if (!(await stat(directory))) return 'absent (optional)';
       if (bundle) await verifyDirectory(directory, bundle, true);
       if (bundle) runtimes.add(directory);
       return bundle?.version ?? 'present (integrity skipped)';
     });
+    if (label === 'User') userMismatch = !result;
+    if (label === 'Project' && bundle && result === bundle.version && userMismatch) {
+      console.log(`For this project, explicitly load ${path.join(directory, 'SKILL.md')} (UI Slop ${result}).`);
+    }
   }
 
   const browsers = new Set();

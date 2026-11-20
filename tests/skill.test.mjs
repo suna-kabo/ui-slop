@@ -31,21 +31,16 @@ test('both gates require evidence and readiness remains qualitative', async () =
   assert.match(skill, /The product contract is protected, the core experience is proven, and no material part of the primary experience feels obviously wrong\./);
 });
 
-test('mandatory supporting-copy rules cover all layers, rendered states and restoration grounds', async () => {
+test('supporting-copy review requires recomposition and operation in the affected states', async () => {
   const skill = await read('SKILL.md');
   const quality = await read('references/quality-bar.md');
-  assert.match(skill, /mandatory \*\*supporting-copy subtraction pass\*\* in `references\/quality-bar\.md` on the first useful viewport, primary detail or focused state, and a compact or mobile state/);
+  assert.match(skill, /mandatory \*\*supporting-copy subtraction pass\*\* in `references\/quality-bar\.md`/);
   const section = quality.split('## Mandatory supporting-copy subtraction')[1]?.split('\n## ')[0];
   assert.ok(section);
   const concepts = [
-    'Secondary labels are not default layers', 'Descriptions must supply unique information',
-    'first useful viewport', 'primary detail or focused state', 'compact or mobile state', 'temporarily hide',
-    'eyebrow text', 'kickers', 'overlines', 'section numbers', 'figure labels', 'captions',
-    'category/type/mode labels', 'repeated subtitles', 'helper descriptions', 'duplicated metadata',
-    'Collapse descriptor stacks', 'tiny uppercase or monospace', 'premium, editorial, archival, or technical authenticity',
-    'Restore copy only if', 'genuine ambiguity', 'hides state', 'weakens a decision', 'necessary provenance',
-    'increases error risk', 'meaningfully hurts action discovery', 'There is no universal ban',
-    'Navigation, live state, action, risk, genuine disambiguation, provenance, scope, units, and constraints'
+    'first useful viewport', 'primary detail or focused state', 'compact or mobile state',
+    'Collapse any wrapper', 'same viewport size', 'operate the affected task',
+    'accessible names', 'live feedback', 'safety', 'provenance', 'units', 'decision context'
   ];
   for (const concept of concepts) assert.ok(section.includes(concept), concept);
   for (const reference of ['craft-floor', 'browser-qa', 'review-protocol']) {
@@ -63,10 +58,8 @@ test('making a category eyebrow clickable cannot satisfy the burden for keeping 
   const quality = await read('references/quality-bar.md');
   const subtraction = quality.split('## Mandatory supporting-copy subtraction')[1].split('\n## ')[0];
   assert.match(subtraction, /Clickability alone is insufficient/);
-  assert.match(subtraction, /category, mode, filter, metadata field, navigation target, or deep-link target does not earn a prominent slot/);
-  assert.match(subtraction, /infer it from context[\s\S]*conventional control or visible state[\s\S]*quieter surface or on demand[\s\S]*primary title or content[\s\S]*removing it entirely/);
-  assert.match(subtraction, /Justify both the information or action and its placement, prominence, and visual treatment/);
-  assert.match(subtraction, /A newly added secondary function is subject to the same test[\s\S]*removing or relocating it materially harms/);
+  assert.match(subtraction, /secondary information or actions work in the title, a conventional control, nearby state, or on demand/);
+  assert.match(subtraction, /Restore visible copy or prominence when the operated comparison exposes lost meaning, discoverability, or protection/);
 });
 
 test('a generic crop toggle cannot establish a signature claim and continuity is judged in use', async () => {
@@ -84,9 +77,9 @@ test('a generic crop toggle cannot establish a signature claim and continuity is
 
 test('READY without an independent reviewer requires an adversarial rendered review', async () => {
   const skill = await read('SKILL.md');
-  assert.match(skill, /Record `INDEPENDENT_REVIEW` or `SELF_REVIEW` and complete the applicable protocol before declaring Quality Gate READY/);
+  assert.match(skill, /Use `references\/review-protocol\.md` for the review mode/);
   const protocol = await read('references/review-protocol.md');
-  assert.match(protocol, /When one is unavailable, record \*\*SELF_REVIEW\*\* and complete the adversarial pass below before declaring Quality Gate READY/);
+  assert.match(protocol, /\*\*INDEPENDENT_REVIEW\*\* when a separate reviewer inspects[\s\S]*Otherwise record \*\*SELF_REVIEW\*\* and complete the adversarial pass below before declaring Quality Gate READY/);
   const adversarial = protocol.split('## Adversarial self-review')[1].split('\n## ')[0];
   for (const requirement of ['rendered and operated states before revisiting implementation rationale',
     'first-impression problems', 'reasons the result should be NOT_READY', 'weakest visible region directly',
