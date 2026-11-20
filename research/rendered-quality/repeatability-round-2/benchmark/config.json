@@ -1,0 +1,12 @@
+{
+  "baseline": "3a2e5468a79e5ef5a5bdb3e52445d0fca99cf903",
+  "candidate": "408395de3f3c1c9e6e121bf1b0ced744e253e280",
+  "families": ["ceramics", "collection", "operations"],
+  "runsPerCell": 2,
+  "states": ["initial", "final"],
+  "reviewersTarget": 2,
+  "viewportWidths": [1440, 768, 390, 320],
+  "runBudgetMinutes": 12,
+  "assets": "Use authored or locally available embeddable media where relevant. No additional design skills, external fetch dependencies, historical artifacts or shared product code.",
+  "implementation": "Local static HTML/CSS/JavaScript, Chromium through Playwright. One fresh context and independent workspace per product. Same model and reasoning configuration where exposed. Capture resource limits and exceptions."
+}
