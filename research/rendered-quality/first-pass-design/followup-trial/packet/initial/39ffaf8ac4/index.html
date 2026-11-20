@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#25234f">
+<title>Switchboard — Evening changeover</title>
+<style>
+:root{color-scheme:light;--paper:#f6f4ed;--white:#fffefa;--ink:#25234f;--muted:#605d73;--line:#dedbd2;--accent:#dfd9ff;--deep:#47358b;--green:#235b46;--amber:#815020;font-family:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink)}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,[tabindex]:focus-visible{outline:3px solid #7755d8;outline-offset:3px}h1,h2,h3,p{margin:0}button,.row,.choice{min-width:0}.frame{max-width:1300px;margin:auto;padding:0 42px}.mast{background:var(--ink);color:#fff}.mast .frame{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}.brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:800;letter-spacing:-.04em}.signal{height:26px;width:28px;display:flex;align-items:center;justify-content:center;gap:3px;background:#e2dbff;border-radius:5px}.signal i{width:2px;background:var(--ink);height:8px}.signal i:nth-child(2){height:14px}.signal i:nth-child(3){height:18px}.signal i:nth-child(4){height:11px}.station,.label,.time,.badge,.clock,.section-count{font-family:ui-monospace,Consolas,monospace}.station{font-size:11px;letter-spacing:.13em;color:#e1dcef}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:40px 0 32px;border-bottom:1px solid var(--line)}.label{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(38px,5vw,67px);line-height:1;letter-spacing:-.055em;margin:9px 0 10px}.sub{font-size:14px;color:var(--muted);line-height:1.45}.clocks{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:none}.clock{padding:13px 17px;min-width:105px;background:var(--white)}.clock strong{display:block;font-size:26px;line-height:1.15;letter-spacing:-.06em;margin:3px 0}.clock small{font-size:10px;color:var(--muted)}.clock.boundary{background:var(--accent);min-width:130px}.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(320px,1fr);gap:34px;padding:29px 0 42px;align-items:start}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.section-head h2{font-size:21px;letter-spacing:-.04em}.section-count{color:var(--muted);font-size:11px}.list{background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden}.row{display:grid;grid-template-columns:67px minmax(0,1fr) 19px;align-items:center;gap:15px;width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left;padding:14px 17px;min-height:78px}.row:last-child{border-bottom:0}.row:hover{background:#f1edf9}.row[aria-pressed=true]{background:#eae5fb;box-shadow:inset 4px 0 #6551ac}.row:focus-visible{outline-offset:-4px}.row.fixed:not([aria-pressed=true]){background:#f0eef5}.time{font-size:17px;font-weight:700;letter-spacing:-.06em}.time small{display:block;color:var(--muted);font-size:11px;font-weight:400;letter-spacing:0;margin-top:4px}.title{display:block;font-size:15px;font-weight:700;line-height:1.22}.meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 10px;margin-top:6px}.badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:3px 6px;border-radius:4px;background:#e8f0e7;color:var(--green);white-space:nowrap}.badge:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.badge.await{background:#f8e8d2;color:var(--amber)}.badge.fixed{background:#e3def4;color:var(--deep)}.deadline{color:var(--muted);font-size:11px}.chevron{font-size:20px;color:var(--deep);justify-self:end}.foot{display:flex;gap:8px;align-items:center;margin-top:14px;font-size:12px;color:var(--muted)}.foot svg{flex:none}.panel{background:var(--white);border:1px solid var(--line);border-radius:9px;overflow:hidden}.panel-top{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:13px 19px}.panel-top span+span{color:#e1dcef;letter-spacing:.05em}.body{padding:19px}.body h3{font-family:Georgia,serif;font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.045em;margin:9px 0 12px}.timing{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:11px 0;border-block:1px solid var(--line);margin-top:13px}.timing strong{display:block;font-family:ui-monospace,Consolas,monospace;font-size:15px;margin-top:4px}.body p{margin-top:12px;font-size:13px;color:var(--muted);line-height:1.45}.replacement{padding-top:16px}.choices{display:grid;gap:7px;margin-top:8px}.choice{width:100%;display:grid;grid-template-columns:1fr auto;gap:2px 8px;text-align:left;background:#fffefa;border:1px solid #d8d2e8;border-radius:6px;padding:9px 10px;font-size:13px}.choice:hover,.choice[aria-pressed=true]{background:#eee8ff;border-color:#765ab8}.choice small{font-size:11px;color:var(--muted);grid-column:1/-1}.choice strong{overflow-wrap:anywhere}.conflict,.fit,.applied{padding:9px 10px;border-radius:5px}.body .conflict{background:#f8e8d2;color:#6c3b18}.body .fit,.body .applied{background:#e8f0e7;color:var(--green)}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.action{border:1px solid var(--deep);border-radius:6px;padding:9px 11px;font-weight:700;font-size:12px;min-height:38px;background:var(--deep);color:white}.action:hover{background:var(--ink)}.action.secondary{background:transparent;color:var(--deep)}.action.secondary:hover{background:#eee8ff}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:760px){.frame{padding:0 16px}.mast .frame{height:55px}.brand{font-size:19px}.station{font-size:9px}.hero{display:block;padding:23px 0 17px}.hero h1{margin:7px 0 6px}.clocks{margin-top:14px}.clock,.clock.boundary{flex:1;min-width:0;padding:8px 11px}.clock strong{font-size:22px}.layout{grid-template-columns:minmax(0,1fr);gap:21px;padding:18px 0 28px}.row{grid-template-columns:53px minmax(0,1fr) 12px;gap:8px;min-height:65px;padding:9px 10px}.time{font-size:15px}.time small{margin-top:3px}.title{font-size:14px}.meta{margin-top:5px}.section-head{margin-bottom:9px}.foot{margin-top:9px}.body{padding:15px}.panel-top{padding:11px 15px}.body h3{font-size:28px}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="frame"><div class="brand"><span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Switchboard</div><div class="station">VOLUNTEER RADIO / STUDIO</div></div></header>
+<main class="frame">
+<section class="hero" aria-labelledby="page-title">
+<div><div class="label">Studio rundown</div><h1 id="page-title">Evening changeover</h1><p class="sub" id="summary"></p></div>
+<div class="clocks"><div class="clock"><span class="label">Studio time</span><strong>18:42</strong><small>Changeover</small></div><div class="clock boundary"><span class="label">Fixed boundary</span><strong>19:00</strong><small>18 min to news</small></div></div>
+</section>
+<div class="layout">
+<section aria-labelledby="rundown-title"><div class="section-head"><h2 id="rundown-title">On-air sequence</h2><span class="section-count">5 segments</span></div><div class="list" id="rundown"></div>
+<p class="foot"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor"/><path d="M8 4.5V8l2 1" stroke="currentColor" stroke-linecap="round"/></svg>All times are studio local time.</p></section>
+<section class="panel" id="detail" aria-label="Segment detail"></section>
+</div>
+<div class="sr" id="announcement" role="status" aria-live="polite"></div>
+</main>
+<script>
+const segments = [
+  {start:'18:43', duration:45, title:'East Market weather', state:'Ready'},
+  {start:'18:44', duration:80, title:'Harbor ferry suspension notice', state:'Ready', deadline:'Must air before 18:50'},
+  {start:'18:46', duration:330, title:'Mara Chen on the night bus pilot', state:'Awaiting audio'},
+  {start:'18:52', duration:190, title:'Listener recordings from North Jetty', state:'Ready'},
+  {start:'19:00', duration:30, title:'Station identification and news handoff', state:'Fixed boundary'}
+];
+const options = [
+  {title:'Depot shift before dawn', duration:225, kind:'Ready · Studio recording'},
+  {title:'West platforms accessibility call-in', duration:450, kind:'Backup · Runs past next segment'}
+];
+const interview = 2;
+const rundown = document.querySelector('#rundown');
+const detail = document.querySelector('#detail');
+const summary = document.querySelector('#summary');
+const announcement = document.querySelector('#announcement');
+let selected = interview;
+let preview = null;
+let applied = false;
+
+function seconds(time) {
+  const [hours, minutes] = time.split(':').map(Number);
+  return hours * 3600 + minutes * 60;
+}
+function endTime(start, duration) {
+  const end = seconds(start) + duration;
+  const pad = n => String(n).padStart(2, '0');
+  return [Math.floor(end / 3600), Math.floor(end / 60) % 60, end % 60].map(pad).join(':');
+}
+function length(seconds) {
+  return Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
+}
+function current(index) {
+  const segment = segments[index];
+  if (index === interview && applied) return {...segment, ...options[0], state:'Ready'};
+  return segment;
+}
+function badge(state) {
+  const style = state === 'Ready' ? '' : state === 'Awaiting audio' ? 'await' : 'fixed';
+  return '<span class="badge ' + style + '">' + state + '</span>';
+}
+function render() {
+  summary.textContent = applied ? 'All segments ready for the 19:00 handoff.' : 'One segment needs audio before the news handoff.';
+  rundown.innerHTML = segments.map((_, index) => {
+    const s = current(index);
+    const note = s.deadline || (index === interview && applied ? 'Ends ' + endTime(s.start, s.duration) : '');
+    return '<button class="row ' + (index === 4 ? 'fixed' : '') + '" type="button" data-segment="' + index +
+      '" aria-pressed="' + (selected === index) + '" aria-controls="detail"><span class="time">' + s.start + '<small>' +
+      length(s.duration) + '</small></span><span><span class="title">' + s.title + '</span><span class="meta">' +
+      badge(s.state) + (note ? '<span class="deadline">' + note + '</span>' : '') +
+      '</span></span><span class="chevron" aria-hidden="true">›</span></button>';
+  }).join('');
+
+  const segment = current(selected);
+  const next = segments[selected + 1];
+  const end = endTime(segment.start, segment.duration);
+  const status = segment.deadline ? '<p>' + segment.deadline + '. Scheduled to end at ' + end + '.</p>' :
+    selected === 4 ? '<p>The station identification starts at 19:00 for the news handoff.</p>' : '';
+  let controls = '';
+  if (selected === interview && !applied) {
+    const choices = options.map((option, index) => '<button type="button" class="choice" data-option="' +
+      index + '" aria-pressed="' + (preview === index) + '"><strong>' + option.title +
+      '</strong><span class="time">' + length(option.duration) + '</span><small>' +
+      option.kind + '</small></button>').join('');
+    let feedback = '';
+    if (preview !== null) {
+      const option = options[preview];
+      const proposedEnd = endTime(segment.start, option.duration);
+      const gap = seconds(next.start) - seconds(segment.start) - option.duration;
+      feedback = gap < 0 ?
+        '<p class="conflict">Would end at <strong>' + proposedEnd + '</strong>, overlapping ' + next.title +
+        ' at ' + next.start + ' by ' + length(-gap) + '. Mara Chen stays scheduled at 18:46.</p>' :
+        '<p class="fit">Keeps the 18:46 start and ends at <strong>' + proposedEnd + '</strong>, leaving ' +
+        length(gap) + ' before the ' + next.start + ' segment.</p>';
+    }
+    controls = '<div class="replacement"><h4 class="label" style="margin:0">Replacement options</h4><div class="choices">' + choices +
+      '</div>' + feedback + '</div>';
+  }
+  if (selected === interview && applied) {
+    controls = '<p class="applied">Replacement scheduled. ' + length(seconds(next.start) - seconds(segment.start) - segment.duration) +
+      ' until the ' + next.start + ' segment.</p>';
+  }
+  const primary = selected === interview && applied ? '<button class="action secondary" data-command="undo">Undo replacement</button>' :
+    selected === interview && preview === 0 ? '<button class="action" data-command="apply">Confirm replacement</button>' : '';
+  const nextAction = next ? '<button class="action secondary" data-command="next">Next · ' + next.start + '</button>' : '';
+  detail.innerHTML = '<div class="panel-top label"><span>Segment detail</span><span>' + String(selected + 1).padStart(2,'0') +
+    ' / 05</span></div><div class="body"><h3 tabindex="-1" id="segment-title">' + segment.title + '</h3>' + badge(segment.state) +
+    '<div class="timing"><div class="label">Start<strong>' + segment.start + '</strong></div><div class="label">Duration<strong>' +
+    length(segment.duration) + '</strong></div><div class="label">Ends<strong>' + end +
+    '</strong></div></div>' + status + controls + ((primary || nextAction) ? '<div class="actions">' + primary + nextAction + '</div>' : '') + '</div>';
+}
+function openSegment(index) {
+  selected = index;
+  preview = null;
+  render();
+  document.querySelector('#segment-title').focus();
+}
+rundown.addEventListener('click', event => {
+  const row = event.target.closest('[data-segment]');
+  if (row) openSegment(Number(row.dataset.segment));
+});
+detail.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  if (button.hasAttribute('data-option')) {
+    preview = Number(button.dataset.option);
+    render();
+    detail.querySelector('[data-option="' + preview + '"]').focus();
+    announcement.textContent = detail.querySelector('.fit, .conflict').textContent;
+    return;
+  }
+  if (button.dataset.command === 'next') {
+    openSegment(selected + 1);
+    return;
+  }
+  applied = button.dataset.command === 'apply';
+  preview = null;
+  render();
+  document.querySelector('#segment-title').focus();
+  const segment = current(interview);
+  announcement.textContent = segment.title + ' scheduled at ' + segment.start + ', ending at ' + endTime(segment.start, segment.duration) + '.';
+});
+render();
+</script>
+</body>
+</html>

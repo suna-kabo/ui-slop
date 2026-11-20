@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchboard · Evening changeover</title>
+<style>
+:root{color-scheme:light;--ink:#272637;--muted:#5f5b69;--paper:#f8f6f0;--line:#d9d5ce;--dark:#252333;--acid:#e5fa94;--warn:#9b471f;--green:#34583c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 "Segoe UI",system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #7764ce;outline-offset:3px}
+.wrap{width:min(1220px,calc(100% - 80px));margin:auto}
+header{background:var(--dark);color:white}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.brand{font-size:21px;font-weight:750;letter-spacing:-.6px;display:flex;align-items:center;gap:12px}
+.mark{display:inline-flex;gap:3px;align-items:center;background:var(--acid);padding:9px;border-radius:50%;width:32px;height:32px;justify-content:center}
+.mark i{width:2px;background:var(--dark);height:8px}
+.mark i:nth-child(2){height:15px}.mark i:nth-child(3){height:11px}
+.clock, .mono, time{font-family:Consolas,"Courier New",monospace;font-variant-numeric:tabular-nums}
+.clock{font-size:14px;color:#e8e4f1}.clock b{color:var(--acid);font-size:18px;margin-left:8px}
+.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:46px 0 32px;border-bottom:1px solid var(--line)}
+h1,h2,p{margin:0}
+h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(40px,5vw,70px);letter-spacing:-.06em;line-height:.99}
+.summary{margin-top:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;flex:none}
+.summary .dot,.await{color:var(--warn)}.summary.clear .dot,.ready{color:var(--green)}
+.boundary{border-left:1px solid var(--line);padding-left:24px;white-space:nowrap}
+.boundary span{display:block;color:var(--muted);font-size:13px}.boundary time{font-size:32px;line-height:1.2;font-weight:bold}
+.board{display:grid;grid-template-columns:minmax(0,1.36fr) minmax(0,1fr);column-gap:36px;align-items:start;margin:30px 0 38px}
+.list-title,.detail-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.list-title{margin-bottom:13px}.list-title h2{font-size:20px;letter-spacing:-.35px}.list-title span{color:var(--muted);font-size:13px}
+ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.row{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left;display:grid;grid-template-columns:66px minmax(0,1fr) 52px 14px;gap:9px;align-items:center;padding:16px 12px;min-height:77px}
+.row:hover{background:#efebe4}.row[aria-expanded=true]{background:#eeebfa;box-shadow:inset 3px 0 #6a54a7}
+.row time{font-size:18px;font-weight:bold}.name{display:block;font-weight:700;font-size:16px;line-height:1.25}.status{font-size:13px;display:block;margin-top:4px}.duration,.arrow{color:var(--muted);text-align:right}.fixed{color:#514486}.lock{background:#efede7}
+.detail{background:#fffdf8;border:1px solid var(--line);border-top:4px solid #7661a9;padding:24px 26px}
+.detail-head{font-size:13px;color:var(--muted);padding-bottom:16px}
+.detail-head time{font-weight:bold;font-size:15px;color:var(--ink)}.detail-head strong{font-size:13px;font-weight:650}
+.detail h2{font-family:Georgia,serif;font-size:34px;font-weight:400;letter-spacing:-.035em;line-height:1.03;max-width:390px}
+.detail p{margin-top:11px;color:var(--muted)}
+.timing{background:#f1eee6;margin:21px 0 16px;padding:13px 13px 11px}
+.time-labels{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}
+.time-labels b{display:block;font-size:14px;color:var(--ink)}
+.time-labels span:last-child{text-align:right}
+.track{display:flex;height:8px;background:repeating-linear-gradient(135deg,#d6d0e0 0 2px,transparent 2px 5px);margin:9px 0 8px;border-right:2px solid var(--ink)}
+.track i{background:#7561a9}.track i.filled{background:#69916a}
+.end{font-size:12px;color:var(--muted)}.end b{color:var(--ink)}
+.action,.secondary,.next{min-height:44px;border:1px solid var(--ink);padding:8px 12px;font-weight:700;text-align:left}
+.action{background:var(--acid);width:100%;display:flex;justify-content:space-between;gap:8px}.action:hover{background:#d9f17e}
+.secondary{background:transparent}.secondary:hover,.next:hover{background:#eeebfa}
+.next{background:transparent;border:0;padding-left:0;display:block;margin-top:9px;color:#514486}
+.choices{display:grid;gap:8px;margin-bottom:12px}
+.choice{background:#f8f6f1;border:1px solid var(--line);text-align:left;padding:10px 12px;width:100%;min-height:48px}
+.choice:hover{border-color:#6a54a7}.choice.fit{background:var(--acid);border-color:var(--ink)}.choice b,.choice span{display:block}.choice span{font-size:12px;color:var(--muted);margin-top:2px}
+.message{border-left:3px solid #ae663f;background:#faeee1;padding:8px 10px;font-size:13px;margin:9px 0}.message.good{background:#edf2e2;border-color:#678761}
+.foot{border-top:1px solid var(--line);padding:13px 0 24px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:760px){
+.wrap{width:calc(100% - 32px)}
+header .wrap{height:53px}.brand{font-size:19px;gap:8px}.mark{width:27px;height:27px;padding:6px}.clock{font-size:12px}.clock b{font-size:15px}
+.hero{padding:26px 0 19px;align-items:flex-start;gap:11px}.hero h1{font-size:clamp(33px,9.8vw,53px);max-width:330px}.summary{font-size:13px;line-height:1.3;margin-top:11px}.boundary{padding-left:10px;margin-top:4px}.boundary time{font-size:23px}.boundary span{font-size:11px}
+.board{display:block;margin:17px 0 23px}.list-title{margin-bottom:8px}.list-title h2{font-size:18px}
+.row{grid-template-columns:52px minmax(0,1fr) 38px 10px;gap:6px;padding:10px 8px;min-height:62px}.row time{font-size:15px}.name{font-size:14px}.status{font-size:12px;margin-top:2px}.duration{font-size:13px}
+.detail{padding:14px 15px;margin:0 0 8px;border-top-width:2px}.detail-head{padding-bottom:8px}.detail h2{font-size:27px}.detail p{font-size:13px;margin-top:8px}.timing{margin:12px 0 11px;padding:8px 10px}.track{margin:5px 0}.foot{font-size:12px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>Switchboard</div><div class="clock">Studio clock <b>18:42</b></div></div></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="title">
+<div><h1 id="title">Evening changeover</h1><p class="summary" id="summary"></p></div>
+<div class="boundary"><span>Next fixed boundary</span><time>19:00</time></div>
+</section>
+<div class="board">
+<section aria-labelledby="rundown"><div class="list-title"><h2 id="rundown">On-air rundown</h2><span>18:43–19:00 starts</span></div><ol id="rows"></ol></section>
+<div id="desk"></div>
+</div>
+<footer class="foot"><span>19:00 handoff · Station identification &amp; news</span><span>Studio schedule</span></footer>
+<div id="announce" class="sr-only" role="status"></div>
+</main>
+<script>
+const segments = [
+  {start:'18:43', title:'East Market weather', seconds:45, note:'Weather update for the East Market area.'},
+  {start:'18:44', title:'Harbor ferry suspension notice', seconds:80, note:'Air this notice before 18:50. The scheduled 18:44 slot clears the cutoff.', cutoff:'18:50'},
+  {start:'18:46', title:'Mara Chen on the night bus pilot', seconds:330, note:'The interview audio is still outstanding.', awaiting:true},
+  {start:'18:52', title:'Listener recordings from North Jetty', seconds:190, note:'The listener recordings are ready for the studio operator.'},
+  {start:'19:00', title:'Station identification and news handoff', seconds:30, note:'Hold this start for station identification and the news handoff.', fixed:true}
+];
+const depot = {title:'Depot shift before dawn', seconds:225, note:'Ready studio recording.'};
+const west = {title:'West platforms accessibility call-in', seconds:450};
+const editIndex = 2;
+const mobile = matchMedia('(max-width:760px)');
+const rows = document.querySelector('#rows');
+const desk = document.querySelector('#desk');
+const summary = document.querySelector('#summary');
+const announce = document.querySelector('#announce');
+let changed = false;
+try { changed = localStorage.getItem('switchboard-depot') === 'true'; } catch {}
+let selected = editIndex;
+let choosing = false;
+let feedback = '';
+
+function current(index) {
+  return index === editIndex && changed
+    ? {...segments[index], ...depot, awaiting:false}
+    : segments[index];
+}
+function duration(seconds) {
+  return Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2,'0');
+}
+function clockSeconds(time) {
+  const [hours, minutes] = time.split(':').map(Number);
+  return hours * 3600 + minutes * 60;
+}
+function endTime(start, seconds) {
+  const end = clockSeconds(start) + seconds;
+  return String(Math.floor(end / 3600)).padStart(2,'0') + ':' + String(Math.floor(end / 60) % 60).padStart(2,'0') + ':' + String(end % 60).padStart(2,'0');
+}
+function status(item) {
+  if (item.fixed) return ['fixed','Fixed boundary'];
+  if (item.awaiting) return ['await','Awaiting audio'];
+  return ['ready',item.cutoff ? 'Ready · air before ' + item.cutoff : 'Ready'];
+}
+function render(focusId) {
+  summary.classList.toggle('clear', changed);
+  summary.innerHTML = '<span class="dot" aria-hidden="true"></span>' + (changed ? 'All scheduled audio ready' : '1 segment awaiting audio');
+  rows.innerHTML = segments.map((_, index) => {
+    const item = current(index);
+    const [tone, label] = status(item);
+    return '<li><button id="slot-' + index + '" data-slot="' + index + '" class="row' + (item.fixed ? ' lock' : '') + '" aria-expanded="' + (index === selected) + '"' + (index === selected ? ' aria-controls="detail"' : '') + '><time>' + item.start + '</time><span><span class="name">' + item.title + '</span><span class="status ' + tone + '">' + label + '</span></span><span class="duration mono">' + duration(item.seconds) + '</span><span class="arrow" aria-hidden="true">' + (index === selected && mobile.matches ? '⌄' : '›') + '</span></button></li>';
+  }).join('');
+  desk.innerHTML = '';
+  const item = current(selected);
+  const next = segments[selected + 1];
+  const [tone, label] = status(item);
+  const limit = next ? clockSeconds(next.start) - clockSeconds(item.start) : item.seconds;
+  const end = endTime(item.start, item.seconds);
+  const edit = selected === editIndex;
+  const conflict = 'Ends at ' + endTime(item.start, west.seconds) + ', ' + duration(west.seconds - limit) + ' after the ' + (next ? next.start : '') + ' North Jetty start.';
+  let controls = '';
+  if (edit && changed) {
+    controls = '<div class="message good">Depot is scheduled in the 18:46 slot.</div><button class="secondary" id="restore">Restore Mara’s interview</button>';
+  } else if (edit && choosing) {
+    controls = '<div class="choices" id="choices"><button class="choice fit" id="apply"><b>Use ' + depot.title + ' →</b><span>Ready · ' + duration(depot.seconds) + ' · ends ' + endTime(item.start,depot.seconds) + '</span></button><button class="choice" id="conflict"><b>Check ' + west.title + '</b><span>Backup · ' + duration(west.seconds) + '</span></button></div>' +
+      (feedback === 'conflict' ? '<div class="message" id="conflict-note">' + conflict + ' Mara’s interview remains selected.</div>' : '') +
+      '<button class="secondary" id="cancel">Cancel replacement</button>';
+  } else if (edit) {
+    controls = (feedback === 'restored' ? '<div class="message">Mara’s interview is back in the 18:46 slot.</div>' : '') + '<button class="action" id="replace" aria-expanded="false">Review replacements <span aria-hidden="true">→</span></button>';
+  }
+  const detail = document.createElement('section');
+  detail.id = 'detail';
+  detail.className = 'detail';
+  detail.setAttribute('aria-labelledby','segment-title');
+  detail.innerHTML = '<div class="detail-head"><time>' + item.start + ' slot</time><strong class="' + tone + '">' + label + '</strong></div><h2 id="segment-title" tabindex="-1">' + item.title + '</h2><p>' + item.note + '</p>' +
+    '<div class="timing"><div class="time-labels"><span>Slot start<b class="mono">' + item.start + '</b></span><span>' + (next ? 'Next slot' : 'Handoff ends') + '<b class="mono">' + (next ? next.start : end) + '</b></span></div><div class="track" aria-hidden="true"><i class="' + (item.awaiting ? '' : 'filled') + '" style="width:' + (item.seconds / limit * 100) + '%"></i></div><div class="end">' + (item.awaiting ? 'Planned end' : 'Ends') + ' <b class="mono">' + end + '</b> · ' + duration(item.seconds) + ' duration</div></div>' +
+    controls + (next ? '<button class="next" id="next">Next segment · ' + next.start + ' <span aria-hidden="true">→</span></button>' : '');
+  (mobile.matches ? rows.children[selected] : desk).append(detail);
+  if (focusId) {
+    const target = document.getElementById(focusId);
+    target?.focus({preventScroll:true});
+    target?.scrollIntoView({block:'nearest'});
+  }
+}
+function select(index) {
+  selected = index;
+  choosing = false;
+  feedback = '';
+  render('segment-title');
+}
+function updateChange(value) {
+  changed = value;
+  choosing = false;
+  feedback = value ? '' : 'restored';
+  try { localStorage.setItem('switchboard-depot', String(value)); } catch {}
+  render(value ? 'restore' : 'replace');
+  announce.textContent = value ? 'Depot shift before dawn scheduled at 18:46, ending 18:49:45.' : 'Mara’s interview restored at 18:46. Awaiting audio.';
+}
+document.querySelector('.board').addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  if (button.dataset.slot !== undefined) return select(Number(button.dataset.slot));
+  switch (button.id) {
+    case 'replace': choosing = true; render('apply'); break;
+    case 'cancel': choosing = false; feedback = ''; render('replace'); break;
+    case 'conflict':
+      feedback = 'conflict';
+      render('conflict');
+      document.querySelector('#conflict').setAttribute('aria-describedby','conflict-note');
+      announce.textContent = document.querySelector('#conflict-note').textContent;
+      break;
+    case 'apply': updateChange(true); break;
+    case 'restore': updateChange(false); break;
+    case 'next': select(selected + 1); break;
+  }
+});
+mobile.addEventListener('change', () => render(document.activeElement?.id));
+render();
+</script>
+</body>
+</html>

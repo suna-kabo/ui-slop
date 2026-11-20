@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fold Fair — Zine shelf</title>
+<style>
+:root{color-scheme:light;--paper:#fbf6ea;--ink:#30182d;--muted:#64535d;--line:#d7c9bf;--plum:#572144;--lime:#e6ed9c}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #a43b71;outline-offset:4px}button:active{filter:brightness(.91)}button:disabled{cursor:default}button[hidden],section[hidden]{display:none}body:has(dialog[open]){overflow:hidden}
+.frame{width:min(1256px,calc(100% - 112px));margin-inline:auto}.mast{border-bottom:1px solid var(--line)}.bar{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:9px;font:900 26px/1 Georgia,serif;letter-spacing:-1.4px;color:var(--plum)}.mark{width:24px;height:25px;background:var(--plum);clip-path:polygon(0 12%,67% 0,100% 28%,100% 86%,34% 100%,0 72%);position:relative}.mark:after{content:"";position:absolute;inset:4px 5px;background:var(--lime);clip-path:polygon(0 12%,54% 0,54% 15%,100% 4%,100% 17%,54% 31%,54% 78%,0 97%)}
+.shortcut,.back,.save,.remove{border:1px solid var(--plum);background:transparent;min-height:44px;padding:0 14px;font-weight:700}.shortcut{display:flex;align-items:center;gap:10px}.count{display:grid;place-items:center;background:var(--lime);min-width:23px;height:23px;border-radius:50%;font-size:12px}.bookmark{width:12px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5}
+.intro{padding:49px 0 28px;display:flex;align-items:end;justify-content:space-between;gap:28px}.intro h1{margin:0;color:var(--plum);font:700 clamp(66px,8.1vw,119px)/.88 Georgia,serif;letter-spacing:-.085em}.intro p{margin:0 5px 2px 0;max-width:272px;font-size:17px;line-height:1.45;color:var(--muted)}
+.tools{border-block:1px solid var(--line);padding:12px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:23px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{min-height:44px;padding:0 15px;border:1px solid var(--line);background:none;font-size:14px;font-weight:700;border-radius:2px}.filter[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff9ef}.filter:hover:not([aria-pressed=true]),.shortcut:hover,.back:hover,.remove:hover{background:#f1e5d7}.results{color:var(--muted);font-size:13px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px;padding-bottom:54px}.card{display:block;width:100%;padding:0;text-align:left;border:0;border-bottom:1px solid var(--line);background:none}.mat{display:grid;place-items:center;background:var(--mat);aspect-ratio:1.45;overflow:hidden}.book{width:43%;height:auto;display:block;box-shadow:3px 3px 0 #f6e9d4,5px 6px 0 #59302166,9px 11px 15px #462b293c}.card:hover h2{text-decoration:underline;text-underline-offset:4px}.card-info{padding:12px 0 14px}.meta,.facts{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:13px;color:var(--muted)}.price{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}.card h2{margin:6px 0 7px;font:700 clamp(20px,2.25vw,34px)/1.02 Georgia,serif;letter-spacing:-.055em}.table{display:inline-block;font-size:12px;font-weight:700;color:var(--plum);background:#f0e7d9;padding:4px 7px}.saved{font-size:12px;font-weight:700;color:var(--plum)}
+dialog{border:1px solid var(--plum);padding:0;background:var(--paper);color:var(--ink);width:min(830px,calc(100% - 40px));max-height:calc(100% - 40px);overscroll-behavior:contain}dialog::backdrop{background:#26152ab8}.dialog-head{display:flex;justify-content:space-between;align-items:center;padding:14px 19px;border-bottom:1px solid var(--line)}.dialog-head h2{margin:0;font:700 28px Georgia,serif}.detail{display:grid;grid-template-columns:44% 1fr}.detail .mat{aspect-ratio:auto;min-height:390px}.detail .book{width:60%}.detail-body{padding:29px 27px;align-self:center}.detail-body h2{font:700 clamp(32px,4.5vw,57px)/.97 Georgia,serif;letter-spacing:-.06em;margin:10px 0 14px}.detail-body p{font-size:16px;line-height:1.5;margin:0 0 20px}.detail-body .facts{justify-content:start;gap:12px;margin-bottom:17px}.save{background:var(--plum);color:white;width:100%}.save[aria-pressed=true]{background:var(--lime);color:var(--plum)}.save:hover{filter:brightness(1.15)}.save:active{filter:brightness(.91)}.list{padding:0 19px 16px}.empty{margin:20px 0 5px;color:var(--muted);line-height:1.5}.saved-row{display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}.saved-row .book{width:100%;box-shadow:none}.saved-row h3{font:700 21px/1.05 Georgia,serif;margin:0 0 6px}.saved-row p{font-size:13px;margin:0;color:var(--muted)}
+@media(max-width:760px){.frame{width:calc(100% - 32px)}.bar{height:63px}.brand{font-size:23px}.shortcut{gap:7px;padding-inline:9px;font-size:13px}.intro{display:block;padding:34px 0 22px}.intro h1{font-size:clamp(46px,14.1vw,87px);white-space:nowrap}.intro p{margin:14px 0 0;font-size:15px;max-width:300px}.tools{display:block;padding:9px 0;margin-bottom:14px}.filters{gap:5px}.filter{font-size:12px;padding:0 9px}.results{display:block;margin-top:8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 11px}.mat{aspect-ratio:1.02}.book{width:58%}.card-info{padding:9px 0 10px}.card h2{font-size:22px;min-height:2.04em}.meta{font-size:11px}.detail{display:flex;flex-direction:column}.detail .mat{min-height:0;height:176px}.detail .book{width:auto;height:139px}.detail-body{width:100%;padding:18px}.dialog-head{padding:10px 14px}dialog{width:calc(100% - 24px);max-height:calc(100% - 24px)}.saved-row{gap:9px}.remove{padding-inline:9px;font-size:13px}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="frame bar"><div class="brand"><span class="mark" aria-hidden="true"></span>Fold Fair</div><button class="shortcut" id="open-list"><svg class="bookmark" viewBox="0 0 12 16" aria-hidden="true"><path d="M2 1.5h8v12.7l-4-3-4 3z"/></svg>Shortlist <span class="count" id="count">0</span></button></div></header>
+<main class="frame">
+  <div class="intro"><h1>The zine shelf</h1><p>Browse independent zines and save the tables you want to visit at the fair.</p></div>
+  <div class="tools"><div class="filters" aria-label="Filter by topic"></div><span class="results" role="status"></span></div>
+  <div class="grid" id="grid"></div>
+</main>
+<dialog id="viewer" aria-labelledby="detail-title"><div class="dialog-head"><button class="back" id="back" autofocus>← Back to shelf</button></div><div id="detail" class="detail"></div></dialog>
+<dialog id="shortlist" aria-labelledby="list-title"><div class="dialog-head"><h2 id="list-title">Shortlist</h2><button class="back" id="close-list" autofocus>Close</button></div><div class="list" id="list"></div></dialog>
+<script>
+const zines = [
+  {id:'night', title:'Night Windows', topic:'Photography', price:12, table:'B4', detail:'24 black-and-white photographs of lit windows on the last tram route.', mat:'#dfc0a9', color:'#201f25'},
+  {id:'botany', title:'Bus Stop Botany', topic:'Field notes', price:8, table:'C7', detail:'Fold-out guide to five plants found at the Crosstown terminus.', mat:'#d9d9ad', color:'#edf09d'},
+  {id:'dinner', title:'Three Ways to Set a Table', topic:'Comics', price:9, table:'A2', detail:'Three wordless comics about dinner with neighbors.', mat:'#f0c6bb', color:'#f0a09b'},
+  {id:'wet', title:'Wet Asphalt', topic:'Photography', price:16, table:'B9', detail:'Large-format reflections captured after a summer storm.', mat:'#c6c9db', color:'#272349'},
+  {id:'shelves', title:'Free Shelves', topic:'Field notes', price:6, table:'C3', detail:'Annotated map of street libraries and a page for new entries.', mat:'#e7d4a8', color:'#f5d37e'},
+  {id:'antenna', title:'Antenna Club', topic:'Comics', price:11, table:'A5', detail:'Short comic about a radio club losing its rooftop access.', mat:'#d7c4d7', color:'#b3a2e4'}
+];
+
+const lettering = (value,x,y,size,fill,font='Georgia',extra='') =>
+  '<text x="'+x+'" y="'+y+'" fill="'+fill+'" font-family="'+font+'" font-size="'+size+'" font-weight="bold" '+extra+'>'+value+'</text>';
+
+function cover(zine) {
+  const black = '#20221e';
+  let art;
+  switch (zine.id) {
+    case 'night': {
+      const windows = [
+        [22,116,50,53],[83,116,50,53],[144,116,53,53],
+        [22,181,50,53],[83,181,50,53],[144,181,53,53]
+      ].map(([x,y,w,h],i) =>
+        '<g transform="translate('+x+' '+y+')"><rect width="'+w+'" height="'+h+'" fill="'+['#8e8880','#d7cfc0','#706962','#aea598','#524d4f','#cec5b4'][i]+'"/>'+
+        '<path d="M2 48 L16 '+[18,35,11,23,38,16][i]+' L32 39 L48 26 V53 H2Z" fill="#28272b" opacity=".8"/><path d="M0 25h52M25 0v53" stroke="#242229" stroke-width="3"/><path d="M3 3h45v47H3Z" fill="none" stroke="#eee2cc" opacity=".56"/></g>'
+      ).join('');
+      art = lettering('NIGHT',18,48,38,'#faf1da','Arial','letter-spacing="3"')+
+        lettering('WINDOWS',18,84,30,'#faf1da','Arial','letter-spacing="1"')+
+        '<path d="M20 104H199M20 249H199" stroke="#b0a89d"/>'+windows+
+        lettering('THE LAST TRAM ROUTE',22,266,9,'#ded4bd','Arial','letter-spacing="2"');
+      break;
+    }
+    case 'botany': {
+      const leaves = [[102,193,-64],[110,175,58],[118,153,-58],[128,128,44],[136,105,-32],
+        [82,208,-54],[76,183,55],[70,158,-58],[148,194,-42],[156,172,50],[163,153,25]];
+      art = '<path d="M17 19H203V261H17Z" fill="none" stroke="#355339"/>'+
+        lettering('Bus Stop',28,59,35,'#263e2a')+lettering('Botany',28,97,38,'#263e2a')+
+        '<g fill="none" stroke="#395735" stroke-width="2"><path d="M104 244Q95 177 136 105M103 243Q73 201 67 150M105 244Q153 209 164 145"/></g>'+
+        leaves.map(([x,y,r],i)=>'<g transform="translate('+x+' '+y+') rotate('+r+')"><path d="M0 0Q-23-8-4-29Q18-15 0 0Z" fill="'+(i%3===0?'#587747':'#9ba957')+'" stroke="#395735"/><path d="M0 0L-4-23" stroke="#395735" opacity=".7"/></g>').join('')+
+        lettering('CROSSTOWN TERMINUS',35,253,9,'#263e2a','Arial','letter-spacing="1.7"');
+      break;
+    }
+    case 'dinner':
+      art = '<path d="M11 11H209V269H11Z" fill="none" stroke="#732e37" stroke-width="2"/>'+
+        lettering('THREE WAYS',22,50,26,'#672331','Arial')+lettering('TO SET',22,81,31,'#672331','Arial')+
+        lettering('A TABLE',22,112,31,'#672331','Arial')+
+        '<g fill="#fce6ca" stroke="#69283b" stroke-width="2.5"><path d="M23 130h174v122H23Z"/><path d="M23 130h174v122H23Z" fill="url(#check)"/><ellipse cx="110" cy="190" rx="45" ry="39"/><ellipse cx="110" cy="190" rx="33" ry="28"/><path d="M45 160v25q0 7 6 7v27m6-59v25q0 7-6 7m0-32v23M170 160q-10 7-9 34h9v24z" fill="none"/><path d="M94 176q11-13 22 2t10 17q-17 14-30 3t-2-22Z" fill="#e7634e"/><path d="M101 183q12-5 15 7m-19 2 10-3" fill="none"/></g>'+
+        '<defs><pattern id="check" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M0 0h9v9H0zM9 9h9v9H9z" fill="#d98f91" opacity=".55"/></pattern></defs>';
+      break;
+    case 'wet':
+      art = lettering('WET',19,51,42,'#f0dcf5','Arial','font-style="italic"')+
+        lettering('ASPHALT',19,86,31,'#f0dcf5','Arial','font-style="italic"')+
+        Array.from({length:32},(_,i)=>{
+          const y=103+i*4.8, x=(i*71)%109, length=19+(i*29)%83;
+          return '<path d="M'+x+' '+y+'h'+length+'m16 0h31" stroke="'+['#ad8daf','#6684aa','#d39e81','#e0c9bc','#705b91'][i%5]+'" stroke-width="'+(1+i%3)+'" opacity="'+(.35+(i%4)*.16)+'"/>';
+        }).join('')+'<path d="M83 104L118 258H153L97 104Z" fill="#e5bac0" opacity=".25"/>';
+      break;
+    case 'shelves':
+      art = lettering('Free',20,55,48,'#383d31')+lettering('Shelves',20,98,46,'#383d31')+
+        '<g fill="none" stroke="#f8edc7" stroke-width="8"><path d="M10 137L210 230M14 209L206 128M58 115l23 145m56-141 18 143M15 177h190"/></g>'+
+        '<path d="M32 216L80 178L111 192L158 160L187 186" fill="none" stroke="#804932" stroke-width="2" stroke-dasharray="3 4"/>'+
+        [[32,216],[80,178],[111,192],[158,160],[187,186]].map(([x,y])=>'<g transform="translate('+x+' '+y+')"><path d="M-7 7V-3L0-9L7-3V7Z" fill="#3a4c36"/><path d="M-4 0H4M-4 3H4" stroke="#f5d37e"/></g>').join('')+
+        lettering('A STREET LIBRARY MAP',22,258,10,black,'Arial','letter-spacing="1.5"');
+      break;
+    default:
+      art = lettering('ANTENNA',17,55,34,'#292345','Arial')+lettering('CLUB',17,96,45,'#292345','Arial')+
+        '<g stroke="#302449" stroke-width="3" fill="none"><path d="M17 230h186v32H17zM33 227v-29h31v29M83 230v-53h51v53M48 198v-79m-27 23 54-19m-45 35 53-21m25 40v-58m-16 15 36-16"/><path d="M145 156q26-22 46 0m-38 11q17-14 31 0m-24 11q9-7 17 0" stroke="#fff0b8"/><path d="M26 244h167m-166 9h170" opacity=".5"/></g>';
+  }
+  return '<svg class="book" viewBox="0 0 220 280" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="220" height="280" fill="'+zine.color+'"/>'+art+'<path d="M5 0v280" stroke="#14101a" opacity=".24" stroke-width="5"/></svg>';
+}
+
+const viewer = document.querySelector('#viewer');
+const shortlist = document.querySelector('#shortlist');
+const filters = document.querySelector('.filters');
+const grid = document.querySelector('#grid');
+const storageKey = 'fold-fair-shortlist';
+const saved = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+let topic = 'All zines';
+let selected;
+let returnTo;
+
+function pickup(zine) {
+  return '<span class="table">Table '+zine.table+'</span>';
+}
+
+function price(zine) {
+  return '<span class="price">$'+zine.price+'</span>';
+}
+
+function mat(zine) {
+  return '<div class="mat" style="--mat:'+zine.mat+'">'+cover(zine)+'</div>';
+}
+
+function renderShelf() {
+  const visible = zines.filter(zine => topic === 'All zines' || zine.topic === topic);
+  document.querySelector('.results').textContent = visible.length+' zines';
+  grid.innerHTML = visible.map(zine =>
+    '<article><button class="card" data-zine="'+zine.id+'" aria-labelledby="title-'+zine.id+'" aria-describedby="info-'+zine.id+'">'+mat(zine)+
+    '<div class="card-info" id="info-'+zine.id+'"><div class="meta"><span>'+zine.topic+'</span>'+price(zine)+'</div>'+
+    '<h2 id="title-'+zine.id+'">'+zine.title+'</h2><div class="facts">'+pickup(zine)+
+    '<span class="saved" data-saved="'+zine.id+'">'+(saved.has(zine.id)?'✓ Saved':'')+'</span></div></div></button></article>'
+  ).join('');
+}
+
+function updateSaves() {
+  document.querySelector('#count').textContent = saved.size;
+  grid.querySelectorAll('[data-saved]').forEach(label => {
+    label.textContent = saved.has(label.dataset.saved) ? '✓ Saved' : '';
+  });
+  const save = document.querySelector('#save');
+  if (save && selected) {
+    save.setAttribute('aria-pressed', saved.has(selected.id));
+    save.textContent = saved.has(selected.id) ? '✓ Saved · Remove' : 'Save to shortlist';
+  }
+}
+
+function toggleSave(id) {
+  if (saved.has(id)) saved.delete(id);
+  else saved.add(id);
+  localStorage.setItem(storageKey, JSON.stringify([...saved]));
+  updateSaves();
+}
+
+function renderList() {
+  const entries = zines.filter(zine => saved.has(zine.id));
+  document.querySelector('#list').innerHTML = entries.length ? entries.map(zine =>
+    '<article class="saved-row">'+cover(zine)+'<div><h3>'+zine.title+'</h3><p>'+zine.topic+' · $'+zine.price+' · Table '+zine.table+'</p></div>'+
+    '<button class="remove" data-remove="'+zine.id+'" aria-label="Remove '+zine.title+'">Remove</button></article>'
+  ).join('') : '<p class="empty">Your shortlist is empty. Save a zine to keep its table handy.</p>';
+}
+
+filters.innerHTML = ['All zines','Photography','Field notes','Comics'].map(name =>
+  '<button class="filter" aria-pressed="'+(name === topic)+'">'+name+'</button>'
+).join('');
+filters.addEventListener('click', event => {
+  const button = event.target.closest('.filter');
+  if (!button) return;
+  topic = button.textContent;
+  filters.querySelectorAll('button').forEach(filter => filter.setAttribute('aria-pressed', filter === button));
+  renderShelf();
+});
+grid.addEventListener('click', event => {
+  const button = event.target.closest('[data-zine]');
+  if (!button) return;
+  returnTo = button;
+  selected = zines.find(zine => zine.id === button.dataset.zine);
+  document.querySelector('#detail').innerHTML = mat(selected)+
+    '<div class="detail-body"><div class="meta">'+selected.topic+'</div><h2 id="detail-title">'+selected.title+'</h2><p>'+selected.detail+
+    '</p><div class="facts">'+pickup(selected)+price(selected)+'</div><button id="save" class="save"></button></div>';
+  updateSaves();
+  viewer.showModal();
+});
+viewer.addEventListener('click', event => {
+  if (event.target.id === 'save') toggleSave(selected.id);
+});
+viewer.addEventListener('close', () => returnTo.focus({preventScroll:true}));
+document.querySelector('#back').onclick = () => viewer.close();
+document.querySelector('#open-list').onclick = () => {
+  renderList();
+  shortlist.showModal();
+};
+document.querySelector('#close-list').onclick = () => shortlist.close();
+document.querySelector('#list').addEventListener('click', event => {
+  const button = event.target.closest('[data-remove]');
+  if (!button) return;
+  const position = [...shortlist.querySelectorAll('[data-remove]')].indexOf(button);
+  toggleSave(button.dataset.remove);
+  renderList();
+  const next = shortlist.querySelectorAll('[data-remove]');
+  (next[Math.min(position, next.length-1)] || document.querySelector('#close-list')).focus();
+});
+renderShelf();
+updateSaves();
+</script>
+</body>
+</html>

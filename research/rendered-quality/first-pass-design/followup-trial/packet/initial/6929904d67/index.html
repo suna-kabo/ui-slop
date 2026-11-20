@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fold Fair — Zine catalogue</title>
+<style>
+*{box-sizing:border-box}
+:root{--paper:#faf7ee;--ink:#202019;--blue:#293bbb;--rule:#c8c4b6;--lime:#e7f875}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.4 Arial,sans-serif}
+body:has(dialog[open]){overflow:hidden}
+.wrap{width:min(1200px,calc(100% - 96px));margin-inline:auto}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #4659df;outline-offset:4px}
+.mast button:focus-visible{outline-color:var(--lime)}
+.mast{background:var(--blue);color:var(--paper)}
+.top{min-height:70px;border-bottom:1px solid #ffffff60;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:-.045em;font-size:21px}
+.shortcut,.action{padding:10px 16px;border:1px solid currentColor;background:transparent;font-weight:700}
+.shortcut:hover{background:var(--lime);color:#202019}
+.count{display:inline-grid;place-items:center;min-width:23px;height:23px;margin-left:8px;background:var(--lime);color:#202019;font-size:13px}
+.hero{display:flex;justify-content:space-between;align-items:center;padding-block:27px 34px;gap:24px}
+h1,h2,p{margin:0}
+h1{font-family:Georgia,serif;font-weight:700;font-size:clamp(68px,9vw,135px);line-height:.94;letter-spacing:-.085em}
+.hero p{font-size:17px;margin-top:15px}
+.mark{width:174px;height:122px;flex:none;position:relative;transform:rotate(-10deg);margin-right:32px}
+.mark i{display:block;position:absolute;width:75px;height:104px;border:2px solid var(--lime);background:var(--blue);transform:skewY(-15deg);top:6px;left:12px}
+.mark i+i{transform:skewY(15deg);left:85px;background:var(--lime);border-color:var(--lime)}
+.mark i+i::after{content:"";position:absolute;inset:24px 15px;background:repeating-linear-gradient(to bottom,var(--blue) 0 2px,transparent 2px 11px)}
+.filters{display:flex;align-items:center;gap:7px;padding:22px 0 15px;border-bottom:1px solid var(--rule);margin-bottom:17px}
+.filters button{border:1px solid transparent;background:none;padding:8px 13px;min-height:42px}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.filters button:hover:not([aria-pressed=true]){border-color:var(--rule)}
+.results{margin-left:auto;color:#58564d;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px 18px;padding-bottom:45px}
+.card{border-bottom:1px solid var(--rule);padding-bottom:13px;min-width:0}
+.entry{display:block;text-align:left;background:none;border:0;padding:0;width:100%}
+.mat{height:clamp(195px,20vw,280px);display:grid;place-items:center;background:var(--mat);overflow:hidden}
+canvas{display:block;height:77%;max-width:90%;width:auto;aspect-ratio:7/9;object-fit:contain;box-shadow:1px 1px #373229,2px 2px #fff9,5px 8px 14px #211b2440}
+.entry:hover .title{text-decoration:underline;text-underline-offset:4px}
+.title{display:block;font-weight:800;font-size:22px;line-height:1.15;margin-top:13px;letter-spacing:-.035em}
+.facts{display:flex;align-items:baseline;gap:6px 12px;flex-wrap:wrap;margin-top:7px;font-size:14px;color:#514f46}
+.price{margin-left:auto;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.table{font-weight:700;color:var(--blue)}
+dialog{background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:0;width:min(760px,calc(100% - 32px));max-height:calc(100dvh - 32px)}
+dialog::backdrop{background:#1719389c}
+.dialogbar{padding:10px 16px;border-bottom:1px solid var(--rule)}
+.close{border:0;background:transparent;padding:8px;min-height:40px;font-weight:700}
+.detail{display:grid;grid-template-columns:1fr 1fr}
+.detail .mat{height:auto;min-height:405px}
+.info{padding:30px 25px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:18px}
+.info h2,.shortlist h2{font:700 42px/.99 Georgia,serif;letter-spacing:-.06em}
+.info .facts{width:100%}
+.action{background:var(--blue);color:white;border-color:var(--blue)}
+.action:hover{background:#182887}
+.action[aria-pressed=true]{color:var(--ink);background:var(--lime);border-color:var(--ink)}
+.shortlist{padding:25px}
+.shortlist h2{margin-bottom:15px}
+.saved-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--rule);padding:11px 0}
+.saved-row p{font-size:14px}
+.saved-row .action{flex:none}
+@media(max-width:720px){
+.wrap{width:calc(100% - 32px)}
+.top{min-height:59px}
+.hero{padding-block:24px 26px;gap:8px}
+h1{font-size:clamp(55px,14vw,92px)}
+.hero p{font-size:15px;margin-top:10px;max-width:238px}
+.mark{transform:rotate(-10deg) scale(.45);transform-origin:center right;margin-right:7px;width:72px;height:110px}
+.mark i{left:-74px}.mark i+i{left:-1px}
+.filters{gap:2px;padding-top:13px;margin-bottom:13px;flex-wrap:wrap}
+.filters button{padding-inline:9px;font-size:13px}
+.results{width:100%;margin:1px 0 0;font-size:12px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 11px}
+.mat{height:clamp(138px,46vw,235px)}
+.title{font-size:17px;margin-top:9px;min-height:2.3em}
+.facts{font-size:12px;gap:2px 6px;margin-top:4px}
+.card .facts span:first-child{flex-basis:100%}
+.detail{grid-template-columns:1fr}
+.detail .mat{min-height:0;height:230px}
+.info{gap:12px;padding:21px}
+.info h2{font-size:36px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap top"><span class="brand">Fold Fair</span><button class="shortcut" id="open-shortlist">Shortlist<span class="count" id="save-count">0</span></button></div>
+  <div class="wrap hero"><div><h1>Zine fair</h1><p>Browse the zines and plan your table stops.</p></div><div class="mark" aria-hidden="true"><i></i><i></i></div></div>
+</header>
+<main class="wrap" aria-label="Zine catalogue">
+  <div class="filters" role="group" aria-label="Filter by topic">
+    <button type="button" aria-pressed="true">All zines</button>
+    <button type="button" aria-pressed="false">Photography</button>
+    <button type="button" aria-pressed="false">Field notes</button>
+    <button type="button" aria-pressed="false">Comics</button>
+    <span class="results" role="status"></span>
+  </div>
+  <div class="grid" id="catalogue"></div>
+</main>
+<dialog aria-labelledby="dialog-title">
+  <div class="dialogbar"><button class="close" autofocus>← Back to zines</button></div>
+  <div id="dialog-content"></div>
+</dialog>
+<script>
+const zines = [
+  {id:'night',title:'Night Windows',topic:'Photography',price:12,table:'B4',description:'24 black-and-white photographs of lit windows on the last tram route.',mat:'#dadad8'},
+  {id:'botany',title:'Bus Stop Botany',topic:'Field notes',price:8,table:'C7',description:'Fold-out guide to five plants found at the Crosstown terminus.',mat:'#dce0bd'},
+  {id:'dinner',title:'Three Ways to Set a Table',topic:'Comics',price:9,table:'A2',description:'Three wordless comics about dinner with neighbors.',mat:'#edc9bb'},
+  {id:'asphalt',title:'Wet Asphalt',topic:'Photography',price:16,table:'B9',description:'Large-format reflections captured after a summer storm.',mat:'#ced4ed'},
+  {id:'shelves',title:'Free Shelves',topic:'Field notes',price:6,table:'C3',description:'Annotated map of street libraries and a page for new entries.',mat:'#e9d9ad'},
+  {id:'antenna',title:'Antenna Club',topic:'Comics',price:11,table:'A5',description:'Short comic about a radio club losing its rooftop access.',mat:'#d8cde8'}
+];
+const palette = {
+  night:['#191a1b','#f3eee1'], botany:['#e9efb6','#294834'],
+  dinner:['#b62921','#ffddb6'], asphalt:['#1b2362','#b5c9f9'],
+  shelves:['#ffcd5e','#402f25'], antenna:['#53296b','#f1bde8']
+};
+function draw(canvas, id) {
+  const ctx = canvas.getContext('2d');
+  const [paper, ink] = palette[id];
+  let seed = 313;
+  const random = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const box = (x,y,w,h,c) => {ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  const line = (points,c=ink,w=2) => {
+    ctx.beginPath();ctx.moveTo(...points[0]);points.slice(1).forEach(point=>ctx.lineTo(...point));
+    ctx.strokeStyle=c;ctx.lineWidth=w;ctx.stroke();
+  };
+  const circle = (x,y,r,c) => {ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=c;ctx.fill()};
+  const words = (value,x,y,size,face='Arial',color=ink) => {ctx.fillStyle=color;ctx.font='bold '+size+'px '+face;ctx.fillText(value,x,y)};
+  box(0,0,280,360,paper);
+  if(id==='night'){
+    for(let i=0;i<95;i++){
+      const x=random()*280,y=123+random()*222,g=16+Math.floor(random()*45);
+      box(x,y,15+random()*85,8+random()*35,'rgb('+g+','+g+','+g+')');
+    }
+    for(let j=0;j<4;j++)for(let i=0;i<5;i++){
+      if(random()<.25)continue;
+      const x=21+i*48,y=136+j*49,glow=random()>.48;
+      box(x,y,33,37,glow?'#c6c3b7':'#5d5c56');
+      box(x+3,y+4,27,29,glow?'#e8e3d5':'#2d2e31');
+      line([[x+17,y+2],[x+17,y+35]],'#444541',3);
+      line([[x+1,y+18],[x+32,y+18]],'#444541',2);
+      if(glow)box(x+6,y+20,9,12,'#aba394');
+    }
+    words('NIGHT',18,54,43);words('WINDOWS',18,99,45);
+    line([[14,112],[262,112]],ink,1);
+  }
+  if(id==='botany'){
+    words('Bus Stop',17,51,43,'Georgia');words('Botany',17,97,56,'Georgia');
+    for(let j=0;j<3;j++){
+      const x=59+j*80, height=[146,191,123][j];
+      line([[x-10,324],[x,324-height]],ink,3);
+      for(let k=1;k<7;k++){
+        const y=316-k*height/7,side=k%2?1:-1;
+        ctx.save();ctx.translate(x-10+k*1.4,y);ctx.rotate(-side*.64);
+        ctx.beginPath();ctx.ellipse(side*15,-3,20,6+j*2,0,0,Math.PI*2);
+        ctx.fillStyle=j===1?'#6d873e':ink;ctx.fill();ctx.restore();
+      }
+      circle(x,322-height,7,'#b35c37');
+    }
+    line([[18,329],[262,329]],ink,2);
+  }
+  if(id==='dinner'){
+    words('Three Ways',18,51,41,'Georgia');words('to Set a Table',18,94,37,'Georgia');
+    for(let j=0;j<3;j++){
+      const y=113+j*75;
+      box(18,y,244,65,ink);
+      line([[93,y],[93,y+65],[164,y+65],[164,y]],paper,2);
+      for(let i=0;i<3;i++){
+        const x=51+i*81;
+        if((i+j)%3===0){circle(x,y+32,23,paper);circle(x,y+32,18,ink);circle(x-5,y+32,8,paper);circle(x+8,y+27,4,'#59633a')}
+        if((i+j)%3===1){box(x-14,y+18,29,33,paper);circle(x+14,y+30,12,paper);circle(x+14,y+30,7,ink)}
+        if((i+j)%3===2){line([[x-13,y+14],[x-13,y+53],[x+13,y+53],[x+13,y+14]],paper,3);box(x-10,y+30,21,20,'#d38938')}
+      }
+    }
+  }
+  if(id==='asphalt'){
+    for(let i=0;i<165;i++){
+      const y=random()*360,x=random()*280;
+      line([[x,y],[x-10-random()*70,y+random()*4]],['#333c85','#4a58a0','#8b94d7','#383060','#9994aa'][i%5],1+random()*4);
+    }
+    for(let i=0;i<34;i++){
+      const y=99+i*6.5,x=163+(random()-.5)*(27+i*3);
+      line([[x,y],[x+10+random()*79,y]],i%5===0?'#fdc69b':'#929feb',1+random()*3);
+    }
+    box(13,16,254,83,paper);words('WET',19,51,35);words('ASPHALT',18,92,48);
+  }
+  if(id==='shelves'){
+    for(let i=0;i<11;i++){
+      const start=130+i*20;
+      line([[0,start],[64,start-23],[124,start-15],[221,start-58],[280,start-50]],'#9e672d',2);
+    }
+    for(let i=0;i<7;i++){
+      const x=18+i*43;
+      line([[x,110],[x-1,177],[x+28,211],[x+40,360]],'#9e672d',2);
+    }
+    for(const [x,y] of [[60,165],[184,146],[140,248],[235,260],[55,306]]){
+      box(x-10,y,22,17,ink);line([[x-12,y],[x,y-10],[x+14,y]],ink,3);box(x-5,y+4,12,9,paper);
+    }
+    words('FREE',16,54,52);words('SHELVES',17,102,49);
+  }
+  if(id==='antenna'){
+    words('ANTENNA',15,56,46);words('CLUB',15,116,65);
+    circle(194,204,54,'#d86ba9');
+    box(0,300,280,60,'#26152c');box(32,271,215,45,'#26152c');box(46,250,73,35,'#26152c');
+    line([[141,304],[141,151],[223,151]],ink,4);
+    for(let i=0;i<5;i++)line([[149+i*14,128+i*4],[149+i*14,175-i*4]],ink,3);
+    for(let i=0;i<3;i++)line([[112-i*11,157-i*8],[105-i*15,176],[112-i*11,195+i*8]],ink,2);
+    for(let i=0;i<7;i++)box(42+i*29,320,12,18,'#a85691');
+  }
+  for(let i=0;i<18000;i++){
+    box(random()*280,random()*360,1+random()*2,1,random()>.5?'#ffffff15':'#00000015');
+  }
+  line([[5,0],[5,360]],'#00000028',3);
+}
+const catalogue = document.querySelector('#catalogue');
+const dialog = document.querySelector('dialog');
+const content = document.querySelector('#dialog-content');
+const closeButton = document.querySelector('.close');
+const shortlistButton = document.querySelector('#open-shortlist');
+const filters = [...document.querySelectorAll('.filters button')];
+let saved;
+try {
+  const stored = JSON.parse(localStorage.getItem('fold-fair-saved') || '[]');
+  saved = new Set(Array.isArray(stored) ? stored.filter(id=>zines.some(zine=>zine.id===id)) : []);
+} catch { saved = new Set(); }
+function updateCount() {
+  document.querySelector('#save-count').textContent = saved.size;
+  shortlistButton.setAttribute('aria-label','Shortlist, '+saved.size+' saved');
+}
+function setSave(id, isSaved) {
+  if(isSaved) saved.add(id); else saved.delete(id);
+  try { localStorage.setItem('fold-fair-saved',JSON.stringify([...saved])); } catch {}
+  updateCount();
+}
+function mat(zine) {
+  return `<div class="mat" style="--mat:${zine.mat}"><canvas width="280" height="360" aria-hidden="true"></canvas></div>`;
+}
+function facts(zine) {
+  return `<div class="facts"><span>${zine.topic}</span><span class="table">Table ${zine.table}</span><span class="price">$${zine.price}</span></div>`;
+}
+function showCatalogue(topic) {
+  const matches = zines.filter(zine=>topic==='All zines'||zine.topic===topic);
+  catalogue.innerHTML = matches.map(zine=>`<article class="card"><button class="entry" data-id="${zine.id}">${mat(zine)}<span class="title">${zine.title}</span></button>${facts(zine)}</article>`).join('');
+  document.querySelector('.results').textContent = matches.length+' zines';
+  matches.forEach((zine,index)=>draw(catalogue.querySelectorAll('canvas')[index],zine.id));
+}
+let origin;
+function openDialog(button) {
+  origin = button;
+  dialog.showModal();
+  dialog.scrollTop = 0;
+}
+function showDetail(zine, button) {
+  content.innerHTML = `<div class="detail">${mat(zine)}<div class="info"><h2 id="dialog-title">${zine.title}</h2>${facts(zine)}<p>${zine.description}</p><button class="action" id="save-zine"></button></div></div>`;
+  draw(content.querySelector('canvas'),zine.id);
+  const saveButton = document.querySelector('#save-zine');
+  function updateButton() {
+    const isSaved = saved.has(zine.id);
+    saveButton.setAttribute('aria-pressed',String(isSaved));
+    saveButton.textContent = isSaved ? '✓ Saved · Remove' : 'Save to shortlist';
+  }
+  updateButton();
+  saveButton.addEventListener('click',()=>{
+    setSave(zine.id,!saved.has(zine.id));
+    updateButton();
+  });
+  openDialog(button);
+}
+function renderShortlist() {
+  const items = zines.filter(zine=>saved.has(zine.id));
+  content.innerHTML = `<div class="shortlist"><h2 id="dialog-title">Shortlist</h2>${items.length ? items.map(zine=>`<div class="saved-row"><div><strong>${zine.title}</strong><p>Table ${zine.table} · $${zine.price}</p></div><button class="action" data-remove="${zine.id}" aria-label="Remove ${zine.title}">Remove</button></div>`).join('') : '<p>No saved zines yet.</p>'}</div>`;
+}
+filters.forEach(filter=>filter.addEventListener('click',()=>{
+  filters.forEach(button=>button.setAttribute('aria-pressed',String(button===filter)));
+  showCatalogue(filter.textContent);
+}));
+catalogue.addEventListener('click',event=>{
+  const button = event.target.closest('.entry');
+  if(button) showDetail(zines.find(zine=>zine.id===button.dataset.id),button);
+});
+shortlistButton.addEventListener('click',()=>{
+  renderShortlist();
+  openDialog(shortlistButton);
+});
+content.addEventListener('click',event=>{
+  const button = event.target.closest('[data-remove]');
+  if(!button)return;
+  const index = [...content.querySelectorAll('[data-remove]')].indexOf(button);
+  setSave(button.dataset.remove,false);
+  renderShortlist();
+  const remaining = content.querySelectorAll('[data-remove]');
+  (remaining[index] || remaining[index-1] || closeButton).focus();
+});
+closeButton.addEventListener('click',()=>dialog.close());
+dialog.addEventListener('close',()=>origin?.focus({preventScroll:true}));
+updateCount();
+showCatalogue('All zines');
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switchboard · Evening changeover</title>
+<style>
+:root{color-scheme:light;--paper:#f4f2ea;--ink:#182723;--muted:#50615a;--line:#d5d8cb;--navy:#172b25;--green:#c2e5cc;--lime:#e9f788;--warn:#f8e6ad;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,sans-serif;font-size:15px}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid #167b68;outline-offset:3px}
+.top{background:var(--navy);color:white;border-bottom:4px solid var(--lime)}
+.top-inner,main{max-width:1248px;margin:auto;padding-inline:28px}
+.top-inner{min-height:66px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-size:21px;font-weight:800;letter-spacing:-.045em;display:flex;align-items:center;gap:9px}
+.mark{display:flex;gap:3px;align-items:center}
+.mark i{display:block;width:3px;background:var(--lime);height:11px}
+.mark i:nth-child(2){height:21px}.mark i:nth-child(3){height:15px}.mark i:nth-child(4){height:7px}
+.clock,.mono,.cue-time,.duration,.rail-labels{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.clock{color:#e2eadf;font-size:13px;white-space:nowrap}
+main{padding-top:38px;padding-bottom:48px}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(34px,5vw,65px);letter-spacing:-.075em;line-height:1}
+.hero{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px}
+.issue{display:inline-flex;gap:8px;align-items:center;font-weight:720;font-size:13px;border-radius:4px;background:var(--warn);padding:8px 11px;white-space:nowrap}
+.issue::before,.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.issue.clear{background:var(--green)}
+.rail{background:var(--navy);color:white;padding:15px 20px 16px;border-radius:8px;margin-bottom:29px}
+.rail-head,.rail-labels{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rail-head{font-size:13px;font-weight:680}
+.rail-head span:last-child{color:var(--lime)}
+.track{display:flex;gap:3px;height:11px;margin:13px 0 7px;background:repeating-linear-gradient(135deg,#243832 0 4px,#304740 4px 6px);position:relative}
+.track span{position:absolute;top:0;bottom:0;background:#9ac6ae;border-radius:2px}
+.track span:nth-child(3){background:#f3d17c}.track.clear span:nth-child(3){background:var(--lime)}
+.track::after{content:"";position:absolute;right:0;top:-3px;bottom:-3px;width:3px;background:var(--lime)}
+.rail-labels{font-size:11px;color:#d1ddd3}
+.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,1fr);gap:26px;align-items:start}
+.sheet h2{font-size:22px;letter-spacing:-.04em;margin-bottom:12px}
+.column-head,.cue{display:grid;grid-template-columns:78px minmax(0,1fr) 55px 19px;align-items:center;gap:12px}
+.column-head{padding:0 14px 8px;color:var(--muted);font-size:12px;border-bottom:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line);position:relative}
+.cue{position:relative;width:100%;text-align:left;border:0;background:transparent;color:inherit;padding:12px 14px;min-height:72px}
+.cue:hover{background:#e8eae0}
+.cue[aria-expanded=true]{background:#e4eadc;box-shadow:inset 4px 0 #466859}
+.cue[aria-expanded=true].waiting{background:#f6ebc9;box-shadow:inset 4px 0 #a3630e}
+.cue-time{font-size:21px;font-weight:800;letter-spacing:-.06em;align-self:start;margin-top:3px}
+.cue-name{display:block;font-weight:760;line-height:1.23}
+.status{display:inline-flex;align-items:center;gap:6px;color:#42634f;font-size:12px;margin-top:5px;font-weight:650}
+.waiting .status{color:#784706}.fixed .status{color:#46545c}.fixed .status::before{border-radius:1px}
+.duration{font-size:13px;color:var(--muted);text-align:right}
+.arrow{font-size:22px;text-align:right;color:#536559}
+.detail{background:#fcfbf6;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.detail-head{background:var(--navy);color:white;padding:15px 17px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.detail-head strong{font-size:14px}.detail-head .mono{color:var(--lime);font-size:14px}
+.detail-body{padding:19px 17px}
+.detail h3{font-size:24px;letter-spacing:-.045em;line-height:1.1;margin:0 0 10px}
+.detail p{line-height:1.45;color:#46564e;font-size:14px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;color:#354941;font-size:13px}
+.meta span{background:#e9ede3;border-radius:3px;padding:5px 7px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.action{border:1px solid #adb9aa;border-radius:4px;padding:9px 12px;color:var(--ink);background:transparent;font-size:14px;font-weight:720;min-height:42px}
+.action:hover{background:#e9eee2}
+.primary{background:var(--lime);border-color:#aebd66}
+.primary:hover{background:#dce978}
+.choice{border-top:1px solid var(--line);padding-top:11px;margin-top:12px}
+.choice button{width:100%;text-align:left}
+.choice .mono{display:block;font-size:12px;margin-top:3px;font-weight:500}
+.conflict{margin-top:9px;background:var(--warn);padding:9px 11px;border-radius:4px}
+.undo-row{margin:0 14px 10px 104px}
+.undo-row button{border:0;background:transparent;color:#285746;text-decoration:underline;padding:5px 0;font-size:13px;font-weight:700}
+#notice{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:740px){
+.top-inner,main{padding-inline:16px}.top-inner{min-height:56px}main{padding-top:25px}
+.hero{display:block;margin-bottom:17px}.issue{margin-top:12px}
+.rail{padding:12px;margin-bottom:22px}
+.layout{display:block}.sheet h2{font-size:20px;margin-bottom:9px}
+.column-head,.cue{grid-template-columns:53px minmax(0,1fr) 37px 11px;gap:8px;padding-inline:7px}
+.cue{min-height:76px}.cue-time{font-size:17px}.cue-name{font-size:14px}.status{font-size:11px}
+.duration{font-size:12px}.arrow{font-size:18px}
+.detail{margin:0 3px 9px}.detail h3{font-size:22px}
+.undo-row{margin-left:68px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-inner">
+<div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Switchboard</div>
+<div class="clock">18:42 local</div>
+</div></header>
+<main>
+<div class="hero"><h1>Evening changeover</h1><span class="issue" id="issue"></span></div>
+<section class="rail" aria-label="Schedule overview from 18:42 to the 19:00 handoff">
+<div class="rail-head"><span>Time to handoff · 18 min</span><span>19:00 fixed</span></div>
+<div id="track" class="track" aria-hidden="true"></div>
+<div class="rail-labels" aria-hidden="true"><span>18:42</span><span>18:48</span><span>18:54</span><span>19:00</span></div>
+</section>
+<div class="layout">
+<section class="sheet" aria-labelledby="rundown"><h2 id="rundown">Studio rundown</h2>
+<div class="column-head" aria-hidden="true"><span>Start</span><span>Segment</span><span>Length</span></div>
+<div id="rows"></div>
+</section>
+<div id="desktop-detail"></div>
+</div>
+<div id="notice" role="status"></div>
+</main>
+<script>
+const cues = [
+  { title:"East Market weather", start:1123, seconds:45, status:"Ready", description:"East Market forecast for the evening." },
+  { title:"Harbor ferry suspension notice", start:1124, seconds:80, status:"Ready", deadline:"Must air before 18:50", description:"Read the suspension notice before 18:50." },
+  { title:"Mara Chen on the night bus pilot", start:1126, seconds:330, status:"Awaiting audio", description:"The interview audio has not arrived. A replacement must finish by the 18:52 North Jetty cue." },
+  { title:"Listener recordings from North Jetty", start:1132, seconds:190, status:"Ready", description:"Listener recordings from North Jetty are ready for air." },
+  { title:"Station identification and news handoff", start:1140, seconds:30, status:"Fixed boundary", description:"Start station identification at 19:00, then hand off to news." }
+];
+const depot = { ...cues[2], title:"Depot shift before dawn", seconds:225, status:"Ready", description:"Studio recording. The original 18:46 start is held." };
+const backup = {title:"West platforms accessibility call-in", seconds:450};
+const phone = matchMedia("(max-width: 740px)");
+let selected = phone.matches ? null : 2;
+let replaced = false;
+let choosing = false;
+let conflict = false;
+const byId = id => document.getElementById(id);
+const pad = number => String(number).padStart(2,"0");
+const time = (minutes, seconds = 0) => {
+  const end = minutes + Math.floor(seconds / 60);
+  return pad(Math.floor(end / 60)) + ":" + pad(end % 60) + (seconds ? ":" + pad(seconds % 60) : "");
+};
+const length = seconds => Math.floor(seconds / 60) + ":" + pad(seconds % 60);
+const current = index => index === 2 && replaced ? depot : cues[index];
+const action = (id, name, primary = false) => '<button type="button" id="' + id + '" class="action' + (primary ? ' primary' : '') + '">' + name + '</button>';
+
+function detail(){
+  const cue = current(selected);
+  const choices = choosing ? `
+    <p>Choose a recording that fits the 6:00 slot.</p>
+    <div class="choice">${action("replace", depot.title + '<span class="mono">3:45 · Ends ' + time(cue.start,depot.seconds) + ' · Use recording</span>', true)}</div>
+    <div class="choice">${action("backup", backup.title + '<span class="mono">' + length(backup.seconds) + ' · Ends ' + time(cue.start,backup.seconds) + ' · Check conflict</span>')}
+    ${conflict ? '<p class="conflict" id="conflict" tabindex="-1">This runs 1:30 into Listener recordings from North Jetty at 18:52. Mara’s interview remains in the rundown.</p>' : ''}</div>
+    <div class="actions">${action("cancel","Cancel replacement")}</div>` : `
+    <p>${cue.description}</p>
+    <div class="actions">
+      ${selected === 2 && !replaced ? action("choose","Compare replacements",true) : ""}
+      ${selected < cues.length - 1 ? action("next","Next cue →") : ""}
+      ${action("close","Close detail")}
+    </div>`;
+  return `<section class="detail" id="detail" aria-labelledby="detail-title">
+    <header class="detail-head"><strong>${choosing ? "Replace segment" : "Cue details"}</strong><span class="mono">${time(cue.start)}</span></header>
+    <div class="detail-body">
+      <h3 id="detail-title" tabindex="-1">${cue.title}</h3>
+      <div class="meta"><span>${cue.status}</span><span class="mono">Ends ${time(cue.start,cue.seconds)}</span></div>
+      ${choices}
+    </div>
+    </section>`;
+}
+
+function render(focus){
+  byId("issue").textContent = replaced ? "All cues ready" : "1 cue awaiting audio";
+  byId("issue").classList.toggle("clear", replaced);
+  byId("track").classList.toggle("clear", replaced);
+  byId("track").innerHTML = cues.slice(0,4).map((_,index) => {
+    const cue = current(index);
+    return `<span style="left:${(cue.start-1122)/18*100}%;width:${cue.seconds/1080*100}%"></span>`;
+  }).join("");
+  byId("rows").innerHTML = cues.map((_,index) => {
+    const cue = current(index);
+    const expanded = selected === index;
+    const state = index === 2 && !replaced ? " waiting" : index === 4 ? " fixed" : "";
+    return `<div class="row">
+      <button class="cue${state}" id="cue-${index}" type="button" aria-expanded="${expanded}" ${expanded ? 'aria-controls="detail"' : ''}>
+        <span class="cue-time">${time(cue.start)}</span>
+        <span><span class="cue-name">${cue.title}</span><span class="status">${cue.status}${cue.deadline ? " · " + cue.deadline : ""}</span></span>
+        <span class="duration">${length(cue.seconds)}</span><span class="arrow" aria-hidden="true">${expanded ? "−" : "›"}</span>
+      </button>
+      ${index === 2 && replaced ? '<div class="undo-row"><button type="button" id="undo">Undo replacement</button></div>' : ''}
+      ${expanded && phone.matches ? detail() : ''}
+    </div>`;
+  }).join("");
+  byId("desktop-detail").innerHTML = selected !== null && !phone.matches ? detail() : "";
+  if (focus) byId(focus)?.focus();
+}
+
+function navigate(index){
+  const previous = selected;
+  selected = index;
+  choosing = conflict = false;
+  render(index === null ? "cue-" + previous : "detail-title");
+}
+
+document.addEventListener("click", event => {
+  const button = event.target.closest("button");
+  if (!button) return;
+  if (button.id.startsWith("cue-")) {
+    const index = Number(button.id.slice(4));
+    navigate(selected === index ? null : index);
+    return;
+  }
+  switch(button.id){
+    case "close": navigate(null); break;
+    case "next": navigate(selected + 1); break;
+    case "choose": choosing = true; render("replace"); break;
+    case "backup": conflict = true; render("conflict"); break;
+    case "cancel": choosing = conflict = false; render("choose"); break;
+    case "replace":
+      replaced = true;
+      navigate(2);
+      byId("notice").textContent = "Depot shift before dawn is scheduled at 18:46 and ends at 18:49:45.";
+      break;
+    case "undo":
+      replaced = false;
+      navigate(2);
+      byId("notice").textContent = "Mara Chen on the night bus pilot restored. Audio is still awaited.";
+      break;
+  }
+});
+phone.addEventListener("change", () => render());
+render();
+</script>
+</body>
+</html>

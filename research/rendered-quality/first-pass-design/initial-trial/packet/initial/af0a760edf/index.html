@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switchboard — Evening changeover</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg:#171b1a; --panel:#202523; --surface:#272d2a; --line:#3b4540;
+  --ink:#f1efe6; --muted:#aab5ad; --mint:#a8e7c2; --amber:#ffc57a;
+  --mono:ui-monospace, "Cascadia Mono", "Courier New", monospace;
+}
+* {box-sizing:border-box}
+body {margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,sans-serif}
+button {font:inherit;color:inherit;cursor:pointer}
+button:focus-visible, [tabindex="-1"]:focus-visible {outline:2px solid var(--mint);outline-offset:4px}
+.mast {border-bottom:1px solid var(--line);background:#1e2321}
+.mast-inner,.wrap {max-width:1408px;margin:auto;padding-inline:48px}
+.mast-inner {min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand {display:flex;align-items:center;gap:12px;font-size:20px;font-weight:750;letter-spacing:-.045em}
+.mark {height:32px;width:32px;background:var(--mint);color:#193126;display:flex;justify-content:center;align-items:center;gap:3px;border-radius:5px}
+.mark i {width:3px;background:currentColor;border-radius:2px}
+.mark i:nth-child(1),.mark i:nth-child(4) {height:8px}
+.mark i:nth-child(2) {height:17px}
+.mark i:nth-child(3) {height:12px}
+.clock,.eyebrow,.mono,.status,.index {font-family:var(--mono)}
+.clock {font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.clock strong {color:var(--ink);font-size:17px}
+.wrap {padding-top:40px;padding-bottom:36px}
+.hero {display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:30px}
+.eyebrow {text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--muted);font-weight:700}
+h1,h2,h3,p {margin:0}
+h1 {font-size:clamp(32px,4.2vw,59px);line-height:1.04;letter-spacing:-.062em;margin:8px 0 10px}
+.hero p {color:var(--muted);font-size:15px}
+.boundary {border-left:2px solid var(--mint);padding:3px 0 3px 15px;min-width:188px}
+.boundary strong {display:inline-block;margin-top:3px;font:700 25px var(--mono);color:var(--mint)}
+.boundary small {color:var(--muted);margin-left:9px}
+.grid {display:grid;grid-template-columns:minmax(0,1.65fr) minmax(350px,1fr);gap:20px;align-items:start}
+.panel {background:var(--panel);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.panel-head {height:62px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line)}
+.panel-head h2 {font-size:19px;letter-spacing:-.03em}
+.summary {font:11px var(--mono);color:var(--amber);text-align:right}
+.summary.clear {color:var(--mint)}
+.column-head,.row {display:grid;grid-template-columns:69px minmax(0,1fr) 67px 119px 12px;gap:12px;align-items:center}
+.column-head {padding:12px 20px;border-bottom:1px solid var(--line)}
+.row {width:100%;min-height:74px;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:12px 20px}
+.row:last-child {border-bottom:0}
+.row:hover {background:#2e3631}
+.row[aria-pressed="true"] {background:#32342a;box-shadow:inset 3px 0 var(--amber)}
+.time {font-size:17px;font-weight:700}
+.segment {font-size:15px;font-weight:650;line-height:1.28}
+.segment small {display:block;font-size:11px;color:var(--muted);font-weight:500;margin-top:5px}
+.duration {font-size:13px;color:var(--muted)}
+.status {font-size:10px;white-space:nowrap;width:max-content;border:1px solid #496555;background:#293d32;color:var(--mint);border-radius:4px;padding:4px 6px}
+.status.pending {color:var(--amber);background:#423526;border-color:#705735}
+.status.fixed {color:#d7ddd8;background:#343c38;border-color:#59675f}
+.arrow {color:var(--muted)}
+.detail .panel-head {height:50px}
+.detail-body {padding:19px 20px 20px}
+.detail h2 {font-size:25px;line-height:1.1;letter-spacing:-.045em;margin-bottom:10px}
+.timing {display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0 13px;padding:11px 0;border-block:1px solid var(--line)}
+.timing strong {display:block;font:700 15px var(--mono);margin-top:5px}
+.note {color:var(--muted);font-size:13px;line-height:1.45}
+.options {margin-top:16px}
+.options h3 {font-size:14px;margin-bottom:8px}
+.option {display:grid;grid-template-columns:17px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;padding:9px 10px;margin:0 0 6px;border:1px solid var(--line);border-radius:6px;background:#232926;text-align:left}
+.option[aria-pressed="true"] {border-color:#7fa992;background:#2a3a30}
+.option:hover {border-color:var(--muted)}
+.radio {width:14px;height:14px;border-radius:50%;border:1px solid var(--muted);display:grid;place-items:center}
+.option[aria-pressed="true"] .radio::after {content:"";width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.option strong {font-size:12px;display:block;line-height:1.25}
+.option small {color:var(--muted);font-size:11px}
+.option .mono {font-size:12px;color:var(--muted)}
+.action {display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.primary,.secondary {border-radius:5px;font-size:13px;font-weight:750;padding:9px 13px}
+.primary {background:var(--mint);color:#172a20;border:1px solid var(--mint)}
+.primary:disabled {opacity:.55;cursor:default}
+.secondary {border:1px solid var(--line);background:var(--surface)}
+.primary:not(:disabled):hover,.secondary:hover {filter:brightness(1.18)}
+.feedback {font-size:12px;color:var(--amber);line-height:1.45;margin-top:8px}
+.feedback:empty {display:none}
+.feedback.success {color:var(--mint)}
+.foot {display:flex;justify-content:space-between;gap:12px;color:var(--muted);margin-top:15px;font:11px var(--mono)}
+@media(max-width:1000px) and (min-width:761px) {
+  .mast-inner,.wrap {padding-inline:24px}
+  .column-head,.row {grid-template-columns:50px minmax(0,1fr) 43px 94px;gap:7px;padding-inline:12px}
+  .arrow {display:none}
+}
+@media(max-width:760px) {
+  .mast-inner,.wrap {padding-inline:16px}
+  .mast-inner {min-height:58px}
+  .wrap {padding-top:20px}
+  .hero {display:block;margin-bottom:16px}
+  h1 {margin:6px 0 7px}
+  .hero p {font-size:13px}
+  .boundary {margin-top:13px;padding-left:9px;display:flex;align-items:center;gap:8px}
+  .boundary strong {font-size:15px;margin-top:0}
+  .boundary small {margin-left:0}
+  .grid {grid-template-columns:minmax(0,1fr);gap:13px}
+  .panel-head {height:47px;padding-inline:12px}
+  .panel-head h2 {font-size:16px}
+  .column-head {display:none}
+  .row {grid-template-columns:47px minmax(0,1fr) 38px 8px;gap:3px 8px;padding:8px 11px;min-height:62px}
+  .row .status {grid-column:2;grid-row:2;padding:2px 4px}
+  .row .duration {grid-column:3;grid-row:1}
+  .row .arrow {grid-column:4;grid-row:1 / span 2}
+  .row .segment {grid-column:2;grid-row:1;font-size:13px}
+  .row .segment small {display:none}
+  .time {font-size:14px}
+  .duration {font-size:11px}
+  .detail-body {padding:14px}
+  .detail h2 {font-size:23px}
+  .detail {scroll-margin-top:8px}
+  .foot {font-size:10px}
+}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="mast-inner">
+    <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Switchboard</div>
+    <div class="clock">STUDIO TIME <strong>18:42</strong></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow">Studio handover</div>
+      <h1>Evening changeover</h1>
+      <p>Confirm what’s ready before the news handoff.</p>
+    </div>
+    <div class="boundary"><div class="eyebrow">Fixed boundary</div><strong>19:00</strong><small>18 min away</small></div>
+  </div>
+  <div class="grid">
+    <section class="panel" aria-labelledby="rundown-title">
+      <div class="panel-head"><h2 id="rundown-title">On-air rundown</h2><span class="summary" id="summary" role="status"></span></div>
+      <div class="column-head eyebrow" aria-hidden="true"><span>Start</span><span>Segment</span><span>Length</span><span>Readiness</span></div>
+      <div id="rows"></div>
+    </section>
+    <section class="panel detail" aria-labelledby="segment-title" id="detail">
+      <div class="panel-head"><span class="eyebrow">Segment detail</span><span class="eyebrow" id="position"></span></div>
+      <div class="detail-body" id="detail-body"></div>
+    </section>
+  </div>
+  <footer class="foot"><span>EVENING SERVICE</span><span>All times in studio time</span></footer>
+</main>
+<script>
+const rundown = [
+  {start:'18:43', title:'East Market weather', seconds:45, state:'Ready', note:'The weather bulletin is ready for air.'},
+  {start:'18:44', title:'Harbor ferry suspension notice', seconds:80, state:'Ready', sub:'Must air before 18:50', note:'Must air before 18:50. At its scheduled time it ends at 18:45:20.'},
+  {start:'18:46', title:'Mara Chen on the night bus pilot', seconds:330, state:'Awaiting audio', note:'Interview audio is still missing. The slot runs until the 18:52 North Jetty recordings.'},
+  {start:'18:52', title:'Listener recordings from North Jetty', seconds:190, state:'Ready', note:'The listener recordings are ready for air. The next scheduled segment is station identification at 19:00.'},
+  {start:'19:00', title:'Station identification and news handoff', seconds:30, state:'Fixed boundary', note:'Keep the station identification at 19:00 for the news handoff.'}
+];
+const replacements = [
+  {title:'Depot shift before dawn', seconds:225, state:'Ready', note:'Studio recording ready for air. Replaces Mara Chen on the night bus pilot in the 18:46 slot.'},
+  {title:'West platforms accessibility call-in', seconds:450, state:'Ready'}
+];
+let selected = 2;
+let draft = null;
+let changed = false;
+let feedback = '';
+let success = false;
+const rows = document.querySelector('#rows');
+const detail = document.querySelector('#detail');
+const body = document.querySelector('#detail-body');
+const summary = document.querySelector('#summary');
+
+function duration(seconds) {
+  return Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2, '0');
+}
+function endAt(start, seconds) {
+  const [hour, minute] = start.split(':').map(Number);
+  const total = hour * 3600 + minute * 60 + seconds;
+  return [Math.floor(total / 3600), Math.floor(total / 60) % 60, total % 60]
+    .map(part => String(part).padStart(2, '0')).join(':');
+}
+function segmentAt(index) {
+  const original = rundown[index];
+  return index === 2 && changed
+    ? {...original, ...replacements[0], sub:'Revised end · ' + endAt(original.start, replacements[0].seconds)}
+    : original;
+}
+function badge(state) {
+  const style = state === 'Awaiting audio' ? 'pending' : state === 'Fixed boundary' ? 'fixed' : '';
+  return '<span class="status ' + style + '">' + state + '</span>';
+}
+function fits(index, replacement) {
+  const start = rundown[index].start;
+  return endAt(start, replacement.seconds) <= rundown[index + 1].start + ':00';
+}
+function render() {
+  summary.textContent = changed ? 'Ready for handoff' : '1 segment needs attention';
+  summary.classList.toggle('clear', changed);
+  rows.innerHTML = rundown.map((_, index) => {
+    const segment = segmentAt(index);
+    return `<button class="row" data-row="${index}" aria-pressed="${selected === index}">
+      <span class="time mono">${segment.start}</span>
+      <span class="segment">${segment.title}${segment.sub ? '<small>' + segment.sub + '</small>' : ''}</span>
+      <span class="duration mono">${duration(segment.seconds)}</span>
+      ${badge(segment.state)}
+      <span class="arrow" aria-hidden="true">›</span>
+    </button>`;
+  }).join('');
+  const segment = segmentAt(selected);
+  document.querySelector('#position').textContent = '0' + (selected + 1) + ' / 05';
+  body.innerHTML = `
+    <h2 id="segment-title" tabindex="-1">${segment.title}</h2>
+    ${badge(segment.state)}
+    <div class="timing">
+      <div><span class="eyebrow">Start</span><strong>${segment.start}</strong></div>
+      <div><span class="eyebrow">Duration</span><strong>${duration(segment.seconds)}</strong></div>
+      <div><span class="eyebrow">End</span><strong>${endAt(segment.start, segment.seconds)}</strong></div>
+    </div>
+    <p class="note">${segment.note}</p>
+    ${selected === 2 && !changed ? `<div class="options"><h3>Replacement options</h3>
+      ${replacements.map((replacement, index) => `<button class="option" data-option="${index}" aria-pressed="${draft === index}">
+        <span class="radio" aria-hidden="true"></span><span><strong>${replacement.title}</strong><small>${fits(selected, replacement) ? 'Ready · Fits this slot' : 'Backup · Too long for this slot'}</small></span>
+        <span class="mono">${duration(replacement.seconds)}</span></button>`).join('')}</div>` : ''}
+    <p role="status" class="feedback${success ? ' success' : ''}">${feedback}</p>
+    <div class="action">
+      ${selected === 2 ? changed
+        ? '<button class="secondary" id="undo">Undo replacement</button>'
+        : '<button class="primary" id="apply"' + (draft === null ? ' disabled' : '') + '>Apply replacement</button>'
+        : ''}
+      ${selected < rundown.length - 1 ? '<button class="secondary" id="next">Next segment <span aria-hidden="true">→</span></button>' : ''}
+    </div>`;
+}
+function openSegment(index) {
+  selected = index;
+  feedback = '';
+  render();
+  document.querySelector('#segment-title').focus({preventScroll:true});
+  if (matchMedia('(max-width:760px)').matches) detail.scrollIntoView({block:'start'});
+}
+rows.addEventListener('click', event => {
+  const row = event.target.closest('[data-row]');
+  if (row) openSegment(Number(row.dataset.row));
+});
+body.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button) return;
+  if (button.id === 'next') {
+    openSegment(selected + 1);
+    return;
+  }
+  let focus = '#segment-title';
+  if (button.hasAttribute('data-option')) {
+    const index = Number(button.dataset.option);
+    const option = replacements[index];
+    const end = endAt(rundown[selected].start, option.seconds);
+    success = false;
+    if (fits(selected, option)) {
+      draft = index;
+      success = true;
+      feedback = 'Preview: ends at ' + end + '. Apply to update the rundown.';
+    } else {
+      feedback = 'Ends at ' + end + ', 1:30 into the 18:52 North Jetty slot. ' +
+        (draft === null ? 'The scheduled interview stays in place.' : 'Your Depot shift selection is still active.');
+    }
+    focus = '[data-option="' + index + '"]';
+  } else if (button.id === 'apply' && draft !== null && fits(selected, replacements[draft])) {
+    changed = true;
+    draft = null;
+    success = true;
+    feedback = 'Replacement applied to the 18:46 slot.';
+  } else if (button.id === 'undo') {
+    changed = false;
+    success = true;
+    feedback = 'Original interview restored. Audio is still pending.';
+  }
+  render();
+  document.querySelector(focus).focus({preventScroll:true});
+});
+render();
+</script>
+</body>
+</html>

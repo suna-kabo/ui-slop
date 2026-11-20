@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchboard · Evening changeover</title>
+<style>
+:root{color-scheme:light;--paper:#f4f0e8;--surface:#fcf9f2;--ink:#261d20;--muted:#665b5c;--rule:#d9d0c5;--red:#a22e32;--wine:#311e25;--green:#335846;--amber:#83501b;--wash:#f5e5d5}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 system-ui,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #a22e32;outline-offset:3px;position:relative;z-index:1}
+.frame{width:min(1280px,calc(100% - 96px));margin:auto}.mast{border-top:5px solid var(--red);border-bottom:1px solid var(--rule)}.mast .frame{height:63px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:19px;font-weight:850;letter-spacing:-.65px;display:flex;align-items:center;gap:11px}.mark{display:flex;align-items:center;gap:3px;height:22px;color:var(--red)}.mark i{width:3px;background:currentColor;height:10px}.mark i:nth-child(2){height:18px}.mark i:nth-child(3){height:24px}.mark i:nth-child(4){height:14px}.mast time{font:700 15px ui-monospace,monospace}.mast small{color:var(--muted);margin-right:9px}
+.intro{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:35px 0 29px;border-bottom:2px solid var(--ink)}h1,h2,h3,p{margin:0}.intro h1{font-family:Georgia,serif;font-size:clamp(37px,5vw,72px);font-weight:500;line-height:.98;letter-spacing:-.065em}.count{display:flex;align-items:center;gap:15px;padding-left:19px;border-left:1px solid var(--rule);flex-shrink:0}.count strong{font:500 45px/.9 Georgia,serif;color:var(--red);letter-spacing:-.06em}.count small{display:block;color:var(--muted);font-size:13px}.count b{font-size:14px}
+.grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(340px,1fr);gap:30px;margin:24px 0 34px;align-items:start}.rundown-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 12px}.rundown-head h2{font-size:19px;letter-spacing:-.4px}.summary{font-size:13px;color:var(--amber);font-weight:700}.summary.clear{color:var(--green)}.columns,.cue{display:grid;grid-template-columns:77px minmax(0,1fr) 60px 111px;gap:8px;align-items:center}.columns{padding:8px 14px;color:var(--muted);font-size:12px;border-bottom:1px solid var(--rule)}.columns span:nth-child(3),.duration{text-align:right}.columns span:last-child{text-align:right}.cue{border:0;border-bottom:1px solid var(--rule);background:transparent;width:100%;min-height:79px;padding:13px 14px;text-align:left;position:relative}.cue:hover{background:#eee7dc}.cue[aria-expanded=true]{background:var(--surface);box-shadow:inset 4px 0 var(--red)}.cue.waiting[aria-expanded=true]{background:var(--wash)}.cue.fixed{border-top:2px solid var(--wine);margin-top:10px;background:#ebe3dd}.cue.fixed[aria-expanded=true]{box-shadow:inset 4px 0 var(--red);background:#e8dbd5}
+.clock,.duration,.metrics dd,.choice .length{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}.clock{font-size:20px;font-weight:700;letter-spacing:-.07em}.title{display:block;font-weight:720;line-height:1.25;font-size:15px}.note{display:block;margin-top:4px;color:var(--muted);font-size:12px}.cue .state{font-size:12px;justify-self:end;text-align:right}.state{font-weight:700;color:var(--green)}.state.waiting{color:var(--amber)}.state.fixed{color:var(--wine)}.state::before{content:"";display:inline-block;width:6px;height:6px;margin-right:6px;border-radius:50%;background:currentColor;vertical-align:2px}.state.fixed::before{border-radius:0;transform:rotate(45deg)}
+.inspector{background:var(--surface);border:1px solid var(--rule);min-width:0}.detail-top{background:var(--wine);color:#fff7ed;padding:20px 23px 19px}.detail-top .state{color:#c3dec9;font-size:13px}.detail-top .state.waiting{color:#ffd398}.detail-top .state.fixed{color:#f6d8c8}.detail-top h2{font:500 clamp(25px,2.55vw,38px)/1.03 Georgia,serif;letter-spacing:-.038em;margin:9px 0 17px;max-width:19ch}.metrics{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-top:1px solid #775f66;padding-top:11px;gap:9px}.metrics dt{font-size:12px;color:#e0cbd0}.metrics dd{margin:2px 0 0;font-size:17px}.detail-body{padding:18px 23px}.detail-body h3{font-size:16px;margin-bottom:8px}.detail-body p{font-size:13px;color:var(--muted)}.rail{position:relative;height:8px;margin-top:12px;background:repeating-linear-gradient(135deg,#eee3da 0 4px,#e5d9cf 4px 6px);border-right:2px solid var(--ink)}.rail i{display:block;height:100%;background:var(--green)}.rail.waiting i{background:#ab6a37}.rail{margin-bottom:14px}.choice{border:1px solid var(--rule);background:transparent;text-align:left;display:grid;grid-template-columns:1fr auto;gap:1px 10px;width:100%;padding:10px 11px;margin-top:8px}.choice:hover{border-color:var(--red)}.choice strong{font-size:13px}.choice span:last-child{grid-column:1/-1;font-size:12px}.choice.primary{background:var(--red);color:#fff;border-color:var(--red)}.choice.primary:hover{background:#85252a}.length{font-size:12px}.feedback:empty{display:none}.feedback{background:var(--wash);border-left:3px solid #a16536;padding:9px 10px;margin-top:10px}.changed{color:var(--green)!important}.detail-foot{border-top:1px solid var(--rule);padding:11px 23px;display:flex;align-items:center;justify-content:space-between;gap:12px}.link{background:none;border:0;padding:8px 0;min-height:36px;font-size:13px;font-weight:750;text-align:left;color:var(--red)}.link:hover{text-decoration:underline}.next{margin-left:auto;text-align:right}
+@media(max-width:900px){.frame{width:calc(100% - 40px)}.grid{gap:18px;grid-template-columns:minmax(0,1.3fr) minmax(305px,1fr)}.columns,.cue{grid-template-columns:55px minmax(0,1fr) 42px 75px;gap:6px;padding-inline:10px}}
+@media(max-width:720px){.frame{width:calc(100% - 32px)}.mast .frame{height:52px}.intro{display:block;padding:20px 0 14px}.intro h1{font-size:41px}.count{margin-top:12px;border:0;padding:0;gap:8px}.count strong{font:700 16px system-ui;letter-spacing:0}.count small,.count b{display:inline;font-size:12px}.count small{margin-right:4px}.grid{display:block;margin:14px 0 22px}.rundown-head{border-bottom:1px solid var(--rule);padding-bottom:6px}.rundown-head{margin-bottom:6px}.rundown-head h2{font-size:17px}.summary{font-size:12px}.columns{display:none}.cue{min-height:61px;padding-block:9px}.clock{font-size:17px}.title{font-size:13px}.cue .state,.note,.duration{font-size:11px}.detail-top{padding:13px 14px 12px}.detail-top h2{font-size:27px;margin:5px 0 9px}.metrics{padding-top:7px}.metrics dd{font-size:15px}.detail-body{padding:12px 14px}.rail{margin-bottom:12px}.detail-foot{padding:5px 14px}.link{min-height:44px}.choice{min-height:49px}.inspector{margin-bottom:4px}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="frame"><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Switchboard</div><div><small>Studio time</small><time>18:42</time></div></div></header>
+<main class="frame">
+  <header class="intro"><h1>Evening changeover</h1><div class="count"><strong>18 min</strong><div><small>to news handoff</small> <b>19:00</b></div></div></header>
+  <div class="grid">
+    <section aria-labelledby="rundown-title">
+      <div class="rundown-head"><h2 id="rundown-title">On-air rundown</h2><p id="summary" class="summary" role="status"></p></div>
+      <div class="columns" aria-hidden="true"><span>Start</span><span>Segment</span><span>Length</span><span>Readiness</span></div>
+      <div id="rundown"></div>
+    </section>
+    <div id="side"></div>
+  </div>
+</main>
+<script>
+const original = [
+  {start:1123,title:'East Market weather',seconds:45,state:'Ready'},
+  {start:1124,title:'Harbor ferry suspension notice',seconds:80,state:'Ready',note:'Must air before 18:50'},
+  {start:1126,title:'Mara Chen on the night bus pilot',seconds:330,state:'Awaiting audio'},
+  {start:1132,title:'Listener recordings from North Jetty',seconds:190,state:'Ready'},
+  {start:1140,title:'Station identification and news handoff',seconds:30,state:'Fixed boundary'}
+];
+const depot = {title:'Depot shift before dawn',seconds:225,state:'Ready',note:'Replacement'};
+const backup = {title:'West platforms accessibility call-in',seconds:450};
+const mobile = matchMedia('(max-width:720px)');
+const rundown = document.querySelector('#rundown');
+const side = document.querySelector('#side');
+const summary = document.querySelector('#summary');
+let active = 2;
+let changed = false;
+try { changed = localStorage.getItem('switchboard-depot') === 'yes'; } catch {}
+const digits = value => String(value).padStart(2,'0');
+const duration = seconds => Math.floor(seconds / 60) + ':' + digits(seconds % 60);
+function time(seconds, precise = false){
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor(seconds / 60) % 60;
+  const remainder = seconds % 60;
+  return digits(hours) + ':' + digits(minutes) + ((precise || remainder) ? ':' + digits(remainder) : '');
+}
+const slot = index => changed && index === 2 ? {...original[index],...depot} : original[index];
+const kind = item => item.state === 'Awaiting audio' ? 'waiting' : item.state === 'Fixed boundary' ? 'fixed' : 'ready';
+
+function detail(index){
+  const item = slot(index);
+  const start = item.start * 60;
+  const next = original[index + 1];
+  const nextStart = next ? next.start * 60 : null;
+  const editable = index === 2;
+  const fits = editable && start + depot.seconds <= nextStart;
+  return `<section class="inspector" id="inspector" aria-labelledby="detail-title">
+    <header class="detail-top">
+      <span class="state ${kind(item)}">${item.state}</span>
+      <h2 id="detail-title" tabindex="-1">${item.title}</h2>
+      <dl class="metrics"><div><dt>Starts</dt><dd>${time(start)}</dd></div><div><dt>Duration</dt><dd>${duration(item.seconds)}</dd></div><div><dt>${kind(item)==='waiting'?'Planned end':'Ends'}</dt><dd>${time(start+item.seconds,true)}</dd></div></dl>
+    </header>
+    <div class="detail-body">
+      ${editable ? `
+        <h3>${changed ? 'Replacement on rundown' : 'Replace this segment'}</h3>
+        <p class="${changed?'changed':''}">${changed ? duration(nextStart-start-item.seconds)+' clear before North Jetty at '+time(nextStart)+'.' : duration(nextStart-start)+' available before North Jetty at '+time(nextStart)+'.'}</p>
+        <div class="rail ${kind(item)}" aria-hidden="true"><i style="width:${100*item.seconds/(nextStart-start)}%"></i></div>
+        ${changed ? '' : `
+          <button class="choice primary" data-action="replace" ${fits ? "" : "disabled"}><strong>${depot.title}</strong><span class="length">${duration(depot.seconds)}</span><span>Use studio recording · ends ${time(start+depot.seconds,true)}</span></button>
+          <button class="choice" data-action="backup"><strong>${backup.title}</strong><span class="length">${duration(backup.seconds)}</span><span>Check backup timing</span></button>
+          <p class="feedback" role="status"></p>`}`
+      : `<p>${item.note ? item.note+'.' : next ? 'Next cue at '+time(nextStart)+'.' : 'Fixed start for the station identification and news handoff.'}</p>`}
+    </div>
+    <footer class="detail-foot">
+      ${changed && editable ? '<button class="link" data-action="undo">↶ Restore Mara interview</button>' : '<button class="link" data-action="close">Close detail</button>'}
+      ${next ? '<button class="link next" data-action="next">Next: '+time(nextStart)+' →</button>' : ''}
+    </footer>
+  </section>`;
+}
+function render(){
+  const inline = mobile.matches;
+  summary.classList.toggle('clear',changed);
+  summary.textContent = changed ? 'All cuts ready' : '1 cut awaiting audio';
+  rundown.innerHTML = original.map((_,index)=>{
+    const item = slot(index);
+    const selected = active === index;
+    const contents = `<button type="button" id="cue-${index}" class="cue ${kind(item)}" data-cue="${index}" aria-expanded="${selected}" ${selected?'aria-controls="inspector"':''}>
+      <span class="clock">${time(item.start*60)}</span><span><span class="title">${item.title}</span>${item.note ? '<span class="note">'+item.note+'</span>' : ''}</span><span class="duration">${duration(item.seconds)}</span><span class="state ${kind(item)}">${item.state}</span>
+    </button>`;
+    return contents + (inline && selected ? detail(index) : '');
+  }).join('');
+  side.innerHTML = !inline && active !== null ? detail(active) : '';
+}
+function focusDetail(){ document.querySelector('#detail-title')?.focus(); }
+function save(){
+  try { localStorage.setItem('switchboard-depot', changed ? 'yes' : 'no'); } catch {}
+}
+document.querySelector('main').addEventListener('click',event=>{
+  const button = event.target.closest('button');
+  if(!button) return;
+  if(button.dataset.cue !== undefined){
+    const index = Number(button.dataset.cue);
+    active = active === index ? null : index;
+    render();
+    if(active === null) document.querySelector('#cue-'+index).focus();
+    else focusDetail();
+    return;
+  }
+  switch(button.dataset.action){
+    case 'backup': {
+      const end = original[2].start*60 + backup.seconds;
+      const feedback = document.querySelector('.feedback');
+      feedback.textContent = 'Backup would end at '+time(end,true)+', overlapping North Jetty by '+duration(end-original[3].start*60)+'. Mara stays in the 18:46 slot.';
+      feedback.scrollIntoView({block:'nearest'});
+      break;
+    }
+    case 'replace':
+    case 'undo':
+      changed = button.dataset.action === 'replace';
+        save();
+      render();
+      focusDetail();
+      break;
+    case 'next':
+      active += 1;
+      render();
+      focusDetail();
+      break;
+    case 'close': {
+      const index = active;
+      active = null;
+      render();
+      document.querySelector('#cue-'+index).focus();
+      break;
+    }
+  }
+});
+mobile.addEventListener('change',render);
+render();
+</script>
+</body>
+</html>

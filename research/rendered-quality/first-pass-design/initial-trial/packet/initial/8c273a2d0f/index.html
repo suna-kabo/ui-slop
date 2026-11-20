@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f1e7">
+<title>Fold Fair · Zine guide</title>
+<style>
+:root{--paper:#f5f1e7;--ink:#22221e;--blue:#203fb4;--yellow:#eafd80;--line:#b8b5a9;font:16px Arial,sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #3659d9;outline-offset:4px}h1,h2,h3,p{margin:0}.frame{width:min(1240px,calc(100% - 100px));margin:auto}
+.top{height:68px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:-.04em;font-size:21px}.mark{display:block;width:21px;height:22px;background:var(--blue);clip-path:polygon(0 0,66% 0,100% 33%,100% 100%,0 100%,0 0,66% 0,66% 33%,100% 33%,66% 0)}.short-button{display:flex;align-items:center;gap:10px;min-height:42px;border:1px solid var(--ink);background:transparent;padding:0 12px;font-weight:700}.count{background:var(--yellow);min-width:23px;text-align:center;padding:3px 4px}
+.hero{background:var(--blue);color:var(--paper);position:relative;isolation:isolate;overflow:hidden;padding:34px 0 38px}.hero-inner{position:relative}.hero h1{font:normal clamp(78px,9.8vw,150px)/.85 Georgia,serif;letter-spacing:-.088em;position:relative;z-index:1}.hero p{margin-top:22px;font-size:17px;max-width:32ch;line-height:1.35;position:relative;z-index:1}.print{position:absolute;width:255px;height:198px;right:52px;top:50%;transform:translateY(-50%) rotate(-12deg);color:var(--ink);background:var(--yellow);box-shadow:13px 14px 0 #122570;display:grid;place-content:center;text-align:center;border:1px solid var(--ink)}.print:before{content:"";position:absolute;inset:10px;border:1px solid currentColor}.print:after{content:"";position:absolute;inset:16px;border:1px dashed currentColor}.print span:first-child{font:italic 74px/.8 Georgia,serif;letter-spacing:-.12em;padding-right:7px}.print span+span{font:bold 12px Arial,sans-serif;letter-spacing:.15em;margin-top:16px}
+main{padding:34px 0 54px}.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px}.section-head h2{font:normal 41px/.95 Georgia,serif;letter-spacing:-.055em}.total{font-size:13px;color:#525148}.topics{display:flex;gap:8px;flex-wrap:wrap;padding:0 0 17px;border-bottom:1px solid var(--line);margin-bottom:18px}.topic{min-height:42px;background:transparent;border:1px solid var(--line);padding:0 15px;font-size:14px}.topic[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}.topic:hover:not([aria-pressed=true]),.short-button:hover,.back:hover{background:#e7e1d4}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px}.zine{width:100%;text-align:left;display:block;padding:0;background:none;border:0}.art{display:grid;place-items:center;overflow:hidden;background:var(--mat);height:clamp(210px,20vw,300px);padding:18px}.cover{width:auto;height:100%;max-width:100%;aspect-ratio:3/4;position:relative;isolation:isolate;overflow:hidden;box-shadow:4px 6px 0 #25231e43;container-type:inline-size}.cover canvas{display:block;width:100%;height:100%}.cover-title{position:absolute;inset:7% 8% auto;color:var(--cover-ink);font:900 16cqw/.83 Arial,sans-serif;letter-spacing:-.07em;white-space:pre-line}.night .cover-title{font-weight:400;letter-spacing:.04em;font-size:13cqw}.botany .cover-title{font:italic bold 15cqw/.89 Georgia,serif}.table .cover-title{font:bold 12cqw/.93 Georgia,serif;letter-spacing:-.055em}.wet .cover-title{inset:auto 8% 8%;font-size:17cqw}.shelves .cover-title{font:900 15cqw/.87 Arial,sans-serif}.antenna .cover-title{font:900 italic 16cqw/.82 Arial,sans-serif}.zine:hover .cover{box-shadow:6px 8px 0 #25231e60}.zine:hover h3{text-decoration:underline;text-underline-offset:3px}.card-title{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:11px 0 8px}.card-title h3{font:normal 25px/1.02 Georgia,serif;letter-spacing:-.045em}.price{font-size:15px;font-weight:bold;flex:none}.meta{display:flex;align-items:center;gap:8px;font-size:13px}.table-tag{display:inline-block;border:1px solid var(--line);padding:4px 6px;white-space:nowrap;font-size:12px}.saved-flag{margin-left:auto;color:var(--blue);font-weight:bold}
+dialog{padding:0;border:1px solid var(--ink);background:var(--paper);color:var(--ink);width:min(800px,calc(100% - 40px));max-height:calc(100% - 36px);overscroll-behavior:contain}dialog::backdrop{background:#181b35b5}body:has(dialog[open]){overflow:hidden}.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line)}.back{border:0;background:transparent;min-height:44px;padding:0 8px;font-weight:700}.detail{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:24px}.detail .art{height:345px}.description{align-self:center}.description h2,.list-title{font:normal 43px/.95 Georgia,serif;letter-spacing:-.055em}.description p{line-height:1.5;margin:18px 0}.description .meta{margin-top:14px}.description .price{margin-left:4px}.save{min-height:46px;background:var(--blue);color:white;border:1px solid var(--blue);font-weight:bold;padding:0 16px}.save:hover{background:#172e8a}.save[aria-pressed=true]{background:var(--yellow);color:var(--ink);border-color:var(--ink)}#shortlist{width:min(570px,calc(100% - 40px))}.list-body{padding:24px}.list-body p{margin-top:14px;line-height:1.45}.saved-list{list-style:none;padding:0;margin:16px 0 0}.saved-list li{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;border-top:1px solid var(--line);padding:12px 0}.saved-list h3{font:normal 23px/1.05 Georgia,serif;margin-bottom:7px}.remove{min-height:44px;border:1px solid var(--line);background:none;padding:0 10px}.remove:hover{background:#e7e1d4}
+@media(max-width:780px){.frame{width:calc(100% - 40px)}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.print{right:20px;width:165px;height:135px}.print span:first-child{font-size:57px}.hero h1{font-size:clamp(68px,12vw,96px)}}
+@media(max-width:520px){.frame{width:calc(100% - 32px)}.top{height:59px}.hero{padding:28px 0}.hero h1{font-size:clamp(56px,17vw,82px)}.hero p{font-size:14px;max-width:24ch;margin-top:16px}.print{width:71px;height:68px;right:9px;top:auto;bottom:0;transform:rotate(-12deg);box-shadow:5px 6px 0 #122570}.print:before{inset:5px}.print:after{display:none}.print span:first-child{font-size:38px;padding-right:3px}.print span+span{display:none}main{padding-top:25px}.section-head h2{font-size:34px}.topics{gap:5px;margin-bottom:12px;padding-bottom:12px}.topic{padding:0 9px;font-size:13px}.grid{gap:22px 10px}.art{height:auto;aspect-ratio:1;padding:12px}.card-title{gap:4px;margin:9px 0 6px}.card-title h3{font-size:20px}.price{font-size:13px}.meta{font-size:11px;gap:5px;flex-wrap:wrap}.table-tag{font-size:11px;padding:3px 5px}.detail{grid-template-columns:1fr;gap:16px;padding:14px}.detail .art{height:220px;aspect-ratio:auto}.description h2,.list-title{font-size:34px}.description p{margin:12px 0}.dialog-head{padding:6px 10px}.list-body{padding:16px}}
+</style>
+</head>
+<body>
+<header class="frame top">
+<div class="brand"><i class="mark" aria-hidden="true"></i> Fold Fair</div>
+<button class="short-button" id="open-list">Shortlist <span id="count" class="count">0</span></button>
+</header>
+<section class="hero" aria-labelledby="title"><div class="frame hero-inner">
+<h1 id="title">Fold Fair</h1>
+<p>Find your next read and the table to pick it up from.</p>
+<div class="print" aria-hidden="true"><span>FF</span><span>INDEPENDENT PRINT</span></div>
+</div></section>
+<main class="frame">
+<div class="section-head"><h2>Browse zines</h2><span class="total" id="total" aria-live="polite"></span></div>
+<div class="topics" aria-label="Filter by topic" role="group"></div>
+<div class="grid"></div>
+</main>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-head"><button class="back" data-close autofocus>← Back to zines</button></div><div class="detail"></div></dialog>
+<dialog id="shortlist" aria-labelledby="list-title"><div class="dialog-head"><button class="back" data-close autofocus>← Back to zines</button></div><div class="list-body"><h2 class="list-title" id="list-title">Your shortlist</h2><p id="empty">Save zines as you browse to keep their table numbers handy.</p><ul class="saved-list"></ul></div></dialog>
+<script>
+const zines = [
+  {id:'night',title:'Night Windows',topic:'Photography',price:12,table:'B4',detail:'24 black-and-white photographs of lit windows on the last tram route.',cover:'NIGHT\nWINDOWS',mat:'#d7d5cd',ink:'#f9f0d3'},
+  {id:'botany',title:'Bus Stop Botany',topic:'Field notes',price:8,table:'C7',detail:'Fold-out guide to five plants found at the Crosstown terminus.',cover:'Bus Stop\nBotany',mat:'#dfdfc6',ink:'#1e452c'},
+  {id:'table',title:'Three Ways to Set a Table',topic:'Comics',price:9,table:'A2',detail:'Three wordless comics about dinner with neighbors.',cover:'Three Ways\nto Set a Table',mat:'#eed9ce',ink:'#57244c'},
+  {id:'wet',title:'Wet Asphalt',topic:'Photography',price:16,table:'B9',detail:'Large-format reflections captured after a summer storm.',cover:'WET\nASPHALT',mat:'#d8dbe3',ink:'#f1ecab'},
+  {id:'shelves',title:'Free Shelves',topic:'Field notes',price:6,table:'C3',detail:'Annotated map of street libraries and a page for new entries.',cover:'FREE\nSHELVES',mat:'#ebe1cd',ink:'#242638'},
+  {id:'antenna',title:'Antenna Club',topic:'Comics',price:11,table:'A5',detail:'Short comic about a radio club losing its rooftop access.',cover:'ANTENNA\nCLUB',mat:'#dfd6e5',ink:'#302059'}
+];
+function paint(canvas,id) {
+  const ctx=canvas.getContext('2d');
+  const rect=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x,y,w,h)};
+  const line=(points,c,w=1)=>{ctx.beginPath();ctx.moveTo(...points[0]);for(const pt of points.slice(1))ctx.lineTo(...pt);ctx.strokeStyle=c;ctx.lineWidth=w;ctx.stroke()};
+  const oval=(x,y,rx,ry,a,c)=>{ctx.beginPath();ctx.ellipse(x,y,rx,ry,a,0,Math.PI*2);ctx.fillStyle=c;ctx.fill()};
+  let state=27;
+  const random=()=>{state=(state*16807)%2147483647;return state/2147483647};
+  if(id==='night'){
+    rect(0,0,240,320,'#222327');
+    for(let i=0;i<45;i++)rect(random()*240,88+random()*232,8+random()*100,1+random()*70,i%2?'#303034':'#292a2e');
+    [[24,129,55,78],[127,113,72,96],[85,238,63,57],[174,244,42,58]].forEach(([x,y,w,h],i)=>{
+      rect(x-5,y-6,w+10,h+12,'#121319');rect(x,y,w,h,i%2?'#a4a499':'#d2c8a7');
+      for(let j=0;j<34;j++)rect(x+random()*w,y+random()*h,2+random()*8,1+random()*5,i%2?'#85857c':'#c0b897');
+      rect(x+w*.48,y,4,h,'#323234');rect(x,y+h*.39,w,4,'#323234');rect(x-4,y+h,w+8,4,'#696760');
+    });
+  }
+  if(id==='botany'){
+    rect(0,0,240,320,'#e7e399');
+    for(let i=0;i<5;i++){
+      const root=51+i*34, tilt=(i-2)*19, top=113+(i%3)*26;
+      line([[root,295],[root+tilt/2,220],[root+tilt,top]],'#32513a',2);
+      for(let j=0;j<4;j++){
+        const y=top+22+j*27, x=root+tilt*(295-y)/(295-top);
+        oval(x-10,y,6+i%3,16,-.92,i%2?'#587448':'#335939');
+        oval(x+11,y-9,6,18,.95,i%2?'#32513a':'#7b8c53');
+      }
+      oval(root+tilt,top,7,11,.1,i%2?'#a46138':'#486946');
+    }
+    line([[20,301],[220,301]],'#587448');
+  }
+  if(id==='table'){
+    rect(0,0,240,320,'#efad9b');
+    const purple='#632c53';
+    [92,165,238].forEach((y,i)=>{
+      rect(19,y,202,62,purple);rect(22,y+3,196,56,i===1?'#ecbe9e':'#f7cead');
+      line([[26,y+51],[60,y+19],[181,y+19],[214,y+51]],purple,2);
+      [70,119,169].forEach((x,j)=>{
+        oval(x,y+38,15,8,0,purple);oval(x,y+37,12,6,0,'#f8dcb7');
+        oval(x+2,y+36,5+j%2,3,0,i===0?'#d77e67':purple);
+        line([[x+18,y+33],[x+18,y+43]],purple);
+      });
+      line([[i===1?25:213,y+8],[i===1?67:178,y+21],[i===1?78:165,y+14]],purple,4);
+    });
+  }
+  if(id==='wet'){
+    rect(0,0,240,320,'#18223b');
+    for(let i=0;i<660;i++){
+      const y=random()*226,x=random()*240;
+      const stream=Math.abs(x-(135+(y-110)*.47))<23||Math.abs(x-(57-y*.12))<13;
+      const colors=stream?['#e3bd6a','#bb664d','#f4d782','#836ba5']:['#303754','#354366','#273050','#626584'];
+      rect(x,y,2+random()*(y/13),1+random()*3,colors[i%4]);
+    }
+  }
+  if(id==='shelves'){
+    rect(0,0,240,320,'#ecb55e');
+    for(let i=0;i<10;i++){
+      line([[0,102+i*23],[92,120+i*17],[240,103+i*24]],'#f8d597',4);
+      line([[9+i*24,101],[23+i*23,226],[i*22,320]],'#f8d597',3);
+    }
+    line([[30,265],[76,240],[102,172],[161,192],[197,143]],'#ad493d',3);
+    [[30,265],[102,172],[161,192],[197,143]].forEach(([x,y])=>{
+      oval(x,y,13,13,0,'#293a43');rect(x-6,y-4,12,8,'#f9e2ad');
+      line([[x-8,y-4],[x,y-9],[x+8,y-4]],'#f9e2ad',2);
+    });
+  }
+  if(id==='antenna'){
+    rect(0,0,240,320,'#b3a1db');
+    oval(161,156,63,63,0,'#e7cdab');
+    rect(0,260,240,60,'#302059');rect(34,230,147,45,'#302059');rect(48,239,18,8,'#d3b2d6');rect(81,239,18,8,'#d3b2d6');
+    line([[135,248],[132,110]],'#302059',5);
+    [[103,161,167,126],[98,181,174,141],[91,203,179,158]].forEach(([x,y,a,b])=>line([[x,y],[a,b]],'#302059',4));
+    line([[133,156],[187,232]],'#302059',2);
+  }
+  for(let i=0;i<3100;i++)rect(random()*240,random()*320,1,1,i%2?'#ffffff28':'#00000025');
+}
+const grid=document.querySelector('.grid');
+const topics=document.querySelector('.topics');
+const detail=document.querySelector('#detail');
+const shortlist=document.querySelector('#shortlist');
+const count=document.querySelector('#count');
+const list=document.querySelector('.saved-list');
+const storageKey='fold-fair-shortlist-v1';
+let saved=new Set();
+try {
+  const data=JSON.parse(localStorage.getItem(storageKey));
+  if(Array.isArray(data))saved=new Set(data.filter(id=>zines.some(zine=>zine.id===id)));
+} catch {}
+let topic='All zines';
+function art(zine) {
+  return '<div class="art" aria-hidden="true" style="--mat:'+zine.mat+';--cover-ink:'+zine.ink+'"><div class="cover '+zine.id+'"><canvas width="240" height="320" data-art="'+zine.id+'"></canvas><span class="cover-title">'+zine.cover+'</span></div></div>';
+}
+function drawWithin(element) {
+  element.querySelectorAll('canvas').forEach(canvas=>paint(canvas,canvas.dataset.art));
+}
+function metadata(zine) {
+  return '<span>'+zine.topic+'</span><span class="table-tag">Table '+zine.table+'</span>';
+}
+function renderBrowse() {
+  const shown=zines.filter(zine=>topic==='All zines'||zine.topic===topic);
+  document.querySelector('#total').textContent=shown.length+' zines';
+  grid.innerHTML=shown.map(zine=>'<button class="zine" id="zine-'+zine.id+'" data-zine="'+zine.id+'" aria-label="View '+zine.title+'">'+art(zine)+'<div class="card-title"><h3>'+zine.title+'</h3><span class="price">$'+zine.price+'</span></div><div class="meta">'+metadata(zine)+'<span class="saved-flag">'+(saved.has(zine.id)?'Saved':'')+'</span></div></button>').join('');
+  drawWithin(grid);
+}
+function setSaved(id,value) {
+  if(value)saved.add(id);
+  else saved.delete(id);
+  try { localStorage.setItem(storageKey,JSON.stringify([...saved])); } catch {}
+  count.textContent=saved.size;
+  const card=document.querySelector('#zine-'+id+' .saved-flag');
+  if(card)card.textContent=value?'Saved':'';
+}
+function openDetail(zine) {
+  detail.querySelector('.detail').innerHTML=art(zine)+'<div class="description"><h2 id="detail-title">'+zine.title+'</h2><div class="meta">'+metadata(zine)+'<span class="price">$'+zine.price+'</span></div><p>'+zine.detail+'</p><button class="save"></button></div>';
+  const button=detail.querySelector('.save');
+  function update() {
+    const active=saved.has(zine.id);
+    button.textContent=active?'✓ Saved · Remove':'Save to shortlist';
+    button.setAttribute('aria-pressed',active);
+  }
+  button.addEventListener('click',()=>{setSaved(zine.id,!saved.has(zine.id));update()});
+  update();
+  drawWithin(detail);
+  detail.showModal();
+}
+function renderList() {
+  const entries=zines.filter(zine=>saved.has(zine.id));
+  document.querySelector('#empty').hidden=entries.length>0;
+  list.innerHTML=entries.map(zine=>'<li><div><h3>'+zine.title+'</h3><div class="meta">'+metadata(zine)+'<span class="price">$'+zine.price+'</span></div></div><button class="remove" data-remove="'+zine.id+'" aria-label="Remove '+zine.title+'">Remove</button></li>').join('');
+}
+['All zines','Photography','Field notes','Comics'].forEach(name=>{
+  const button=document.createElement('button');
+  button.className='topic';
+  button.textContent=name;
+  button.setAttribute('aria-pressed',name===topic);
+  button.addEventListener('click',()=>{
+    topic=name;
+    topics.querySelectorAll('button').forEach(filter=>filter.setAttribute('aria-pressed',filter===button));
+    renderBrowse();
+  });
+  topics.append(button);
+});
+grid.addEventListener('click',event=>{
+  const card=event.target.closest('[data-zine]');
+  if(card)openDetail(zines.find(zine=>zine.id===card.dataset.zine));
+});
+document.querySelector('#open-list').addEventListener('click',()=>{renderList();shortlist.showModal()});
+list.addEventListener('click',event=>{
+  const button=event.target.closest('[data-remove]');
+  if(!button)return;
+  const next=button.closest('li').nextElementSibling||button.closest('li').previousElementSibling;
+  const nextId=next?.querySelector('button').dataset.remove;
+  setSaved(button.dataset.remove,false);
+  renderList();
+  const target=nextId?list.querySelector('[data-remove="'+nextId+'"]'):shortlist.querySelector('[data-close]');
+  target.focus();
+});
+document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
+count.textContent=saved.size;
+renderBrowse();
+</script>
+</body>
+</html>

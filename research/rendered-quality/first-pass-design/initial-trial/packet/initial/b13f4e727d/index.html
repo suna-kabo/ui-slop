@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fold Fair — Zine catalogue</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="masthead"><div class="shell top">
+  <div class="brand"><i aria-hidden="true"></i> FOLD FAIR</div>
+  <button id="shortlist" type="button"><span aria-hidden="true">☆</span> Shortlist <b id="saved-count">0</b></button>
+</div></header>
+<main class="shell">
+  <section class="banner" aria-labelledby="fair-title">
+    <div class="intro"><p>THE PRINT FAIR CATALOGUE</p><h1 id="fair-title">Fold Fair<span>.</span></h1><div>Browse independent zines and find the tables you want to visit.</div></div>
+    <div class="hero-art" aria-hidden="true"><div class="sheet back"></div><div class="sheet mid"></div><div class="sheet front"><div class="sun"></div><div class="creases"></div><div class="sheet-fold"></div></div></div>
+  </section>
+  <section class="catalogue" aria-labelledby="catalogue-title">
+    <div class="section-head"><h2 id="catalogue-title">Browse zines</h2><span id="result-count" aria-live="polite"></span></div>
+    <div class="filters" role="group" aria-label="Filter by topic">
+      <button type="button" data-topic="All" aria-pressed="true">All zines</button>
+      <button type="button" data-topic="Photography" aria-pressed="false">Photography</button>
+      <button type="button" data-topic="Field notes" aria-pressed="false">Field notes</button>
+      <button type="button" data-topic="Comics" aria-pressed="false">Comics</button>
+    </div>
+    <div id="rack" class="rack"></div>
+  </section>
+</main>
+<footer class="shell footer"><span>Fold Fair</span><a href="#catalogue-title">Back to zines ↑</a></footer>
+<dialog id="panel" aria-labelledby="panel-title"><div id="panel-content"></div></dialog>
+<p id="announcement" class="sr" role="status"></p>
+</body>
+</html>

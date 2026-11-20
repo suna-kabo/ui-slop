@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fold Fair — Zine directory</title>
+<style>
+:root{--paper:#f5f0e5;--ink:#221e19;--line:#c9beac;--orange:#b53620}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #15678b;outline-offset:4px}button:hover{text-decoration:underline;text-underline-offset:4px}
+.wrap{width:min(1160px,calc(100% - 88px));margin:auto}.masthead{background:#edaa86;border-bottom:1px solid var(--ink)}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #a66a50;min-height:66px;gap:12px}.wordmark{font-size:13px;font-weight:800;letter-spacing:.13em}.saved-button,.close{background:transparent;border:1px solid currentColor;padding:9px 14px;min-height:44px;font-weight:700}.count{margin-left:8px;background:var(--ink);color:var(--paper);display:inline-grid;place-items:center;min-width:23px;height:23px;border-radius:50%;font-size:13px}.hero{display:flex;align-items:end;justify-content:space-between;gap:36px;padding:22px 0 29px}.hero h1{font:bold clamp(74px,9vw,142px)/.9 Georgia,serif;letter-spacing:-.095em;margin:0}.hero p{font:23px/1.22 Georgia,serif;max-width:270px;margin:0 0 3px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--ink);margin:22px 0 22px}.filters{display:flex;gap:9px}.filters button{background:none;border:0;border-bottom:3px solid transparent;padding:12px 10px 10px;min-height:44px;white-space:nowrap}.filters button[aria-pressed=true]{border-color:var(--orange);font-weight:700;color:#a02a17}.result{font-size:13px;color:#544a40;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:33px 22px;padding-bottom:44px}.issue{min-width:0}.card{display:block;width:100%;padding:0;border:0;background:none;text-align:left}.mat{display:grid;place-items:center;background:#eae2d3;border:1px solid #dfd5c5;height:clamp(228px,23vw,322px);padding:21px}.cover{width:auto;height:100%;max-width:100%;aspect-ratio:3/4;position:relative;isolation:isolate;box-shadow:3px 5px 0 #241d1825,8px 10px 16px #49392325;overflow:hidden;container-type:inline-size}.cover canvas{display:block;width:100%;height:100%;position:absolute;inset:0;z-index:-1}.cover-lettering{display:block;position:absolute;left:9%;right:8%;top:7%;font:900 17cqw/.86 Arial,sans-serif;letter-spacing:-.07em;text-transform:uppercase}.night{background:#201f23;color:#fcf1cf}.night .cover-lettering{font-size:17cqw}.botany{background:#cbd28d;color:#203a25}.botany .cover-lettering{font:italic bold 17cqw/.87 Georgia,serif;text-transform:none}.table{background:#df674e;color:#291319}.table .cover-lettering{font:900 15cqw/.88 Georgia,serif;text-transform:none}.asphalt{background:#382b51;color:#f9d9a5}.shelves{background:#efc454;color:#412e12}.shelves .cover-lettering{font-family:Georgia,serif}.antenna{background:#acd0d7;color:#172f46}
+.caption{display:flex;justify-content:space-between;align-items:start;gap:8px;padding-top:12px}.title{font:bold 24px/1.02 Georgia,serif;letter-spacing:-.025em}.price{font-weight:700;font-variant-numeric:tabular-nums}.meta{display:flex;gap:9px;align-items:center;color:#574a3e;font-size:14px;margin-top:8px}.table-code{color:var(--ink);font-weight:700}.mark{color:#982b19;font-weight:700}
+dialog{margin:auto;width:min(760px,calc(100% - 32px));max-height:calc(100dvh - 32px);border:1px solid var(--ink);padding:0;background:var(--paper);color:var(--ink);box-shadow:9px 9px 0 #211c1950}dialog::backdrop{background:#20191499}.dialog-bar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 22px}.dialog-bar .close{border:0;padding-left:0}.detail{display:grid;grid-template-columns:1fr 1.08fr;gap:26px;padding:24px}.detail .mat{height:365px}.detail-info{align-self:center}h2{font:bold 44px/.98 Georgia,serif;letter-spacing:-.045em;margin:12px 0}.detail-info p{line-height:1.5}.action{padding:12px 16px;min-height:46px;background:#a92f1c;color:white;border:1px solid #a92f1c;font-weight:700}.action[aria-pressed=true]{background:transparent;color:#8f2817}.shortlist{padding:17px 24px 26px}.saved-row{border-bottom:1px solid var(--line);padding:9px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}.saved-row h3{font:bold 21px/1.1 Georgia,serif;margin:4px 0}.saved-row button{border:0;background:none;min-height:44px;text-decoration:underline}.saved-row p{margin:3px 0 5px}
+@media(max-width:720px){.wrap{width:calc(100% - 32px)}.top{min-height:58px}.hero{display:block;padding:19px 0 20px}.hero h1{font-size:clamp(64px,17vw,102px)}.hero p{font-size:18px;margin:12px 0 0;max-width:none}.toolbar{margin:12px 0 15px}.filters{gap:2px}.filters button{font-size:14px;padding-left:6px;padding-right:6px}.result{font-size:12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}.mat{height:auto;aspect-ratio: .83;padding:12px}.cover{height:auto;width:100%;max-width:220px}.caption{padding-top:8px}.title{font-size:19px}.price{font-size:14px}.meta{font-size:12px;gap:5px;margin-top:6px}.detail{display:block;padding:16px}.detail .mat{aspect-ratio:auto;height:235px}.detail .cover{width:auto;height:100%}.detail-info h2{font-size:36px}.dialog-bar{padding:6px 16px}.shortlist{padding:12px 16px 21px}}
+@media(max-width:360px){.result{display:none}.meta{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header class="masthead"><div class="wrap">
+  <div class="top"><span class="wordmark">INDEPENDENT ZINE FAIR</span><button class="saved-button" id="open-saved">Shortlist <span class="count" id="count">0</span></button></div>
+  <div class="hero"><h1>Fold Fair</h1><p>Browse the zines. Find your next table.</p></div>
+</div></header>
+<main class="wrap" aria-label="Zine directory">
+  <div class="toolbar"><div id="filters" class="filters" role="group" aria-label="Filter by topic"></div><span class="result" id="result" role="status"></span></div>
+  <div class="grid" id="grid"></div>
+</main>
+<dialog id="detail" aria-labelledby="detail-title">
+  <div class="dialog-bar"><form method="dialog"><button class="close" autofocus>← Back to zines</button></form><span id="detail-table" class="table-code"></span></div>
+  <div id="detail-body" class="detail"></div>
+</dialog>
+<dialog id="shortlist" aria-labelledby="saved-title">
+  <div class="dialog-bar"><form method="dialog"><button class="close" autofocus>← Back to zines</button></form></div>
+  <div class="shortlist"><h2 id="saved-title">Shortlist</h2><div id="saved-list"></div></div>
+</dialog>
+<script>
+const issues = [
+  ['night','Night Windows','Photography',12,'B4','24 black-and-white photographs of lit windows on the last tram route.'],
+  ['botany','Bus Stop Botany','Field notes',8,'C7','Fold-out guide to five plants found at the Crosstown terminus.'],
+  ['table','Three Ways to Set a Table','Comics',9,'A2','Three wordless comics about dinner with neighbors.'],
+  ['asphalt','Wet Asphalt','Photography',16,'B9','Large-format reflections captured after a summer storm.'],
+  ['shelves','Free Shelves','Field notes',6,'C3','Annotated map of street libraries and a page for new entries.'],
+  ['antenna','Antenna Club','Comics',11,'A5','Short comic about a radio club losing its rooftop access.']
+].map(([id,title,topic,price,table,description]) => ({id,title,topic,price,table,description}));
+const $ = selector => document.querySelector(selector);
+const storageKey = 'fold-fair-shortlist';
+const saved = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+let topic = 'All zines';
+let origin;
+const detail = $('#detail');
+const shortlist = $('#shortlist');
+
+function cover(issue) {
+  return '<div class="mat" aria-hidden="true"><div class="cover '+issue.id+'"><canvas width="300" height="400" data-art="'+issue.id+'"></canvas><span class="cover-lettering">'+issue.title+'</span></div></div>';
+}
+
+function paint(root) {
+  root.querySelectorAll('canvas').forEach(canvas => {
+    const ctx = canvas.getContext('2d');
+    let seed = 28;
+    const random = () => ((seed = (16807 * seed) % 2147483647) / 2147483647);
+    const rect = (x,y,w,h,color) => {ctx.fillStyle=color;ctx.fillRect(x,y,w,h)};
+    const line = (points,color,width=2) => {
+      ctx.beginPath();ctx.moveTo(...points[0]);points.slice(1).forEach(p=>ctx.lineTo(...p));
+      ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();
+    };
+    const ellipse = (x,y,rx,ry,color,rotation=0) => {
+      ctx.beginPath();ctx.ellipse(x,y,rx,ry,rotation,0,2*Math.PI);ctx.fillStyle=color;ctx.fill();
+    };
+    switch(canvas.dataset.art) {
+      case 'night':
+        for(let col=0;col<6;col++){
+          const x=col*50, top=144+random()*75;
+          rect(x,top,49,400-top,['#414044','#111115','#333236'][col%3]);
+          for(let row=0;row<6;row++){
+            const y=top+row*37+13, lit=random()>.64;
+            rect(x+8,y,30,21,lit?'#e2d6af':'#272628');
+            line([[x+21,y],[x+21,y+21]],'#18171a');
+            line([[x+8,y+9],[x+38,y+9]],'#18171a');
+          }
+        }
+        line([[0,369],[109,300],[300,288]],'#afaa98',2);
+        break;
+      case 'botany':
+        for(let i=0;i<5;i++){
+          const x=37+i*55, y=185+random()*70;
+          line([[150,389],[x+13,310],[x,y]],'#324c2a',2);
+          for(let k=0;k<4;k++){
+            const offset=k*24;
+            ellipse(x+10,y+offset,7,22,'#4a6533',.8);
+            ellipse(x-8,y+offset+8,6,18,'#778743',-.8);
+          }
+          ellipse(x,y-6,10,12,i%2?'#e8d984':'#a5563a');
+        }
+        break;
+      case 'table':
+        rect(22,177,256,197,'#f8ce9d');
+        for(let i=0;i<3;i++){
+          const x=65+i*85, y=i===1?282:260;
+          rect(x-38,184,76,182,i%2?'#efad83':'#f9d9ae');
+          ellipse(x,y,30,37,'#792f34');
+          ellipse(x,y-2,26,32,'#f9deb1');
+          ellipse(x,y-2,17,23,'#ec9369');
+          line([[x-29,y+39],[x-22,y+72]],'#792f34',3);
+          line([[x+32,y+39],[x+25,y+72]],'#792f34',3);
+        }
+        break;
+      case 'asphalt':
+        for(let i=0;i<270;i++){
+          const y=142+random()*258, x=random()*300, w=3+random()*(y-120)*.22;
+          const palette=x<122?['#7b728a','#c39882','#5e516f','#f1ba92']:['#654d6c','#9c6180','#362941','#d88878'];
+          rect(x,y,w,1+random()*4,palette[Math.floor(random()*4)]);
+        }
+        break;
+      case 'shelves':
+        for(let i=0;i<9;i++){
+          line([[0,155+i*34],[80,170+i*32],[180,136+i*38],[300,160+i*40]],'#8e6b33',3);
+          line([[i*43,145],[i*38-34,256],[i*47-21,400]],'#8e6b33',2);
+        }
+        [[48,218],[190,195],[123,292],[248,321],[78,358]].forEach(([x,y])=>{
+          rect(x-12,y-12,24,24,'#412e12');
+          rect(x-8,y-6,7,12,'#f6df96');rect(x+1,y-6,7,12,'#f6df96');
+        });
+        break;
+      case 'antenna':
+        for(let i=0;i<8;i++){
+          const h=30+random()*110;
+          rect(i*40,400-h,39,h,i%2?'#34556c':'#29455a');
+          for(let j=0;j<h/17-1;j++)rect(i*40+7,390-j*17,6,8,'#c6d1a0');
+        }
+        line([[95,322],[148,166],[189,322],[110,291],[174,274],[123,251],[161,231]],'#17354b',4);
+        line([[111,186],[185,186],[174,169],[124,169],[111,186]],'#17354b',3);
+        for(let i=0;i<3;i++){ctx.beginPath();ctx.arc(148,169,25+i*16,3.67,5.75);ctx.strokeStyle='#356882';ctx.stroke()}
+        break;
+    }
+    for(let i=0;i<3700;i++){
+      rect(random()*300,random()*400,1.6,1.4,i%2?'#fff2d323':'#241c171e');
+    }
+  });
+}
+
+function updateSaved() {
+  $('#count').textContent = saved.size;
+  document.querySelectorAll('.mark').forEach(mark => {
+    mark.hidden = !saved.has(mark.dataset.saved);
+  });
+}
+
+function renderGrid() {
+  const matches = issues.filter(issue => topic === 'All zines' || issue.topic === topic);
+  $('#result').textContent = matches.length+' zines';
+  $('#grid').innerHTML = matches.map(issue => '<article class="issue"><button class="card" data-open="'+issue.id+'" aria-labelledby="title-'+issue.id+'" aria-describedby="meta-'+issue.id+'">'+cover(issue)+'<span class="caption"><span class="title" id="title-'+issue.id+'">'+issue.title+'</span><span class="price">$'+issue.price+'</span></span></button><div class="meta" id="meta-'+issue.id+'">'+issue.topic+' <span aria-hidden="true">·</span> <span class="table-code">Table '+issue.table+'</span><span class="mark" data-saved="'+issue.id+'" hidden>✓ Saved</span></div></article>').join('');
+  updateSaved();
+  paint($('#grid'));
+}
+
+function setSaved(id, value) {
+  if (value) saved.add(id);
+  else saved.delete(id);
+  localStorage.setItem(storageKey, JSON.stringify([...saved]));
+  updateSaved();
+}
+
+function showDetail(issue, trigger) {
+  origin = trigger;
+  $('#detail-table').textContent = 'Table '+issue.table;
+  $('#detail-body').innerHTML = cover(issue)+'<div class="detail-info"><div class="meta">'+issue.topic+' <span aria-hidden="true">·</span> <span class="price">$'+issue.price+'</span></div><h2 id="detail-title">'+issue.title+'</h2><p>'+issue.description+'</p><button class="action" id="save-toggle"></button></div>';
+  const toggle = $('#save-toggle');
+  function label() {
+    const isSaved = saved.has(issue.id);
+    toggle.textContent = isSaved ? '✓ Saved · Remove' : 'Save to shortlist';
+    toggle.setAttribute('aria-pressed', isSaved);
+  }
+  toggle.onclick = () => {setSaved(issue.id, !saved.has(issue.id));label()};
+  label();
+  paint(detail);
+  detail.showModal();
+}
+
+function renderShortlist() {
+  const matches = issues.filter(issue => saved.has(issue.id));
+  $('#saved-list').innerHTML = matches.length ? matches.map(issue => '<article class="saved-row"><div><h3>'+issue.title+'</h3><p class="meta">'+issue.topic+' · $'+issue.price+' · <strong>Table '+issue.table+'</strong></p></div><button data-remove="'+issue.id+'" aria-label="Remove '+issue.title+'">Remove</button></article>').join('') : '<p>No zines saved yet.</p>';
+}
+
+for (const label of ['All zines','Photography','Field notes','Comics']) {
+  const button = document.createElement('button');
+  button.textContent = label;
+  button.setAttribute('aria-pressed', label === topic);
+  button.onclick = () => {
+    topic = label;
+    $('#filters').querySelector('[aria-pressed="true"]').setAttribute('aria-pressed','false');
+    button.setAttribute('aria-pressed','true');
+    renderGrid();
+  };
+  $('#filters').append(button);
+}
+$('#grid').onclick = event => {
+  const trigger = event.target.closest('[data-open]');
+  if (trigger) showDetail(issues.find(issue => issue.id === trigger.dataset.open), trigger);
+};
+$('#open-saved').onclick = event => {
+  origin = event.currentTarget;
+  renderShortlist();
+  shortlist.showModal();
+};
+$('#saved-list').onclick = event => {
+  const button = event.target.closest('[data-remove]');
+  if (!button) return;
+  const buttons = [...shortlist.querySelectorAll('[data-remove]')];
+  const index = buttons.indexOf(button);
+  setSaved(button.dataset.remove, false);
+  renderShortlist();
+  const remaining = shortlist.querySelectorAll('[data-remove]');
+  (remaining[Math.min(index,remaining.length-1)] || shortlist.querySelector('.close')).focus();
+};
+for (const dialog of [detail, shortlist]) {
+  dialog.addEventListener('close', () => origin?.focus({preventScroll:true}));
+}
+renderGrid();
+</script>
+</body>
+</html>

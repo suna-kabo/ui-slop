@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switchboard — Evening changeover</title>
+<style>
+:root{color-scheme:light;--paper:#f7f5ee;--ink:#222821;--muted:#565c51;--line:#cbcbbd;--accent:#aa371c;--tint:#f5e5d9;--dark:#26322a;--green:#284b36;--mono:ui-monospace,"Cascadia Code",Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 system-ui,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #426b9d;outline-offset:3px}h1,h2,h3,p{margin:0}.shell{width:min(1280px,calc(100% - 96px));margin:auto}.mast{border-bottom:1px solid var(--line)}.mast .shell{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:800;letter-spacing:-.045em}.mark{display:flex;gap:3px;align-items:center;justify-content:center;width:33px;height:33px;background:var(--accent);color:white}.mark i{width:2px;background:currentColor;height:11px}.mark i:nth-child(2),.mark i:nth-child(4){height:18px}.mark i:nth-child(3){height:24px}.label,.station{font:700 11px/1.4 var(--mono);letter-spacing:.10em;text-transform:uppercase}.station{color:var(--muted)}.intro{display:flex;align-items:end;justify-content:space-between;gap:28px;padding:48px 0 34px}.intro .label{color:var(--accent);margin-bottom:9px}h1{font:normal clamp(43px,5.2vw,78px)/.98 Georgia,serif;letter-spacing:-.064em}.intro p:last-child{color:var(--muted);margin-top:13px}.clock{border-left:1px solid var(--line);padding:3px 0 3px 20px;min-width:141px}.clock span{display:block;color:var(--muted)}.clock strong{font:500 31px/1.15 var(--mono);letter-spacing:-.06em}.boundary{background:var(--dark);color:#fbf7eb;padding:14px 19px;display:flex;align-items:center;gap:14px}.boundary strong{font:500 23px/1 var(--mono)}.boundary .label{color:#ebdfbd}.boundary .remaining{margin-left:auto;color:#ebdfbd;font:500 12px var(--mono);white-space:nowrap}.layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:26px;margin:30px 0 35px;align-items:start}.rundown-head{display:flex;align-items:center;justify-content:space-between;padding:0 0 12px;border-bottom:1px solid var(--line)}.rundown-head h2{font:normal 29px/1.05 Georgia,serif;letter-spacing:-.04em}.rundown-head .label{color:var(--muted)}.segment{border:0;border-bottom:1px solid var(--line);border-left:3px solid transparent;background:none;text-align:left;width:100%;display:grid;grid-template-columns:64px minmax(0,1fr) 57px 104px;align-items:center;gap:12px;min-height:75px;padding:10px 12px 10px 10px}.segment:hover{background:#eeede3}.segment[aria-pressed=true]{background:var(--tint);border-left-color:var(--accent)}.segment time,.duration{font:600 14px var(--mono)}.duration{color:var(--muted)}.segment b{font-size:15px;line-height:1.22;display:block}.segment small{display:block;margin-top:4px;color:var(--muted);font-size:12px}.status{font:700 11px/1.25 var(--mono);color:var(--green);display:flex;gap:6px;align-items:center}.status:before{content:"";width:6px;height:6px;flex:none;background:currentColor;border-radius:50%}.status.warn{color:var(--accent)}.status.fixed{color:#4e5147}.status.fixed:before{border-radius:0}.panel{border:1px solid var(--line);background:#fffcf4;padding:22px;min-width:0}.panel .label{color:var(--accent)}.panel h2{margin:7px 0 9px;font:normal 34px/.99 Georgia,serif;letter-spacing:-.045em}.timing{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-block:1px solid var(--line);padding:10px 0;margin:16px 0 13px}.timing span{display:block}.timing .label{color:var(--muted);font-size:10px}.timing strong{font:600 17px var(--mono)}.description{color:var(--muted);font-size:14px}.options{margin-top:18px}.options h3{font-size:12px;margin-bottom:7px}.option{display:flex;gap:8px;align-items:center;justify-content:space-between;width:100%;background:none;border:1px solid var(--line);padding:9px 10px;margin-top:6px;text-align:left;font-size:13px;font-weight:650}.option:hover{border-color:var(--accent)}.option.primary{background:var(--dark);color:#fffdf4;border-color:var(--dark)}.option span:last-child{white-space:nowrap;font:500 12px var(--mono)}.feedback{background:var(--tint);padding:10px 12px;margin-top:12px;color:#6c2e1d;font-size:13px}.feedback:empty{display:none}.panel-nav{margin-top:15px;display:flex;justify-content:space-between;gap:8px}.quiet{background:none;border:0;text-decoration:underline;text-underline-offset:3px;padding:3px 0;font-size:13px;font-weight:650}.quiet:hover{color:var(--accent)}.quiet:disabled{cursor:default;color:var(--muted);text-decoration:none}.footer{border-top:1px solid var(--line);padding:13px 0 24px;color:var(--muted);display:flex;justify-content:space-between;gap:10px}
+@media(max-width:1000px){.shell{width:calc(100% - 56px)}.layout{gap:16px;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}.segment{grid-template-columns:47px minmax(0,1fr) 39px 75px;gap:7px}.panel{padding:17px}}
+@media(max-width:720px){.shell{width:calc(100% - 32px)}.mast .shell{height:56px}.brand{font-size:18px}.mark{width:27px;height:27px}.station{font-size:9px}.intro{padding:26px 0 20px;gap:8px;align-items:start;position:relative}.intro .label{font-size:9px}.intro h1{font-size:clamp(33px,9.25vw,56px)}.intro p:last-child{font-size:12px;margin-top:8px}.clock{position:absolute;right:0;top:21px;padding-left:8px;min-width:0;display:flex;align-items:center;gap:5px}.clock span{font-size:8px}.clock strong{font-size:15px}.boundary{gap:7px;padding:11px 9px}.boundary strong{font-size:17px}.boundary .label{font-size:9px;letter-spacing:.03em}.boundary .remaining{font-size:9px}.layout{display:flex;flex-direction:column;gap:17px;margin:19px 0 20px}.rundown,.panel{width:100%}.rundown-head{padding-bottom:8px}.rundown-head h2{font-size:24px}.rundown-head .label{font-size:9px}.segment{min-height:54px;grid-template-columns:43px minmax(0,1fr) 32px 64px;gap:6px;padding:7px 3px 7px 5px}.segment b{font-size:12px}.segment small{font-size:10px;margin-top:2px}.segment time,.duration{font-size:11px}.status{font-size:9px;gap:4px}.status:before{width:5px;height:5px}.panel{padding:15px}.panel h2{font-size:29px}.footer .label{font-size:9px}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="shell">
+<div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Switchboard</div>
+<span class="station">Volunteer radio · Studio A</span>
+</div></header>
+<main class="shell">
+<section class="intro" aria-labelledby="title"><div><p class="label">Producer handover</p><h1 id="title">Evening changeover</h1><p>Check the rundown for the studio operator.</p></div><div class="clock"><span class="label">Desk time</span><strong>18:42</strong></div></section>
+<div class="boundary"><span class="label">Next fixed boundary</span><strong>19:00</strong><span class="remaining">18 min to handoff</span></div>
+<div class="layout">
+<section class="rundown" aria-labelledby="rundown-title"><div class="rundown-head"><h2 id="rundown-title">On-air rundown</h2><span class="label" id="summary"></span></div><div id="segments"></div></section>
+<section class="panel" id="detail" aria-labelledby="segment-title"></section>
+</div>
+<footer class="footer"><span class="label">Studio A · Evening service</span><span class="label">All times local</span></footer>
+</main>
+<script>
+const fixtures = [
+  {start:'18:43', title:'East Market weather', seconds:45, state:'Ready', note:'Local weather update for East Market.'},
+  {start:'18:44', title:'Harbor ferry suspension notice', seconds:80, state:'Ready', cue:'Must air before 18:50', note:'Air the ferry suspension notice before 18:50. The scheduled slot meets the deadline.'},
+  {start:'18:46', title:'Mara Chen on the night bus pilot', seconds:330, state:'Awaiting audio', note:'The interview audio hasn’t arrived. Choose a ready recording for the 18:46 slot.'},
+  {start:'18:52', title:'Listener recordings from North Jetty', seconds:190, state:'Ready', note:'Listener recordings are ready for the scheduled 18:52 start.'},
+  {start:'19:00', title:'Station identification and news handoff', seconds:30, state:'Fixed boundary', note:'Start station identification and the news handoff at 19:00.'}
+];
+const replacement = {title:'Depot shift before dawn', seconds:225, state:'Ready', cue:'Studio recording · replaces Mara Chen', note:'The studio recording is ready for air. The slot still starts at 18:46.'};
+const backup = {title:'West platforms accessibility call-in', seconds:450};
+const changeSlot = 2;
+let selected = changeSlot;
+let changed = false;
+const rundown = document.querySelector('#segments');
+const detail = document.querySelector('#detail');
+const duration = seconds => Math.floor(seconds / 60) + ':' + String(seconds % 60).padStart(2,'0');
+function endTime(start, seconds) {
+  const [hours, minutes] = start.split(':').map(Number);
+  const total = hours * 3600 + minutes * 60 + seconds;
+  return [Math.floor(total / 3600), Math.floor(total / 60) % 60, total % 60].map(n => String(n).padStart(2,'0')).join(':');
+}
+function stateClass(state) {
+  return state === 'Awaiting audio' ? 'warn' : state === 'Fixed boundary' ? 'fixed' : '';
+}
+function render(focusId) {
+  const rows = fixtures.map((item, index) => index === changeSlot && changed ? {...item, ...replacement} : item);
+  document.querySelector('#summary').textContent = changed ? '4 ready · 1 fixed' : '3 ready · 1 awaiting';
+  rundown.innerHTML = rows.map((row, index) => `
+    <button class="segment" id="row-${index}" data-segment="${index}" aria-pressed="${index === selected}" aria-controls="detail">
+      <time>${row.start}</time><span><b>${row.title}</b>${row.cue ? `<small>${row.cue}</small>` : ''}</span>
+      <span class="duration">${duration(row.seconds)}</span><span class="status ${stateClass(row.state)}">${row.state}</span>
+    </button>`).join('');
+  const row = rows[selected];
+  const options = `<div class="options"><h3>Replace this segment</h3>
+    <button class="option primary" id="replace"><span>${replacement.title}</span><span>${duration(replacement.seconds)} ↗</span></button>
+    <button class="option" id="backup"><span>${backup.title}</span><span>${duration(backup.seconds)} ↗</span></button></div>`;
+  detail.innerHTML = `<p class="label">Selected segment</p><h2 id="segment-title" tabindex="-1">${row.title}</h2>
+    <span class="status ${stateClass(row.state)}">${row.state}</span>
+    <div class="timing"><div><span class="label">Start</span><strong>${row.start}</strong></div><div><span class="label">Duration</span><strong>${duration(row.seconds)}</strong></div><div><span class="label">Ends</span><strong>${endTime(row.start,row.seconds)}</strong></div></div>
+    <p class="description">${row.note}</p>
+    ${selected === changeSlot && !changed ? options : ''}
+    <div class="feedback" id="feedback" role="status"></div>
+    <div class="panel-nav">${selected === changeSlot && changed ? '<button class="quiet" id="undo">Undo replacement</button>' : '<span></span>'}
+    <button class="quiet" id="next" ${selected === rows.length - 1 ? 'disabled' : ''}>Next segment →</button></div>`;
+  if (focusId) document.getElementById(focusId).focus();
+}
+rundown.addEventListener('click', event => {
+  const button = event.target.closest('[data-segment]');
+  if (!button) return;
+  selected = Number(button.dataset.segment);
+  render('segment-title');
+});
+detail.addEventListener('click', event => {
+  switch (event.target.closest('button')?.id) {
+    case 'backup':
+      document.querySelector('#feedback').textContent = 'Ends at ' + endTime(fixtures[changeSlot].start, backup.seconds) + ', overlapping Listener recordings from North Jetty at 18:52 by 1:30. Mara Chen stays selected.';
+      break;
+    case 'replace':
+      changed = true;
+      render('segment-title');
+      document.querySelector('#feedback').textContent = 'Replacement scheduled. North Jetty still starts at 18:52.';
+      break;
+    case 'undo':
+      changed = false;
+      render('segment-title');
+      document.querySelector('#feedback').textContent = 'Mara Chen restored at 18:46. Audio is still pending.';
+      break;
+    case 'next':
+      selected++;
+      render('segment-title');
+      break;
+  }
+});
+render();
+</script>
+</body>
+</html>

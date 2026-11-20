@@ -1,0 +1,3520 @@
+{
+  "runs": [
+    {
+      "id": "0a585fbab9",
+      "product": "print",
+      "repeat": 1,
+      "condition": "B",
+      "started": "2026-11-20T17:13:42.397083+00:00",
+      "elapsedSeconds": 179.62,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "bcf1c8394e8f9dd18b26229c656da77cf9495cd4183359c58c09b936cf7641b5",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 347831,
+        "cached_input_tokens": 316928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7935,
+        "reasoning_output_tokens": 345
+      },
+      "thread": "01a1f9f3-20cb-7281-9447-921e43b6757e",
+      "files": {
+        "app.js": "d1982abb4fae2a0dc29292b28a09174c8db9072ce96b0fe2ee987d5044c9ac7f",
+        "index.html": "4b8bb19f313706baf757dd484437f086228496ad550ad17e2c13aa705f40a374",
+        "style.css": "315fda5a75cb7275b436c64d6481dd75ef3ec5efaa8d3b14f2ee13519613f733"
+      },
+      "firstViews": [
+        {
+          "id": "0a585fbab9",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "0a585fbab9-1440-default.png",
+          "headings": [
+            {
+              "text": "Fold Fair",
+              "family": "Georgia, serif",
+              "pixels": 138.24,
+              "weight": "400",
+              "top": 113
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 245, 236)",
+          "visibleButtons": 11,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "0a585fbab9",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "0a585fbab9-390-default.png",
+          "headings": [
+            {
+              "text": "Fold Fair",
+              "family": "Georgia, serif",
+              "pixels": 66.3,
+              "weight": "400",
+              "top": 89
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 245, 236)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "0a585fbab9",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "0a585fbab9-320-default.png",
+          "headings": [
+            {
+              "text": "Fold Fair",
+              "family": "Georgia, serif",
+              "pixels": 65,
+              "weight": "400",
+              "top": 89
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 245, 236)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "39ffaf8ac4",
+      "product": "radio",
+      "repeat": 2,
+      "condition": "A",
+      "started": "2026-11-20T17:13:42.192208+00:00",
+      "elapsedSeconds": 134.91,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": null,
+      "skillFilesRead": [],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 206713,
+        "cached_input_tokens": 190464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5842,
+        "reasoning_output_tokens": 162
+      },
+      "thread": "01a1f9f3-204d-7723-965b-8ab5465704e5",
+      "files": {
+        "index.html": "5ae411cc5a71c9a0cdeb3091226b64b33320b89b2031737b4ecd08ca634487a1"
+      },
+      "firstViews": [
+        {
+          "id": "39ffaf8ac4",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "39ffaf8ac4-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 67,
+              "weight": "400",
+              "top": 130
+            },
+            {
+              "text": "On-air sequence",
+              "family": "Arial, Helvetica, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 289
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 369
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 447
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 525
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 603
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 681
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 403
+            }
+          ],
+          "bodyBackground": "rgb(246, 244, 237)",
+          "visibleButtons": 8,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "39ffaf8ac4",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "39ffaf8ac4-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 38,
+              "weight": "400",
+              "top": 98
+            },
+            {
+              "text": "On-air sequence",
+              "family": "Arial, Helvetica, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 300
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 368
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 433
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 498
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 563
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 642
+            }
+          ],
+          "bodyBackground": "rgb(246, 244, 237)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "39ffaf8ac4",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "39ffaf8ac4-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 38,
+              "weight": "400",
+              "top": 98
+            },
+            {
+              "text": "On-air sequence",
+              "family": "Arial, Helvetica, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 358
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 426
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 505
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 581
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 657
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, Consolas, monospace",
+              "pixels": 10,
+              "weight": "700",
+              "top": 734
+            }
+          ],
+          "bodyBackground": "rgb(246, 244, 237)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 17
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "538440f88f",
+      "product": "radio",
+      "repeat": 2,
+      "condition": "C",
+      "started": "2026-11-20T17:13:42.396896+00:00",
+      "elapsedSeconds": 194.76,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "a807b859e0ea32ef7d9542046e0937aa36434c9855c52ad3735ee42e86fd429f",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 496046,
+        "cached_input_tokens": 435968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8511,
+        "reasoning_output_tokens": 554
+      },
+      "thread": "01a1f9f3-20ea-72c3-ad87-4a0c0af489fd",
+      "files": {
+        "index.html": "fbdd1baa431f3823716773e84c4a06b42475b104e62048c503a13335230ffe07"
+      },
+      "firstViews": [
+        {
+          "id": "538440f88f",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "538440f88f-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 60.48,
+              "weight": "740",
+              "top": 103
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 25,
+              "weight": "700",
+              "top": 250
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "system-ui, sans-serif",
+              "pixels": 29,
+              "weight": "700",
+              "top": 310
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 380
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 461
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 542
+            },
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 623
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 705
+            }
+          ],
+          "bodyBackground": "rgb(21, 27, 32)",
+          "visibleButtons": 8,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "538440f88f",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "538440f88f-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 34,
+              "weight": "740",
+              "top": 80
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 217
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "system-ui, sans-serif",
+              "pixels": 25,
+              "weight": "700",
+              "top": 721
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 318
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 383
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 460
+            },
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 533
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 606
+            }
+          ],
+          "bodyBackground": "rgb(21, 27, 32)",
+          "visibleButtons": 6,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "538440f88f",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "538440f88f-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 34,
+              "weight": "740",
+              "top": 80
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 228
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 341
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 419
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 491
+            },
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 563
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "system-ui, sans-serif",
+              "pixels": 11,
+              "weight": "400",
+              "top": 637
+            }
+          ],
+          "bodyBackground": "rgb(21, 27, 32)",
+          "visibleButtons": 6,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "5e9c2c6bc1",
+      "product": "radio",
+      "repeat": 2,
+      "condition": "B",
+      "started": "2026-11-20T17:13:42.418611+00:00",
+      "elapsedSeconds": 261.57,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "bcf1c8394e8f9dd18b26229c656da77cf9495cd4183359c58c09b936cf7641b5",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 370606,
+        "cached_input_tokens": 316928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8037,
+        "reasoning_output_tokens": 182
+      },
+      "thread": "01a1f9f3-20c4-7d73-bbe0-dfa3d7a68ba1",
+      "files": {
+        "index.html": "628ef6a8a6f29419e6428e32efe33268a2d39a321f1b0168fe16224d28a7d91c"
+      },
+      "firstViews": [
+        {
+          "id": "5e9c2c6bc1",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "5e9c2c6bc1-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 57.6,
+              "weight": "700",
+              "top": 102
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 17,
+              "weight": "700",
+              "top": 306
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "system-ui, sans-serif",
+              "pixels": 30,
+              "weight": "700",
+              "top": 370
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 377
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 452
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 527
+            },
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 602
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 678
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 334
+            }
+          ],
+          "bodyBackground": "rgb(16, 19, 23)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "5e9c2c6bc1",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "5e9c2c6bc1-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 35,
+              "weight": "700",
+              "top": 80
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 17,
+              "weight": "700",
+              "top": 293
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "system-ui, sans-serif",
+              "pixels": 26,
+              "weight": "700",
+              "top": 641
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 362
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 450
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 536
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 598
+            }
+          ],
+          "bodyBackground": "rgb(16, 19, 23)",
+          "visibleButtons": 4,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "5e9c2c6bc1",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "5e9c2c6bc1-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "system-ui, sans-serif",
+              "pixels": 35,
+              "weight": "700",
+              "top": 80
+            },
+            {
+              "text": "Rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 17,
+              "weight": "700",
+              "top": 328
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "system-ui, sans-serif",
+              "pixels": 26,
+              "weight": "700",
+              "top": 707
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 413
+            },
+            {
+              "text": "Ready · Air before 18:50",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 498
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 601
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "system-ui, sans-serif",
+              "pixels": 12,
+              "weight": "400",
+              "top": 664
+            }
+          ],
+          "bodyBackground": "rgb(16, 19, 23)",
+          "visibleButtons": 4,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Segoe UI",
+              "postScriptName": "SegoeUI-Bold",
+              "isCustomFont": false,
+              "glyphCount": 17
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "6929904d67",
+      "product": "print",
+      "repeat": 2,
+      "condition": "B",
+      "started": "2026-11-20T17:13:42.417295+00:00",
+      "elapsedSeconds": 206.63,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "bcf1c8394e8f9dd18b26229c656da77cf9495cd4183359c58c09b936cf7641b5",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 416552,
+        "cached_input_tokens": 380544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8570,
+        "reasoning_output_tokens": 130
+      },
+      "thread": "01a1f9f3-20e4-7e21-af74-43f5b58ec2cb",
+      "files": {
+        "index.html": "fca50147eeeff5cc9efa56ca79433f6ccec4861b24e5bbc10bde3b98eba378a4"
+      },
+      "firstViews": [
+        {
+          "id": "6929904d67",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "6929904d67-1440-default.png",
+          "headings": [
+            {
+              "text": "Zine fair",
+              "family": "Georgia, serif",
+              "pixels": 129.6,
+              "weight": "700",
+              "top": 97
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(250, 247, 238)",
+          "visibleButtons": 11,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "6929904d67",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "6929904d67-390-default.png",
+          "headings": [
+            {
+              "text": "Zine fair",
+              "family": "Georgia, serif",
+              "pixels": 55,
+              "weight": "700",
+              "top": 86
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(250, 247, 238)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "6929904d67",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "6929904d67-320-default.png",
+          "headings": [
+            {
+              "text": "Zine fair",
+              "family": "Georgia, serif",
+              "pixels": 55,
+              "weight": "700",
+              "top": 83
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(250, 247, 238)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 8
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "9afd1ea5b3",
+      "product": "print",
+      "repeat": 2,
+      "condition": "A",
+      "started": "2026-11-20T17:13:42.190210+00:00",
+      "elapsedSeconds": 211.18,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": null,
+      "skillFilesRead": [],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 389130,
+        "cached_input_tokens": 355712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9247,
+        "reasoning_output_tokens": 334
+      },
+      "thread": "01a1f9f3-205b-7cf2-88eb-1ae386421fa7",
+      "files": {
+        "app.js": "cc2e99066b23c6ee89506946d903de297c98063144bc643c9487b0b1e8b1755b",
+        "index.html": "fe0a36d94c330dc61ece413320a5163d1b6c8b27a0ef145efe650d5e1f9871b4",
+        "style.css": "06d6df02e26dfef4da03b9f6a03e0e40c36c23e87e4afba86370f9ad93df85eb"
+      },
+      "firstViews": [
+        {
+          "id": "9afd1ea5b3",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "9afd1ea5b3-1440-default.png",
+          "headings": [
+            {
+              "text": "The Zine Tables.",
+              "family": "Georgia, serif",
+              "pixels": 145.44,
+              "weight": "400",
+              "top": 136
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(238, 233, 219)",
+          "visibleButtons": 8,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 16
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "9afd1ea5b3",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "9afd1ea5b3-390-default.png",
+          "headings": [
+            {
+              "text": "The Zine Tables.",
+              "family": "Georgia, serif",
+              "pixels": 66.3,
+              "weight": "400",
+              "top": 107
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(238, 233, 219)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 15
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "9afd1ea5b3",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "9afd1ea5b3-320-default.png",
+          "headings": [
+            {
+              "text": "The Zine Tables.",
+              "family": "Georgia, serif",
+              "pixels": 62,
+              "weight": "400",
+              "top": 107
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(238, 233, 219)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 15
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "a1784a5360",
+      "product": "print",
+      "repeat": 2,
+      "condition": "C",
+      "started": "2026-11-20T17:13:42.396805+00:00",
+      "elapsedSeconds": 307.9,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "a807b859e0ea32ef7d9542046e0937aa36434c9855c52ad3735ee42e86fd429f",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 726003,
+        "cached_input_tokens": 679552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10706,
+        "reasoning_output_tokens": 487
+      },
+      "thread": "01a1f9f3-20c8-76c2-8685-f0d6891d4867",
+      "files": {
+        "index.html": "269854fb6e85c50a2b52b8849285c5fd6915f09b94e28689a395bfe6795dcea0"
+      },
+      "firstViews": [
+        {
+          "id": "a1784a5360",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "a1784a5360-1440-default.png",
+          "headings": [
+            {
+              "text": "Find your fold.",
+              "family": "Georgia, serif",
+              "pixels": 122.4,
+              "weight": "400",
+              "top": 102
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 242, 230)",
+          "visibleButtons": 11,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 10
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "a1784a5360",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "a1784a5360-390-default.png",
+          "headings": [
+            {
+              "text": "Find your fold.",
+              "family": "Georgia, serif",
+              "pixels": 57,
+              "weight": "400",
+              "top": 84
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 242, 230)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 10
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "a1784a5360",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "a1784a5360-320-default.png",
+          "headings": [
+            {
+              "text": "Find your fold.",
+              "family": "Georgia, serif",
+              "pixels": 57,
+              "weight": "400",
+              "top": 84
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 242, 230)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 9
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "c18deb8f03",
+      "product": "print",
+      "repeat": 1,
+      "condition": "A",
+      "started": "2026-11-20T17:13:42.188937+00:00",
+      "elapsedSeconds": 163.82,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": null,
+      "skillFilesRead": [],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 294449,
+        "cached_input_tokens": 232320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6717,
+        "reasoning_output_tokens": 193
+      },
+      "thread": "01a1f9f3-2024-7560-935d-981300eaa79a",
+      "files": {
+        "index.html": "40aecd30de4f901d574b1bbb6c1c30630d883b59272d270b95cd91eaad7bb4fa"
+      },
+      "firstViews": [
+        {
+          "id": "c18deb8f03",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "c18deb8f03-1440-default.png",
+          "headings": [
+            {
+              "text": "The zine index",
+              "family": "Georgia, serif",
+              "pixels": 86.4,
+              "weight": "700",
+              "top": 118
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 243, 232)",
+          "visibleButtons": 18,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "c18deb8f03",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "c18deb8f03-390-default.png",
+          "headings": [
+            {
+              "text": "The zine index",
+              "family": "Georgia, serif",
+              "pixels": 46,
+              "weight": "700",
+              "top": 95
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 243, 232)",
+          "visibleButtons": 18,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 14
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "c18deb8f03",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "c18deb8f03-320-default.png",
+          "headings": [
+            {
+              "text": "The zine index",
+              "family": "Georgia, serif",
+              "pixels": 46,
+              "weight": "700",
+              "top": 95
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(247, 243, 232)",
+          "visibleButtons": 14,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Bold",
+              "isCustomFont": false,
+              "glyphCount": 13
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "cb0026dd71",
+      "product": "print",
+      "repeat": 1,
+      "condition": "C",
+      "started": "2026-11-20T17:13:42.396732+00:00",
+      "elapsedSeconds": 236.48,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "a807b859e0ea32ef7d9542046e0937aa36434c9855c52ad3735ee42e86fd429f",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 695643,
+        "cached_input_tokens": 626688,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9966,
+        "reasoning_output_tokens": 303
+      },
+      "thread": "01a1f9f3-20c2-7600-adda-7e3c8f2756d3",
+      "files": {
+        "app.js": "873851cc055760c7ed6ca04a551dae6e8445d77cddc0b393193e966ad8e1d873",
+        "index.html": "b6aca1b0571b9629434a8da0916ee9d8bd438c984188f8c12f3be795e488fcf0",
+        "style.css": "03714deb6057ddf9489ed32ebe2270d99f0a84ce6cebdf9ca05684577393b7a5"
+      },
+      "firstViews": [
+        {
+          "id": "cb0026dd71",
+          "task": "print",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "cb0026dd71-1440-default.png",
+          "headings": [
+            {
+              "text": "Find yournext zine.",
+              "family": "Arial, sans-serif",
+              "pixels": 120.96,
+              "weight": "900",
+              "top": 95
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 246, 238)",
+          "visibleButtons": 11,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Arial Black",
+              "postScriptName": "Arial-Black",
+              "isCustomFont": false,
+              "glyphCount": 13
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "cb0026dd71",
+          "task": "print",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "cb0026dd71-390-default.png",
+          "headings": [
+            {
+              "text": "Find your next zine.",
+              "family": "Arial, sans-serif",
+              "pixels": 62.4,
+              "weight": "900",
+              "top": 84
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 246, 238)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Arial Black",
+              "postScriptName": "Arial-Black",
+              "isCustomFont": false,
+              "glyphCount": 14
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "cb0026dd71",
+          "task": "print",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "cb0026dd71-320-default.png",
+          "headings": [
+            {
+              "text": "Find your next zine.",
+              "family": "Arial, sans-serif",
+              "pixels": 52,
+              "weight": "900",
+              "top": 93
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(248, 246, 238)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Arial Black",
+              "postScriptName": "Arial-Black",
+              "isCustomFont": false,
+              "glyphCount": 14
+            },
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia-Italic",
+              "isCustomFont": false,
+              "glyphCount": 5
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "ec4fdad655",
+      "product": "radio",
+      "repeat": 1,
+      "condition": "B",
+      "started": "2026-11-20T17:13:42.397816+00:00",
+      "elapsedSeconds": 203.97,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "bcf1c8394e8f9dd18b26229c656da77cf9495cd4183359c58c09b936cf7641b5",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 451949,
+        "cached_input_tokens": 409344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8733,
+        "reasoning_output_tokens": 510
+      },
+      "thread": "01a1f9f3-2198-7ee3-8a53-ff93a81b001c",
+      "files": {
+        "index.html": "c2d0e28796b70fbd44e49e627085401471415269af86e59abcb539dd4a1553b0"
+      },
+      "firstViews": [
+        {
+          "id": "ec4fdad655",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "ec4fdad655-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 73.44,
+              "weight": "400",
+              "top": 110
+            },
+            {
+              "text": "Studio rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 21,
+              "weight": "700",
+              "top": 298
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 33,
+              "weight": "400",
+              "top": 350
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(246, 243, 235)",
+          "visibleButtons": 7,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "ec4fdad655",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "ec4fdad655-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 36.66,
+              "weight": "400",
+              "top": 77
+            },
+            {
+              "text": "Studio rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 18,
+              "weight": "700",
+              "top": 224
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 25,
+              "weight": "400",
+              "top": 488
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(246, 243, 235)",
+          "visibleButtons": 7,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 17
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "ec4fdad655",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "ec4fdad655-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 34,
+              "weight": "400",
+              "top": 77
+            },
+            {
+              "text": "Studio rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 18,
+              "weight": "700",
+              "top": 219
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 25,
+              "weight": "400",
+              "top": 508
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(246, 243, 235)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 17
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "f2b64dc67c",
+      "product": "radio",
+      "repeat": 1,
+      "condition": "C",
+      "started": "2026-11-20T17:13:42.406211+00:00",
+      "elapsedSeconds": 216.03,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": "a807b859e0ea32ef7d9542046e0937aa36434c9855c52ad3735ee42e86fd429f",
+      "skillFilesRead": [
+        ".agents/skills/ui-slop/SKILL.md",
+        ".agents/skills/ui-slop/skill-manifest.json",
+        ".agents/skills/ui-slop/references/shaping.md",
+        ".agents/skills/ui-slop/references/review-stages.md",
+        ".agents/skills/ui-slop/references/product-principles.md",
+        ".agents/skills/ui-slop/references/reference-calibration.md",
+        ".agents/skills/ui-slop/references/concept-proof.md",
+        ".agents/skills/ui-slop/references/craft-floor.md",
+        ".agents/skills/ui-slop/examples/experience-brief.template.md",
+        ".agents/skills/ui-slop/examples/product-principles.template.md",
+        ".agents/skills/ui-slop/references/quality-bar.md",
+        ".agents/skills/ui-slop/references/review-protocol.md"
+      ],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 722619,
+        "cached_input_tokens": 667520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8878,
+        "reasoning_output_tokens": 293
+      },
+      "thread": "01a1f9f3-20f3-7790-b644-e2cb641e4a1a",
+      "files": {
+        "index.html": "f5023061aba3289447434a48748435695cafa688006c46bff4b9be1b048e6ac8"
+      },
+      "firstViews": [
+        {
+          "id": "f2b64dc67c",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "f2b64dc67c-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 72,
+              "weight": "500",
+              "top": 104
+            },
+            {
+              "text": "On-air rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 19,
+              "weight": "700",
+              "top": 230
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 36.72,
+              "weight": "500",
+              "top": 281
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(244, 240, 232)",
+          "visibleButtons": 9,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "f2b64dc67c",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "f2b64dc67c-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 41,
+              "weight": "500",
+              "top": 78
+            },
+            {
+              "text": "On-air rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 17,
+              "weight": "700",
+              "top": 182
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 27,
+              "weight": "500",
+              "top": 474
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(244, 240, 232)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "f2b64dc67c",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "f2b64dc67c-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 41,
+              "weight": "500",
+              "top": 78
+            },
+            {
+              "text": "On-air rundown",
+              "family": "system-ui, sans-serif",
+              "pixels": 17,
+              "weight": "700",
+              "top": 222
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 27,
+              "weight": "500",
+              "top": 553
+            }
+          ],
+          "statuses": [],
+          "bodyBackground": "rgb(244, 240, 232)",
+          "visibleButtons": 3,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 17
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md",
+          ".agents/skills/ui-slop/SKILL.md",
+          ".agents/skills/ui-slop/skill-manifest.json",
+          ".agents/skills/ui-slop/references/shaping.md",
+          ".agents/skills/ui-slop/references/review-stages.md",
+          ".agents/skills/ui-slop/references/product-principles.md",
+          ".agents/skills/ui-slop/references/reference-calibration.md",
+          ".agents/skills/ui-slop/references/concept-proof.md",
+          ".agents/skills/ui-slop/references/craft-floor.md",
+          ".agents/skills/ui-slop/examples/experience-brief.template.md",
+          ".agents/skills/ui-slop/examples/product-principles.template.md",
+          ".agents/skills/ui-slop/references/quality-bar.md",
+          ".agents/skills/ui-slop/references/review-protocol.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    },
+    {
+      "id": "f8a6735a49",
+      "product": "radio",
+      "repeat": 1,
+      "condition": "A",
+      "started": "2026-11-20T17:13:42.190079+00:00",
+      "elapsedSeconds": 145.81,
+      "timeout": false,
+      "returncode": 0,
+      "attempt": 1,
+      "digest": null,
+      "skillFilesRead": [],
+      "skillVerified": true,
+      "ready": true,
+      "usage": {
+        "input_tokens": 330167,
+        "cached_input_tokens": 267008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6081,
+        "reasoning_output_tokens": 155
+      },
+      "thread": "01a1f9f3-205f-7e81-9a21-ceed86f6bd02",
+      "files": {
+        "index.html": "d7fcfa2831fdc4681770a2e054823668e4a5a4de9c1124b1a140fc46044fd544"
+      },
+      "firstViews": [
+        {
+          "id": "f8a6735a49",
+          "task": "radio",
+          "width": 1440,
+          "height": 900,
+          "variant": "default",
+          "file": "f8a6735a49-1440-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 74.88,
+              "weight": "400",
+              "top": 147
+            },
+            {
+              "text": "On-air rundown",
+              "family": "Georgia, serif",
+              "pixels": 29,
+              "weight": "400",
+              "top": 371
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 34,
+              "weight": "400",
+              "top": 416
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 444
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 519
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 594
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 669
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 744
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 11,
+              "weight": "700",
+              "top": 492
+            }
+          ],
+          "bodyBackground": "rgb(247, 245, 238)",
+          "visibleButtons": 8,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "f8a6735a49",
+          "task": "radio",
+          "width": 390,
+          "height": 844,
+          "variant": "default",
+          "file": "f8a6735a49-390-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 36.075,
+              "weight": "400",
+              "top": 105
+            },
+            {
+              "text": "On-air rundown",
+              "family": "Georgia, serif",
+              "pixels": 24,
+              "weight": "400",
+              "top": 243
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 29,
+              "weight": "400",
+              "top": 603
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 298
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 352
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 401
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 460
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 509
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 669
+            }
+          ],
+          "bodyBackground": "rgb(247, 245, 238)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        },
+        {
+          "id": "f8a6735a49",
+          "task": "radio",
+          "width": 320,
+          "height": 740,
+          "variant": "default",
+          "file": "f8a6735a49-320-default.png",
+          "headings": [
+            {
+              "text": "Evening changeover",
+              "family": "Georgia, serif",
+              "pixels": 33,
+              "weight": "400",
+              "top": 105
+            },
+            {
+              "text": "On-air rundown",
+              "family": "Georgia, serif",
+              "pixels": 24,
+              "weight": "400",
+              "top": 240
+            },
+            {
+              "text": "Mara Chen on the night bus pilot",
+              "family": "Georgia, serif",
+              "pixels": 29,
+              "weight": "400",
+              "top": 607
+            }
+          ],
+          "statuses": [
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 295
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 353
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 405
+            },
+            {
+              "text": "Ready",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 464
+            },
+            {
+              "text": "Fixed boundary",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 513
+            },
+            {
+              "text": "Awaiting audio",
+              "family": "ui-monospace, \"Cascadia Code\", Consolas, monospace",
+              "pixels": 9,
+              "weight": "700",
+              "top": 673
+            }
+          ],
+          "bodyBackground": "rgb(247, 245, 238)",
+          "visibleButtons": 5,
+          "rootOverflow": 0,
+          "rootSize": "16px",
+          "fonts": [
+            {
+              "familyName": "Georgia",
+              "postScriptName": "Georgia",
+              "isCustomFont": false,
+              "glyphCount": 18
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "sequence": {
+        "browserRunsBeforeInitialWrite": [],
+        "filesReadBeforeInitialWrite": [
+          "brief.md",
+          "assignment.md"
+        ],
+        "initialWriteCalls": 1,
+        "initialWriteObserved": true
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "reviewer": "1-1",
+      "product": "radio",
+      "repeat": 1,
+      "conditions": [
+        "B",
+        "A",
+        "C"
+      ],
+      "recordRoot": "reviewers/1-1",
+      "status": {
+        "started": "2026-11-20T17:18:53.671811+00:00",
+        "elapsedSeconds": 130.04,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "67792ed55f108fadf013c593bee63bc33617143f32968bc08a7927eeaa94d027"
+      },
+      "order": [
+        "ec4fdad655",
+        "f8a6735a49",
+        "f2b64dc67c"
+      ],
+      "observations": {
+        "ec4fdad655": {
+          "typography": "Large serif changeover and cue headlines distinguish page and detail. Bold sans-serif row names and monospaced timing keep a steady scan line. The phone wraps the page title around the compact fixed-handoff callout.",
+          "composition": "Muted burgundy masthead and a proportional schedule strip connect the five cues to the handoff. The 390px layout places the inspector directly after its cue and fits all five opening rows inside the first viewport.",
+          "weakest": "With the oversized backup selected, Apply replacement still looks like a bordered button and takes keyboard focus. Enter leaves Mara intact, but a producer can spend an extra action trying a control that cannot apply the choice. The list also omits the revised end.",
+          "interaction": "At both sizes, the earliest unready cue was Mara at 18:46 and the fixed boundary was 19:00. The 7:30 backup would end at 18:53:30, overlapping the 18:52 North Jetty cue by 1:30, and left Mara selected and scheduled. The 3:45 replacement kept the 18:46 start and showed Depot in both row and detail. Undo restored Mara and Awaiting audio, with 18:51:30 in detail. Ferry detail showed the 18:50 deadline and an 18:45:20 end. Enter on Next returned to Mara and focused her heading at both widths. Weather opened and the 18:46 row could be revisited. No horizontal overflow was reported in the sampled states. Radio choices preview both end times and require a separate Apply action. The change bar and timeline update with the row. On mobile, Undo remained available while Ferry was selected and restored Mara directly. Two consecutive ferry-row clicks kept the ferry inspector open. Tab from the ferry heading reached Next in one step.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": {
+            "finding": "FAIL because the task asks to verify the revised end in list and detail. The replacement row shows 18:46 and 3:45, and the detail explicitly shows 18:49:45. The numbers are consistent, but the exact revised end cannot be read from the row.",
+            "paths": [
+              "process/ec4fdad655-1440-opening/1.jpg",
+              "process/ec4fdad655-1440-workflow/6.jpg",
+              "process/ec4fdad655-1440-workflow/14.jpg",
+              "process/ec4fdad655-1440-workflow/20.jpg",
+              "process/ec4fdad655-1440-workflow/steps.json",
+              "process/ec4fdad655-1440-workflow/trace.zip",
+              "process/ec4fdad655-390-opening/1.jpg",
+              "process/ec4fdad655-390-workflow/6.jpg",
+              "process/ec4fdad655-390-workflow/14.jpg",
+              "process/ec4fdad655-390-workflow/20.jpg",
+              "process/ec4fdad655-390-workflow/steps.json",
+              "process/ec4fdad655-390-workflow/trace.zip",
+              "process/ec4fdad655-390-followup/6.jpg",
+              "process/ec4fdad655-390-followup/11.jpg",
+              "process/ec4fdad655-390-recovery/4.jpg",
+              "process/ec4fdad655-390-recovery/7.jpg"
+            ]
+          }
+        },
+        "f8a6735a49": {
+          "typography": "Broad serif display and detail headings set hierarchy against bold sans-serif segment names. Small monospaced labels work as columns on desktop, but statuses such as Awaiting audio and Fixed boundary wrap in the phone's narrow right column.",
+          "composition": "A full-width dark green boundary strip gives 19:00 the strongest emphasis of the three concepts. The 390px rundown stays intact above detail, keeping all five rows together while separating a tap from its result.",
+          "weakest": "On the 390px opening the replacement choices sit below the viewport. Selecting a cue sends focus to a panel after the full rundown, and the changed cue must be reselected to expose Undo after inspecting Ferry. The list also omits the revised end.",
+          "interaction": "At both sizes, the earliest unready cue was Mara at 18:46 and the fixed boundary was 19:00. The 7:30 backup would end at 18:53:30, overlapping the 18:52 North Jetty cue by 1:30, and left Mara selected and scheduled. The 3:45 replacement kept the 18:46 start and showed Depot in both row and detail. Undo restored Mara and Awaiting audio, with 18:51:30 in detail. Ferry detail showed the 18:50 deadline and an 18:45:20 end. Enter on Next returned to Mara and focused her heading at both widths. Weather opened and the 18:46 row could be revisited. No horizontal overflow was reported in the sampled states. The two replacement options are directly available in Mara's inspector and the valid option applies immediately. The conflict names the full North Jetty segment. Two consecutive ferry clicks kept the inspector open. Tab from the ferry heading reached Next in one step. On mobile, changing to Ferry kept Depot in the list and removed the Undo control from view.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": {
+            "finding": "FAIL because the task asks to verify the revised end in list and detail. The replacement row shows 18:46 and 3:45, and the detail explicitly shows 18:49:45. The numbers are consistent, but the exact revised end cannot be read from the row.",
+            "paths": [
+              "process/f8a6735a49-1440-opening/1.jpg",
+              "process/f8a6735a49-1440-workflow/5.jpg",
+              "process/f8a6735a49-1440-workflow/12.jpg",
+              "process/f8a6735a49-1440-workflow/18.jpg",
+              "process/f8a6735a49-1440-workflow/steps.json",
+              "process/f8a6735a49-1440-workflow/trace.zip",
+              "process/f8a6735a49-390-opening/1.jpg",
+              "process/f8a6735a49-390-workflow/5.jpg",
+              "process/f8a6735a49-390-workflow/12.jpg",
+              "process/f8a6735a49-390-workflow/18.jpg",
+              "process/f8a6735a49-390-workflow/steps.json",
+              "process/f8a6735a49-390-workflow/trace.zip",
+              "process/f8a6735a49-390-followup/6.jpg",
+              "process/f8a6735a49-390-followup/10.jpg"
+            ]
+          }
+        },
+        "f2b64dc67c": {
+          "typography": "Expressive serif headlines, bright type on the plum inspector, and heavier start times give the page distinct levels. The red 18 min countdown takes precedence over the smaller 19:00 time on desktop.",
+          "composition": "The dark inspector separates the selected cut from the light rundown. A slot-length rail and candidate end time bring timing into the replacement decision. At 390px, inline detail keeps the decision with Mara while pushing North Jetty and the fixed row below the first viewport.",
+          "weakest": "Two consecutive ferry-row activations closed the very detail they opened at both sizes. Focus returned to the row, so the producer must open it again to read the exact end and deadline in detail. The list also omits the revised end.",
+          "interaction": "At both sizes, the earliest unready cue was Mara at 18:46 and the fixed boundary was 19:00. The 7:30 backup would end at 18:53:30, overlapping the 18:52 North Jetty cue by 1:30, and left Mara selected and scheduled. The 3:45 replacement kept the 18:46 start and showed Depot in both row and detail. Undo restored Mara and Awaiting audio, with 18:51:30 in detail. Ferry detail showed the 18:50 deadline and an 18:45:20 end. Enter on Next returned to Mara and focused her heading at both widths. Weather opened and the 18:46 row could be revisited. No horizontal overflow was reported in the sampled states. The valid option previews its end and applies in one action. Close detail gives a route back to the row and restores focus. On mobile, Tab from Ferry's heading reached Close first, then Next, whose Enter focused Mara. Selecting Ferry after replacement hid Restore, and reselecting Depot exposed it and allowed Mara to be restored.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": {
+            "finding": "FAIL because the task asks to verify the revised end in list and detail. The replacement row shows 18:46 and 3:45, and the detail explicitly shows 18:49:45. The numbers are consistent, but the exact revised end cannot be read from the row.",
+            "paths": [
+              "process/f2b64dc67c-1440-opening/1.jpg",
+              "process/f2b64dc67c-1440-workflow/6.jpg",
+              "process/f2b64dc67c-1440-workflow/13.jpg",
+              "process/f2b64dc67c-1440-workflow/19.jpg",
+              "process/f2b64dc67c-1440-workflow/steps.json",
+              "process/f2b64dc67c-1440-workflow/trace.zip",
+              "process/f2b64dc67c-390-opening/1.jpg",
+              "process/f2b64dc67c-390-workflow/6.jpg",
+              "process/f2b64dc67c-390-workflow/13.jpg",
+              "process/f2b64dc67c-390-workflow/19.jpg",
+              "process/f2b64dc67c-390-workflow/steps.json",
+              "process/f2b64dc67c-390-workflow/trace.zip",
+              "process/f2b64dc67c-390-recovery/8.jpg",
+              "process/f2b64dc67c-390-recovery/12.jpg",
+              "process/f2b64dc67c-390-recovery/16.jpg"
+            ]
+          }
+        }
+      },
+      "ranking": [
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f2b64dc67c"
+        ],
+        [
+          "f8a6735a49"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "f2b64dc67c"
+        ],
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f8a6735a49"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f8a6735a49"
+        ],
+        [
+          "f2b64dc67c"
+        ]
+      ],
+      "disagreementPoints": [
+        "f2b64dc67c leads visually for the contrast between rundown and inspector and for integrating the available-time rail with the replacement choices. ec4fdad655 keeps more of the opening schedule in view on the phone and has the stronger recovery flow.",
+        "ec4fdad655 adds a choice and confirmation step, but provides explicit fit comparison and keeps Undo available after leaving the changed cue. f8a6735a49 and f2b64dc67c apply in one action and put Undo inside the changed cue.",
+        "f8a6735a49 takes fewer keyboard steps from Ferry to Next and keeps detail open on repeated activation. f2b64dc67c places detail next to the active row on mobile and provides Close with focus return. In the paired click test that same toggle dismissed Ferry detail.",
+        "Evidence Gate treats the explicit list-and-detail end-time check in tasks.md as required. Quality Gate treats that omission as a release blocker across all concepts. The rankings compare the observed first passes despite the shared blocker."
+      ],
+      "gaps": [
+        "The separate role and Enter regression fixtures were outside this review. The reported Enter result is for the concepts' Next control.",
+        "Rapid activation was exercised as consecutive Playwright clicks on the ferry row. Input timing thresholds, repeated activation of a disappearing commit control, and concurrent input were not verified.",
+        "No reload, cross-session persistence, live resize, screen reader announcement, or viewport beyond the two assigned sizes was verified."
+      ]
+    },
+    {
+      "reviewer": "1-2",
+      "product": "radio",
+      "repeat": 1,
+      "conditions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "recordRoot": "reviewers-retry/1-2",
+      "status": {
+        "started": "2026-11-20T17:23:53.061726+00:00",
+        "elapsedSeconds": 95.08,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "052bdba8d3bca8742432a7f6f3514499a3f947a3bd38997f2cd5bd336e5f8300"
+      },
+      "order": [
+        "f8a6735a49",
+        "ec4fdad655",
+        "f2b64dc67c"
+      ],
+      "observations": {
+        "f8a6735a49": {
+          "typography": "Large serif headline and detail titles establish hierarchy. Monospaced times align cleanly, but the phone’s tiny status labels wrap onto two lines and take longer to scan than the segment titles.",
+          "composition": "Forest-green 19:00 banner gives the fixed boundary the clearest emphasis. The full rundown stays together above the detail on the phone, so North Jetty and the handoff are visible at opening while replacement controls sit below the fold.",
+          "weakest": "The changed row shows 18:46, Depot, 3:45 and Ready. The exact 18:49:45 end is only in detail. On the phone the producer has to move down from the list to read that end and act on it.",
+          "interaction": "At both sizes, two consecutive Mara row activations left the interview open. The 7:30 backup reported an 18:53:30 end and a 1:30 overlap at North Jetty, keeping Mara selected. Depot updated both names at 18:46 and detail showed 18:49:45. Undo restored Mara, Awaiting audio and 18:51:30 in detail, with an explicit restoration message. Enter on Next opened and focused North Jetty. Ferry detail confirmed its 18:50 deadline, and returning to Mara on the phone worked. Visiting Ferry after a change hid Undo. Reload at 390 restored the original schedule.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "f8a6735a49-1440-opening",
+            "f8a6735a49-390-opening",
+            "f8a6735a49-1440-flow",
+            "f8a6735a49-390-flow",
+            "f8a6735a49-390-followup"
+          ]
+        },
+        "ec4fdad655": {
+          "typography": "Serif display and detail headings contrast with bold sans-serif cue names. Compact monospaced times, readable secondary status text and a restrained burgundy accent keep the lineup legible at both widths.",
+          "composition": "An overview timeline shows the full shift to the 19:00 fixed handoff and shortens the 18:46 block after replacement. The desktop inspector becomes inline on the phone. The changed-state banner keeps Undo above the rundown even while inspecting Ferry.",
+          "weakest": "The timeline and 3:45 row give a duration cross-check, but the lineup row still lacks the literal 18:49:45 end. The out-of-fit Apply button looked like an ordinary outlined action in the phone capture despite refusing Enter, and reload reverted the change.",
+          "interaction": "At both sizes, two consecutive Mara activations kept detail open. The chooser previewed 18:49:45 for Depot and 18:53:30 for the backup. Enter on Apply with the backup selected left Mara scheduled and showed the 1:30 overrun against 18:52. Applying Depot kept 18:46 and updated the row, inspector and timeline. Undo restored Mara, Awaiting audio and 18:51:30 in detail. Enter on Next opened and focused North Jetty. Ferry showed the 18:50 deadline and phone return reopened Mara. The restore message stayed in the snapshot text after changing cues. Phone reload reset to Mara after a committed replacement.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "ec4fdad655-1440-opening",
+            "ec4fdad655-390-opening",
+            "ec4fdad655-1440-flow",
+            "ec4fdad655-390-flow",
+            "ec4fdad655-390-followup"
+          ]
+        },
+        "f2b64dc67c": {
+          "typography": "The large serif headline, bold cue labels and light serif inspector title on burgundy give the selection a clear identity. On the phone, narrow columns wrap cue titles and the changed row’s replacement note, making that row taller.",
+          "composition": "Dark inspector header, red Depot action and a slot-length rail put the edit and its timing in one place. The phone keeps the inspector anchored under Mara, with the alternatives visible on opening. North Jetty and the fixed row sit below the initial viewport, while the 19:00 handoff remains visible in the header.",
+          "weakest": "The phone backup capture shows the clicked control at the bottom edge with the conflict message below the viewport. Tabbing to Close detail brings the message into view. The row also omits the exact changed end shown in detail.",
+          "interaction": "At both sizes, two consecutive Mara row activations landed on open detail. The phone follow-up confirmed the first activation of the already-open row collapsed it and focused the row, and the second reopened it. The 7:30 backup reported 18:53:30 and a 1:30 overlap while retaining Mara. Depot updated both names at 18:46 and detail showed 18:49:45 with 2:15 clear. Restore returned Mara and Awaiting audio with 18:51:30 in detail. Enter on Next opened and focused North Jetty. Ferry showed the 18:50 deadline and return to Mara worked on phone. Restore was absent while Ferry was selected after the change. A 390 reload retained Depot and reopened its detail with Restore available.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "f2b64dc67c-1440-opening",
+            "f2b64dc67c-390-opening",
+            "f2b64dc67c-1440-flow",
+            "f2b64dc67c-390-flow",
+            "f2b64dc67c-390-followup"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f2b64dc67c"
+        ],
+        [
+          "f8a6735a49"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "f2b64dc67c"
+        ],
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f8a6735a49"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "ec4fdad655"
+        ],
+        [
+          "f8a6735a49"
+        ],
+        [
+          "f2b64dc67c"
+        ]
+      ],
+      "disagreementPoints": [
+        "f2b64dc67c has the strongest edit hierarchy and retains the replacement on phone reload. ec4fdad655 ranks higher overall for fit previews, a guarded commit and Undo that stays available while inspecting another cue.",
+        "f8a6735a49 keeps the five-cue overview together on the phone and repeat row activation leaves detail open. f2b64dc67c places the edit closer to its cue and shows the result of a reload, but the initially open row toggles closed on first activation and the backup explanation can start below the fold.",
+        "All three changed rows agree with detail on name, start, length and readiness. Evidence Gate uses the literal tasks.md requirement to verify the revised end in both list and detail. The exact end was absent from every changed row, so each gate is FAIL and each Quality Gate is NOT_READY."
+      ],
+      "gaps": [
+        "The separate prior role and Enter regression fixtures were outside the supplied runnable concepts. Enter continuation in these concepts was exercised.",
+        "Only the two requested Chromium viewport sizes were operated. Live resize, other browsers, assistive technology and physical phone behavior remain unverified.",
+        "Reload evidence is limited to the same browser context at 390×844. Persistence across separate sessions or devices remains unverified.",
+        "Browser operations used two consecutive Playwright row clicks. Hardware double-click or touch-event timing was not measured."
+      ]
+    },
+    {
+      "reviewer": "2-1",
+      "product": "print",
+      "repeat": 1,
+      "conditions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "recordRoot": "reviewers/2-1",
+      "status": {
+        "started": "2026-11-20T17:18:53.664968+00:00",
+        "elapsedSeconds": 161.67,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "e637d384190a6dfd5008f820a61a1a86e17285df0c455be5dbbb557b38d0a78e"
+      },
+      "order": [
+        "c18deb8f03",
+        "0a585fbab9",
+        "cb0026dd71"
+      ],
+      "observations": {
+        "c18deb8f03": {
+          "typography": "A bold serif gives the index and zine titles a clear editorial hierarchy. Small uppercase mono makes price and table slower to read, especially at 390 px and even in the Night Windows detail.",
+          "composition": "The desktop three-column grid fits all six cards and their metadata at 1440×900. At 390×844 the two-column grid shows four cards with pickup information before the lower row. Tilted covers and distinct color mats make them easy to distinguish.",
+          "weakest": "The shortlist reuses the browse checkmark as its removal control. The screenshot shows only a checkmark, and the action trace identifies the control as 'Save Night Windows' even when pressed. A visitor has to infer that activating it removes the zine.",
+          "interaction": "At both widths, Photography reduced the catalogue to two items. Night Windows showed $12 and B4, saved successfully, and regained focus on return with Photography still active. Wet Asphalt showed $16 and B9 and regained focus on return. Two successive Wet Asphalt save activations ended with its control unpressed and only Night Windows in the shortlist. After reload and reopening the shortlist, Night Windows remained and could be removed, leaving an empty shortlist and a count of zero. Field notes then opened Bus Stop Botany at $8 and C7. Browse cards visibly reflect saves and allow direct toggling. Removing the sole item moves focus to the shortlist heading. The detail uses a dedicated view with a labeled back action.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/c18deb8f03-1440-opening/1.jpg",
+            "process/c18deb8f03-1440-flow/3.jpg",
+            "process/c18deb8f03-1440-flow/24.jpg",
+            "process/c18deb8f03-1440-flow/steps.json",
+            "process/c18deb8f03-390-opening/1.jpg",
+            "process/c18deb8f03-390-flow/3.jpg",
+            "process/c18deb8f03-390-flow/24.jpg",
+            "process/c18deb8f03-390-flow/steps.json"
+          ]
+        },
+        "0a585fbab9": {
+          "typography": "The large serif masthead and serif card titles work with a quieter sans-serif metadata layer. Boxed table labels and regular-case price text make the two practical facts easy to spot.",
+          "composition": "Large upright covers give the most room to the individual illustrations and their lettering. The tall mats show only the first row with metadata at 1440×900. On mobile the second row's price and table extend below the opening frame. The detail and shortlist overlay the catalogue.",
+          "weakest": "The large masthead and cover mats slow initial comparison. Wet Asphalt's price and table are below the opening frame at both tested sizes, although the Photography filter brings it into a two-item comparison.",
+          "interaction": "At both widths, Photography reduced the catalogue to two items. Night Windows showed $12 and B4, saved successfully, and regained focus on return with Photography still active. Wet Asphalt showed $16 and B9 and regained focus on return. Two successive Wet Asphalt save activations ended with its control unpressed and only Night Windows in the shortlist. After reload and reopening the shortlist, Night Windows remained and could be removed, leaving an empty shortlist and a count of zero. Field notes then opened Bus Stop Botany at $8 and C7. The dialog closes onto the originating card. The labeled Remove button makes shortlist recovery explicit, and focus moves to Close when the last row disappears. The catalogue surfaces the count but gives no card-level saved marker.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/0a585fbab9-1440-opening/1.jpg",
+            "process/0a585fbab9-1440-flow/3.jpg",
+            "process/0a585fbab9-1440-flow/24.jpg",
+            "process/0a585fbab9-1440-flow/steps.json",
+            "process/0a585fbab9-390-opening/1.jpg",
+            "process/0a585fbab9-390-flow/3.jpg",
+            "process/0a585fbab9-390-flow/24.jpg",
+            "process/0a585fbab9-390-flow/steps.json"
+          ]
+        },
+        "cb0026dd71": {
+          "typography": "Heavy sans-serif titles and a red italic serif accent give the opening a distinct voice. The desktop headline visibly runs 'your' into 'next', and the right edges of the Night Windows and Bus Stop Botany cover lettering are clipped at both widths.",
+          "composition": "A lavender hero and stacked-zine illustration make a strong opening, and bold price/table pairs scan well in the grid. At 390 px the hero and filters push the first covers to about halfway down the viewport. The desktop opening shows one complete card row.",
+          "weakest": "The primary detail action is a blank red rectangle on first open and when reopened after saving, at both widths. The focused button has no text or pressed state until activated. A visitor cannot tell what the control does or whether it will save or remove the zine before pressing it.",
+          "interaction": "At both widths, Photography reduced the catalogue to two items. Night Windows showed $12 and B4, saved successfully, and regained focus on return with Photography still active. Wet Asphalt showed $16 and B9 and regained focus on return. Two successive Wet Asphalt save activations ended with its control unpressed and only Night Windows in the shortlist. After reload and reopening the shortlist, Night Windows remained and could be removed, leaving an empty shortlist and a count of zero. Field notes then opened Bus Stop Botany at $8 and C7. The scripted sequence required targeting the blank button by selector. Enter on that focused button saved Night Windows and exposed the saved/remove label. Reopening the same item left the shortlist at one while the detail action lost both the label and pressed state again. The shortlist itself has a labeled Remove control and returns focus to Close when emptied.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "process/cb0026dd71-1440-opening/1.jpg",
+            "process/cb0026dd71-1440-flow/3.jpg",
+            "process/cb0026dd71-1440-flow/24.jpg",
+            "process/cb0026dd71-1440-flow/steps.json",
+            "process/cb0026dd71-1440-save-affordance/4.jpg",
+            "process/cb0026dd71-1440-save-affordance/11.jpg",
+            "process/cb0026dd71-1440-save-affordance/steps.json",
+            "process/cb0026dd71-390-opening/1.jpg",
+            "process/cb0026dd71-390-flow/3.jpg",
+            "process/cb0026dd71-390-flow/24.jpg",
+            "process/cb0026dd71-390-flow/steps.json",
+            "process/cb0026dd71-390-save-affordance/4.jpg",
+            "process/cb0026dd71-390-save-affordance/11.jpg",
+            "process/cb0026dd71-390-save-affordance/steps.json"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "0a585fbab9"
+        ],
+        [
+          "c18deb8f03"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "c18deb8f03"
+        ],
+        [
+          "0a585fbab9"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "0a585fbab9"
+        ],
+        [
+          "c18deb8f03"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "disagreementPoints": [
+        "c18deb8f03 leads visually for the amount of usable catalogue visible at both sizes. 0a585fbab9 gives the covers more space and labels table numbers more clearly, at the cost of showing fewer complete entries in the opening.",
+        "0a585fbab9 leads overall because the task ends in the shortlist and its labeled Remove action and focus destination make recovery clearer. c18deb8f03 has the stronger browse-side save feedback and an inline shortcut.",
+        "cb0026dd71 has the most distinctive hero and strong card metadata, but the desktop headline join and cover crops weaken finish. Its blank detail save action is a separate failure on the core task even though the underlying toggle and persistence work."
+      ],
+      "gaps": [
+        "Browser history Back was not exercised because the task allows the in-app return path.",
+        "Reload persistence was checked for a saved entry. A further reload after removing it was not exercised.",
+        "Repeated activation was tested as two consecutive Playwright clicks, without a fixed timing threshold.",
+        "Only the two specified Chromium viewports were operated. Other widths, browsers, real touch input, and screen-reader announcements were not verified."
+      ]
+    },
+    {
+      "reviewer": "2-2",
+      "product": "print",
+      "repeat": 1,
+      "conditions": [
+        "A",
+        "B",
+        "C"
+      ],
+      "recordRoot": "reviewers/2-2",
+      "status": {
+        "started": "2026-11-20T17:18:53.708996+00:00",
+        "elapsedSeconds": 98.47,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "c27acbda9efcc0ae17668eacbb12286aa8a777fda3a5b7dfa0a3839afbb77132"
+      },
+      "order": [
+        "c18deb8f03",
+        "0a585fbab9",
+        "cb0026dd71"
+      ],
+      "observations": {
+        "c18deb8f03": {
+          "typography": "Large heavy serif headings and letterspaced monospace labels give the catalogue a print identity. Price and table text is much smaller than the titles, particularly in the phone grid and the detail pickup line.",
+          "composition": "Tilted paper mockups and restrained color fields fit all six cards at 1440×900. The two-column phone grid exposes the start of the third row. The full-page detail places the description, pickup line and save button within the phone viewport.",
+          "weakest": "Price and pickup are subdued even though they drive table planning. On the phone, the small plus over the cover saves directly, while the adjoining card opens the detail, so closely spaced controls do different things.",
+          "interaction": "At both sizes, Photography showed two results. Night Windows showed $12 and Table B4. Save raised the count to one. The interface return restored the Photography filter and focused the Night Windows card. Wet Asphalt showed $16 and Table B9 and its return focused its card. Night Windows was present when the shortlist was reopened after reload. Removal cleared the row and count. Field notes showed two results and Bus Stop Botany opened at $8 and Table C7. Two consecutive pointer activations and two consecutive Enter presses each ended with an unpressed save control and an empty shortlist. Returning from detail replaces the page and restores the card through focus. Removing the last shortlist item moves focus to the shortlist heading.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/c18deb8f03-opening-1440",
+            "process/c18deb8f03-opening-390",
+            "process/c18deb8f03-task-1440",
+            "process/c18deb8f03-task-390",
+            "process/c18deb8f03-detail-keyboard-1440",
+            "process/c18deb8f03-detail-keyboard-390"
+          ]
+        },
+        "0a585fbab9": {
+          "typography": "A large regular-weight serif masthead and serif card titles create an editorial hierarchy. Plain sans-serif prices and separately shaded table tags are easier to pick out at phone width.",
+          "composition": "Square-on covers make the lit windows, leaf diagram and comic panels distinct and readable. The desktop three-column layout gives the art ample space. The phone retains two columns and places a full-width labeled save button under the detail copy.",
+          "weakest": "The tall desktop cover mats push the second row’s titles, prices and tables below the opening viewport, so visitors must scroll to compare the full catalogue.",
+          "interaction": "At both sizes, Photography showed two results. Night Windows showed $12 and Table B4. Save raised the count to one. The interface return restored the Photography filter and focused the Night Windows card. Wet Asphalt showed $16 and Table B9 and its return focused its card. Night Windows was present when the shortlist was reopened after reload. Removal cleared the row and count. Field notes showed two results and Bus Stop Botany opened at $8 and Table C7. Two consecutive pointer activations and two consecutive Enter presses each ended with an unpressed save control and an empty shortlist. The detail dialog keeps the filtered cards visible behind it. The empty shortlist gives focus to Close after the last removal.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/0a585fbab9-opening-1440",
+            "process/0a585fbab9-opening-390",
+            "process/0a585fbab9-task-1440",
+            "process/0a585fbab9-task-390",
+            "process/0a585fbab9-detail-keyboard-1440",
+            "process/0a585fbab9-detail-keyboard-390"
+          ]
+        },
+        "cb0026dd71": {
+          "typography": "Heavy sans-serif headings and red italic serif lettering make the opening distinct. The desktop headline joins “your” and “next.” The Night Windows and Bus Stop Botany cover lettering clips at the right edge at both sizes, including the enlarged Night Windows cover.",
+          "composition": "The lavender hero and stacked-zine illustration give the fair a recognizable opening. The tall hero delays the desktop grid and the phone shows less catalogue content before scrolling. Topic, price and table sit together on the cards and in detail.",
+          "weakest": "A narrow blank red save button appears on first open and when reopening an already-saved Night Windows at both widths. Readers have to guess what it does and cannot tell from detail that Night Windows is already on the shortlist.",
+          "interaction": "At both sizes, Photography showed two results. Night Windows showed $12 and Table B4. Save raised the count to one. The interface return restored the Photography filter and focused the Night Windows card. Wet Asphalt showed $16 and Table B9 and its return focused its card. Night Windows was present when the shortlist was reopened after reload. Removal cleared the row and count. Field notes showed two results and Bus Stop Botany opened at $8 and Table C7. Two consecutive pointer activations and two consecutive Enter presses each ended with an unpressed save control and an empty shortlist. The tested selector could activate the blank control. After the first activation its saved label appeared, then reopening the detail showed the blank control again while the shortlist still contained Night Windows. Removal transferred focus to Close.",
+          "evidenceGate": "FAIL",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "process/cb0026dd71-opening-1440",
+            "process/cb0026dd71-opening-390",
+            "process/cb0026dd71-task-1440",
+            "process/cb0026dd71-task-390",
+            "process/cb0026dd71-detail-keyboard-1440",
+            "process/cb0026dd71-detail-keyboard-390",
+            "process/cb0026dd71-save-reopen-1440",
+            "process/cb0026dd71-save-reopen-390"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "0a585fbab9"
+        ],
+        [
+          "c18deb8f03"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "c18deb8f03"
+        ],
+        [
+          "0a585fbab9"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "0a585fbab9"
+        ],
+        [
+          "c18deb8f03"
+        ],
+        [
+          "cb0026dd71"
+        ]
+      ],
+      "disagreementPoints": [
+        "c18deb8f03 leads visually for catalogue density and its consistent print typography. 0a585fbab9 leads overall and for interaction because its detail keeps the filtered grid in view and its phone save button gives the action a prominent, readable target.",
+        "c18deb8f03 supports direct saving from browse and explicitly says where to pick up the zine. 0a585fbab9 requires opening detail to save but gives price and table more visual separation.",
+        "cb0026dd71 has the most distinctive opening palette and keeps the browse context behind detail. Its clipped cover lettering and blank save control compromise title recognition and save-state verification."
+      ],
+      "gaps": [
+        "Browser history return and Escape dismissal were unverified. Interface return was exercised at both widths.",
+        "Repeated activation was tested with consecutive pointer actions and Enter presses. Held-key auto-repeat, simultaneous input and cross-tab synchronization were unverified.",
+        "Screen-reader announcements, browse scroll restoration from a deliberately displaced position, and layouts outside the two assigned viewports were unverified."
+      ]
+    },
+    {
+      "reviewer": "3-1",
+      "product": "radio",
+      "repeat": 2,
+      "conditions": [
+        "B",
+        "A",
+        "C"
+      ],
+      "recordRoot": "reviewers/3-1",
+      "status": {
+        "started": "2026-11-20T17:18:53.694997+00:00",
+        "elapsedSeconds": 124.66,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "2a8e91c7c97c5235c71ec28343ddb1e5388c1c836ae30a218a19c8f2fe48d2e8"
+      },
+      "order": [
+        "5e9c2c6bc1",
+        "39ffaf8ac4",
+        "538440f88f"
+      ],
+      "observations": {
+        "5e9c2c6bc1": {
+          "typography": "Bold sans-serif headings and bright monospaced cue times separate editorial content from timing. Small, muted timeline labels are harder to scan on the phone.",
+          "composition": "Lime marks the 19:00 handoff and an amber striped bar locates the 18:46 audio gap in the run of show. Desktop shows the rundown beside the detail. At 390 px the detail expands under Mara, pushing the 18:52 cue and the 19:00 row below the opening viewport while the handoff remains visible at the top.",
+          "weakest": "Two consecutive Enter activations of Check timing from its collapsed state close the explanation again at both sizes. The schedule remains intact, but a producer who activates twice loses the exact overrun until reopening it. The phone capture immediately after Close still shows the outgoing card, while the corresponding snapshot shows it collapsed and focus returned to the 18:46 row.",
+          "interaction": "Both widths showed Mara as the first unready cue and 19:00 as fixed. Check timing showed 18:53:30 and a 1:30 overlap with the 18:52 cue while retaining Mara. Use this recording applied Depot at 18:46 with 3:45 and 18:49:45 in row and detail. Undo restored Mara, 5:30 and the 18:51:30 detail end. Ferry detail showed its 18:50 deadline and 18:45:20 end. Enter on the ferry's Next cue focused Mara's heading. Close at 390 px focused the 18:46 row and collapsed detail in the snapshot. Paired Enters on apply and undo left one coherent changed or restored state. The phone replacement survived same-tab reload.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/5e9c2c6bc1-1440-opening",
+            "process/5e9c2c6bc1-390-opening",
+            "process/5e9c2c6bc1-1440-task",
+            "process/5e9c2c6bc1-390-task",
+            "process/5e9c2c6bc1-1440-repeat",
+            "process/5e9c2c6bc1-390-repeat",
+            "process/5e9c2c6bc1-390-reload"
+          ]
+        },
+        "39ffaf8ac4": {
+          "typography": "Large serif display and detail headings give the cream and indigo interface a distinct character. Bold row names scan clearly, while the small monospaced readiness pills and clock captions carry essential information at a much smaller size.",
+          "composition": "Paired clock cards and lavender selection make the handoff and inspected row distinct. The complete sequence fits above the detail on the phone opening, though reaching the replacement controls requires scrolling past the rundown.",
+          "weakest": "At 390 px a same-tab reload dropped the confirmed replacement and returned the summary to one segment needing audio. The rundown could therefore show the original unready cue after a producer has already confirmed Depot. From the detail heading, Shift+Tab returns to the 19:00 row instead of the active 18:46 row, and the panel offers no direct return control.",
+          "interaction": "Both widths showed Mara as the first unready cue and 19:00 as fixed. The backup stayed pressed as a preview and showed the named 18:52 overlap of 1:30 with an 18:53:30 end. Mara stayed scheduled. Previewing Depot showed the 2:15 margin, then Confirm replacement applied it at 18:46 with 3:45 and 18:49:45 in row and detail. Undo restored Mara, 5:30 and the 18:51:30 detail end. Ferry detail showed its 18:50 deadline and 18:45:20 end. Enter on Next focused Mara's heading. Paired Enters kept the backup conflict visible and left apply and undo in coherent states.",
+          "evidenceGate": "PASS",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "process/39ffaf8ac4-1440-opening",
+            "process/39ffaf8ac4-390-opening",
+            "process/39ffaf8ac4-1440-task",
+            "process/39ffaf8ac4-390-task",
+            "process/39ffaf8ac4-1440-repeat",
+            "process/39ffaf8ac4-390-repeat",
+            "process/39ffaf8ac4-390-reload"
+          ]
+        },
+        "538440f88f": {
+          "typography": "Heavy sans-serif headings and segment names pair with monospaced timing. Coral sets off 19:00 and the waiting state, and the aligned metrics make start, length and end easy to compare.",
+          "composition": "The cream rundown against a dark console makes the two regions easy to distinguish on desktop. At 390 px the complete table, selected cue and top of the detail all fit in the opening. The coral Find replacement button stays below the opening phone fold.",
+          "weakest": "The chooser adds a step before the producer can compare the recordings. Two consecutive Enters on the collapsed backup hide the inline conflict at both widths. The backup's short overrun label remains, and the detailed 1:30 explanation needs another activation.",
+          "interaction": "Both widths showed Mara as the first unready cue and 19:00 as fixed. The chooser preselected Depot. Checking West platforms showed an 18:53:30 end and a 1:30 overlap with North Jetty at 18:52, kept Depot selected and left Mara in the schedule. Applying set Depot at 18:46 with 3:45 and 18:49:45 in row and detail. Undo restored Mara, 5:30 and the 18:51:30 detail end. Ferry detail showed its 18:50 deadline and 18:45:20 end. Enter on Next focused Mara's heading. At 390 px ↑ Rundown focused the selected 18:46 row. Cancel returned focus to Find replacement. Paired Enters left apply and undo in coherent states. The phone replacement survived same-tab reload.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/538440f88f-1440-opening",
+            "process/538440f88f-390-opening",
+            "process/538440f88f-1440-task",
+            "process/538440f88f-390-task",
+            "process/538440f88f-1440-repeat",
+            "process/538440f88f-390-repeat",
+            "process/538440f88f-390-reload"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "538440f88f"
+        ],
+        [
+          "5e9c2c6bc1"
+        ],
+        [
+          "39ffaf8ac4"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "538440f88f"
+        ],
+        [
+          "39ffaf8ac4"
+        ],
+        [
+          "5e9c2c6bc1"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "538440f88f"
+        ],
+        [
+          "5e9c2c6bc1"
+        ],
+        [
+          "39ffaf8ac4"
+        ]
+      ],
+      "disagreementPoints": [
+        "39ffaf8ac4 places second visually for its serif hierarchy, persistent clock cards and complete phone rundown. It places third in operation because a phone reload discards the confirmed edit and keyboard return lands on the last row.",
+        "5e9c2c6bc1 makes elapsed time and the audio gap tangible, and its one-step replacement and focused Close are fast. The expanded detail displaces the later rundown on the phone.",
+        "538440f88f trades an extra chooser step for an explicit retained candidate, an explicit commit and a direct return to the selected row. Its complete phone rundown and reload behavior carry more weight in the overall ordering.",
+        "39ffaf8ac4 alone kept the detailed conflict visible after paired Enter activations. 5e9c2c6bc1 and 538440f88f treated the same pair as expanding and collapsing the explanation."
+      ],
+      "gaps": [
+        "The separate role and Enter regression fixtures were not exercised. Enter was tested on the three concepts' own controls.",
+        "Reload evidence covers only a same-tab reload at 390 × 844. Desktop reload, fresh tabs and cross-device continuity were not exercised.",
+        "Focus and announcements were inspected in Chromium snapshots. Screen-reader speech and other browsers were not tested.",
+        "Rapid activation evidence covers two consecutive Enter presses on the focused controls. Hardware key repeat and double taps were not exercised."
+      ]
+    },
+    {
+      "reviewer": "3-2",
+      "product": "radio",
+      "repeat": 2,
+      "conditions": [
+        "C",
+        "B",
+        "A"
+      ],
+      "recordRoot": "reviewers/3-2",
+      "status": {
+        "started": "2026-11-20T17:18:53.685651+00:00",
+        "elapsedSeconds": 99.01,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "a47247a13f61e7cfff91e57c13727c2be2d8e58ff004269c8a62313234b9c8e7"
+      },
+      "order": [
+        "538440f88f",
+        "5e9c2c6bc1",
+        "39ffaf8ac4"
+      ],
+      "observations": {
+        "538440f88f": {
+          "typography": "Heavy sans headings and segment names establish a clear hierarchy. Monospaced cue times, lengths, and boundary support comparison. Small muted table headers and secondary text are less prominent at 390×844.",
+          "composition": "Coral marks the fixed handoff and the unready state. The light rundown against the dark detail panel makes the two surfaces distinct. At 390×844 all five cues and the boundary fit in the opening, with the detail stacked below.",
+          "weakest": "The replacement picker sits below detail and adds an entry step. On the phone the initial replacement button is below the fold. Two fast activations collapse the inline conflict warning, so the producer must reopen it to read the overlap.",
+          "interaction": "At both widths, opening Mara and checking the 7:30 backup disclosed an 18:53:30 end and 1:30 overlap with North Jetty at 18:52. Mara stayed on air in the rundown and Depot stayed selected in the picker. Applying Depot kept 18:46 and showed its name, 3:45 and 18:49:45 in the list and detail. The second consecutive Enter landed on the focused detail heading and left the applied state intact. Undo restored Mara, Awaiting audio, 5:30 and the 18:51:30 detail end. Ferry showed the 18:50 deadline and 18:45:20 end. Enter on Next returned to Mara detail. Rundown focused the selected row and kept the detail rendered at both widths.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/538440f88f-1440-opening (opening)",
+            "process/538440f88f-1440-workflow (conflict, replacement, restored, ferry, and focus snapshots)",
+            "process/538440f88f-1440-repeat (after-two-backup-activations)",
+            "process/538440f88f-390-opening (opening)",
+            "process/538440f88f-390-workflow (conflict, replacement, restored, ferry, return, and focus snapshots)",
+            "process/538440f88f-390-repeat (after-two-backup-activations)"
+          ]
+        },
+        "5e9c2c6bc1": {
+          "typography": "Bold sans segment names and monospaced numerals give timing and names distinct shapes. Lime emphasizes the boundary and apply action. Amber status text and the striped timeline block draw attention to Mara.",
+          "composition": "The horizontal strip gives a separate view of occupied time and changes with the swap. Desktop keeps rundown and alternatives side by side. On mobile the detail opens directly under Mara, so reading later cues requires scrolling past the expanded panel or closing it.",
+          "weakest": "The inline panel pushes the 18:52 and 19:00 rows below the phone opening, although the fixed 19:00 headline remains visible. Two fast Check timing activations leave the warning collapsed.",
+          "interaction": "At both widths Mara starts expanded, and activating its row closes it before a second activation reopens it. Check timing showed the 18:53:30 end and 1:30 overlap with the 18:52 cue while Mara remained scheduled. The Depot card exposed the revised end and 2:15 clearance before applying. The single apply action kept 18:46 and updated the list and detail to Depot, 3:45 and 18:49:45. A second consecutive Enter left the applied state intact with focus on the detail heading. Undo restored Mara, Awaiting audio, 5:30 and the 18:51:30 detail end. Ferry showed 18:50 and 18:45:20. Enter on Next opened Mara. Close collapsed the panel and put focus back on Mara's row at both widths.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/5e9c2c6bc1-1440-opening (opening)",
+            "process/5e9c2c6bc1-1440-workflow (conflict, replacement, restored, ferry, and focus snapshots)",
+            "process/5e9c2c6bc1-1440-repeat (after-two-backup-activations)",
+            "process/5e9c2c6bc1-390-opening (opening)",
+            "process/5e9c2c6bc1-390-workflow (conflict, replacement, restored, ferry, return, and focus snapshots)",
+            "process/5e9c2c6bc1-390-repeat (after-two-backup-activations)"
+          ]
+        },
+        "39ffaf8ac4": {
+          "typography": "The serif changeover and segment headings distinguish the display from the other concepts. Monospaced numbers pair start and duration down the left edge. Uppercase micro-labels and small status chips carry less weight than the names, especially on the phone.",
+          "composition": "The cream and indigo opening pairs a compact clock and boundary card with a continuous, ruled schedule. The highlighted Mara row and tinted boundary row are easy to pick out. All five rows fit in the phone opening before the detail begins.",
+          "weakest": "Checking the backup moves the pressed state from the valid Depot preview to the invalid option and removes Confirm, so the producer must reselect Depot. The phone detail has no return control. From the Mara heading, one reverse Tab landed on the 19:00 row and three were needed to reach Mara.",
+          "interaction": "At both widths, the backup explained the 18:53:30 end, named North Jetty and gave the 1:30 overlap at 18:52. Mara remained scheduled. Two consecutive activations of the backup kept its warning visible. Reselecting Depot and confirming kept 18:46 and showed Depot, 3:45 and 18:49:45 in list and detail. A second consecutive Enter left the applied state intact with focus on the heading. Undo restored Mara, Awaiting audio, 5:30 and the 18:51:30 detail end. Ferry showed the 18:50 deadline and 18:45:20 end, and Enter on Next opened Mara.",
+          "evidenceGate": "PASS",
+          "qualityGate": "NOT_READY",
+          "evidence": [
+            "process/39ffaf8ac4-1440-opening (opening)",
+            "process/39ffaf8ac4-1440-workflow (conflict, replacement, restored, ferry, and focus snapshots)",
+            "process/39ffaf8ac4-1440-repeat (after-two-backup-activations)",
+            "process/39ffaf8ac4-390-opening (opening)",
+            "process/39ffaf8ac4-390-workflow (conflict, replacement, restored, ferry, keyboard-return, and focus snapshots)",
+            "process/39ffaf8ac4-390-repeat (after-two-backup-activations, return-to-mara-after-three-tabs)"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "5e9c2c6bc1"
+        ],
+        [
+          "538440f88f"
+        ],
+        [
+          "39ffaf8ac4"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "39ffaf8ac4"
+        ],
+        [
+          "538440f88f"
+        ],
+        [
+          "5e9c2c6bc1"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "5e9c2c6bc1"
+        ],
+        [
+          "538440f88f"
+        ],
+        [
+          "39ffaf8ac4"
+        ]
+      ],
+      "disagreementPoints": [
+        "39ffaf8ac4 has the strongest opening typography and compact rundown, but the phone return and the lost Depot preview cost steps during recovery.",
+        "5e9c2c6bc1 has the shortest path from timing information to replacement and a close control that restores focus. Its expanded phone detail comes at the cost of seeing the whole sequence at once.",
+        "538440f88f preserves both the full phone queue and the valid Depot choice through a conflict. Opening its separate picker adds a step before comparing options.",
+        "39ffaf8ac4 keeps the error visible after two consecutive backup activations. The other two disclosures close on the second activation while leaving the scheduled cue intact."
+      ],
+      "gaps": [
+        "The separate role and Enter regression fixtures were outside this review. Enter was exercised on Apply or Confirm and on Next in the runnable concepts.",
+        "Rapid input was exercised as consecutive browser clicks or taps on the backup and consecutive Enter presses across the apply focus change. Device-level double-tap timing and concurrent input were unverified.",
+        "Persistence after reload, assistive technology announcements, and layouts outside 1440×900 and 390×844 were unverified."
+      ]
+    },
+    {
+      "reviewer": "4-1",
+      "product": "print",
+      "repeat": 2,
+      "conditions": [
+        "C",
+        "A",
+        "B"
+      ],
+      "recordRoot": "reviewers/4-1",
+      "status": {
+        "started": "2026-11-20T17:18:53.688884+00:00",
+        "elapsedSeconds": 109.08,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "ce82d04cd0115b5c224b07449922e319694268a786111bdbec58f6d463b2aad7"
+      },
+      "order": [
+        "a1784a5360",
+        "9afd1ea5b3",
+        "6929904d67"
+      ],
+      "observations": {
+        "a1784a5360": {
+          "typography": "Large ink serif and rust italic give the headline a clear accent. Bold serif titles lead the cards, and bold table codes make the smaller pickup line easy to scan.",
+          "composition": "Ruled cream layout puts three large, distinct covers across desktop and two across mobile. The compact 390px opening shows the titles, prices and table codes for four zines. Detail and compact shortlist panels keep the filtered catalogue visible behind them.",
+          "weakest": "The 390px Night Windows detail crops much of the lower cover, so opening the item gives a larger view of only part of the illustration. The mobile opening also omits the visible result count.",
+          "interaction": "At both sizes, Photography narrowed the list to Night Windows and Wet Asphalt. Verified Night Windows at $12 and Table B4, saved it, returned to its focused card with Photography still selected, and opened Wet Asphalt (Table B9). Reopened the shortlist after reload and removed Night Windows. Field notes opened Bus Stop Botany. Three successive Enter activations ended with a saved control, exactly one saved title in the shortlist, and a header count of one. The follow-up run confirmed removal persisted after reload. Closing the shortlist restored focus to its header button. The saved title reopened detail, and the compact row kept title, topic, price and table together.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "a1784a5360-1440-opening",
+            "a1784a5360-1440-workflow",
+            "a1784a5360-1440-shortlist-check",
+            "a1784a5360-390-opening",
+            "a1784a5360-390-workflow",
+            "a1784a5360-390-shortlist-check"
+          ]
+        },
+        "9afd1ea5b3": {
+          "typography": "Oversized tight serif headlines, small uppercase monospaced metadata and a sans-serif action layer create an editorial hierarchy. On mobile the table codes are small relative to the titles and covers.",
+          "composition": "Tilted, textured cover mockups on colored mats look like physical publications and convey the topics distinctly. Full-page desktop detail gives Night Windows room to show its whole cover. At 390px the two-line hero and stamp push the second row's titles and pickup details below the opening viewport.",
+          "weakest": "The shortlist reuses the catalogue grid, so a single save occupies a narrow card with a large cover and the Remove action below the item metadata. Back from the shortlist focused the last inspected card at both sizes, moving keyboard users away from the shortlist trigger.",
+          "interaction": "At both sizes, Photography narrowed the list to Night Windows and Wet Asphalt. Verified Night Windows at $12 and Table B4, saved it, returned to its focused card with Photography still selected, and opened Wet Asphalt (Table B9). Reopened the shortlist after reload and removed Night Windows. Field notes opened Bus Stop Botany. Three successive Enter activations ended with a saved control, exactly one saved title in the shortlist, and a header count of one. The follow-up run confirmed removal persisted after reload. The shortlist title opened full detail. Returning from an active Photography shortlist focused Wet Asphalt, and returning after reload focused All zines. Both returns kept the current browse topic.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "9afd1ea5b3-1440-opening",
+            "9afd1ea5b3-1440-workflow",
+            "9afd1ea5b3-1440-shortlist-check",
+            "9afd1ea5b3-390-opening",
+            "9afd1ea5b3-390-workflow",
+            "9afd1ea5b3-390-shortlist-check"
+          ]
+        },
+        "6929904d67": {
+          "typography": "The white serif masthead sets the opening hierarchy. Heavy sans-serif card titles and bold blue table codes make pickup information quick to find. Detail shifts back to serif for the title.",
+          "composition": "The blue masthead and lime folded-paper mark separate the header from a quiet catalogue. The colored mats distinguish subjects. At 390px the result count drops below the filters and the second row's pickup data falls below the opening viewport. Desktop detail presents the full cover alongside the pickup facts.",
+          "weakest": "The saved title is plain text. Clicking it at either size kept the shortlist open, so a reader who wants the description again must return to browse and reopen the card.",
+          "interaction": "At both sizes, Photography narrowed the list to Night Windows and Wet Asphalt. Verified Night Windows at $12 and Table B4, saved it, returned to its focused card with Photography still selected, and opened Wet Asphalt (Table B9). Reopened the shortlist after reload and removed Night Windows. Field notes opened Bus Stop Botany. Three successive Enter activations ended with a saved control, exactly one saved title in the shortlist, and a header count of one. The follow-up run confirmed removal persisted after reload. Closing the shortlist returned focus to the header trigger. The saved control used a checkmark and pressed state, and the shortlist put a prominent Remove action beside the pickup facts.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "6929904d67-1440-opening",
+            "6929904d67-1440-workflow",
+            "6929904d67-1440-shortlist-check",
+            "6929904d67-390-opening",
+            "6929904d67-390-workflow",
+            "6929904d67-390-shortlist-check"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "a1784a5360"
+        ],
+        [
+          "9afd1ea5b3"
+        ],
+        [
+          "6929904d67"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "9afd1ea5b3"
+        ],
+        [
+          "a1784a5360"
+        ],
+        [
+          "6929904d67"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "a1784a5360"
+        ],
+        [
+          "6929904d67"
+        ],
+        [
+          "9afd1ea5b3"
+        ]
+      ],
+      "disagreementPoints": [
+        "9afd1ea5b3 leads visually for physical-looking covers and the spacious desktop detail. a1784a5360 leads overall for opening density on mobile, a compact shortlist with a path back into detail, and predictable focus restoration.",
+        "6929904d67 edges 9afd1ea5b3 on interaction for returning focus to the shortlist trigger and putting Remove beside pickup details. 9afd1ea5b3 ranks higher overall for stronger cover presentation and the ability to reopen a saved zine directly."
+      ],
+      "gaps": [
+        "Browser Back and Escape were not exercised. Recovery used the in-app return controls.",
+        "Repeated activation used three consecutive Enter presses. Touch bursts and held-key repeats were not tested.",
+        "Other viewport sizes, other browsers, and assistive technology behavior were not tested."
+      ]
+    },
+    {
+      "reviewer": "4-2",
+      "product": "print",
+      "repeat": 2,
+      "conditions": [
+        "B",
+        "A",
+        "C"
+      ],
+      "recordRoot": "reviewers/4-2",
+      "status": {
+        "started": "2026-11-20T17:18:53.670796+00:00",
+        "elapsedSeconds": 110.53,
+        "timeout": false,
+        "returncode": 0,
+        "unchanged": true,
+        "report": "76764b99ad2d2c510dec8fad8c4a7615ad39906b0a1898416759abe47388daf4"
+      },
+      "order": [
+        "6929904d67",
+        "9afd1ea5b3",
+        "a1784a5360"
+      ],
+      "observations": {
+        "6929904d67": {
+          "typography": "Oversized cream serif headline on cobalt, heavy sans-serif card titles, and blue pickup labels. Table and price are readable, although price sits at the opposite edge from the table on wide cards.",
+          "composition": "Three columns on desktop and two on mobile. Color-coded mats and upright covers make titles easy to compare. The mobile masthead still leaves the first two covers and their facts visible.",
+          "weakest": "The mobile card title area reserves room for a wrapped title even under short names. This separates the title from its facts, and Wet Asphalt’s pickup information falls below the opening viewport.",
+          "interaction": "At both widths Photography stayed active after returning from Night Windows and Wet Asphalt, and focus returned to each opened card. Night Windows showed $12 and Table B4, and Wet Asphalt showed $16 and Table B9. Night Windows survived reload and removal emptied the shortlist. Field notes opened Bus Stop Botany. Two consecutive Enter activations ended unsaved with a count of zero and an empty shortlist. Three consecutive activations on Night Windows ended saved with one matching shortlist row. Returning from the shortlist restored focus to its header button. After last-item removal focus moved to Back to zines. The saved row shows table and price with a Remove action, so rereading the description requires returning to browse.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/6929904d67-1440-opening",
+            "process/6929904d67-1440-task",
+            "process/6929904d67-1440-verification",
+            "process/6929904d67-390-opening",
+            "process/6929904d67-390-task",
+            "process/6929904d67-390-verification"
+          ]
+        },
+        "9afd1ea5b3": {
+          "typography": "Large editorial serif, compact uppercase topic and pickup labels, and small bold prices. The serif titles carry the hierarchy, while table labels are particularly small on the phone.",
+          "composition": "Cream stock, red ink, a circular stamp and angled cover mockups create the closest visual fit to a small print fair. At 1440 the tall lead section and large art fill the opening with one complete row. At 390 the second row shows Wet Asphalt’s art but its title and price sit below the fold.",
+          "weakest": "After Back to the tables from the shortlist, focus goes to the previously viewed Wet Asphalt card. Returning to the header shortlist action by keyboard takes additional navigation.",
+          "interaction": "At both widths Photography stayed active after returning from Night Windows and Wet Asphalt, and focus returned to each opened card. Night Windows showed $12 and Table B4, and Wet Asphalt showed $16 and Table B9. Night Windows survived reload and removal emptied the shortlist. Field notes opened Bus Stop Botany. Two consecutive Enter activations ended unsaved with a count of zero and an empty shortlist. Three consecutive activations on Night Windows ended saved with one matching shortlist row. Detail and shortlist use separate views with explicit back controls. Removing the only saved item moved focus to the shortlist heading. The shortlist uses a full cover card for the saved item.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/9afd1ea5b3-1440-opening",
+            "process/9afd1ea5b3-1440-task",
+            "process/9afd1ea5b3-1440-verification",
+            "process/9afd1ea5b3-390-opening",
+            "process/9afd1ea5b3-390-task",
+            "process/9afd1ea5b3-390-verification"
+          ]
+        },
+        "a1784a5360": {
+          "typography": "Large serif heading with red italic emphasis, bold serif card titles and compact facts. Price and bold table number share one line, making pickup details easier to scan.",
+          "composition": "A compact cream masthead gives the cover grid more room. On the phone, two complete rows show names, topics, prices and tables, including Wet Asphalt. On desktop, aligned card facts keep the row comparable despite the longer comics title.",
+          "weakest": "The desktop cover windows cut off the lower portion of the cover artwork. Titles stay visible, but some illustration and cover detail disappear from the comparison grid.",
+          "interaction": "At both widths Photography stayed active after returning from Night Windows and Wet Asphalt, and focus returned to each opened card. Night Windows showed $12 and Table B4, and Wet Asphalt showed $16 and Table B9. Night Windows survived reload and removal emptied the shortlist. Field notes opened Bus Stop Botany. Two consecutive Enter activations ended unsaved with a count of zero and an empty shortlist. Three consecutive activations on Night Windows ended saved with one matching shortlist row. Returning from the shortlist restored focus to the header shortlist button. After last-item removal focus moved to Back to browse. The compact saved row includes a title button and puts topic, price and table together.",
+          "evidenceGate": "PASS",
+          "qualityGate": "READY",
+          "evidence": [
+            "process/a1784a5360-1440-opening",
+            "process/a1784a5360-1440-task",
+            "process/a1784a5360-1440-verification",
+            "process/a1784a5360-390-opening",
+            "process/a1784a5360-390-task",
+            "process/a1784a5360-390-verification"
+          ]
+        }
+      },
+      "ranking": [
+        [
+          "a1784a5360"
+        ],
+        [
+          "9afd1ea5b3"
+        ],
+        [
+          "6929904d67"
+        ]
+      ],
+      "visualRanking": [
+        [
+          "9afd1ea5b3"
+        ],
+        [
+          "a1784a5360"
+        ],
+        [
+          "6929904d67"
+        ]
+      ],
+      "interactionRanking": [
+        [
+          "a1784a5360"
+        ],
+        [
+          "6929904d67"
+        ],
+        [
+          "9afd1ea5b3"
+        ]
+      ],
+      "disagreementPoints": [
+        "9afd1ea5b3 leads visually for its print-fair identity, but a1784a5360 leads overall for mobile comparison density and focus returning to the shortlist trigger.",
+        "6929904d67 ranks above 9afd1ea5b3 for interaction because closing the shortlist restores the invoking control. 9afd1ea5b3 offers a fuller saved-card presentation and returns focus to the last zine, which suits resuming browse but adds keyboard navigation when reopening the shortlist.",
+        "All three completed the assigned flow. All returned to the initial browse filter on reload while keeping the saved zine. The brief requires topic continuity when returning from detail and save persistence on reload."
+      ],
+      "gaps": [
+        "Return was verified through the provided interface. Browser Back behavior was not exercised.",
+        "Rapid activation was tested with consecutive Enter presses. Touch bursts, input timing thresholds, multiple tabs and storage failure were not exercised.",
+        "Only Chromium at 1440×900 and 390×844 was tested. Other engines, assistive technology and the remaining zine details were not verified."
+      ]
+    }
+  ],
+  "pairwise": {
+    "ranking": {
+      "A:B": {
+        "left": 2,
+        "right": 6,
+        "tie": 0
+      },
+      "A:C": {
+        "left": 2,
+        "right": 6,
+        "tie": 0
+      },
+      "B:C": {
+        "left": 5,
+        "right": 3,
+        "tie": 0
+      }
+    },
+    "visualRanking": {
+      "A:B": {
+        "left": 6,
+        "right": 2,
+        "tie": 0
+      },
+      "A:C": {
+        "left": 5,
+        "right": 3,
+        "tie": 0
+      },
+      "B:C": {
+        "left": 2,
+        "right": 6,
+        "tie": 0
+      }
+    },
+    "interactionRanking": {
+      "A:B": {
+        "left": 0,
+        "right": 8,
+        "tie": 0
+      },
+      "A:C": {
+        "left": 4,
+        "right": 4,
+        "tie": 0
+      },
+      "B:C": {
+        "left": 5,
+        "right": 3,
+        "tie": 0
+      }
+    }
+  },
+  "medianSuccessfulSeconds": {
+    "A": 154.815,
+    "B": 205.3,
+    "C": 226.255
+  }
+}

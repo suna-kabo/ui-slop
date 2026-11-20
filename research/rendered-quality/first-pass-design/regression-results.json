@@ -1,0 +1,205 @@
+[
+  {
+    "name": "old-role",
+    "width": 1440,
+    "contract": "FAIL",
+    "leadActionsAgree": false,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-role",
+    "width": 1440,
+    "contract": "PASS",
+    "leadActionsAgree": true,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "old-enter",
+    "width": 1440,
+    "contract": "FAIL",
+    "focused": "advance-load",
+    "afterRepeat": "Firing",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-enter",
+    "width": 1440,
+    "contract": "PASS",
+    "focused": "detail-heading",
+    "afterRepeat": "Queued",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "copy",
+    "width": 1440,
+    "original": {
+      "firstResultTop": 459,
+      "firstTitleTop": 865.265625
+    },
+    "reserved": {
+      "firstResultTop": 459,
+      "firstTitleTop": 865.265625
+    },
+    "removed": {
+      "firstResultTop": 459,
+      "firstTitleTop": 865.265625
+    },
+    "recomposed": {
+      "firstResultTop": 362.25,
+      "firstTitleTop": 768.515625
+    },
+    "browseDetailReturn": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "checkout",
+    "width": 1440,
+    "cases": [
+      {
+        "number": "62",
+        "confirmation": "PASS",
+        "synchronized": "FAIL",
+        "reversal": "PASS"
+      },
+      {
+        "number": "75",
+        "confirmation": "PASS",
+        "synchronized": "PASS",
+        "reversal": "PASS"
+      }
+    ],
+    "runtimeErrors": []
+  },
+  {
+    "name": "old-role",
+    "width": 390,
+    "contract": "FAIL",
+    "leadActionsAgree": false,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-role",
+    "width": 390,
+    "contract": "PASS",
+    "leadActionsAgree": true,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "old-enter",
+    "width": 390,
+    "contract": "FAIL",
+    "focused": "advance-load",
+    "afterRepeat": "Firing",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-enter",
+    "width": 390,
+    "contract": "PASS",
+    "focused": "detail-heading",
+    "afterRepeat": "Queued",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "copy",
+    "width": 390,
+    "original": {
+      "firstResultTop": 452.265625,
+      "firstTitleTop": 899.90625
+    },
+    "reserved": {
+      "firstResultTop": 452.265625,
+      "firstTitleTop": 899.90625
+    },
+    "removed": {
+      "firstResultTop": 395.265625,
+      "firstTitleTop": 818.90625
+    },
+    "recomposed": {
+      "firstResultTop": 375.265625,
+      "firstTitleTop": 798.90625
+    },
+    "browseDetailReturn": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "checkout",
+    "width": 390,
+    "cases": [
+      {
+        "number": "62",
+        "confirmation": "PASS",
+        "synchronized": "FAIL",
+        "reversal": "PASS"
+      },
+      {
+        "number": "75",
+        "confirmation": "PASS",
+        "synchronized": "PASS",
+        "reversal": "PASS"
+      }
+    ],
+    "runtimeErrors": []
+  },
+  {
+    "name": "old-role",
+    "width": 320,
+    "contract": "FAIL",
+    "leadActionsAgree": false,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-role",
+    "width": 320,
+    "contract": "PASS",
+    "leadActionsAgree": true,
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "old-enter",
+    "width": 320,
+    "contract": "FAIL",
+    "focused": "advance-load",
+    "afterRepeat": "Firing",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "fixed-enter",
+    "width": 320,
+    "contract": "PASS",
+    "focused": "detail-heading",
+    "afterRepeat": "Queued",
+    "recovery": "PASS",
+    "runtimeErrors": []
+  },
+  {
+    "name": "checkout",
+    "width": 320,
+    "cases": [
+      {
+        "number": "62",
+        "confirmation": "PASS",
+        "synchronized": "FAIL",
+        "reversal": "PASS"
+      },
+      {
+        "number": "75",
+        "confirmation": "PASS",
+        "synchronized": "PASS",
+        "reversal": "PASS"
+      }
+    ],
+    "runtimeErrors": []
+  }
+]

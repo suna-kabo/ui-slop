@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchboard · Evening changeover</title>
+<style>
+:root{color-scheme:dark;--bg:#101317;--panel:#191e24;--line:#303741;--muted:#aab4c1;--ink:#f3f5f6;--lime:#d9fa83;--amber:#ffc586;--mono:ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,[tabindex="-1"]:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.shell{width:min(1240px,calc(100% - 96px));margin:auto}
+header{border-bottom:1px solid var(--line)}
+.brandbar{height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:760;letter-spacing:-.035em}
+.mark{width:31px;height:31px;border-radius:7px;display:flex;align-items:center;justify-content:center;gap:3px;background:var(--lime)}
+.mark i{width:2px;background:var(--bg);height:8px;border-radius:2px}
+.mark i:nth-child(2){height:15px}.mark i:nth-child(3){height:20px}.mark i:nth-child(4){height:12px}
+.clock{font:13px var(--mono);color:var(--muted)}.clock b{font-size:16px;color:var(--ink);margin-left:8px}
+.hero{display:flex;justify-content:space-between;align-items:end;gap:18px;padding:33px 0 25px}
+h1,h2,h3,p{margin:0}h1{font-size:clamp(35px,4vw,58px);line-height:1.02;letter-spacing:-.062em}
+.summary{display:flex;align-items:center;gap:8px;margin-top:12px;color:var(--amber);font-size:14px}
+.summary.ready{color:var(--lime)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.boundary{display:flex;align-items:center;gap:14px;text-align:right}
+.boundary span{color:var(--muted);font-size:13px}.boundary strong{font:700 38px/1 var(--mono);letter-spacing:-.08em;color:var(--lime);border-left:1px solid #52613e;padding-left:14px}
+.strip{padding:12px 16px 9px;border:1px solid var(--line);background:#15191e;border-radius:10px}
+.track{height:19px;position:relative;background:repeating-linear-gradient(90deg,#222831 0,#222831 calc(100% / 18 - 1px),#343c45 calc(100% / 18 - 1px),#343c45 calc(100% / 18));border-right:3px solid var(--lime);border-radius:3px 0 0 3px}
+.block{position:absolute;top:3px;bottom:3px;border-radius:2px;background:#7b9a60;min-width:3px}
+.block.issue{background:repeating-linear-gradient(125deg,#ffc586 0 3px,#a57350 3px 6px)}
+.block.active{outline:1px solid var(--ink);outline-offset:1px}
+.ticks{position:relative;height:13px;color:var(--muted);font:11px var(--mono);margin-top:7px}.ticks span{position:absolute}.ticks span:nth-child(2){left:22.22%;transform:translateX(-50%)}.ticks span:nth-child(3){left:55.56%;transform:translateX(-50%)}.ticks span:last-child{right:0;color:var(--lime)}
+.workspace{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(320px,1fr);gap:26px;margin:26px 0 40px;align-items:start}
+.list-head,.row{display:grid;grid-template-columns:78px minmax(0,1fr) 85px 18px;align-items:center;gap:12px}
+.list-head{padding:0 15px 10px;color:var(--muted);font-size:12px}.list-head h2{font-size:17px;color:var(--ink);letter-spacing:-.02em}
+.entry+ .entry{margin-top:7px}
+.row{width:100%;text-align:left;background:#191e24;border:1px solid var(--line);border-radius:8px;min-height:68px;padding:10px 14px}
+.row:hover{background:#222931}
+.row[aria-expanded="true"]{background:#27251f;border-color:#9e7248;box-shadow:inset 3px 0 var(--amber)}
+.row[aria-expanded="true"]:not(.problem){background:#252d22;border-color:#748e51;box-shadow:inset 3px 0 var(--lime)}
+.row.fixed{border-top:2px solid #8ea959}
+.row-time{font:700 19px var(--mono);letter-spacing:-.06em}
+.row-title{display:block;font-size:15px;font-weight:700;line-height:1.25}
+.status{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--lime);margin-top:4px}
+.status.await,.status.deadline{color:var(--amber)}.status.fixed-state{color:#d9e6f3}
+.row-duration{font:14px var(--mono);color:var(--muted)}.row-end{white-space:nowrap;display:block;font:11px var(--mono);color:var(--muted);margin-top:4px}
+.chevron{color:var(--muted);font-size:21px;text-align:right}
+.detail{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:20px;min-width:0}
+.detail-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.detail-top .status{margin:0}
+
+.close{background:transparent;border:1px solid var(--line);border-radius:5px;padding:6px 9px;font-size:12px}
+.detail h2{font-size:30px;line-height:1.04;letter-spacing:-.044em;max-width:22ch}
+.slot-data{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px 0;margin-top:14px;border-block:1px solid var(--line)}
+.slot-data span{display:block;color:var(--muted);font-size:12px}.slot-data b{font:600 15px var(--mono);display:block;margin-top:3px}
+.options{margin-top:16px}.options h3{font-size:14px;margin-bottom:8px}
+.option{background:#13171b;border:1px solid var(--line);border-radius:7px;padding:11px;margin-top:7px}
+.option-head{display:flex;justify-content:space-between;gap:10px;font-size:14px;line-height:1.3}
+.option-head span{font:13px var(--mono);color:var(--muted)}
+.option p,.note{font-size:13px;color:var(--muted);margin-top:5px}.note{margin-top:15px}
+.action{border:1px solid transparent;background:var(--lime);color:#151b0b;font-weight:750;border-radius:6px;padding:8px 12px;min-height:38px;font-size:13px}
+.action:hover{background:#edffbd}
+.secondary{background:transparent;color:var(--ink);border-color:#48535f}.secondary:hover,.close:hover{background:#303841;color:var(--ink)}
+.option .action{margin-top:9px}
+.conflict{font-size:13px;color:var(--amber);border-left:2px solid var(--amber);padding-left:9px;margin-top:9px}
+.footer-actions{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-top:15px}
+.next{border:0;background:transparent;color:var(--lime);padding:8px 0;min-height:38px;text-align:left;font-size:13px;font-weight:700}
+.next:hover{text-decoration:underline}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:900px){.shell{width:calc(100% - 48px)}.workspace{gap:16px}.list-head,.row{grid-template-columns:60px minmax(0,1fr) 65px 12px;gap:8px}.detail{padding:15px}}
+@media(max-width:700px){.shell{width:calc(100% - 32px)}.brandbar{height:57px}.hero{display:block;padding:22px 0 15px}.summary{margin-top:8px}.boundary{justify-content:space-between;text-align:left;margin-top:13px;padding-top:9px;border-top:1px solid var(--line)}.boundary strong{font-size:24px}.strip{padding:8px 10px}.track{height:15px}.workspace{display:block;margin-top:20px}.list-head,.row{grid-template-columns:48px minmax(0,1fr) 58px 10px;gap:8px;padding-inline:10px}.row{min-height:66px}.row-time{font-size:16px}.row-title{font-size:14px}.row-duration{font-size:13px}.detail{margin-top:5px;margin-bottom:11px}.detail h2{font-size:26px}.action,.next,.close{min-height:44px}}
+@media(max-width:700px){
+  .hero{padding-top:18px}.boundary{margin-top:10px}.boundary br{display:none}.boundary span span{margin-left:6px}
+  .workspace{margin-top:15px}.row{min-height:61px;padding-block:8px}.detail{padding:12px}
+  .detail-top{margin-bottom:4px}.detail h2{font-size:24px}.slot-data{margin-top:9px;padding:8px 0}
+  .options{margin-top:10px}.option{padding:9px}.option .action{margin-top:6px}
+}
+</style>
+</head>
+<body>
+<header><div class="shell brandbar"><div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Switchboard</div><div class="clock">Studio clock <b>18:42</b></div></div></header>
+<main class="shell">
+  <div class="hero">
+    <div><h1>Evening changeover</h1><p class="summary" id="summary"></p></div>
+    <div class="boundary"><span>Fixed news handoff<br><span>18 min to air</span></span><strong>19:00</strong></div>
+  </div>
+  <div class="strip" aria-hidden="true"><div class="track" id="track"></div><div class="ticks"><span>18:42</span><span>18:46</span><span>18:52</span><span>19:00</span></div></div>
+  <div class="workspace">
+    <section aria-labelledby="rundown-title"><div class="list-head"><span>Start</span><h2 id="rundown-title">Rundown</h2><span>Duration</span></div><div id="rows"></div></section>
+    <div id="detail-dock"><section class="detail" id="detail" aria-labelledby="detail-title"></section></div>
+  </div>
+  <p class="sr" id="announcement" role="status"></p>
+</main>
+<script>
+const cues = [
+  { start:43, title:'East Market weather', seconds:45, note:'Next cue at 18:44.' },
+  { start:44, title:'Harbor ferry suspension notice', seconds:80, deadline:true, note:'Must air before 18:50.' },
+  { start:46, title:'Mara Chen on the night bus pilot', seconds:330, missing:true },
+  { start:52, title:'Listener recordings from North Jetty', seconds:190, note:'Leaves 4:50 before the fixed 19:00 handoff.' },
+  { start:60, title:'Station identification and news handoff', seconds:30, fixed:true, note:'Keep this cue at 19:00. It marks the fixed news handoff.' }
+];
+const depot = { title:'Depot shift before dawn', seconds:225 };
+const backup = { title:'West platforms accessibility call-in', seconds:450 };
+const repairIndex = 2;
+let selected = repairIndex;
+let replaced = false;
+try { replaced = sessionStorage.getItem('switchboard-depot') === 'true'; } catch {}
+let conflict = false;
+const compact = matchMedia('(max-width: 700px)');
+const rows = document.querySelector('#rows');
+const detail = document.querySelector('#detail');
+const dock = document.querySelector('#detail-dock');
+const announcement = document.querySelector('#announcement');
+const pad = value => String(value).padStart(2,'0');
+const duration = seconds => Math.floor(seconds/60) + ':' + pad(seconds%60);
+function time(start, seconds = 0) {
+  const total = start * 60 + seconds;
+  return (18 + Math.floor(total/3600)) + ':' + pad(Math.floor(total/60)%60) + (seconds ? ':' + pad(total%60) : '');
+}
+function current(index) {
+  if (index === repairIndex && replaced) return { start:46, ...depot };
+  return cues[index];
+}
+function status(cue, inRow = false) {
+  if (cue.missing) return '<span class="status await"><i class="dot" aria-hidden="true"></i>Awaiting audio</span>';
+  if (cue.fixed) return '<span class="status fixed-state"><i class="dot" aria-hidden="true"></i>Fixed boundary</span>';
+  return '<span class="status '+(cue.deadline ? 'deadline' : '')+'"><i class="dot" aria-hidden="true"></i>Ready'+(cue.deadline && inRow ? ' · Air before 18:50' : '')+'</span>';
+}
+function option(clip, action, label, caption) {
+  return '<div class="option"><div class="option-head"><strong>'+clip.title+'</strong><span>'+duration(clip.seconds)+'</span></div>'+(caption ? '<p>'+caption+'</p>' : '')+'<button class="action '+(action === 'check' ? 'secondary' : '')+'" data-action="'+action+'"'+(action === 'check' ? ' aria-expanded="'+conflict+'" aria-controls="conflict"' : '')+'>'+label+'</button>'+
+    (action === 'check' ? '<div class="conflict" id="conflict" '+(conflict ? '' : 'hidden')+'>It would end at '+time(46,backup.seconds)+', overlapping the 18:52 cue by '+duration(backup.seconds-360)+'. The current cue is unchanged.</div>' : '')+'</div>';
+}
+function placeDetail() {
+  const anchor = compact.matches && selected !== null ? document.querySelector('#entry-'+selected) : dock;
+  if (detail.parentElement !== anchor) anchor.append(detail);
+}
+function render(focusSelector) {
+  dock.append(detail);
+  document.querySelector('#summary').classList.toggle('ready', replaced);
+  document.querySelector('#summary').innerHTML = '<i class="dot" aria-hidden="true"></i>'+(replaced ? 'All scheduled audio ready' : '1 cue awaiting audio');
+  document.querySelector('#track').innerHTML = cues.slice(0,-1).map((_,index) => {
+    const cue = current(index);
+    return '<span class="block '+(cue.missing ? 'issue ' : '')+(selected === index ? 'active' : '')+'" style="left:'+((cue.start-42)/18*100)+'%;width:'+(cue.seconds/1080*100)+'%"></span>';
+  }).join('');
+  rows.innerHTML = cues.map((_,index) => {
+    const cue = current(index);
+    return '<div class="entry" id="entry-'+index+'"><button id="cue-'+index+'" class="row '+(cue.fixed?'fixed ':'')+(cue.missing?'problem':'')+'" data-index="'+index+'" aria-controls="detail" aria-expanded="'+(index===selected)+'"><span class="row-time">'+time(cue.start)+'</span><span><span class="row-title">'+cue.title+'</span>'+status(cue,true)+'</span><span class="row-duration">'+duration(cue.seconds)+(index===repairIndex && replaced ? '<span class="row-end">→ '+time(cue.start,cue.seconds)+'</span>' : '')+'</span><span class="chevron" aria-hidden="true">'+(index===selected ? '⌄' : '›')+'</span></button></div>';
+  }).join('');
+  detail.hidden = selected === null;
+  if (selected !== null) {
+    const cue = current(selected);
+    const isRepair = selected === repairIndex;
+    detail.innerHTML = '<div class="detail-top">'+status(cue)+'<button class="close" data-action="close">Close</button></div>'+
+      '<h2 id="detail-title" tabindex="-1">'+cue.title+'</h2>'+
+      '<div class="slot-data"><div><span>Starts</span><b>'+time(cue.start)+'</b></div><div><span>Ends</span><b>'+time(cue.start,cue.seconds)+'</b></div><div><span>Duration</span><b>'+duration(cue.seconds)+'</b></div></div>'+
+      (isRepair && !replaced ? '<div class="options"><h3>Ready recordings</h3>'+
+        option(depot,'replace','Use this recording','Ends '+time(46,depot.seconds)+' · '+duration(360-depot.seconds)+' before the 18:52 cue')+
+        option(backup,'check','Check backup timing','')+'</div>' : '')+
+      (isRepair && replaced ? '<p class="note">Replaced Mara Chen on the night bus pilot. The 18:52 cue stays in place.</p>' : '')+
+      (cue.note ? '<p class="note">'+cue.note+'</p>' : '')+
+      '<div class="footer-actions">'+(isRepair && replaced ? '<button class="action secondary" data-action="undo">Undo replacement</button>' : '')+
+      (selected < cues.length-1 ? '<button class="next" data-action="next">Next cue · '+time(cues[selected+1].start)+' →</button>' : '')+'</div>';
+  }
+  placeDetail();
+  if (focusSelector) document.querySelector(focusSelector)?.focus();
+}
+compact.addEventListener('change',placeDetail);
+rows.addEventListener('click',event => {
+  const row = event.target.closest('[data-index]');
+  if (!row) return;
+  const index = Number(row.dataset.index);
+  selected = selected === index ? null : index;
+  conflict = false;
+  render(selected === null ? '#cue-'+index : '#detail-title');
+});
+detail.addEventListener('click', event => {
+  const action = event.target.closest('button')?.dataset.action;
+  if (action === 'close') {
+    const origin = selected;
+    selected = null;
+    conflict = false;
+    render('#cue-'+origin);
+  } else if (action === 'next') {
+    selected += 1;
+    conflict = false;
+    render('#detail-title');
+  } else if (action === 'check') {
+    conflict = !conflict;
+    const button = event.target.closest('button');
+    button.setAttribute('aria-expanded',conflict);
+    document.querySelector('#conflict').hidden = !conflict;
+    announcement.textContent = conflict ? document.querySelector('#conflict').textContent : '';
+  } else if (action === 'replace' || action === 'undo') {
+    replaced = action === 'replace';
+    conflict = false;
+    try { sessionStorage.setItem('switchboard-depot',String(replaced)); } catch {}
+    render('#detail-title');
+    announcement.textContent = replaced ? 'Replacement applied. Depot shift before dawn ends at 18:49:45.' : 'Original cue restored. Awaiting audio.';
+  }
+});
+render();
+</script>
+</body>
+</html>

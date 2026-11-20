@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fold Fair — The zine index</title>
+<style>
+:root{--paper:#f7f3e8;--ink:#241f1a;--muted:#615950;--rust:#a03421;--line:#c9bdab}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #135d6d;outline-offset:4px}button:disabled{cursor:default}h1,h2,p{margin:0}.wrap{width:min(1160px,calc(100% - 80px));margin:auto}.top{border-bottom:1px solid var(--line)}.mast{height:65px;display:flex;justify-content:space-between;align-items:center}.brand{background:none;border:0;padding:0;font:bold 22px Georgia,serif;letter-spacing:-.05em}.brand span{color:var(--rust);font:22px Arial;margin-right:7px}.shortlist{background:none;border:1px solid var(--ink);border-radius:3px;padding:8px 11px;font-weight:bold;font-size:13px}.shortlist span{margin-left:5px;background:var(--ink);color:var(--paper);border-radius:50%;display:inline-grid;place-items:center;width:20px;height:20px}.hero{display:flex;justify-content:space-between;align-items:end;padding:35px 0 24px;border-bottom:2px solid var(--ink);gap:24px}.kicker,.topic,.location,.count,.cover small{font: bold 11px 'Courier New',monospace;letter-spacing:.08em;text-transform:uppercase}.kicker,.topic{color:var(--rust)}h1{font:bold clamp(46px,6vw,87px)/.96 Georgia,serif;letter-spacing:-.073em;margin-top:5px}.intro{font:19px/1.4 Georgia,serif;max-width:290px;padding-bottom:3px}.tools{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:17px 0 18px}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;border-radius:22px;padding:7px 13px;font-size:13px}.filter[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}.count{color:var(--muted);white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 17px}.card{position:relative;border-bottom:1px solid var(--line);min-width:0}.open{display:block;border:0;padding:0;background:transparent;width:100%;text-align:left}.open:hover .name{text-decoration:underline;text-underline-offset:4px}.stage{height:200px;display:grid;place-items:center;overflow:hidden;background:var(--stage);border-radius:2px}.cover{position:relative;width:121px;height:158px;overflow:hidden;isolation:isolate;box-shadow:4px 6px 10px #21180e55, inset 3px 0 #ffffff27;transform:rotate(var(--tilt));background:var(--cover);color:var(--type);padding:10px 11px;display:flex;flex-direction:column;justify-content:space-between}.cover strong{z-index:1;white-space:pre-line;font:bold 22px/.9 Georgia,serif;letter-spacing:-.06em}.cover small{z-index:1;font-size:7px;letter-spacing:.07em}.art{position:absolute;inset:0;z-index:-1}.night .art{inset:47px 16px 19px;background:repeating-linear-gradient(90deg,transparent 0 13px,#1f2525 13px 18px),repeating-linear-gradient(0deg,#d5c9a2 0 12px,#303737 12px 18px);transform:skewY(-10deg);box-shadow:8px 4px #353b38}.botany .art{inset:52px 14px 18px;background:linear-gradient(113deg,transparent 48%,#214939 49% 51%,transparent 52%)}.botany .art i{position:absolute;display:block;width:34px;height:18px;border:1px solid #224639;border-radius:90% 0 90% 0;background:#728b51;transform:rotate(var(--angle));top:var(--y);left:var(--x)}.table .art{inset:61px 10px 19px;background:radial-gradient(circle at 30% 36%,#fff4d4 0 10px,#60291c 11px 12px,transparent 13px),radial-gradient(circle at 70% 66%,#fff4d4 0 11px,#60291c 12px 13px,transparent 14px),repeating-conic-gradient(#cf5c3e 0% 25%,#f3ab89 0% 50%) 0 0/15px 15px;border:1px solid #60291c}.wet .art{inset:52px 0 13px;background:repeating-linear-gradient(167deg,transparent 0 5px,#9cd9d9 6px 7px,transparent 8px 13px),linear-gradient(120deg,#162c43,#4d7c99 45%,#1a303b 54%)}.shelves .art{inset:55px 12px 17px;background:repeating-linear-gradient(36deg,transparent 0 12px,#849779 13px 14px,transparent 15px 26px),repeating-linear-gradient(115deg,transparent 0 10px,#849779 11px 12px,transparent 13px 27px)}.shelves .art:after{content:'●　 ●\A 　 ●\A ●　　 ●';white-space:pre;position:absolute;color:#a03421;inset:6px;font:16px/1.15 monospace}.antenna .art{inset:57px 11px 19px;background:repeating-radial-gradient(circle at 55% 58%,transparent 0 8px,#ffca6b 9px 10px,transparent 11px 15px)}.antenna .art:after{content:'';position:absolute;left:50%;bottom:0;width:3px;height:70%;background:#ffca6b;transform:rotate(18deg)}.metadata{padding:12px 0 13px;display:grid;gap:5px}.name{display:block;font:bold 23px/1.04 Georgia,serif;letter-spacing:-.035em;padding-right:34px}.location{color:var(--muted)}.location b{color:var(--ink)}.mark{display:grid;place-items:center;position:absolute;right:0;bottom:28px;width:32px;height:32px;border:1px solid var(--line);border-radius:50%;background:var(--paper);font-size:22px;line-height:1}.mark[aria-pressed=true]{background:var(--rust);border-color:var(--rust);color:white}.footer{color:var(--muted);padding:22px 0;font:11px 'Courier New',monospace;letter-spacing:.08em;text-transform:uppercase}.back{border:0;background:none;padding:0;font-weight:bold;font-size:14px;margin:24px 0}.detail{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.detail .stage{height:390px}.detail .cover{scale:1.75}.detail h1,.short h1{font-size:clamp(43px,5vw,67px);margin:8px 0 16px}.description{font:22px/1.45 Georgia,serif;max-width:420px;margin:20px 0}.pickup{padding:13px 0;border-block:1px solid var(--line);max-width:420px}.save{background:var(--rust);color:white;border:0;border-radius:3px;padding:12px 16px;font-weight:bold;margin-top:19px}.short h1{margin-bottom:24px}.empty{font:20px Georgia,serif}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:680px){.wrap{width:calc(100% - 32px)}.mast{height:54px}.hero{display:block;padding:23px 0 16px}.intro{font-size:16px;margin-top:10px;max-width:300px}.tools{margin:12px 0 13px;display:block}.filters{gap:5px}.filter{padding:6px 9px;font-size:12px}.count{display:block;margin-top:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}.stage{height:145px}.cover{scale:.76}.metadata{padding:8px 0 10px;gap:4px}.name{font-size:18px;padding-right:0}.topic,.location{font-size:9px}.mark{right:5px;top:5px;bottom:auto;width:29px;height:29px;font-size:18px}.detail{grid-template-columns:1fr;gap:20px}.detail .stage{height:230px}.detail .cover{scale:1.12}.detail h1{margin-bottom:10px}.description{margin:13px 0;font-size:19px}.back{margin:17px 0}.footer{padding:16px 0}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap mast"><button class="brand" type="button"><span aria-hidden="true">◩</span>Fold Fair</button><button class="shortlist" type="button">Shortlist <span id="total">0</span></button></div></header>
+<main id="app" class="wrap"></main>
+<footer class="wrap footer">Fold Fair · Independent print</footer>
+<div id="notice" class="sr" role="status"></div>
+<script>
+const zines = [
+ {id:'night',name:'Night Windows',cover:'Night\nWindows',topic:'Photography',price:12,table:'B4',detail:'24 black-and-white photographs of lit windows on the last tram route.',palette:['#dcd5c8','#242b2b','#fff1ce','-6deg']},
+ {id:'botany',name:'Bus Stop Botany',cover:'Bus Stop\nBotany',topic:'Field notes',price:8,table:'C7',detail:'Fold-out guide to five plants found at the Crosstown terminus.',palette:['#e0e2c8','#e4dfa3','#213e31','5deg']},
+ {id:'table',name:'Three Ways to Set a Table',cover:'Three Ways\nto Set a Table',topic:'Comics',price:9,table:'A2',detail:'Three wordless comics about dinner with neighbors.',palette:['#efd3c4','#f4a180','#54251b','-4deg']},
+ {id:'wet',name:'Wet Asphalt',cover:'Wet\nAsphalt',topic:'Photography',price:16,table:'B9',detail:'Large-format reflections captured after a summer storm.',palette:['#d5dfe1','#233d53','#dbf4ee','4deg']},
+ {id:'shelves',name:'Free Shelves',cover:'Free\nShelves',topic:'Field notes',price:6,table:'C3',detail:'Annotated map of street libraries and a page for new entries.',palette:['#e9ddc6','#f2e8c9','#2e4c36','-5deg']},
+ {id:'antenna',name:'Antenna Club',cover:'Antenna\nClub',topic:'Comics',price:11,table:'A5',detail:'Short comic about a radio club losing its rooftop access.',palette:['#e0d5e5','#51355a','#ffe1a0','5deg']}
+];
+const topics = ['All zines','Photography','Field notes','Comics'];
+const key = 'fold-fair-shortlist';
+const saved = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+const app = document.querySelector('#app');
+const total = document.querySelector('#total');
+const notice = document.querySelector('#notice');
+let topic = 'All zines';
+let view = 'browse';
+let origin = 'browse';
+let last = '';
+const leaves = [[21,40,-35],[38,20,23],[9,5,42],[44,49,-19],[0,49,18]]
+ .map(([x,y,angle]) => '<i style="--x:'+x+'px;--y:'+y+'px;--angle:'+angle+'deg"></i>').join('');
+function art(z) {
+ const [stage, cover, type, tilt] = z.palette;
+ return '<div class="stage" aria-hidden="true" style="--stage:'+stage+';--cover:'+cover+';--type:'+type+';--tilt:'+tilt+'"><div class="cover '+z.id+'"><strong>'+z.cover+'</strong><div class="art">'+(z.id==='botany'?leaves:'')+'</div><small>'+z.topic+'</small></div></div>';
+}
+function card(z) {
+ return '<article class="card"><button type="button" class="open" data-open="'+z.id+'" aria-label="View '+z.name+'">'+art(z)+'<span class="metadata"><span class="topic">'+z.topic+'</span><span class="name">'+z.name+'</span><span class="location"><b>$'+z.price+'</b> · Table '+z.table+'</span></span></button><button type="button" class="mark" data-save="'+z.id+'" aria-label="Save '+z.name+'" aria-pressed="'+saved.has(z.id)+'">'+(saved.has(z.id)?'✓':'+')+'</button></article>';
+}
+function render(focus) {
+ total.textContent = saved.size;
+ if (view === 'browse') {
+  const matches = zines.filter(z => topic === topics[0] || z.topic === topic);
+  app.innerHTML = '<div class="hero"><div><p class="kicker">The fair catalogue</p><h1 tabindex="-1">The zine index</h1></div><p class="intro">Browse independent print and pick the tables you want to visit.</p></div><div class="tools"><div class="filters" role="group" aria-label="Filter by topic">'+topics.map((t,i)=>'<button type="button" class="filter" data-topic="'+i+'" aria-pressed="'+(t===topic)+'">'+t+'</button>').join('')+'</div><p class="count">'+matches.length+' zines</p></div><div class="grid">'+matches.map(card).join('')+'</div>';
+ } else if (view === 'shortlist') {
+  const matches = zines.filter(z => saved.has(z.id));
+  app.innerHTML = '<section class="short"><button type="button" class="back" data-back>← Back to browse</button><h1 tabindex="-1">Your shortlist</h1>'+(matches.length?'<div class="grid">'+matches.map(card).join('')+'</div>':'<p class="empty">Save zines to keep their table numbers handy.</p>')+'</section>';
+ } else {
+  const z = zines.find(item => item.id === last);
+  app.innerHTML = '<button type="button" class="back" data-back>← Back to '+origin+'</button><section class="detail">'+art(z)+'<div><p class="topic">'+z.topic+'</p><h1 tabindex="-1">'+z.name+'</h1><p class="description">'+z.detail+'</p><p class="location pickup"><b>$'+z.price+'</b> · Pick up at table '+z.table+'</p><button type="button" class="save" data-save="'+z.id+'" aria-pressed="'+saved.has(z.id)+'">'+(saved.has(z.id)?'Remove from shortlist':'Save to shortlist')+'</button></div></section>';
+ }
+ if (focus) (app.querySelector(focus) || app.querySelector('h1')).focus();
+}
+function go(destination,focus) {
+ view = destination;
+ window.scrollTo(0,0);
+ render(focus || 'h1');
+}
+app.addEventListener('click', event => {
+ const button = event.target.closest('button');
+ if (!button) return;
+ const {topic:filter,open,save} = button.dataset;
+ if (filter !== undefined) {
+  topic = topics[filter];
+  render('[data-topic="'+filter+'"]');
+ } else if (open) {
+  origin = view;
+  last = open;
+  go('detail');
+ } else if (save) {
+  if (saved.has(save)) saved.delete(save); else saved.add(save);
+  localStorage.setItem(key,JSON.stringify([...saved]));
+  render(view === 'shortlist' ? '[data-save]' : '[data-save="'+save+'"]');
+  notice.textContent = zines.find(z=>z.id===save).name + (saved.has(save)?' saved to shortlist.':' removed from shortlist.');
+ } else if (button.hasAttribute('data-back')) {
+  if (view === 'detail') go(origin,'[data-open="'+last+'"]'); else go('browse');
+ }
+});
+document.querySelector('.brand').addEventListener('click',()=>go('browse'));
+document.querySelector('.shortlist').addEventListener('click',()=>go('shortlist'));
+render();
+</script>
+</body>
+</html>

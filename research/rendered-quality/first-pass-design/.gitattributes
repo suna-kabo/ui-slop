@@ -1,0 +1,5 @@
+initial-trial/packet/** -text -whitespace
+followup-trial/packet/** -text -whitespace
+selected-proofs/packet/** -text -whitespace
+briefs/** -text
+selection-*.txt -text

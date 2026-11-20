@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchboard — Evening changeover</title>
+<style>
+:root{color-scheme:light;--ink:#252139;--muted:#615b72;--line:#ded9e9;--paper:#f5f3f9;--purple:#5234ac;--dark:#211932;--warning:#803e23}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.45 system-ui,sans-serif}button{font:inherit;cursor:pointer}button:focus-visible,h3:focus-visible{outline:3px solid #8059e9;outline-offset:3px}h1,h2,h3,p{margin:0}time,.number{font-variant-numeric:tabular-nums}
+header{background:var(--dark);color:white;border-bottom:4px solid #9775f1;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0 0 0 46%;pointer-events:none;background:repeating-radial-gradient(ellipse at 72% 135%,transparent 0 15px,#b995ff26 16px 17px,transparent 18px 32px);mask-image:linear-gradient(90deg,transparent,black)}
+.frame{max-width:1280px;margin:auto;padding-inline:48px}.hero{position:relative;z-index:1;padding-block:29px 35px}.brand{display:flex;align-items:center;gap:11px;font-weight:730;letter-spacing:.025em}.signal{display:flex;gap:3px;align-items:center;height:24px;color:#c9b2ff}.signal i{display:block;width:3px;background:currentColor;border-radius:3px}.signal i:nth-child(1),.signal i:nth-child(5){height:7px}.signal i:nth-child(2),.signal i:nth-child(4){height:15px}.signal i:nth-child(3){height:23px}
+.hero-body{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:25px}h1{font-size:clamp(32px,4.3vw,62px);letter-spacing:-.06em;line-height:1.06;font-weight:760}.clocks{display:flex;min-width:286px;gap:27px}.clock{display:grid;gap:1px}.clock+.clock{padding-left:27px;border-left:1px solid #8e7da8}.clock span{color:#e0d4f5;font-size:12px}.clock time{font-size:30px;line-height:1.15;font-weight:680;letter-spacing:-.045em}
+main.frame{padding-block:34px 50px}.layout{display:grid;grid-template-columns:minmax(0,1.64fr) minmax(310px,1fr);gap:29px;align-items:start}.list-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}h2{font-size:27px;letter-spacing:-.045em}.summary{font-size:13px;color:var(--warning);font-weight:675;display:flex;align-items:center;gap:7px}.summary.clear{color:#25644e}.summary::before,.status::before{content:"";width:7px;height:7px;flex:none;background:currentColor;border-radius:50%}
+.rows{overflow:hidden;background:white;border:1px solid var(--line);border-radius:14px}.entry+.entry{border-top:1px solid var(--line)}.cue{width:100%;display:grid;grid-template-columns:72px minmax(0,1fr) 46px 12px;gap:13px;text-align:left;align-items:center;background:white;border:0;border-left:4px solid transparent;color:inherit;padding:15px 19px 15px 15px;min-height:84px}.cue:hover{background:#f9f7ff}.cue:focus-visible{outline-offset:-4px}.cue[aria-expanded=true]{background:#eee7ff;border-left-color:#7750d4}.cue time{font-size:21px;font-weight:760;letter-spacing:-.04em}.cue .name{display:block;font-weight:720;font-size:16px;line-height:1.25}.status{display:inline-flex;align-items:center;gap:6px;margin-top:5px;font-size:12px;font-weight:650;color:#25644e}.status.wait,.status.deadline{color:var(--warning)}.status.fixed{color:var(--purple)}.duration{text-align:right;color:var(--muted);font-size:13px}.chevron{font-size:20px;color:#675489}.boundary .cue:not([aria-expanded=true]){background:#f8f5fd}.boundary .cue{border-top:2px solid #a48bd8}
+.inspector{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:53px}.detail-top{background:#e9e1fa;padding:21px 23px 18px}.detail-label{font-weight:700;color:#503285;font-size:13px;margin-bottom:5px}.detail-top h3{font-size:25px;line-height:1.12;letter-spacing:-.04em}.detail-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;color:#514568;font-size:13px}.detail-meta .status{margin:0}.detail-body{padding:18px 23px 21px}.detail-body h4{font-size:15px;margin:0 0 9px}.window{font-size:13px;color:var(--muted);margin-bottom:13px}.backup{padding:12px;border:1px solid var(--line);border-radius:9px;margin-bottom:9px}.backup strong{display:block;line-height:1.28}.backup p{margin-top:4px;font-size:13px;color:var(--muted)}.backup .conflict{color:var(--warning);font-weight:650}.actions{display:flex;gap:9px;flex-wrap:wrap}.primary,.quiet{min-height:42px;border-radius:7px;padding:8px 13px;font-weight:720}.primary{background:var(--purple);border:1px solid var(--purple);color:white}.primary:hover{background:#412589}.backup .primary{margin-top:10px}.quiet{background:white;border:1px solid #cfc2e3;color:#4e3288}.quiet:hover{background:#f2ecfd}.next{margin-top:7px}.change-note{margin-bottom:13px;font-size:14px}.notice{color:var(--warning);padding:10px 0 1px;font-size:13px;font-weight:650}
+.inline{display:none}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:760px){.frame{padding-inline:17px}.hero{padding-block:17px 20px}.hero-body{display:block;margin-top:13px}.clocks{margin-top:16px;gap:18px;min-width:0}.clock+.clock{padding-left:18px}.clock time{font-size:24px}header::after{inset-inline-start:15%}main.frame{padding-block:19px 30px}.layout{display:block}.list-head{margin-bottom:10px}h2{font-size:24px}.summary{font-size:12px}.cue{min-height:77px;grid-template-columns:50px minmax(0,1fr) 30px 7px;gap:9px;padding:11px 12px 11px 9px}.cue time{font-size:18px}.cue .name{font-size:14px}.duration{font-size:12px}.chevron{font-size:17px}.inspector{display:none}.inline{display:block;border-top:1px solid var(--line)}.detail-top{padding:15px 13px}.detail-body{padding:13px}.detail-top h3{font-size:22px}.primary,.quiet{min-height:44px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="frame hero">
+  <div class="brand"><span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Switchboard</div>
+  <div class="hero-body"><h1>Evening changeover</h1><div class="clocks"><div class="clock"><span>Changeover time</span><time>18:42</time></div><div class="clock"><span>Fixed handoff</span><time>19:00</time></div></div></div>
+ </div>
+</header>
+<main class="frame">
+ <div class="layout">
+  <section aria-labelledby="rundown"><div class="list-head"><h2 id="rundown">Studio rundown</h2><p id="summary" class="summary"></p></div><div class="rows" id="rows"></div></section>
+  <aside id="inspector" class="inspector" aria-label="Selected segment"></aside>
+ </div>
+ <p id="announcement" class="sr" role="status"></p>
+</main>
+<script>
+const cues = [
+ { start:'18:43', name:'East Market weather', duration:45, state:'Ready' },
+ { start:'18:44', name:'Harbor ferry suspension notice', duration:80, state:'Ready', deadline:'18:50' },
+ { start:'18:46', name:'Mara Chen on the night bus pilot', duration:330, state:'Awaiting audio' },
+ { start:'18:52', name:'Listener recordings from North Jetty', duration:190, state:'Ready' },
+ { start:'19:00', name:'Station identification and news handoff', duration:30, state:'Fixed boundary' }
+];
+const depot = { name:'Depot shift before dawn', duration:225, state:'Ready' };
+const callIn = { name:'West platforms accessibility call-in', duration:450 };
+const replacementSlot = 2;
+const narrow = matchMedia('(max-width:760px)');
+const rows = document.querySelector('#rows');
+const inspector = document.querySelector('#inspector');
+const summary = document.querySelector('#summary');
+const announcement = document.querySelector('#announcement');
+let selected = narrow.matches ? null : replacementSlot;
+let changed = false;
+let showConflict = false;
+
+function seconds(time) {
+ const [hours, minutes] = time.split(':').map(Number);
+ return hours * 3600 + minutes * 60;
+}
+function duration(value) {
+ return Math.floor(value / 60) + ':' + String(value % 60).padStart(2, '0');
+}
+function endTime(start, length) {
+ const end = seconds(start) + length;
+ return String(Math.floor(end / 3600)).padStart(2, '0') + ':' + duration(end % 3600).padStart(5, '0');
+}
+function shown(index) {
+ return index === replacementSlot && changed ? {...cues[index], ...depot} : cues[index];
+}
+function status(cue) {
+ const tone = cue.deadline ? 'deadline' : cue.state === 'Awaiting audio' ? 'wait' : cue.state === 'Fixed boundary' ? 'fixed' : '';
+ const label = cue.deadline ? 'Ready · Air before ' + cue.deadline : cue.state;
+ return '<span class="status ' + tone + '">' + label + '</span>';
+}
+function detail(index) {
+ const cue = shown(index);
+ const next = cues[index+1];
+ const slot = index === replacementSlot;
+ const windowLength = next ? seconds(next.start) - seconds(cue.start) : 0;
+ const over = callIn.duration - windowLength;
+ let body = '';
+ if (slot && !changed) {
+  body = `<h4>Replacement recordings</h4><p class="window">${duration(windowLength)} available before North Jetty at ${next.start}.</p>
+   <div class="backup"><strong>${depot.name}</strong><p>${duration(depot.duration)} · Ready · Ends ${endTime(cue.start,depot.duration)}</p><p>${duration(windowLength-depot.duration)} clear before North Jetty</p><button class="primary" data-action="replace">Use this recording</button></div>
+   <div class="backup"><strong>${callIn.name}</strong><p>${duration(callIn.duration)} · Ends ${endTime(cue.start,callIn.duration)}</p><p class="conflict">Overlaps North Jetty by ${duration(over)}</p><button class="quiet next" data-action="conflict" aria-expanded="${showConflict}" aria-controls="conflict-note">${showConflict ? 'Hide conflict' : 'Review conflict'}</button><p id="conflict-note" class="notice" ${showConflict ? '' : 'hidden'}>This recording would still be playing when North Jetty starts at ${next.start}. The 18:46 slot still holds Mara Chen’s interview.</p></div>`;
+ }
+ if (slot && changed) {
+  body = `<p class="change-note">Replaces <strong>${cues[index].name}</strong>. ${duration(windowLength-cue.duration)} clear before North Jetty at ${next.start}.</p><div class="actions"><button class="quiet" data-action="undo">Undo replacement</button></div>`;
+ }
+ if (cue.deadline) body = `<p class="change-note">Scheduled to finish before the ${cue.deadline} air deadline.</p>`;
+ if (next) body += `<button class="quiet next" data-action="next">Next segment · ${next.start} →</button>`;
+ else body += '<button class="quiet" data-action="close">Back to rundown</button>';
+ return `<div class="detail-top"><p class="detail-label">${cue.start} slot</p><h3 tabindex="-1" id="detail-title">${cue.name}</h3><div class="detail-meta">${status(cue)}<span>·</span><span class="number">${cue.duration ? duration(cue.duration) : ''} · Ends ${endTime(cue.start,cue.duration)}</span></div></div><div class="detail-body">${body}</div>`;
+}
+function render() {
+ summary.textContent = changed ? 'All segments ready' : '1 segment needs audio';
+ summary.classList.toggle('clear', changed);
+ rows.innerHTML = cues.map((_, index) => {
+  const cue = shown(index);
+  const open = selected === index;
+  return `<div class="entry ${cue.state === 'Fixed boundary' ? 'boundary' : ''}"><button class="cue" id="cue-${index}" data-cue="${index}" aria-expanded="${open}" ${open ? 'aria-controls="detail"' : ''}><time>${cue.start}</time><span><span class="name">${cue.name}</span>${status(cue)}</span><span class="duration number">${duration(cue.duration)}</span><span class="chevron" aria-hidden="true">${narrow.matches && open ? '⌄' : '›'}</span></button>${open && narrow.matches ? '<div class="inline" id="detail">'+detail(index)+'</div>' : ''}</div>`;
+ }).join('');
+ inspector.innerHTML = selected !== null && !narrow.matches ? '<div id="detail">'+detail(selected)+'</div>' : '';
+ inspector.hidden = !inspector.innerHTML;
+}
+function focusCue(index, reveal = false) {
+ const trigger = document.querySelector('#cue-' + index);
+ trigger.focus({preventScroll:true});
+ if (reveal) trigger.scrollIntoView({block:'start'});
+}
+document.querySelector('main').addEventListener('click', event => {
+ const trigger = event.target.closest('button');
+ if (!trigger) return;
+ if (trigger.dataset.cue !== undefined) {
+  const index = Number(trigger.dataset.cue);
+  selected = narrow.matches && selected === index ? null : index;
+  showConflict = false;
+  render();
+  focusCue(index);
+  return;
+ }
+ switch (trigger.dataset.action) {
+  case 'conflict':
+   showConflict = !showConflict;
+   render();
+   document.querySelector('[data-action="conflict"]').focus({preventScroll:true});
+   if (showConflict) document.querySelector('#conflict-note').scrollIntoView({block:'nearest'});
+   break;
+  case 'replace':
+  case 'undo':
+   changed = trigger.dataset.action === 'replace';
+   showConflict = false;
+   render();
+   announcement.textContent = changed ? 'Depot shift before dawn scheduled at 18:46. Ends 18:49:45.' : 'Mara Chen’s interview restored at 18:46. Awaiting audio.';
+   document.querySelector('#detail-title').focus();
+   break;
+  case 'next':
+   selected += 1;
+   showConflict = false;
+   render();
+   focusCue(selected, narrow.matches);
+   break;
+  case 'close': {
+   const previous = selected;
+   selected = null;
+   render();
+   focusCue(previous);
+   break;
+  }
+ }
+});
+narrow.addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f2e6">
+<title>Fold Fair — Zine catalogue</title>
+<style>
+:root{color-scheme:light;--paper:#f7f2e6;--ink:#252319;--orange:#9d321c;--line:#b9ad97;--wash:#eee6d7;--serif:Georgia,serif}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui,sans-serif}button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #9d321c;outline-offset:4px}button:active{opacity:.72}[hidden]{display:none!important}
+.wrap{width:min(1120px,calc(100% - 80px));margin:auto}
+.mast{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;border-bottom:1px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:10px;font:700 22px var(--serif)}.mark{width:21px;height:25px;background:var(--orange);clip-path:polygon(0 0,100% 0,100% 66%,65% 100%,0 100%);position:relative}.mark:after{content:"";position:absolute;bottom:0;right:0;width:8px;height:9px;background:#e28b61}
+.shortcut,.save{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:9px 15px;min-height:44px}.shortcut span{margin-left:8px;color:#ffd0b9;font-variant-numeric:tabular-nums}
+.hero{padding:27px 0 25px}.hero h1{margin:0;font:normal clamp(62px,7vw,105px)/.93 var(--serif);letter-spacing:-.077em}.hero h1 em{color:var(--orange);font-weight:normal}
+.filters{display:flex;align-items:center;gap:9px;border-block:1px solid var(--ink);padding:10px 0}.filters button{background:transparent;border:1px solid transparent;padding:7px 11px;min-height:44px;white-space:nowrap}.filters button:hover{border-color:var(--line)}.filters button[aria-pressed=true]{background:#ead9c7;border-color:#a77a62;color:#742514;font-weight:700}.count{margin-left:auto;color:#584c3c;font-size:14px;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:29px 24px;padding:24px 0 48px}
+.card{border:0;background:transparent;text-align:left;padding:0 0 13px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.stage{width:100%;display:grid;grid-template:100% / minmax(0,1fr);place-items:center;background:var(--wash);height:clamp(200px,23vw,312px);overflow:hidden}.cover{display:block;height:85%;width:auto;max-width:91%;object-fit:contain;box-shadow:3px 5px 9px #38271d42}.card:hover .stage{background:#e8ddca}.card:hover .title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.title{margin:11px 0 6px;font:700 clamp(19px,2.1vw,30px)/1.09 var(--serif)}.facts{width:100%;display:flex;justify-content:space-between;align-items:baseline;gap:5px;margin-top:auto;font-size:14px;color:#574b3d}.pickup{white-space:nowrap;color:var(--ink);font-variant-numeric:tabular-nums}.pickup b{font-weight:700}
+dialog{width:min(720px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:0;border:1px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:0 15px 60px #201a1455}dialog::backdrop{background:#241c15a6}.dialogbar{display:flex;justify-content:space-between;align-items:center;padding:9px 17px;border-bottom:1px solid var(--line)}.close,.remove,.open-saved{border:0;background:transparent;min-height:44px;padding:6px 4px;text-decoration:underline;text-underline-offset:3px}.detail{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:24px}.detail .stage{height:310px}.detail h2,.saved-body h2{font:700 clamp(29px,4vw,45px)/1.02 var(--serif);margin:3px 0 13px}.detail p{margin:12px 0 17px}.detail .pickup{border-top:1px solid var(--line);padding-top:10px}.saved-body{padding:20px}.saved-row{display:grid;grid-template-columns:1fr auto;gap:0 14px;align-items:center;border-top:1px solid var(--line);padding:7px 0}.open-saved{text-align:left;font-weight:700}.saved-row small{display:block;color:#574b3d;padding-bottom:6px}.remove{grid-column:2;grid-row:1/3}.status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:660px){.wrap{width:calc(100% - 32px)}.mast{min-height:58px}.brand{font-size:20px}.hero{display:block;padding:26px 0 19px}.hero h1{font-size:clamp(40px,10.9vw,70px)}.filters{gap:2px;justify-content:space-between;padding:4px 0}.filters button{font-size:13px;padding:6px 7px}.count{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px;padding-top:14px}.stage{height:clamp(140px,45vw,260px)}.title{margin-top:8px}.facts{flex-wrap:wrap;gap:0 5px;font-size:12px;flex-direction:column}.detail{display:flex;flex-direction:column;gap:13px;padding:14px}.detail .stage{height:clamp(140px,52vw,245px)}.detail h2{margin-bottom:7px}.detail p{margin:8px 0 12px}.dialogbar{padding:5px 14px}}
+:root:has(dialog[open]){overflow:hidden}
+</style>
+</head>
+<body>
+<header class="wrap mast"><div class="brand"><span class="mark" aria-hidden="true"></span>Fold Fair</div><button class="shortcut" id="shortlist">Shortlist <span id="total">0</span></button></header>
+<main class="wrap">
+<section class="hero"><h1>Zine <em>catalogue</em></h1></section>
+<div class="filters" role="group" aria-label="Filter by topic">
+<button type="button" aria-pressed="true" data-topic="">All zines</button><button type="button" aria-pressed="false" data-topic="Photography">Photography</button><button type="button" aria-pressed="false" data-topic="Field notes">Field notes</button><button type="button" aria-pressed="false" data-topic="Comics">Comics</button><span class="count" id="count" aria-live="polite"></span>
+</div>
+<div class="grid" id="catalog"></div>
+</main>
+<dialog id="panel" aria-labelledby="panel-title"><div class="dialogbar"><button class="close" id="close" autofocus>← Back to browse</button></div><div id="panel-body"></div><span class="status" id="status" role="status"></span></dialog>
+<script>
+const zines = [
+  ['Night Windows','Photography',12,'B4','24 black-and-white photographs of lit windows on the last tram route.'],
+  ['Bus Stop Botany','Field notes',8,'C7','Fold-out guide to five plants found at the Crosstown terminus.'],
+  ['Three Ways to Set a Table','Comics',9,'A2','Three wordless comics about dinner with neighbors.'],
+  ['Wet Asphalt','Photography',16,'B9','Large-format reflections captured after a summer storm.'],
+  ['Free Shelves','Field notes',6,'C3','Annotated map of street libraries and a page for new entries.'],
+  ['Antenna Club','Comics',11,'A5','Short comic about a radio club losing its rooftop access.']
+];
+
+function drawCover(index) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 480;
+  canvas.height = 600;
+  const ctx = canvas.getContext('2d');
+  const rect = (x,y,w,h,c) => { ctx.fillStyle=c; ctx.fillRect(x,y,w,h); };
+  const line = (points,c,w=2) => {
+    ctx.beginPath();
+    points.forEach(([x,y],i) => i ? ctx.lineTo(x,y) : ctx.moveTo(x,y));
+    ctx.strokeStyle=c;
+    ctx.lineWidth=w;
+    ctx.stroke();
+  };
+  const oval = (x,y,rx,ry,angle,c) => {
+    ctx.beginPath();
+    ctx.ellipse(x,y,rx,ry,angle,0,2*Math.PI);
+    ctx.fillStyle=c;
+    ctx.fill();
+  };
+  const words = (s,x,y,size,c,face='Georgia') => {
+    ctx.font='bold '+size+'px '+face;
+    ctx.fillStyle=c;
+    ctx.fillText(s,x,y);
+  };
+  let seed = 251 + index;
+  const rand = () => ((seed = (Math.imul(seed,1664525)+1013904223) >>> 0)/4294967296);
+  const ink = '#25251a';
+  const paper = ['#1f2020','#d9dfaa','#e9a783','#203e54','#edce7a','#efe1bd'][index];
+  rect(0,0,480,600,paper);
+  if(index===0) {
+    for(let i=0;i<20;i++) {
+      const x=12+(i%5)*96, y=173+Math.floor(i/5)*106;
+      rect(x,y,76,82,'hsl(36 4% '+(13+rand()*16)+'%)');
+      if(i%4!==0) {
+        const dx=x+13+rand()*26, dy=y+13+rand()*13;
+        rect(dx,dy,29,40,['#d0ccc0','#9c998e','#e7e2d1'][i%3]);
+        line([[dx+14,dy],[dx+14,dy+40]],'#4c4c48',3);
+        line([[dx,dy+17],[dx+29,dy+17]],'#4c4c48',3);
+        if(i%3===0) oval(dx+21,dy+31,5,10,0,'#686660');
+      }
+    }
+    words('NIGHT',24,79,78,'#ece8da','Arial');
+    words('WINDOWS',24,145,70,'#ece8da','Arial');
+  } else if(index===1) {
+    const green='#284628';
+    words('Bus Stop',31,80,71,green);
+    words('Botany',31,155,89,green);
+    line([[33,173],[447,173]],green,2);
+    for(let i=0;i<5;i++) {
+      const x=102+i*66, top=266+Math.abs(i-2)*35;
+      line([[242,552],[x,440],[x-22,top]],green,4);
+      for(let j=0;j<5;j++) {
+        const y=top+22+j*30, dx=x-20+j*4, side=j%2===0?1:-1;
+        oval(dx+side*16,y-10,12,30,side*.8,(i+j)%3?'#58733a':'#9a9850');
+        line([[dx,y],[dx+side*28,y-25]],green,1.4);
+      }
+      oval(x-24,top-13,8,14,-.2,'#b67a39');
+    }
+    line([[32,555],[448,555]],green,2);
+  } else if(index===2) {
+    const red='#741f1d';
+    words('THREE WAYS',27,68,55,red,'Arial');
+    words('TO SET',27,128,63,red,'Arial');
+    words('A TABLE',27,190,63,red,'Arial');
+    for(let i=0;i<3;i++) {
+      const y=227+i*112;
+      rect(28,y,424,97,'#f2c499');
+      line([[28,y+96],[452,y+96]],red,3);
+      oval(240,y+52,83,33,0,red);
+      oval(240,y+48,73,28,0,'#df895e');
+      for(let j=0;j<=i;j++) {
+        const x=210+j*30;
+        oval(x,y+44,11,7,0,'#f9e0a9');
+      }
+      for(const x of [124,356]) {
+        oval(x,y+53,28,35,x<240?-.35:.35,red);
+        oval(x,y+34,15,16,0,'#df895e');
+      }
+    }
+  } else if(index===3) {
+    for(let i=0;i<290;i++) {
+      const y=165+rand()*435, x=rand()*480;
+      const glow=Math.abs(x-(225+Math.sin(y*.038)*54)) < 45+y*.047;
+      const colors=glow?['#c89970','#d0a36b','#e9cb80','#6d858d']:['#42677a','#27485e','#56798a','#142f43'];
+      rect(x,y,3+rand()*65,1+rand()*6,colors[i%4]);
+    }
+    words('WET',30,84,79,'#f4ddac','Arial');
+    words('ASPHALT',30,157,79,'#f4ddac','Arial');
+  } else if(index===4) {
+    words('Free',28,88,95,ink);
+    words('Shelves',28,179,92,ink);
+    for(let i=0;i<6;i++) {
+      const x=57+i*72, y=214+i*60;
+      line([[x-130,230],[x-30,333],[x+92,588]],'#b18a43',4);
+      line([[8,y+62],[220,y+5],[462,y-66]],'#b18a43',5);
+    }
+    line([[45,534],[151,469],[123,375],[259,324],[337,423],[431,372]],'#943e22',7);
+    for(const [x,y] of [[45,534],[123,375],[259,324],[337,423],[431,372]]) {
+      oval(x,y,15,15,0,'#943e22');
+      rect(x-7,y-6,6,12,'#f6efc8');
+      rect(x+1,y-6,6,12,'#f6efc8');
+    }
+  } else {
+    const blue='#294a78';
+    words('ANTENNA',24,91,80,blue,'Arial');
+    words('CLUB',24,177,100,blue,'Arial');
+    for(let i=0;i<8;i++) {
+      const x=i*65, y=420+rand()*90;
+      rect(x,y,59,600-y,blue);
+      for(let j=0;j<3;j++) rect(x+9+j*15,y+20,7,15,'#d8ab68');
+    }
+    line([[250,478],[247,236]],blue,9);
+    for(let i=0;i<6;i++) {
+      const y=250+i*22;
+      line([[170+i*8,y-41],[248,y],[327-i*8,y-41]],blue,5);
+    }
+    for(let i=0;i<3;i++) {
+      ctx.beginPath();
+      ctx.arc(247,241,42+i*24,3.55,5.88);
+      ctx.strokeStyle='#a34125';
+      ctx.lineWidth=3;
+      ctx.stroke();
+    }
+  }
+  for(let i=0;i<14000;i++) {
+    const x=rand()*480,y=rand()*600;
+    rect(x,y,1+rand()*2,1,i%2?'#211a151c':'#fff9db29');
+  }
+  rect(0,0,6,600,'#211a152b');
+  return canvas.toDataURL();
+}
+
+const art = zines.map((_,id) => drawCover(id));
+const cover = id => '<span class="stage"><img class="cover" src="'+art[id]+'" alt=""></span>';
+const pickup = (price,table) => '$'+price+' · <b>Table '+table+'</b>';
+const catalog = document.querySelector('#catalog');
+const panel = document.querySelector('#panel');
+const body = document.querySelector('#panel-body');
+const close = document.querySelector('#close');
+const shortlist = document.querySelector('#shortlist');
+const total = document.querySelector('#total');
+const status = document.querySelector('#status');
+let topic = '';
+let opener;
+let shortlistOrigin = null;
+let saved = new Set();
+try {
+  const ids = JSON.parse(localStorage.getItem('fold-fair-shortlist') || '[]');
+  if(Array.isArray(ids)) saved = new Set(ids.filter(id => Number.isInteger(id) && zines[id]));
+} catch {}
+
+function updateCount() {
+  total.textContent = saved.size;
+}
+function toggleSave(id) {
+  if(saved.has(id)) saved.delete(id);
+  else saved.add(id);
+  updateCount();
+  const message = saved.has(id) ? 'Saved to shortlist.' : 'Removed from shortlist.';
+  try {
+    localStorage.setItem('fold-fair-shortlist',JSON.stringify([...saved]));
+    status.textContent = message;
+  } catch {
+    status.textContent = message+' Changes are available for this visit only.';
+  }
+}
+function renderCatalog() {
+  catalog.innerHTML = zines.map(([title,category,price,table],id) => {
+    if(topic && topic !== category) return '';
+    return '<button class="card" data-id="'+id+'">'+cover(id)+
+      '<span class="title">'+title+'</span><span class="facts"><span>'+category+
+      '</span><span class="pickup">'+pickup(price,table)+'</span></span></button>';
+  }).join('');
+  const count = catalog.children.length;
+  document.querySelector('#count').textContent = count+' zines';
+}
+function openPanel(origin) {
+  opener = origin;
+  status.textContent = '';
+  panel.showModal();
+  close.focus();
+}
+function detail(id) {
+  const [title,,price,table,description] = zines[id];
+  close.textContent = shortlistOrigin !== null ? '← Back to shortlist' : '← Back to browse';
+  body.innerHTML = '<div class="detail">'+cover(id)+'<div><h2 id="panel-title">'+title+'</h2><p>'+description+
+    '</p><p class="pickup">'+pickup(price,table)+'</p><button class="save"></button></div></div>';
+  const save = body.querySelector('.save');
+  const sync = () => { save.textContent = saved.has(id) ? 'Remove from shortlist' : 'Save to shortlist'; };
+  sync();
+  save.onclick = () => { toggleSave(id); sync(); };
+}
+function renderShortlist() {
+  close.textContent = '← Back to browse';
+  body.innerHTML = '<div class="saved-body"><h2 id="panel-title">Shortlist</h2>'+
+    ([...saved].map(id => {
+      const [title,category,price,table] = zines[id];
+      return '<div class="saved-row"><button class="open-saved" data-id="'+id+'">'+title+
+        '</button><small>'+category+' · '+pickup(price,table)+
+        '</small><button class="remove" data-id="'+id+'" aria-label="Remove '+title+'">Remove</button></div>';
+    }).join('') || '<p>Your shortlist is empty. Save a zine to find its table here.</p>')+'</div>';
+}
+document.querySelector('.filters').onclick = event => {
+  const button = event.target.closest('[data-topic]');
+  if(!button) return;
+  topic = button.dataset.topic;
+  document.querySelectorAll('[data-topic]').forEach(filter => filter.setAttribute('aria-pressed',filter===button));
+  renderCatalog();
+};
+catalog.onclick = event => {
+  const card = event.target.closest('.card');
+  if(!card) return;
+  shortlistOrigin = null;
+  detail(Number(card.dataset.id));
+  openPanel(card);
+};
+shortlist.onclick = () => {
+  shortlistOrigin = null;
+  renderShortlist();
+  openPanel(shortlist);
+};
+body.addEventListener('click',event => {
+  const button = event.target.closest('.open-saved,.remove');
+  if(!button) return;
+  const id = Number(button.dataset.id);
+  if(button.matches('.remove')) {
+    const position = [...body.querySelectorAll('.remove')].indexOf(button);
+    toggleSave(id);
+    renderShortlist();
+    const remaining = body.querySelectorAll('.remove');
+    (remaining[Math.min(position,remaining.length-1)] || close).focus();
+  } else {
+    shortlistOrigin = id;
+    detail(id);
+    close.focus();
+  }
+});
+close.onclick = () => {
+  if(shortlistOrigin !== null) {
+    const id = shortlistOrigin;
+    shortlistOrigin = null;
+    renderShortlist();
+    (body.querySelector('.open-saved[data-id="'+id+'"]') || close).focus();
+  } else panel.close();
+};
+panel.addEventListener('cancel',event => {
+  event.preventDefault();
+  close.click();
+});
+panel.addEventListener('close',() => opener?.focus({preventScroll:true}));
+updateCount();
+renderCatalog();
+</script>
+</body>
+</html>
